@@ -1,5 +1,5 @@
-import java.util.*;
-public class nakseo {
+import java.util.Scanner;
+public class Ex03 {
 	
 	public static void main(String[] ar) {
 		Scanner sc = new Scanner(System.in);
@@ -16,7 +16,7 @@ public class nakseo {
 		int num3 = Integer.parseInt(sc.nextLine());
 		
 		int sum = num1 + num2 + num3;
-		double per = (double)(num1 + num2 + num3) / 3;
+		double per = (num1 + num2 + num3) / 3;
 		
 		System.out.println("己利 包府橇肺弊伐 ver2.1");
 		System.out.println("===================");

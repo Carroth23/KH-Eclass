@@ -15,6 +15,7 @@ public class Exam_01 {
 		
 		System.out.println(a++);
 		System.out.println(++a);
+		
 	}
 
 }
