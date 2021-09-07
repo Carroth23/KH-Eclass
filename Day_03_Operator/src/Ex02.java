@@ -1,5 +1,5 @@
 public class Ex02 {
-	
+
 	public static void main(String[] ar) {
 		int a = 10;
 		int b = 20;
