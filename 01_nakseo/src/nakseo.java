@@ -2,6 +2,7 @@ import java.util.*;
 
 public class nakseo {
 	public static void main(String[] args) {
+<<<<<<< Updated upstream
 		
 		Scanner sc = new Scanner(System.in); // 스캐너 사용
 		System.out.println("퍼스널컬러 테스트 ver2.0");
@@ -42,6 +43,19 @@ public class nakseo {
 			System.out.println("앞으로고 꾸준히 " + color + " 색상을 사랑해 준다면, " + color + " 색상은 최고의 퍼스널 컬러가 될것입니다.");
 		} else {
 			System.out.printf("축하합니다. 베스트 색상을 고르셨군요.!%n%s 색상과 함께라면 앞으로도 쭉 멋진일이 생길것입니다.", color);
+=======
+		Scanner sc = new Scanner(System.in);
+		while (true) {
+			System.out.println("연산자 입력 : ");
+			String op = sc.nextLine();
+			
+			if (!op.equals("+" + "-")){
+				System.out.println("Exit");
+				break;
+			}
+			System.out.println("persi");
+			break;
+>>>>>>> Stashed changes
 		}
 	}
 }
