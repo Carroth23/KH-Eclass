@@ -2,17 +2,17 @@ import java.util.*;
 
 public class nakseo {
 	public static void main(String[] args) {
-		
+
 		Scanner sc = new Scanner(System.in); // 스캐너 사용
 		System.out.println("퍼스널컬러 테스트 ver2.0");
 		System.out.println("이 테스트는 권위있는 영국 학술지 NATURE에 실리고싶은 테스트입니다.");
 		System.out.println("평소 자신이 선호하는 색상을 적어 주세요.>");
 		String color = sc.nextLine(); // 사용자의 입력을 문자열로 저장
-		
+
 		System.out.printf("선택하신 색상은 %s 입니다.%n", color);
 		double ran = Math.random() * 10; // double형 난수를 생성
-		int dom = (int)ran - 5; // int형으로 캐스팅하여 소수점자리 제거와 케이스 줄이기
-		
+		int dom = (int) ran - 5; // int형으로 캐스팅하여 소수점자리 제거와 케이스 줄이기
+
 		System.out.print("분석중"); // 뭔가 분석중이면서 콤마가 늘어나는 느낌이 나게
 		char comma = '.';
 		int i = 0;
@@ -22,7 +22,7 @@ public class nakseo {
 				System.out.println();
 			}
 		}
-		
+
 		if (dom == 0) { // 아무 말이나 가져다 붙이기
 			System.out.printf("%s 색상을 좋아하는 당신은 온화한 사람입니다.%n", color);
 			System.out.printf("%s 색상을 좋아하는 사람들의 특징은 남을 먼저 생각하고 배려하며%n", color);
@@ -42,6 +42,17 @@ public class nakseo {
 			System.out.println("앞으로고 꾸준히 " + color + " 색상을 사랑해 준다면, " + color + " 색상은 최고의 퍼스널 컬러가 될것입니다.");
 		} else {
 			System.out.printf("축하합니다. 베스트 색상을 고르셨군요.!%n%s 색상과 함께라면 앞으로도 쭉 멋진일이 생길것입니다.", color);
+			while (true) {
+				System.out.println("연산자 입력 : ");
+				String op = sc.nextLine();
+
+				if (!op.equals("+" + "-")) {
+					System.out.println("Exit");
+					break;
+				}
+				System.out.println("persi");
+				break;
+			}
 		}
 	}
 }
