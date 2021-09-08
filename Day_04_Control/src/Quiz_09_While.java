@@ -1,5 +1,5 @@
 
-public class Quiz_09_while {
+public class Quiz_09_While {
 
 	public static void main(String[] args) {
 
