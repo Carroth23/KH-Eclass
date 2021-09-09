@@ -25,13 +25,15 @@ public class Quiz_02 {
 				}
 				continue; // 다시시작
 			}
-
+			
 			System.out.println("첫 번째 숫자 입력 : ");
 			int num1 = Integer.parseInt(sc.nextLine());
+			
 			System.out.println("두 번째 숫자 입력 : ");
 			int num2 = Integer.parseInt(sc.nextLine());
+			
 			System.out.println(); // 줄바꿈
-			System.out.println("===== 결 과 =====");
+			System.out.println("====== 결 과 ======");
 			System.out.println();
 
 			switch (oper) {

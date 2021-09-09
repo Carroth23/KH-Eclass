@@ -1,58 +1,68 @@
-import java.util.*;
+import java.util.Scanner;
 
 public class nakseo {
-	public static void main(String[] args) {
+   public static void main(String[] args) {
 
-		Scanner sc = new Scanner(System.in); // 스캐너 사용
-		System.out.println("퍼스널컬러 테스트 ver2.0");
-		System.out.println("이 테스트는 권위있는 영국 학술지 NATURE에 실리고싶은 테스트입니다.");
-		System.out.println("평소 자신이 선호하는 색상을 적어 주세요.>");
-		String color = sc.nextLine(); // 사용자의 입력을 문자열로 저장
+      Scanner sc = new Scanner(System.in);
+      
+      int menu;
+      int money = 0;
+      int input;
+      int output;
 
-		System.out.printf("선택하신 색상은 %s 입니다.%n", color);
-		double ran = Math.random() * 10; // double형 난수를 생성
-		int dom = (int) ran - 5; // int형으로 캐스팅하여 소수점자리 제거와 케이스 줄이기
+      while(true) {
+         System.out.println("*** ATM 시뮬레이터 ***");
+         System.out.println("1. 잔액조회");
+         System.out.println("2. 입금하기");
+         System.out.println("3. 출금하기");
+         System.out.println("4. 종료하기");
+         System.out.print(">>");
+         
+         while(true){
+            try {
+               menu = Integer.parseInt(sc.nextLine());   
+               break;
+            }catch(Exception e) {
+               System.out.println("숫자를 입력해주세요.");
+            }   
+         }
 
-		System.out.print("분석중"); // 뭔가 분석중이면서 콤마가 늘어나는 느낌이 나게
-		char comma = '.';
-		int i = 0;
-		while (i++ < 13) {
-			System.out.print(comma);
-			if (i == 13) {
-				System.out.println();
-			}
-		}
-
-		if (dom == 0) { // 아무 말이나 가져다 붙이기
-			System.out.printf("%s 색상을 좋아하는 당신은 온화한 사람입니다.%n", color);
-			System.out.printf("%s 색상을 좋아하는 사람들의 특징은 남을 먼저 생각하고 배려하며%n", color);
-			System.out.println("항상 베푼다는 특징이 있습니다.");
-		} else if (dom == 1) {
-			System.out.printf("항상 활기차고 웃음기 많은 당신 %s 색상을 선택하셨군요.%n", color);
-			System.out.printf("%s 색상은 당신에게 잘 맞으며 훌륭한 퍼스널 컬러가 될것입니다.", color);
-		} else if (dom == 2) {
-			System.out.println("조금은 소심하지만 누구보다 큰 꿈을 꾸는 당신");
-			System.out.printf("혹시 %s 색상을 선택하지 않으셨나요? 그렇다면 잘하셨습니다.%n", color);
-			System.out.printf("%s 색상은 당신에게 힘과 앞으로 나아갈 용기를 불어넣어 줄것입니다.", color);
-		} else if (dom == 3) {
-			System.out.printf("%s 의 주인은 바로 당신, 최고의 궁합색상을 선택하셨네요!%n", color);
-			System.out.println("앞으로도 " + color + " 색상과 함께 멋진 날이 기다릴거에요.");
-		} else if (dom == 4) {
-			System.out.printf("당신과 완벽히 어울리지는 않지만 %s 색상은 언제나 당신을 지켜줄것입니다.%n", color);
-			System.out.println("앞으로고 꾸준히 " + color + " 색상을 사랑해 준다면, " + color + " 색상은 최고의 퍼스널 컬러가 될것입니다.");
-		} else {
-			System.out.printf("축하합니다. 베스트 색상을 고르셨군요.!%n%s 색상과 함께라면 앞으로도 쭉 멋진일이 생길것입니다.", color);
-			while (true) {
-				System.out.println("연산자 입력 : ");
-				String op = sc.nextLine();
-
-				if (!op.equals("+" + "-")) {
-					System.out.println("Exit");
-					break;
-				}
-				System.out.println("persi");
-				break;
-			}
-		}
-	}
+         if(menu == 1) {
+            System.out.println("현재 잔액은" + money + "원 입니다.");
+         }else if(menu == 2) {
+            System.out.println("얼마를 입금하시겠습니까?");
+            while(true) {
+               try {
+                  input = Integer.parseInt(sc.nextLine());
+                  money += input; // 사용자가 입력한 값과 원래 가지고 있던 값을 더해서 누적.
+                  System.out.println("정상 입력하였습니다.");
+                  break;
+               }catch(Exception e) {
+                  System.out.println("숫자를 입력 해 주시기 바랍니다.");
+               }   
+            }
+         }else if(menu == 3) {
+            System.out.println("얼마를 출금하시겠습니까?");
+            while(true) {
+               try {
+                  output = Integer.parseInt(sc.nextLine());
+                  System.out.println("정상 입력하였습니다.");
+                  break;
+               }catch(Exception e) {
+                  System.out.println("숫자를 입력 해 주시기 바랍니다.");
+               }   
+            }
+            if(money >= output) { // 내가 가진 money가 출금 금액보다 크다면,
+               money -= output;  // 내가 가진 money에서 출금 금액을 뺄셈.
+            }else {
+               System.out.println("잔액이 부족합니다.");
+            }
+         }else if(menu == 4) {
+            System.out.println("ATM을 종료합니다.");
+            System.exit(0);
+         }else {
+            System.out.println("메뉴를 다시 확인해주세요.");
+         }
+      }      
+   }
 }
