@@ -1,6 +1,6 @@
-import java.util.*;
+import java.util.Scanner;
 
-public class nakseo2 {
+public class Quiz_03_horseGame {
 	public static void main(String[] args) {
 
 		Scanner sc = new Scanner(System.in);
@@ -28,20 +28,40 @@ public class nakseo2 {
 			switch (menu) {
 			case 1:
 				if (money != 0) {
-					int horse = 0;
-					int bet = 0;
 					while (true) {
-						try {
-							System.out.println("경마게임에 오신것을 환영합니다.");
-							System.out.println("1. 우승 경력은 많으나 곧 은퇴를 앞둔 말");
-							System.out.println("2. 최근 한달동안 돌풍같은 질주를 펼쳤던 말");
-							System.out.println("3. 가장 신참이지만 무섭게 떠오르는 말");
-							System.out.println("베팅하고 싶은 말을 선택해 주세요. >>");
-							horse = Integer.parseInt(sc.nextLine());
-							System.out.println(horse + "번마를 선택하셨습니다.");
+						System.out.println("경마게임에 오신것을 환영합니다.");
+						System.out.println("1. 우승 경력은 많으나 곧 은퇴를 앞둔 말");
+						System.out.println("2. 최근 한달동안 돌풍같은 질주를 펼쳤던 말");
+						System.out.println("3. 가장 신참이지만 무섭게 떠오르는 말");
+						System.out.println("베팅하고 싶은 말을 선택해 주세요. >>");
 
-							System.out.println("얼마를 베팅 하시겠습니까?");
-							bet = Integer.parseInt(sc.nextLine());
+						int horse = 0;
+						while (true) {
+							try {
+								horse = Integer.parseInt(sc.nextLine());
+								if (0 < horse && horse < 4) {
+									System.out.println(horse + "번마를 선택하셨습니다.");
+									break;
+								} else {
+									System.out.println("1 ~ 3번 말중 선택하여 주십시오.");
+								}
+							} catch (Exception e) {
+								System.out.println("숫자로 1 ~ 3 번말을 골라 주십시오.");
+							}
+						}
+
+						while (true) {
+
+							int bet = 0;
+							while (true) {
+								System.out.println("얼마를 베팅 하시겠습니까?");
+								try {
+									bet = Integer.parseInt(sc.nextLine());
+									break;
+								} catch (Exception e) {
+									System.out.println("금액을 숫자로 입력해 주십시오.");
+								}
+							}
 
 							if (money >= bet) {
 								int winhorse = ((int) (Math.random() * 3) + 1);
@@ -59,9 +79,6 @@ public class nakseo2 {
 								System.out.println("잔액이 부족합니다.");
 								System.out.println("현재 최대 베팅 가능 금액은 : " + money + "원 입니다.");
 							}
-						} catch (Exception e) {
-							System.out.println("메뉴를 다시 확인해 주십시오.");
-							break;
 						}
 						break;
 					}

@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class nakseo {
+public class Quiz_02_algorithm {
 	public static void main(String[] args) {
 
 		Scanner sc = new Scanner(System.in);
@@ -17,13 +17,16 @@ public class nakseo {
 			System.out.println("2. Game Score");
 			System.out.println("3. End Game");
 			System.out.print(">");
-			try {
-				menu = Integer.parseInt(sc.nextLine());
-				if (1 > menu || menu > 3) {
+			while (true) {
+				try {
+					menu = Integer.parseInt(sc.nextLine());
+					if (0 < menu && menu < 4) {
+						break;
+					}
 					System.out.println("메뉴를 다시 확인해 주세요");
+				} catch (Exception e) {
+					System.out.println("메뉴는 숫자로 입력해주세요.");
 				}
-			} catch (Exception e) {
-				System.out.println("메뉴는 숫자로 입력해주세요.");
 			}
 
 			switch (menu) { // 게임프로그램 코드
@@ -31,7 +34,7 @@ public class nakseo {
 				System.out.println("<<  Game Start  >>");
 				int ran = ((int) (Math.random() * (100 - 1 + 1) + 1));
 //				System.out.println("정답 : " + ran); ///////// 주석 제거시 정답 동시출력 //////
-
+				
 				int player = 0;
 				int com1 = 0;
 				int input = 0;
