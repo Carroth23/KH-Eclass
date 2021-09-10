@@ -5,7 +5,12 @@ public class Quiz_03_horseGame {
 
 		Scanner sc = new Scanner(System.in);
 
-		int money = 0;
+		int money = 0; // 마이 머니
+		int horse = 0; // 선택할 말
+		int bet = 0; // 배팅할 금액
+		int charge = 0; // 충전 금액
+		int menu = 0; // 메뉴선택
+		
 		while (true) {
 			System.out.printf("경마게임에 오신 것을 환영합니다.%n");
 			System.out.printf("1. 게임 시작%n");
@@ -15,7 +20,7 @@ public class Quiz_03_horseGame {
 			System.out.printf("메뉴를 선택해 주세요 : %n");
 			System.out.printf(">> ");
 
-			int menu = 0;
+			// ========== 메뉴 선택 ===========
 			try {
 				menu = Integer.parseInt(sc.nextLine());
 				if (1 > menu || menu > 4) {
@@ -28,6 +33,7 @@ public class Quiz_03_horseGame {
 			switch (menu) {
 			case 1:
 				if (money != 0) {
+					// ========== 경주마 선택 ===========
 					while (true) {
 						System.out.println("경마게임에 오신것을 환영합니다.");
 						System.out.println("1. 우승 경력은 많으나 곧 은퇴를 앞둔 말");
@@ -35,7 +41,6 @@ public class Quiz_03_horseGame {
 						System.out.println("3. 가장 신참이지만 무섭게 떠오르는 말");
 						System.out.println("베팅하고 싶은 말을 선택해 주세요. >>");
 
-						int horse = 0;
 						while (true) {
 							try {
 								horse = Integer.parseInt(sc.nextLine());
@@ -50,9 +55,9 @@ public class Quiz_03_horseGame {
 							}
 						}
 
+						// ========== 금액 베팅 ===========
 						while (true) {
 
-							int bet = 0;
 							while (true) {
 								System.out.println("얼마를 베팅 하시겠습니까?");
 								try {
@@ -87,7 +92,6 @@ public class Quiz_03_horseGame {
 				}
 				break;
 			case 2:
-				int charge = 0;
 				while (true) {
 					System.out.println("얼마를 충전하시겠습니까? : ");
 					try {
@@ -97,7 +101,7 @@ public class Quiz_03_horseGame {
 						System.out.println("금액을 숫자로 입력해 주십시오.");
 					}
 				}
-				money += charge;
+				money += charge; // ===== 금액 충전 =====
 				System.out.println(charge + "원이 충전되었습니다. 현재 잔액은 : " + money + "원 입니다.");
 				break;
 			case 3:
