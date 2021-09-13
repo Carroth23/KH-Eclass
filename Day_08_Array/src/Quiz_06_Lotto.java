@@ -1,6 +1,6 @@
-import java.util.*;
+import java.util.Scanner;
 
-public class nakseo2 {
+public class Quiz_06_Lotto {
 	public static void main(String[] args) {
 
 		Scanner sc = new Scanner(System.in);

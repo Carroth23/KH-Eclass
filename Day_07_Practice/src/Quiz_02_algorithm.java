@@ -5,7 +5,6 @@ public class Quiz_02_algorithm {
 
 		Scanner sc = new Scanner(System.in);
 
-		int bestScore = 100;
 		int comscore = 0;
 		int playerscore = 0;
 
@@ -33,10 +32,8 @@ public class Quiz_02_algorithm {
 			case 1:
 				System.out.println("<<  Game Start  >>");
 				int ran = ((int) (Math.random() * (100 - 1 + 1) + 1));
-//				System.out.println("정답 : " + ran); ///////// 주석 제거시 정답 동시출력 //////
-				
-				int player = 0;
-				int com1 = 0;
+				System.out.println("정답 : " + ran); ///////// 주석 제거시 정답 동시출력 //////
+
 				int input = 0;
 				int upcom = 100;
 				int downcom = 1;
@@ -55,24 +52,15 @@ public class Quiz_02_algorithm {
 					}
 
 					if (ran > input) {
-						player++;
 						System.out.println("<<  U P  >>");
 					} else if (ran < input) {
-						player++;
 						System.out.println("<< D O W N >>");
 					} else {
-						player++;
 						System.out.println("<<  정답  >>");
 						playerscore++;
 						break;
 					}
 
-					// upcom = 100
-					// downcom = 1
-					///////////////// 여기서 컴퓨터의 중복값을 제거하고싶습니다 //////////////
-					// ran = 70
-					// dom = 50
-					// downcom = 50
 					while (true) {
 						int dom = ((int) (Math.random() * (upcom - downcom + 1) + downcom));
 						System.out.println("컴퓨터의 숫자 : " + dom);

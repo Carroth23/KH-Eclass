@@ -59,7 +59,7 @@ public class Quiz_03_horseGame {
 						while (true) {
 
 							while (true) {
-								System.out.println("얼마를 베팅 하시겠습니까?");
+								System.out.println("얼마를 베팅 하시겠습니까? 현재 잔액 : " + money + "원.");
 								try {
 									bet = Integer.parseInt(sc.nextLine());
 									break;
@@ -73,10 +73,11 @@ public class Quiz_03_horseGame {
 
 								if (horse == winhorse) {
 									System.out.println("축하 합니다! 선택한 말이 우승하여 두배의 상금을 얻었습니다!");
-									money += (bet * 2);
+									money += bet * 2;
 									break;
 								} else {
-									System.out.println("아쉽습니다. 간발의 차이로 우승을 놓쳤습니다. 베팅금액은 회수됩니다.");
+									System.out.println("아쉽습니다. 간발의 차이로 우승을 놓쳤습니다.");
+									System.out.println("오늘의 우승마는 " + winhorse + "번마 입니다.\n");
 									money -= bet;
 									break;
 								}
