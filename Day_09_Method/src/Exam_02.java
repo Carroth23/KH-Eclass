@@ -1,4 +1,9 @@
 
+// 자바 관습
+// 클래스의 첫번째 문자는 대문자.
+// 메서드 첫글자는 소문자
+
+
 public class Exam_02 {
 
 //	double random() {
@@ -16,7 +21,7 @@ public class Exam_02 {
 //	}
 //	
 //	public static void main(String[] args) {
-//		double rand = Math.random();
+		double rand = Math.random();
 //		String msg = sc.nextLine();
 //		
 //		int kor = Integer.parseInt(sc.nextLine(/*여기의 리턴 타입은 String*/));
