@@ -80,9 +80,9 @@ public class Exam_02 {
 								+ stds[i].getEng() + "\t" + stds[i].getMath() + "\t" + stds[i].getSum() + "\t"
 								+ stds[i].getAvg());
 						existFlag = true;
-					}/* else if (i == index - 1) { 이런것도 가능
-						System.out.println("해당 학생 정보가 없습니다.");
-					}*/
+					} /*
+						 * else if (i == index - 1) { 이런것도 가능 System.out.println("해당 학생 정보가 없습니다."); }
+						 */
 				}
 				if (!existFlag) {
 					System.out.println("해당 이름이 존재하지 않습니다.");
@@ -90,14 +90,36 @@ public class Exam_02 {
 
 			} else if (menu == 4) {
 				// 선택 과제 - 아이디와 새로운 정보를 입력받아서 대상 정보를 수정
-				
-				
-				
+				System.out.println("수정할 학생ID를 입력해주세요_");
+				int idnum = Integer.parseInt(sc.nextLine());
+
+				boolean idFlag = false;
+				for (int i = 0; i < index; i++) {
+					if (idnum == stds[i].getId()) {
+						System.out.println("검색된 학생의 정보 : " + stds[i].getId() + "\t" + stds[i].getName() + "\t"
+								+ stds[i].getKor() + "\t" + stds[i].getEng() + "\t" + stds[i].getMath() + "\t"
+								+ stds[i].getSum() + "\t" + stds[i].getAvg());
+						System.out.println("수정할 이름을 입력해 주세요:");
+						stds[i].setName(sc.nextLine());
+						stds[i].setKor(inputValidInt("국 어 : "));
+						stds[i].setEng(inputValidInt("영 어 : "));
+						stds[i].setMath(inputValidInt("수 학 : "));
+						System.out.println("수정이 완료되었습니다.");
+						idFlag = true;
+					}
+				}
+				if (!idFlag) {
+					System.out.println("해당 Id로 조회되는 학생이 없습니다.");
+				}
+
 			} else if (menu == 5) {
 				// 선택 과제 - 성적순으로 1 ~ n위를 정렬하여 출력
-				
-				
-				
+				for (int i = 0; i < index; i++) {
+					System.out.println(stds[i].getId() + "\t" + stds[i].getName() + "\t" + stds[i].getKor() + "\t"
+							+ stds[i].getEng() + "\t" + stds[i].getMath() + "\t" + stds[i].getSum() + "\t"
+							+ stds[i].getAvg());
+				}
+
 			} else if (menu == 0) {
 				System.out.println("시스템을 종료합니다.");
 				System.exit(0);
