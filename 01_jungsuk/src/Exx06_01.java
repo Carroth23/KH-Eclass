@@ -1,16 +1,20 @@
 
-public class Exx06_01 {
-	
-	public static void change(String str) {
-		str += "456";
-	}
+public class Exx06_01{
 	
 	public static void main(String[] args) {
-
-		String str = "ABC123";
-		System.out.println(str);
-		change(str);
-		System.out.println("After change : ");
+		
+		int sum = 0;
+		float average = 0f;
+		
+		int[] score = {100, 88, 100, 100, 90};
+		
+		for (int i = 0; i < score.length; i++) {
+			sum += score[i];
+		}
+		
+		average = sum / (float)score.length;
+		
+		System.out.println(sum);
+		System.out.println(average);
 	}
-
 }

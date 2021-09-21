@@ -15,19 +15,19 @@ class Ex06_01 {
 	}
 }
 
-class Tv {
-	// Tv의 속성(멤버변수)
-	String color; 	// 색깔
-	boolean power; 	// 전원상태(on/off)
-	int channel; 	// 채널
-	
-	void power() {
-		power = !power;
-	}
-	void channelUp() {
-		channel++;
-	}
-	void channelDown() {
-		channel--;
-	}
-}
+//class Tv {
+//	// Tv의 속성(멤버변수)
+//	String color; 	// 색깔
+//	boolean power; 	// 전원상태(on/off)
+//	int channel; 	// 채널
+//	
+//	void power() {
+//		power = !power;
+//	}
+//	void channelUp() {
+//		channel++;
+//	}
+//	void channelDown() {
+//		channel--;
+//	}
+//}
