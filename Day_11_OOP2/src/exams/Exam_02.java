@@ -1,5 +1,6 @@
 package exams;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 import classes.Student;
@@ -114,6 +115,8 @@ public class Exam_02 {
 
 			} else if (menu == 5) {
 				// 선택 과제 - 성적순으로 1 ~ n위를 정렬하여 출력
+			
+				
 				for (int i = 0; i < index; i++) {
 					System.out.println(stds[i].getId() + "\t" + stds[i].getName() + "\t" + stds[i].getKor() + "\t"
 							+ stds[i].getEng() + "\t" + stds[i].getMath() + "\t" + stds[i].getSum() + "\t"
