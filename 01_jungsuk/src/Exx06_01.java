@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 public class Exx06_01 {
 
 	public static int[] shuffle(int[] arr) {
@@ -19,6 +20,24 @@ public class Exx06_01 {
 		int[] result = shuffle(original);
 		System.out.println(java.util.Arrays.toString(result));
 		
+=======
+public class Exx06_01{
+	
+	public static void main(String[] args) {
+		
+		int sum = 0;
+		float average = 0f;
+		
+		int[] score = {100, 88, 100, 100, 90};
+		
+		for (int i = 0; i < score.length; i++) {
+			sum += score[i];
+		}
+		
+		average = sum / (float)score.length;
+		
+		System.out.println(sum);
+		System.out.println(average);
+>>>>>>> 6b090a6ee49a8911b2f40ab6599da09cbcd75395
 	}
-
 }
