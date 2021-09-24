@@ -1,13 +1,21 @@
-import java.util.Scanner;
+
+class Parent{
+	void parentMethod() {}
+}
+
+class Child extends Parent{
+	
+	void parentMethod() {
+		System.out.println("¿Ó");
+	}
+	void parentMethod(int x) {}
+	void parentMethod(long x) {}
+}
 
 public class Main {
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
+    public static void main(String[] args) {
 
-		double d = 0.1f;
-		float f = (float)0.1d;
-		System.out.println(f);
-		System.out.println(d);
-
-	}
+    	int[] score = new int[5];
+    	System.out.println(score[3]);
+    }
 }

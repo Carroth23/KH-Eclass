@@ -1,6 +1,7 @@
 package grade;
 
-public class Grade { // 상속을 해주는 쪽 (부모클래스[상위클래스]) SuperClass
+abstract public class Grade { // 상속을 해주는 쪽 (부모클래스[상위클래스]) SuperClass
+//	abstract : 추상클래스가 됨
 	private int id;
 	private String name;
 	private int point;
@@ -38,7 +39,5 @@ public class Grade { // 상속을 해주는 쪽 (부모클래스[상위클래스]) SuperClass
 		this.point = point;
 	}
 
-	public double getBonus() {
-		return this.point * 0.03; // 내용은 다르지만 공통요소는 맞다
-	}
+	abstract public double getBonus(); // 추상 메서드
 }

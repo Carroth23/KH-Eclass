@@ -12,4 +12,8 @@ public class Gold extends/*상속받는다(확장)*/ Grade{ // 자식클래스[하위클래스] D
 //		this.setPoint(point);
 	}
 	
+	public double getBonus() { // 메서드 오버라이딩
+		return this.getPoint() * 0.03;
+	}
+	
 }

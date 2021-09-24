@@ -1,23 +1,26 @@
 
 public class Ex_07_02 {
 	public static void main(String[] args) {
-
-		Child c = new Child();
-		c.method();
+		
 		
 	}
 }
 
-class Parent {
-	int x = 10;
+class Point {
+	int x, y;
+	
+	Point(int x, int y){
+		this.x = x;
+		this.y = y;
+	}
 }
 
-class Child extends Parent {
-	int x = 20;
-
-	void method() {
-		System.out.println("x = " + x);
-		System.out.println("this.x = " + this.x);
-		System.out.println("super.x = " + super.x);
+class Point4D extends Point {
+	int z;
+	
+	Point4D(int x, int y, int z){
+		super(x, y);
+		this.z = z;
 	}
+	
 }
