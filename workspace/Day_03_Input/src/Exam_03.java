@@ -6,15 +6,15 @@ public class Exam_03 {
 
 		Scanner sc = new Scanner(System.in);
 
-		System.out.println("¼ıÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
+		System.out.println("ìˆ«ìë¥¼ ì…ë ¥í•˜ì„¸ìš” : ");
 		String num = sc.nextLine();
 		int result = Integer.parseInt(num);
 
-//		int result = Integer.parseInt(sc.nextLine()); // ÀÌ°Íµµ ¹®¹ıÀûÀ¸·Î °¡´É
-//		System.out.println("´õÇÑ °á°ú´Â " + (Integer.parseInt(sc.nextLine()))); ÀÌ°Íµµ °¡´É
+//		int result = Integer.parseInt(sc.nextLine()); // ì´ê²ƒë„ ë¬¸ë²•ì ìœ¼ë¡œ ê°€ëŠ¥
+//		System.out.println("ë”í•œ ê²°ê³¼ëŠ” " + (Integer.parseInt(sc.nextLine()))); ì´ê²ƒë„ ê°€ëŠ¥
 		System.out.println(result + 10);
 
-		// ¿¹¿Ü == ¿¡·¯
+		// ì˜ˆì™¸ == ì—ëŸ¬
 	}
 
 }

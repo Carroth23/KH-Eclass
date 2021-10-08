@@ -7,14 +7,14 @@ public class Quiz_03 {
 		
 		int[] arr = new int[3];
 		
-//		System.out.print("1 ¹øÂ° ¼ö : ");
+//		System.out.print("1 ë²ˆì§¸ ìˆ˜ : ");
 //		x = sc.nextInt();
-//		System.out.print("2 ¹øÂ° ¼ö : ");
+//		System.out.print("2 ë²ˆì§¸ ìˆ˜ : ");
 //		y = sc.nextInt();
-//		System.out.print("3 ¹øÂ° ¼ö : ");
+//		System.out.print("3 ë²ˆì§¸ ìˆ˜ : ");
 //		z = sc.nextInt();
 		for (int i = 0; i < arr.length; i++) {
-			System.out.print(i + 1 + "¹øÂ° ¼ö ÀÔ·Â : ");
+			System.out.print(i + 1 + "ë²ˆì§¸ ìˆ˜ ìž…ë ¥ : ");
 			arr[i] = sc.nextInt();
 			if (i == arr.length - 1) {
 				System.out.println(Arrays.toString(arr));
@@ -22,7 +22,7 @@ public class Quiz_03 {
 		}
 		
 		for (int i = 0; i< arr.length; i++) {
-			System.out.println(i +1 + " ¹øÂ° ¼ö : " + arr[i]);
+			System.out.println(i +1 + " ë²ˆì§¸ ìˆ˜ : " + arr[i]);
 		}
 		
 	}

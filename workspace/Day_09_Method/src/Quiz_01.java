@@ -1,10 +1,9 @@
-
 public class Quiz_01 {
 	
 	public static String test(String str) {
-		if (str.equals("»ç°ú")) { // String°ª ºñ±³ÇÒ¶© equals »ç¿ë
+		if (str.equals("ì‚¬ê³¼")) { // Stringê°’ ë¹„êµí• ë• equals ì‚¬ìš©
 			return "Apple";
-		} else if (str.equals("Æ÷µµ")){
+		} else if (str.equals("í¬ë„")){
 			return "Grape";
 		} else {
 			return "None";
@@ -17,13 +16,13 @@ public class Quiz_01 {
 	
 	public static void main(String[] args) {
 
-		// "»ç°ú" ¸¦ Àü´ŞÇÏ¸é, "Apple"¸¦ return ÇÏ°í
-		// "Æ÷µµ" ¸¦ Àü´ŞÇÏ¸é, "Grape"¸¦ return ÇÏ´Â ¸Ş¼­µå test¸¦ ¸¸µå¼¼¿ä
-		// "»ç°ú"³ª "Æ÷µµ"°¡ ¾Æ´Ï¸é "None"À» return!
+		// "ì‚¬ê³¼" ë¥¼ ì „ë‹¬í•˜ë©´, "Apple"ë¥¼ return í•˜ê³ 
+		// "í¬ë„" ë¥¼ ì „ë‹¬í•˜ë©´, "Grape"ë¥¼ return í•˜ëŠ” ë©”ì„œë“œ testë¥¼ ë§Œë“œì„¸ìš”
+		// "ì‚¬ê³¼"ë‚˜ "í¬ë„"ê°€ ì•„ë‹ˆë©´ "None"ì„ return!
 		
-		System.out.println(test("»ç°ú"));
+		System.out.println(test("ì‚¬ê³¼"));
 		
-		System.out.println(myRand(10, 20)); // 10 ~ 20»çÀÌÀÇ ³­¼ö
+		System.out.println(myRand(10, 20)); // 10 ~ 20ì‚¬ì´ì˜ ë‚œìˆ˜
 		
 	}
 }

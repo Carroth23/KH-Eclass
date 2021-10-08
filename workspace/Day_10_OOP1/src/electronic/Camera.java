@@ -7,18 +7,18 @@ public class Camera {
 	String battery;
 	
 	public static void powerOn() {
-		// Àü¿ø ÄÑ±â
+		// ì „ì› ì¼œê¸°
 	}
 	
 	public static void powerOff() {
-		// Àü¿ø²ô±â
+		// ì „ì›ë„ê¸°
 	}
 	
 	public static void zoomIn(int a) {
-		// ÁÜÀÎ
+		// ì¤Œì¸
 	}
 	
 	public static void zoomOut(int a) {
-		// ÁÜ¾Æ¿ô
+		// ì¤Œì•„ì›ƒ
 	}
 }

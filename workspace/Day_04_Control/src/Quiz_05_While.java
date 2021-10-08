@@ -1,9 +1,8 @@
-
 public class Quiz_05_While {
 
 	public static void main(String[] args) {
 
-		// Hello Java ¶ó´Â ¹®±¸¸¦ 23¹ø Ãâ·ÂÇØº¾½Ã´Ù.
+		// Hello Java ë¼ëŠ” ë¬¸êµ¬ë¥¼ 23ë²ˆ ì¶œë ¥í•´ë´…ì‹œë‹¤.
 		int i = 0;
 		while (i++ < 23) {
 			System.out.println("Hello Java" + i);

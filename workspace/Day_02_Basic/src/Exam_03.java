@@ -1,18 +1,17 @@
-
 public class Exam_03 {
 	public static void main(String[] args) {
 //		byte a = 10;
 //		short b = a;
 		
-//		promotion = ´ëÀÔÇÒ¶§³ª ¿¬»êÇÒ¶§ ¹ß»ı(ÀÛÀºÀÚ·áÇüÀ» Å« ÀÚ·áÇü¿¡ ¸ÂÃç Áø±Ş½ÃÅ´)
+//		promotion = ëŒ€ì…í• ë•Œë‚˜ ì—°ì‚°í• ë•Œ ë°œìƒ(ì‘ì€ìë£Œí˜•ì„ í° ìë£Œí˜•ì— ë§ì¶° ì§„ê¸‰ì‹œí‚´)
 		
 //		int a = 10;
 //		double b = 3.14;
-//		System.out.println(a + b); // ¾çÂÊ ´Ù doubleÇüÀÌ µÈ´Ù.
+//		System.out.println(a + b); // ì–‘ìª½ ë‹¤ doubleí˜•ì´ ëœë‹¤.
 		
 		int a = 5;
 		int b = 2;
-		System.out.println(a / b); // int³¢¸®ÀÇ ¿¬»êÀº Á¤¼ö¸¸ ¹İÈ¯ÇÔ. (ÇÑÂÊÀ» double·Î Çüº¯È¯½ÃÅ°¸é °¡´É)
+		System.out.println(a / b); // intë¼ë¦¬ì˜ ì—°ì‚°ì€ ì •ìˆ˜ë§Œ ë°˜í™˜í•¨. (í•œìª½ì„ doubleë¡œ í˜•ë³€í™˜ì‹œí‚¤ë©´ ê°€ëŠ¥)
 		
 	}
 }

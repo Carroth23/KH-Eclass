@@ -2,7 +2,7 @@ import java.util.Arrays;
 
 public class Exam_03 {
 
-//	boolean equals(String str) { ¾Æ¸¶ ÀÌ·¸°Ô »ı°åÀ»°Í.
+//	boolean equals(String str) { ì•„ë§ˆ ì´ë ‡ê²Œ ìƒê²¼ì„ê²ƒ.
 //		
 //	}
 	
@@ -22,11 +22,11 @@ public class Exam_03 {
 		String sub = "Hello";
 		boolean result = str.startsWith("He");
 		boolean result2 = str.endsWith("o");
-		// boolean À» ¸®ÅÏÇÏ´Â ¸Ş¼­µå´Â ÀÇ¹®¹®À¸·Î ÀĞ¾îº¸¸é µÊ ("He"·Î ½ÃÀÛÇÏ´Â°Å³Ä?) 
+		// boolean ì„ ë¦¬í„´í•˜ëŠ” ë©”ì„œë“œëŠ” ì˜ë¬¸ë¬¸ìœ¼ë¡œ ì½ì–´ë³´ë©´ ë¨ ("He"ë¡œ ì‹œì‘í•˜ëŠ”ê±°ëƒ?) 
 		System.out.println(result);
 		System.out.println(result2);
 		
-		str.contains("ell"); // Æ÷ÇÔ µÇ¾î ÀÖ³Ä? (Ä³¸¯ÅÍ½ÃÄö½º´Â String·Î »ı°¢ÇÏ¸é µÊ)
+		str.contains("ell"); // í¬í•¨ ë˜ì–´ ìˆëƒ? (ìºë¦­í„°ì‹œí€€ìŠ¤ëŠ” Stringë¡œ ìƒê°í•˜ë©´ ë¨)
 		str.equals("Hello");
 		String str2 = "Apple:Orange:Mango";
 		String[] fruits = str2.split(":");
@@ -34,7 +34,7 @@ public class Exam_03 {
 			System.out.println(fruits[i]);
 		}
 		
-//		str.replace °øºÎÇØº¸±â
+//		str.replace ê³µë¶€í•´ë³´ê¸°
 	}
 
 }

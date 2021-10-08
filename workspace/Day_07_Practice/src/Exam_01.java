@@ -4,15 +4,15 @@ public class Exam_01 {
 
 	public static void main(String[] args) {
 		// Math.random();
-		// ((int)(Math.random() * (ÃÖ´ë°ª - ÃÖ¼Ò°ª +1) + ÃÖ¼Ò°ª)
+		// ((int)(Math.random() * (ìµœëŒ€ê°’ - ìµœì†Œê°’ +1) + ìµœì†Œê°’)
 
 		Scanner sc = new Scanner(System.in);
 
-		System.out.println("=== µ¿Àü ¾Õ µÚ ¸ÂÃß±â ===");
+		System.out.println("=== ë™ì „ ì•ž ë’¤ ë§žì¶”ê¸° ===");
 
 		while (true) {
 			int ran = (int)(Math.random() * 2 + 1);
-			System.out.println("¼ýÀÚ¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä (1.¾Õ¸é / 2.µÞ¸é) : ");
+			System.out.println("ìˆ«ìžë¥¼ ìž…ë ¥í•´ ì£¼ì„¸ìš” (1.ì•žë©´ / 2.ë’·ë©´) : ");
 			
 			int num = 0;
 			while (true) {
@@ -20,17 +20,17 @@ public class Exam_01 {
 					num = Integer.parseInt(sc.nextLine());
 					break;
 				} catch (Exception e) {
-					System.out.println("¼ýÀÚ¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä.");
+					System.out.println("ìˆ«ìžë¥¼ ìž…ë ¥í•´ ì£¼ì„¸ìš”.");
 				}
 			}
 			
 			if (num == ran) {
-				System.out.println("¸ÂÃß¼Ì½À´Ï´Ù ^^");
+				System.out.println("ë§žì¶”ì…¨ìŠµë‹ˆë‹¤ ^^");
 				System.out.println();
 				System.out.println("------------------>restart");
 			} else {
 				System.out.println();
-				System.out.println("¶¯! Æ²·È½À´Ï´Ù!");
+				System.out.println("ë•¡! í‹€ë ¸ìŠµë‹ˆë‹¤!");
 			}
 			
 			

@@ -3,7 +3,7 @@ public class Ex02 {
 	public static void main(String[] ar) {
 		int a = 10;
 		int b = 20;
-		System.out.println(++a == 10 && b++ == 20); // ¼ôÄÆ¿¬»êÀ¸·Î ÀÎÇØ &&µÚÀÇ b++´Â ¿¬»êÇÏÁö¾ÊÀ½
-		System.out.println(a + " : " + b); // ±×·¯¹Ç·Î b´Â Áõ°¡µÇÁö¾ÊÀº 20À¸·Î Ãâ·Â.
+		System.out.println(++a == 10 && b++ == 20); // ìˆì»·ì—°ì‚°ìœ¼ë¡œ ì¸í•´ &&ë’¤ì˜ b++ëŠ” ì—°ì‚°í•˜ì§€ì•ŠìŒ
+		System.out.println(a + " : " + b); // ê·¸ëŸ¬ë¯€ë¡œ bëŠ” ì¦ê°€ë˜ì§€ì•Šì€ 20ìœ¼ë¡œ ì¶œë ¥.
 	}
 }

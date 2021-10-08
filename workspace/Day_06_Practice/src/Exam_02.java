@@ -5,17 +5,17 @@ public class Exam_02 {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		// ¿¹¿Ü Ã³¸®
+		// ì˜ˆì™¸ ì²˜ë¦¬
 		
-		System.out.println("¼ıÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
+		System.out.println("ìˆ«ìë¥¼ ì…ë ¥í•˜ì„¸ìš” : ");
 		
 		try {
-			int num = Integer.parseInt(sc.nextLine()); // ¿¡·¯°¡ ¹ß»ıÇÒ°ÍÀ¸·Î ¿¹»óµÇ´Â ÄÚµå
-		} catch (Exception e) { // catch´Â ¿¡·¯°¡ ¹ß»ı½Ã ÀÌ·¸°Ô Ã³Ä¡ÇÏ¼¼¿ä ¶ó´Â ±¸¹®, ¿¡·¯°¡ ³ªÁö¾Ê´Â´Ù¸é ¾ø´Â¼À Ä£´Ù.
-			System.out.println("ÀÔ·ÂÇÑ °ªÀº ¼ıÀÚ°¡ ¾Æ´Õ´Ï´Ù.");
+			int num = Integer.parseInt(sc.nextLine()); // ì—ëŸ¬ê°€ ë°œìƒí• ê²ƒìœ¼ë¡œ ì˜ˆìƒë˜ëŠ” ì½”ë“œ
+		} catch (Exception e) { // catchëŠ” ì—ëŸ¬ê°€ ë°œìƒì‹œ ì´ë ‡ê²Œ ì²˜ì¹˜í•˜ì„¸ìš” ë¼ëŠ” êµ¬ë¬¸, ì—ëŸ¬ê°€ ë‚˜ì§€ì•ŠëŠ”ë‹¤ë©´ ì—†ëŠ”ì…ˆ ì¹œë‹¤.
+			System.out.println("ì…ë ¥í•œ ê°’ì€ ìˆ«ìê°€ ì•„ë‹™ë‹ˆë‹¤.");
 		}
 		
-//		System.out.println("ÀÔ·ÂÇÑ ¼ıÀÚ´Â " + num + " ÀÔ´Ï´Ù."); // numÀº tryÀÇ Áö¿ªº¯¼ö±â ¶§¹®¿¡ ¿©±â¼± »ç¿ë ºÒ°¡
+//		System.out.println("ì…ë ¥í•œ ìˆ«ìëŠ” " + num + " ì…ë‹ˆë‹¤."); // numì€ tryì˜ ì§€ì—­ë³€ìˆ˜ê¸° ë•Œë¬¸ì— ì—¬ê¸°ì„  ì‚¬ìš© ë¶ˆê°€
 		
 	}
 }

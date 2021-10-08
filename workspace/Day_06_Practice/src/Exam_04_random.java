@@ -1,18 +1,17 @@
-
 public class Exam_04_random {
 	public static void main(String[] args) {
 		
-		// ³­¼ö - Random Number
+		// ë‚œìˆ˜ - Random Number
 		
 		double rand = Math.random();
-		// Math.random À¸·Î ¹ß»ıÇÏ´Â ³­¼ö´Â 0 ~ 1»çÀÌÀÇ double°ªÀ¸·Î ¹ß»ıÇÔ.(0ÀÌ ³ª¿ÀÁö¾Ê°í 1ÀÌ ³ª¿ÀÁö¾Ê´Â´Ù)
-		System.out.println(rand); // ¿¹»óºÒ°¡´ÉÇÑ °ª
+		// Math.random ìœ¼ë¡œ ë°œìƒí•˜ëŠ” ë‚œìˆ˜ëŠ” 0 ~ 1ì‚¬ì´ì˜ doubleê°’ìœ¼ë¡œ ë°œìƒí•¨.(0ì´ ë‚˜ì˜¤ì§€ì•Šê³  1ì´ ë‚˜ì˜¤ì§€ì•ŠëŠ”ë‹¤)
+		System.out.println(rand); // ì˜ˆìƒë¶ˆê°€ëŠ¥í•œ ê°’
 		
-		// 16 ~ 34 »çÀÌÀÇ ³­¼ö
+		// 16 ~ 34 ì‚¬ì´ì˜ ë‚œìˆ˜
 		
-//		³­¼ö °ª ±¸ÇÏ´Â °ø½Ä
-//		ÃÖ¼Ò°ª : X
-//		ÃÖ´ë°ª : Y
+//		ë‚œìˆ˜ ê°’ êµ¬í•˜ëŠ” ê³µì‹
+//		ìµœì†Œê°’ : X
+//		ìµœëŒ€ê°’ : Y
 //		((int)(Math.random() * (Y - X + 1) + X))
 		
 	}

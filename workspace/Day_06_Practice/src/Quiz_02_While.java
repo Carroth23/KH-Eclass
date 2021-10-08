@@ -12,51 +12,51 @@ public class Quiz_02_While {
 
 		while (true) {
 
-			System.out.println("=== ÀÚÆÇ±â ½Ã¹Ä·¹ÀÌÅÍ ===");
-			System.out.println("À½·á¼ö¸¦ ¼±ÅÃÇÏ¼¼¿ä.");
-			System.out.println("1Äİ¶ó(1000) 2.»çÀÌ´Ù(800) 3.¸Å½ÇÂ÷(1500) [0.¼ÒÁöÇ°È®ÀÎ]");
+			System.out.println("=== ìíŒê¸° ì‹œë®¬ë ˆì´í„° ===");
+			System.out.println("ìŒë£Œìˆ˜ë¥¼ ì„ íƒí•˜ì„¸ìš”.");
+			System.out.println("1ì½œë¼(1000) 2.ì‚¬ì´ë‹¤(800) 3.ë§¤ì‹¤ì°¨(1500) [0.ì†Œì§€í’ˆí™•ì¸]");
 			int cho = Integer.parseInt(sc.nextLine());
 
 			switch (cho) {
 			case 1:
 				if (money > 1000) {
-					System.out.println("Äİ¶ó¸¦ ±¸¸ÅÇß½À´Ï´Ù.");
-					System.out.println("Äİ¶ó +1");
-					System.out.println("¼ÒÁö±İ -1000");
+					System.out.println("ì½œë¼ë¥¼ êµ¬ë§¤í–ˆìŠµë‹ˆë‹¤.");
+					System.out.println("ì½œë¼ +1");
+					System.out.println("ì†Œì§€ê¸ˆ -1000");
 					coke += 1;
 					money -= 1000;
 				} else {
-					System.out.println("ÀÜ¾×ÀÌ ºÎÁ·ÇÕ´Ï´Ù.");
+					System.out.println("ì”ì•¡ì´ ë¶€ì¡±í•©ë‹ˆë‹¤.");
 				}
 				break;
 			case 2:
 				if (money > 800) {
-					System.out.println("»çÀÌ´Ù¸¦ ±¸¸ÅÇß½À´Ï´Ù.");
-					System.out.println("»çÀÌ´Ù +1");
-					System.out.println("¼ÒÁö±İ -800");
+					System.out.println("ì‚¬ì´ë‹¤ë¥¼ êµ¬ë§¤í–ˆìŠµë‹ˆë‹¤.");
+					System.out.println("ì‚¬ì´ë‹¤ +1");
+					System.out.println("ì†Œì§€ê¸ˆ -800");
 					soda += 1;
 					money -= 800;
 				} else {
-					System.out.println("ÀÜ¾×ÀÌ ºÎÁ·ÇÕ´Ï´Ù.");
+					System.out.println("ì”ì•¡ì´ ë¶€ì¡±í•©ë‹ˆë‹¤.");
 				}
 				break;
 			case 3:
 				if (money > 1500) {
-					System.out.println("¸Å½ÇÂ÷¸¦ ±¸¸ÅÇß½À´Ï´Ù.");
-					System.out.println("¸Å½ÇÂ÷ +1");
-					System.out.println("¼ÒÁö±İ -1500");
+					System.out.println("ë§¤ì‹¤ì°¨ë¥¼ êµ¬ë§¤í–ˆìŠµë‹ˆë‹¤.");
+					System.out.println("ë§¤ì‹¤ì°¨ +1");
+					System.out.println("ì†Œì§€ê¸ˆ -1500");
 					tea += 1;
 					money -= 1500;
 				} else {
-					System.out.println("ÀÜ¾×ÀÌ ºÎÁ·ÇÕ´Ï´Ù.");
+					System.out.println("ì”ì•¡ì´ ë¶€ì¡±í•©ë‹ˆë‹¤.");
 				}
 				break;
 			case 0:
-				System.out.println("===== ¼ÒÁöÇ° ¸ñ·Ï =====");
-				System.out.println("¼ÒÁö±İ : " + money + "¿ø");
-				System.out.println("Äİ¶ó : " + coke + "°³");
-				System.out.println("»çÀÌ´Ù : " + soda + "°³");
-				System.out.println("¸Å½ÇÂ÷ : " + tea + "°³");
+				System.out.println("===== ì†Œì§€í’ˆ ëª©ë¡ =====");
+				System.out.println("ì†Œì§€ê¸ˆ : " + money + "ì›");
+				System.out.println("ì½œë¼ : " + coke + "ê°œ");
+				System.out.println("ì‚¬ì´ë‹¤ : " + soda + "ê°œ");
+				System.out.println("ë§¤ì‹¤ì°¨ : " + tea + "ê°œ");
 			}
 		}
 	}

@@ -10,22 +10,22 @@ class Input {
 	Scanner sc = new Scanner(System.in);
 
 	public String name() {
-		System.out.println("ÀÌ¸§À» ÀÔ·ÂÇÏ¼¼¿ä : ");
+		System.out.println("ì´ë¦„ì„ ì…ë ¥í•˜ì„¸ìš” : ");
 		return sc.nextLine();
 	}
 
 	public int kor() {
-		System.out.println("±¹¾î ¼ºÀûÀ» ÀÔ·ÂÇÏ¼¼¿ä : ");
+		System.out.println("êµ­ì–´ ì„±ì ì„ ì…ë ¥í•˜ì„¸ìš” : ");
 		return Integer.parseInt(sc.nextLine());
 	}
 
 	public int eng() {
-		System.out.println("¿µ¾î ¼ºÀûÀ» ÀÔ·ÂÇÏ¼¼¿ä : ");
+		System.out.println("ì˜ì–´ ì„±ì ì„ ì…ë ¥í•˜ì„¸ìš” : ");
 		return Integer.parseInt(sc.nextLine());
 	}
 
 	public int math() {
-		System.out.println("¼öÇĞ ¼ºÀûÀ» ÀÔ·ÂÇÏ¼¼¿ä : ");
+		System.out.println("ìˆ˜í•™ ì„±ì ì„ ì…ë ¥í•˜ì„¸ìš” : ");
 		return Integer.parseInt(sc.nextLine());
 	}
 
@@ -41,14 +41,14 @@ public class Main {
 		ArrayList members = manager.getStudent();
 		int id = 1001;
 		while (true) {
-			System.out.println("=== ÇĞ»ı °ü¸® ½Ã½ºÅÛ ===");
-			System.out.println("1. ÇĞ»ı Á¤º¸ ÀÔ·Â"); // ÇĞ¹ø(1001ºÎÅÍ 1¾¿ Áõ°¡) / ÀÌ¸§ / ±¹, ¿µ, ¼ö
-			System.out.println("2. ÇĞ»ı ¸ñ·Ï Ãâ·Â");
-			System.out.println("3. ÇĞ»ı Á¤º¸ °Ë»ö");
-			System.out.println("4. ÇĞ»ı Á¤º¸ ¼öÁ¤");
-			System.out.println("5. ÇĞ»ı Á¤º¸ »èÁ¦");
-			System.out.println("0. ½Ã½ºÅÛ Á¾·á.");
-			System.out.println("¿øÇÏ½Ã´Â ¸Ş´º¹øÈ£¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä._");
+			System.out.println("=== í•™ìƒ ê´€ë¦¬ ì‹œìŠ¤í…œ ===");
+			System.out.println("1. í•™ìƒ ì •ë³´ ì…ë ¥"); // í•™ë²ˆ(1001ë¶€í„° 1ì”© ì¦ê°€) / ì´ë¦„ / êµ­, ì˜, ìˆ˜
+			System.out.println("2. í•™ìƒ ëª©ë¡ ì¶œë ¥");
+			System.out.println("3. í•™ìƒ ì •ë³´ ê²€ìƒ‰");
+			System.out.println("4. í•™ìƒ ì •ë³´ ìˆ˜ì •");
+			System.out.println("5. í•™ìƒ ì •ë³´ ì‚­ì œ");
+			System.out.println("0. ì‹œìŠ¤í…œ ì¢…ë£Œ.");
+			System.out.println("ì›í•˜ì‹œëŠ” ë©”ë‰´ë²ˆí˜¸ë¥¼ ì…ë ¥í•´ ì£¼ì„¸ìš”._");
 			int menu = Integer.parseInt(sc.nextLine());
 
 			if (menu == 1) {
@@ -68,7 +68,7 @@ public class Main {
 				}
 
 			} else if (menu == 3) {
-				System.out.println("Ã£À¸½Ã´Â ÇĞ»ıÀÇ ÀÌ¸§À» Àû¾îÁÖ¼¼¿ä.");
+				System.out.println("ì°¾ìœ¼ì‹œëŠ” í•™ìƒì˜ ì´ë¦„ì„ ì ì–´ì£¼ì„¸ìš”.");
 				String findName = sc.nextLine();
 				boolean nameflag = false;
 				for (int i = 0; i < members.size(); i++) {
@@ -82,11 +82,11 @@ public class Main {
 					}
 
 					if (nameflag == false && i == members.size() - 1) {
-						System.out.println("ÀÔ·ÂÇÏ½Å ÀÌ¸§ÀÇ ÇĞ»ıÀº Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.");
+						System.out.println("ì…ë ¥í•˜ì‹  ì´ë¦„ì˜ í•™ìƒì€ ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.");
 					}
 				}
 			} else if (menu == 4) {
-				System.out.println("¼öÁ¤ÇÒ ÇĞ»ıÀÇ ÇĞ¹øÀ» Àû¾îÁÖ¼¼¿ä.");
+				System.out.println("ìˆ˜ì •í•  í•™ìƒì˜ í•™ë²ˆì„ ì ì–´ì£¼ì„¸ìš”.");
 				boolean nameflag = false;
 				int findNumber = Integer.parseInt(sc.nextLine());
 				for (int i = 0; i < members.size(); i++) {
@@ -102,26 +102,26 @@ public class Main {
 						nameflag = !false;
 					}
 					if (nameflag == false && i == members.size() - 1) {
-						System.out.println("ÀÔ·ÂÇÏ½Å ÀÌ¸§ÀÇ ÇĞ»ıÀº Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.");
+						System.out.println("ì…ë ¥í•˜ì‹  ì´ë¦„ì˜ í•™ìƒì€ ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.");
 					}
 				}
 			} else if (menu == 5) {
-				System.out.println("»èÁ¦ÇÒ ÇĞ»ıÀÇ ÇĞ¹øÀ» Àû¾îÁÖ¼¼¿ä");
+				System.out.println("ì‚­ì œí•  í•™ìƒì˜ í•™ë²ˆì„ ì ì–´ì£¼ì„¸ìš”");
 				boolean nameflag = false;
 				int findNumber = Integer.parseInt(sc.nextLine());
 				for (int i = 0; i < members.size(); i++) {
 					if (findNumber == ((Student) members.get(i)).getNumber()) {
 						members.remove(i);
-						System.out.println("¼±ÅÃÇÏ½Å ÇĞ»ıÀÇ Á¤º¸¸¦ »èÁ¦Çß½À´Ï´Ù.");
+						System.out.println("ì„ íƒí•˜ì‹  í•™ìƒì˜ ì •ë³´ë¥¼ ì‚­ì œí–ˆìŠµë‹ˆë‹¤.");
 						nameflag = !false;
 					}
 
 					if (nameflag == false && i == members.size() - 1) {
-						System.out.println("Á¸ÀçÇÏÁö ¾Ê´Â ÇĞ»ıÀÔ´Ï´Ù.");
+						System.out.println("ì¡´ì¬í•˜ì§€ ì•ŠëŠ” í•™ìƒì…ë‹ˆë‹¤.");
 					}
 				}
 			} else if (menu == 0) {
-				System.out.println("½Ã½ºÅÛÀ» Á¾·áÇÕ´Ï´Ù.");
+				System.out.println("ì‹œìŠ¤í…œì„ ì¢…ë£Œí•©ë‹ˆë‹¤.");
 				System.exit(0);
 			}
 		}

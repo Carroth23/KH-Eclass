@@ -2,8 +2,8 @@ import java.util.*;
 public class Exam_02_break {
 	public static void main(String[] args) {
 		
-		// 1 ºÎÅÍ 10±îÁö Ãâ·ÂÇÏ´Â for¹®
-		System.out.println("=== 1 ~ 10±îÁö Ãâ·ÂÇÏ±â ===");
+		// 1 ë¶€í„° 10ê¹Œì§€ ì¶œë ¥í•˜ëŠ” forë¬¸
+		System.out.println("=== 1 ~ 10ê¹Œì§€ ì¶œë ¥í•˜ê¸° ===");
 		for (int i = 1; i <= 10; i++) {
 			if (i == 5) {
 				break;

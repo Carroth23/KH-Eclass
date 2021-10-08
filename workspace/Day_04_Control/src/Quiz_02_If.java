@@ -4,20 +4,20 @@ public class Quiz_02_If {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		System.out.println("1~100 »çÀÌÀÇ ¼ıÀÚ¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä : ");
+		System.out.println("1~100 ì‚¬ì´ì˜ ìˆ«ìë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš” : ");
 		int num = Integer.parseInt(sc.nextLine());
-		System.out.println("=== °á °ú ===");
+		System.out.println("=== ê²° ê³¼ ===");
 
-		// »ç¿ëÀÚ°¡ ÀÔ·ÂÇÑ ¼ö°¡ 1 ~ 100 »çÀÌÀÇ ¼öÀÎÁö
-		// ¾Æ´ÑÁö
+		// ì‚¬ìš©ìê°€ ì…ë ¥í•œ ìˆ˜ê°€ 1 ~ 100 ì‚¬ì´ì˜ ìˆ˜ì¸ì§€
+		// ì•„ë‹Œì§€
 		if (0 < num && num <= 100) {
 			if (num % 2 == 0) {
-				System.out.println("Â¦¼ö ÀÔ´Ï´Ù.");
+				System.out.println("ì§ìˆ˜ ì…ë‹ˆë‹¤.");
 			} else {
-				System.out.println("È¦¼ö ÀÔ´Ï´Ù.");
+				System.out.println("í™€ìˆ˜ ì…ë‹ˆë‹¤.");
 			}
 		} else {
-			System.out.println("ÀÔ·ÂÇÑ ¼öÀÇ ¹üÀ§°¡ Àß ¸ø µÇ¾ú½À´Ï´Ù.");
+			System.out.println("ì…ë ¥í•œ ìˆ˜ì˜ ë²”ìœ„ê°€ ì˜ ëª» ë˜ì—ˆìŠµë‹ˆë‹¤.");
 		}
 
 	}

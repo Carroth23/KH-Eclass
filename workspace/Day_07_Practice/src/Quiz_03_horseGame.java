@@ -5,66 +5,66 @@ public class Quiz_03_horseGame {
 
 		Scanner sc = new Scanner(System.in);
 
-		int money = 0; // ¸¶ÀÌ ¸Ó´Ï
-		int horse = 0; // ¼±ÅÃÇÒ ¸»
-		int bet = 0; // ¹èÆÃÇÒ ±Ý¾×
-		int charge = 0; // ÃæÀü ±Ý¾×
-		int menu = 0; // ¸Þ´º¼±ÅÃ
+		int money = 0; // ë§ˆì´ ë¨¸ë‹ˆ
+		int horse = 0; // ì„ íƒí•  ë§
+		int bet = 0; // ë°°íŒ…í•  ê¸ˆì•¡
+		int charge = 0; // ì¶©ì „ ê¸ˆì•¡
+		int menu = 0; // ë©”ë‰´ì„ íƒ
 		
 		while (true) {
-			System.out.printf("°æ¸¶°ÔÀÓ¿¡ ¿À½Å °ÍÀ» È¯¿µÇÕ´Ï´Ù.%n");
-			System.out.printf("1. °ÔÀÓ ½ÃÀÛ%n");
-			System.out.printf("2. ÀÜ¾× ÃæÀü%n");
-			System.out.printf("3. ÀÜ¾× Á¶È¸%n");
-			System.out.printf("4. Á¾·á%n");
-			System.out.printf("¸Þ´º¸¦ ¼±ÅÃÇØ ÁÖ¼¼¿ä : %n");
+			System.out.printf("ê²½ë§ˆê²Œìž„ì— ì˜¤ì‹  ê²ƒì„ í™˜ì˜í•©ë‹ˆë‹¤.%n");
+			System.out.printf("1. ê²Œìž„ ì‹œìž‘%n");
+			System.out.printf("2. ìž”ì•¡ ì¶©ì „%n");
+			System.out.printf("3. ìž”ì•¡ ì¡°íšŒ%n");
+			System.out.printf("4. ì¢…ë£Œ%n");
+			System.out.printf("ë©”ë‰´ë¥¼ ì„ íƒí•´ ì£¼ì„¸ìš” : %n");
 			System.out.printf(">> ");
 
-			// ========== ¸Þ´º ¼±ÅÃ ===========
+			// ========== ë©”ë‰´ ì„ íƒ ===========
 			try {
 				menu = Integer.parseInt(sc.nextLine());
 				if (1 > menu || menu > 4) {
-					System.out.println("¸Þ´º¸¦ ´Ù½Ã È®ÀÎÇØ ÁÖ½Ê½Ã¿À." + "\n");
+					System.out.println("ë©”ë‰´ë¥¼ ë‹¤ì‹œ í™•ì¸í•´ ì£¼ì‹­ì‹œì˜¤." + "\n");
 				}
 			} catch (Exception e) {
-				System.out.println("¸Þ´º´Â ¼ýÀÚ 1 ~ 4¹øÀ¸·Î ÀÔ·ÂÇØ ÁÖ½Ê½Ã¿À." + "\n");
+				System.out.println("ë©”ë‰´ëŠ” ìˆ«ìž 1 ~ 4ë²ˆìœ¼ë¡œ ìž…ë ¥í•´ ì£¼ì‹­ì‹œì˜¤." + "\n");
 			}
 
 			switch (menu) {
 			case 1:
 				if (money != 0) {
-					// ========== °æÁÖ¸¶ ¼±ÅÃ ===========
+					// ========== ê²½ì£¼ë§ˆ ì„ íƒ ===========
 					while (true) {
-						System.out.println("°æ¸¶°ÔÀÓ¿¡ ¿À½Å°ÍÀ» È¯¿µÇÕ´Ï´Ù.");
-						System.out.println("1. ¿ì½Â °æ·ÂÀº ¸¹À¸³ª °ð ÀºÅð¸¦ ¾ÕµÐ ¸»");
-						System.out.println("2. ÃÖ±Ù ÇÑ´Þµ¿¾È µ¹Ç³°°Àº ÁúÁÖ¸¦ ÆîÃÆ´ø ¸»");
-						System.out.println("3. °¡Àå ½ÅÂüÀÌÁö¸¸ ¹«¼·°Ô ¶°¿À¸£´Â ¸»");
-						System.out.println("º£ÆÃÇÏ°í ½ÍÀº ¸»À» ¼±ÅÃÇØ ÁÖ¼¼¿ä. >>");
+						System.out.println("ê²½ë§ˆê²Œìž„ì— ì˜¤ì‹ ê²ƒì„ í™˜ì˜í•©ë‹ˆë‹¤.");
+						System.out.println("1. ìš°ìŠ¹ ê²½ë ¥ì€ ë§Žìœ¼ë‚˜ ê³§ ì€í‡´ë¥¼ ì•žë‘” ë§");
+						System.out.println("2. ìµœê·¼ í•œë‹¬ë™ì•ˆ ëŒí’ê°™ì€ ì§ˆì£¼ë¥¼ íŽ¼ì³¤ë˜ ë§");
+						System.out.println("3. ê°€ìž¥ ì‹ ì°¸ì´ì§€ë§Œ ë¬´ì„­ê²Œ ë– ì˜¤ë¥´ëŠ” ë§");
+						System.out.println("ë² íŒ…í•˜ê³  ì‹¶ì€ ë§ì„ ì„ íƒí•´ ì£¼ì„¸ìš”. >>");
 
 						while (true) {
 							try {
 								horse = Integer.parseInt(sc.nextLine());
 								if (0 < horse && horse < 4) {
-									System.out.println(horse + "¹ø¸¶¸¦ ¼±ÅÃÇÏ¼Ì½À´Ï´Ù.");
+									System.out.println(horse + "ë²ˆë§ˆë¥¼ ì„ íƒí•˜ì…¨ìŠµë‹ˆë‹¤.");
 									break;
 								} else {
-									System.out.println("1 ~ 3¹ø ¸»Áß ¼±ÅÃÇÏ¿© ÁÖ½Ê½Ã¿À.");
+									System.out.println("1 ~ 3ë²ˆ ë§ì¤‘ ì„ íƒí•˜ì—¬ ì£¼ì‹­ì‹œì˜¤.");
 								}
 							} catch (Exception e) {
-								System.out.println("¼ýÀÚ·Î 1 ~ 3 ¹ø¸»À» °ñ¶ó ÁÖ½Ê½Ã¿À.");
+								System.out.println("ìˆ«ìžë¡œ 1 ~ 3 ë²ˆë§ì„ ê³¨ë¼ ì£¼ì‹­ì‹œì˜¤.");
 							}
 						}
 
-						// ========== ±Ý¾× º£ÆÃ ===========
+						// ========== ê¸ˆì•¡ ë² íŒ… ===========
 						while (true) {
 
 							while (true) {
-								System.out.println("¾ó¸¶¸¦ º£ÆÃ ÇÏ½Ã°Ú½À´Ï±î? ÇöÀç ÀÜ¾× : " + money + "¿ø.");
+								System.out.println("ì–¼ë§ˆë¥¼ ë² íŒ… í•˜ì‹œê² ìŠµë‹ˆê¹Œ? í˜„ìž¬ ìž”ì•¡ : " + money + "ì›.");
 								try {
 									bet = Integer.parseInt(sc.nextLine());
 									break;
 								} catch (Exception e) {
-									System.out.println("±Ý¾×À» ¼ýÀÚ·Î ÀÔ·ÂÇØ ÁÖ½Ê½Ã¿À.");
+									System.out.println("ê¸ˆì•¡ì„ ìˆ«ìžë¡œ ìž…ë ¥í•´ ì£¼ì‹­ì‹œì˜¤.");
 								}
 							}
 
@@ -72,44 +72,44 @@ public class Quiz_03_horseGame {
 								int winhorse = ((int) (Math.random() * 3) + 1);
 
 								if (horse == winhorse) {
-									System.out.println("ÃàÇÏ ÇÕ´Ï´Ù! ¼±ÅÃÇÑ ¸»ÀÌ ¿ì½ÂÇÏ¿© µÎ¹èÀÇ »ó±ÝÀ» ¾ò¾ú½À´Ï´Ù!");
+									System.out.println("ì¶•í•˜ í•©ë‹ˆë‹¤! ì„ íƒí•œ ë§ì´ ìš°ìŠ¹í•˜ì—¬ ë‘ë°°ì˜ ìƒê¸ˆì„ ì–»ì—ˆìŠµë‹ˆë‹¤!");
 									money += bet * 2;
 									break;
 								} else {
-									System.out.println("¾Æ½±½À´Ï´Ù. °£¹ßÀÇ Â÷ÀÌ·Î ¿ì½ÂÀ» ³õÃÆ½À´Ï´Ù.");
-									System.out.println("¿À´ÃÀÇ ¿ì½Â¸¶´Â " + winhorse + "¹ø¸¶ ÀÔ´Ï´Ù.\n");
+									System.out.println("ì•„ì‰½ìŠµë‹ˆë‹¤. ê°„ë°œì˜ ì°¨ì´ë¡œ ìš°ìŠ¹ì„ ë†“ì³¤ìŠµë‹ˆë‹¤.");
+									System.out.println("ì˜¤ëŠ˜ì˜ ìš°ìŠ¹ë§ˆëŠ” " + winhorse + "ë²ˆë§ˆ ìž…ë‹ˆë‹¤.\n");
 									money -= bet;
 									break;
 								}
 							} else {
-								System.out.println("ÀÜ¾×ÀÌ ºÎÁ·ÇÕ´Ï´Ù.");
-								System.out.println("ÇöÀç ÃÖ´ë º£ÆÃ °¡´É ±Ý¾×Àº : " + money + "¿ø ÀÔ´Ï´Ù.");
+								System.out.println("ìž”ì•¡ì´ ë¶€ì¡±í•©ë‹ˆë‹¤.");
+								System.out.println("í˜„ìž¬ ìµœëŒ€ ë² íŒ… ê°€ëŠ¥ ê¸ˆì•¡ì€ : " + money + "ì› ìž…ë‹ˆë‹¤.");
 							}
 						}
 						break;
 					}
 				} else {
-					System.out.println("ÀÜ¾×À» ¸ÕÀú ÃæÀüÇØ ÁÖ½Ê½Ã¿À." + "\n");
+					System.out.println("ìž”ì•¡ì„ ë¨¼ì € ì¶©ì „í•´ ì£¼ì‹­ì‹œì˜¤." + "\n");
 				}
 				break;
 			case 2:
 				while (true) {
-					System.out.println("¾ó¸¶¸¦ ÃæÀüÇÏ½Ã°Ú½À´Ï±î? : ");
+					System.out.println("ì–¼ë§ˆë¥¼ ì¶©ì „í•˜ì‹œê² ìŠµë‹ˆê¹Œ? : ");
 					try {
 						charge = Integer.parseInt(sc.nextLine());
 						break;
 					} catch (Exception e) {
-						System.out.println("±Ý¾×À» ¼ýÀÚ·Î ÀÔ·ÂÇØ ÁÖ½Ê½Ã¿À.");
+						System.out.println("ê¸ˆì•¡ì„ ìˆ«ìžë¡œ ìž…ë ¥í•´ ì£¼ì‹­ì‹œì˜¤.");
 					}
 				}
-				money += charge; // ===== ±Ý¾× ÃæÀü =====
-				System.out.println(charge + "¿øÀÌ ÃæÀüµÇ¾ú½À´Ï´Ù. ÇöÀç ÀÜ¾×Àº : " + money + "¿ø ÀÔ´Ï´Ù.");
+				money += charge; // ===== ê¸ˆì•¡ ì¶©ì „ =====
+				System.out.println(charge + "ì›ì´ ì¶©ì „ë˜ì—ˆìŠµë‹ˆë‹¤. í˜„ìž¬ ìž”ì•¡ì€ : " + money + "ì› ìž…ë‹ˆë‹¤.");
 				break;
 			case 3:
-				System.out.println("ÇöÀç ÀÜ¾×Àº : " + money + "¿ø ÀÔ´Ï´Ù.");
+				System.out.println("í˜„ìž¬ ìž”ì•¡ì€ : " + money + "ì› ìž…ë‹ˆë‹¤.");
 				break;
 			case 4:
-				System.out.println("°æ¸¶°ÔÀÓÀ» ÀÌ¿ëÇØÁÖ¼Å¼­ °¨»çÇÕ´Ï´Ù.");
+				System.out.println("ê²½ë§ˆê²Œìž„ì„ ì´ìš©í•´ì£¼ì…”ì„œ ê°ì‚¬í•©ë‹ˆë‹¤.");
 				System.exit(0);
 			}
 		}

@@ -7,9 +7,9 @@ public class Quiz_02 {
 
 		int bestScore = 100;
 
-		while (true) { // ¸Ş´º¼±ÅÃÃ¢.
+		while (true) { // ë©”ë‰´ì„ íƒì°½.
 			System.out.println("== Up & Down Game ==");
-			int menu = 0; // ¼±ÅÃÇÑ ¸Ş´º
+			int menu = 0; // ì„ íƒí•œ ë©”ë‰´
 
 			System.out.println("1. Game Start");
 			System.out.println("2. Game Score");
@@ -21,31 +21,31 @@ public class Quiz_02 {
 					if (0 < menu && menu < 4) {
 						break;
 					}
-					System.out.println("¸Ş´º¸¦ ´Ù½Ã È®ÀÎÇØ ÁÖ¼¼¿ä");
+					System.out.println("ë©”ë‰´ë¥¼ ë‹¤ì‹œ í™•ì¸í•´ ì£¼ì„¸ìš”");
 				} catch (Exception e) {
-					System.out.println("¸Ş´º´Â ¼ıÀÚ·Î ÀÔ·ÂÇØÁÖ¼¼¿ä.");
+					System.out.println("ë©”ë‰´ëŠ” ìˆ«ìë¡œ ì…ë ¥í•´ì£¼ì„¸ìš”.");
 				}
 			}
 
-			switch (menu) { // °ÔÀÓÇÁ·Î±×·¥ ÄÚµå
+			switch (menu) { // ê²Œì„í”„ë¡œê·¸ë¨ ì½”ë“œ
 			case 1:
 				System.out.println("<<  Game Start  >>");
 				int ran = ((int) (Math.random() * (100 - 1 + 1) + 1));
-				System.out.println(ran); // °ÔÀÓ »¡¸®³¡³»·Á°í ±×³É Ãâ·ÂÇØ¹ö¸²
+				System.out.println(ran); // ê²Œì„ ë¹¨ë¦¬ëë‚´ë ¤ê³  ê·¸ëƒ¥ ì¶œë ¥í•´ë²„ë¦¼
 
 				int player = 0;
 				int input = 0;
 				while (true) {
 					while (true) {
 						try {
-							System.out.print("1 ~ 100 ÀÔ·Â : ");
+							System.out.print("1 ~ 100 ì…ë ¥ : ");
 							input = Integer.parseInt(sc.nextLine());
 							if (1 <= input && input <= 100) {
 								break;
 							}
-							System.out.println("1 ~ 100À» ÀÔ·ÂÇØ ÁÖ¼¼¿ä");
+							System.out.println("1 ~ 100ì„ ì…ë ¥í•´ ì£¼ì„¸ìš”");
 						} catch (Exception e) {
-							System.out.println("¼ıÀÚ¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä.");
+							System.out.println("ìˆ«ìë¥¼ ì…ë ¥í•´ ì£¼ì„¸ìš”.");
 						}
 					}
 
@@ -57,7 +57,7 @@ public class Quiz_02 {
 						System.out.println("<< D O W N >>");
 					} else {
 						player++;
-						System.out.println("<<  Á¤´ä  >>");
+						System.out.println("<<  ì •ë‹µ  >>");
 						if (player < bestScore) {
 							bestScore = player;
 						}
@@ -67,15 +67,15 @@ public class Quiz_02 {
 				continue;
 
 			case 2:
-				System.out.println("ÇöÀç ÃÖ°í±â·ÏÀº " + bestScore + " ÀÔ´Ï´Ù.");
+				System.out.println("í˜„ì¬ ìµœê³ ê¸°ë¡ì€ " + bestScore + " ì…ë‹ˆë‹¤.");
 				continue;
 
 			case 3:
-				System.out.println("°ÔÀÓÀ» Á¾·áÇÕ´Ï´Ù.");
+				System.out.println("ê²Œì„ì„ ì¢…ë£Œí•©ë‹ˆë‹¤.");
 //				System.exit(0);
-				break; // switch¹®À» ³ª°¡°í
+				break; // switchë¬¸ì„ ë‚˜ê°€ê³ 
 			}
-			break; // ÀüÃ¼ while¹®À» ³ª°£´Ù.
+			break; // ì „ì²´ whileë¬¸ì„ ë‚˜ê°„ë‹¤.
 		}
 	}
 }

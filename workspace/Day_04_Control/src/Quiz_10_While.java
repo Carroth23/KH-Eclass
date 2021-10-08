@@ -4,11 +4,11 @@ public class Quiz_10_While {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		// ±¸±¸´Ü Ãâ·Â ÇÁ·Î±×·¥
+		// êµ¬êµ¬ë‹¨ ì¶œë ¥ í”„ë¡œê·¸ë¨
 
 		while (true) {
-			System.out.println("=== ±¸±¸´Ü Ãâ·Â ÇÁ·Î±×·¥ ===");
-			System.out.println("2 ~ 9´Ü Áß ¼±ÅÃ : ");
+			System.out.println("=== êµ¬êµ¬ë‹¨ ì¶œë ¥ í”„ë¡œê·¸ë¨ ===");
+			System.out.println("2 ~ 9ë‹¨ ì¤‘ ì„ íƒ : ");
 			int dan = Integer.parseInt(sc.nextLine());
 			int num = 0;
 
@@ -17,7 +17,7 @@ public class Quiz_10_While {
 					System.out.println(dan + " * " + num + " = " + dan * num);
 				}
 			} else {
-				System.out.println("±¸±¸´Ü ¹üÀ§¸¦ ´Ù½Ã È®ÀÎÇÏ¼¼¿ä.");
+				System.out.println("êµ¬êµ¬ë‹¨ ë²”ìœ„ë¥¼ ë‹¤ì‹œ í™•ì¸í•˜ì„¸ìš”.");
 			}
 		}
 	}

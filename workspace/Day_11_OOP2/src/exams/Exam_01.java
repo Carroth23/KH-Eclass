@@ -8,7 +8,7 @@ public class Exam_01 {
 	public static void main(String[] args) {
 
 		// Contact
-		// ¼ıÀÚ id
+		// ìˆ«ì id
 		// name
 		// Contact
 		// getter / setter / constructor / default constructor
@@ -23,7 +23,7 @@ public class Exam_01 {
 //		c2.setContact("01091233219");
 //		Contact c3 = new Contact(1003, "Jack", "01015242314");
 
-		Contact[] contacts = new Contact[] { // °´Ã¼ ¹è¿­
+		Contact[] contacts = new Contact[] { // ê°ì²´ ë°°ì—´
 				new Contact(1001, "Susan", "01012341234"),
 				new Contact(1002, "Tom", "01012341234"),
 				new Contact(1003, "Jack", "01012341234"),
@@ -35,7 +35,7 @@ public class Exam_01 {
 //			System.out.println(contacts[i].getId() + " : " + contacts[i].getName() + " : " + contacts[i].getContact());
 //		}
 		
-		// ÀÌ¸§ÀÌ TomÀÎ »ç¶÷ÀÇ ¿¬¶ôÃ³¸¦ °Ë»öÇØ¼­ Ãâ·Â
+		// ì´ë¦„ì´ Tomì¸ ì‚¬ëŒì˜ ì—°ë½ì²˜ë¥¼ ê²€ìƒ‰í•´ì„œ ì¶œë ¥
 		for (int i = 0; i < contacts.length; i++) {
 			if (contacts[i].getName().equals("Tom")) {
 				System.out.println(contacts[i].getName() + " : " + contacts[i].getContact());
@@ -45,7 +45,7 @@ public class Exam_01 {
 		System.out.println();
 		
 		System.out.println(contacts[2].getId() + " : " + contacts[2].getContact());
-		// ¾ÆÀÌµğ°¡ 1003¹ø »ç¶÷À» Ã£¾Æ¼­ ÀüÈ­¹øÈ£¸¦ 01011112222·Î ¼öÁ¤ÇØº¸¼¼¿ä.
+		// ì•„ì´ë””ê°€ 1003ë²ˆ ì‚¬ëŒì„ ì°¾ì•„ì„œ ì „í™”ë²ˆí˜¸ë¥¼ 01011112222ë¡œ ìˆ˜ì •í•´ë³´ì„¸ìš”.
 		for (int i = 0; i < contacts.length; i++) {
 			if (contacts[i].getId() == 1003){
 				contacts[i].setContact("01011112222");
@@ -70,9 +70,9 @@ public class Exam_01 {
 //		contacts[1] = c2;
 //		contacts[2] = c3;
 		
-//		System.out.println("¾ÆÀÌµğ : " + con1.getId() + " ÀÌ¸§ : " + con1.getName() + " ¹øÈ£ : " + con1.getContact());
-//		System.out.println("¾ÆÀÌµğ : " + con2.getId() + " ÀÌ¸§ : " + con2.getName() + " ¹øÈ£ : " + con2.getContact());
-//		System.out.println("¾ÆÀÌµğ : " + con3.getId() + " ÀÌ¸§ : " + con3.getName() + " ¹øÈ£ : " + con3.getContact());
+//		System.out.println("ì•„ì´ë”” : " + con1.getId() + " ì´ë¦„ : " + con1.getName() + " ë²ˆí˜¸ : " + con1.getContact());
+//		System.out.println("ì•„ì´ë”” : " + con2.getId() + " ì´ë¦„ : " + con2.getName() + " ë²ˆí˜¸ : " + con2.getContact());
+//		System.out.println("ì•„ì´ë”” : " + con3.getId() + " ì´ë¦„ : " + con3.getName() + " ë²ˆí˜¸ : " + con3.getContact());
 
 	}
 

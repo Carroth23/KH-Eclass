@@ -2,8 +2,8 @@ package electronic;
 
 public class Temp {
 
-	public int a;			// Instance Member Field (ÀÎ½ºÅÏ½º¿Í »ı¸íÁÖ±â°¡ °°´Ù.)
-	public static int b;	// Class Member Field (mainÀÌ ½ÇÇàµÉ¶§ °°ÀÌ ¼±¾ğµÊ.)
-							// staticÀÌ ºÙÀº ¿ä¼ÒµéÀº ¸ğµÎ Data¸Ş¸ğ¸®·Î µé¾î°¨.
-	private static int c; 	// private¸¦ ºÙÀÌ¸é Temp ÀÎ½ºÅÏ½º ³»¿¡¼­¸¸ °øÀ¯ÇÏ´Â º¯¼ö°¡ µÈ´Ù.
+	public int a;			// Instance Member Field (ì¸ìŠ¤í„´ìŠ¤ì™€ ìƒëª…ì£¼ê¸°ê°€ ê°™ë‹¤.)
+	public static int b;	// Class Member Field (mainì´ ì‹¤í–‰ë ë•Œ ê°™ì´ ì„ ì–¸ë¨.)
+							// staticì´ ë¶™ì€ ìš”ì†Œë“¤ì€ ëª¨ë‘ Dataë©”ëª¨ë¦¬ë¡œ ë“¤ì–´ê°.
+	private static int c; 	// privateë¥¼ ë¶™ì´ë©´ Temp ì¸ìŠ¤í„´ìŠ¤ ë‚´ì—ì„œë§Œ ê³µìœ í•˜ëŠ” ë³€ìˆ˜ê°€ ëœë‹¤.
 }

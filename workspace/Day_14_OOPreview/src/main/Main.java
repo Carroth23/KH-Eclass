@@ -14,22 +14,22 @@ public class Main {
 		Manager manager = new Manager();
 
 		while (true) {
-			System.out.println("== ÇĞ»ı°ü¸® ½Ã½ºÅÛ ==");
-			System.out.println("1. ÇĞ»ı Á¤º¸ ÀÔ·Â");
-			System.out.println("2. ÇĞ»ı ¸ñ·Ï Ãâ·Â");
-			System.out.println("3. Á¾·á");
+			System.out.println("== í•™ìƒê´€ë¦¬ ì‹œìŠ¤í…œ ==");
+			System.out.println("1. í•™ìƒ ì •ë³´ ì…ë ¥");
+			System.out.println("2. í•™ìƒ ëª©ë¡ ì¶œë ¥");
+			System.out.println("3. ì¢…ë£Œ");
 			System.out.print(">> ");
 			String menu = sc.nextLine();
 
 			if (menu.equals("1")) {
 
-				System.out.println("ÇĞ»ı ÀÌ¸§ : ");
+				System.out.println("í•™ìƒ ì´ë¦„ : ");
 				String name = sc.nextLine();
 
-				System.out.println("±¹¾î Á¡¼ö : ");
+				System.out.println("êµ­ì–´ ì ìˆ˜ : ");
 				int kor = Integer.parseInt(sc.nextLine());
 
-				System.out.println("¿µ¾î Á¡¼ö : ");
+				System.out.println("ì˜ì–´ ì ìˆ˜ : ");
 				int eng = Integer.parseInt(sc.nextLine());
 
 				Student std = new Student(seq++, name, kor, eng);
@@ -39,7 +39,7 @@ public class Main {
 				ArrayList<Student> students = manager.getStudents();
 				
 				
-				for(Student std : students) { // foreach¹®¹ı
+				for(Student std : students) { // foreachë¬¸ë²•
 		            System.out.println(std.getId() + "\t" + std.getName() + 
 		            		"\t" + std.getKor() + "\t" + std.getEng());
 				}
@@ -53,10 +53,10 @@ public class Main {
 //				}
 
 			} else if (menu.equals("3")) {
-				System.out.println("½Ã½ºÅÛ Á¾·á");
+				System.out.println("ì‹œìŠ¤í…œ ì¢…ë£Œ");
 				System.exit(0);
 			} else {
-				System.out.println("¸Ş´º¸¦ ´Ù½Ã È®ÀÎÇØÁÖ¼¼¿ä.");
+				System.out.println("ë©”ë‰´ë¥¼ ë‹¤ì‹œ í™•ì¸í•´ì£¼ì„¸ìš”.");
 			}
 		}
 

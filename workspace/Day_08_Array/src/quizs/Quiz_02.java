@@ -2,8 +2,8 @@ package quizs;
 
 public class Quiz_02 {
 	public static void main(String[] args) {
-		// intÇü ¹è¿­ 100 Ä­ Â¥¸® arr1À» ¸¸µé°í, 1ºÎÅÍ 100±îÁö ÀúÀåÇØ º¸¼¼¿ä.
-		// Àß ÀúÀåÇß´ÂÁö È®ÀÎÇÏ´Â ¹æ¹ı
+		// intí˜• ë°°ì—´ 100 ì¹¸ ì§œë¦¬ arr1ì„ ë§Œë“¤ê³ , 1ë¶€í„° 100ê¹Œì§€ ì €ì¥í•´ ë³´ì„¸ìš”.
+		// ì˜ ì €ì¥í–ˆëŠ”ì§€ í™•ì¸í•˜ëŠ” ë°©ë²•
 
 		int[] arr1 = new int[100];
 
@@ -14,7 +14,7 @@ public class Quiz_02 {
 		System.out.println(arr1[0]);
 		System.out.println(arr1[99]);
 
-		// intÇü ¹è¿­ 100Ä­Â¥¸® arr2¸¦ ¸¸µé°í, 100ºÎÅÍ 1±îÁö ÀúÀåÇØº¸¼¼¿ä.
+		// intí˜• ë°°ì—´ 100ì¹¸ì§œë¦¬ arr2ë¥¼ ë§Œë“¤ê³ , 100ë¶€í„° 1ê¹Œì§€ ì €ì¥í•´ë³´ì„¸ìš”.
 
 		int[] arr2 = new int[100];
 		for (int i = 0; i < arr2.length; i++) {
@@ -25,12 +25,12 @@ public class Quiz_02 {
 		System.out.println(arr2[0]);
 		System.out.println(arr2[99]);
 		
-		// charÇü ¹è¿­ 26Ä­Â¥¸®¸¦ arr3 ·Î ¸¸µé°í, Z-A ±îÁö ÀúÀåÇØº¸¼¼¿ä.
+		// charí˜• ë°°ì—´ 26ì¹¸ì§œë¦¬ë¥¼ arr3 ë¡œ ë§Œë“¤ê³ , Z-A ê¹Œì§€ ì €ì¥í•´ë³´ì„¸ìš”.
 		
 		char[] arr3 = new char[26];
 		
 		for (int i = 0; i < arr3.length; i++) {
-			arr3[i] = (char) ('Z' - i); // 'Z'¿¡¼­ int i¸¦ »©¸é int·Î º¯È¯µÇ±â¶§¹®¿¡ char·Î ´Ù½Ã Çüº¯È¯.
+			arr3[i] = (char) ('Z' - i); // 'Z'ì—ì„œ int ië¥¼ ë¹¼ë©´ intë¡œ ë³€í™˜ë˜ê¸°ë•Œë¬¸ì— charë¡œ ë‹¤ì‹œ í˜•ë³€í™˜.
 		}
 		
 		System.out.println();

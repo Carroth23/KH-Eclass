@@ -12,24 +12,24 @@ import manager.Manager;
 public class Main {
 	public static void main(String[] args) {
 
-		// »ó¼ÓÀÇ ¸ñÀû
-		// Æ¯Á¤ Å¬·¡½ºÀÇ ±â´ÉÀ» ³ªÀÇ Å¬·¡½º¿¡µµ »ó¼Ó¹Ş¾Æ »ç¿ëÇÏ±â À§ÇÔ.
-		// ´ÙÇü¼º ¼ºÁúÀ» ÀÌ¿ëÇÏ±â À§ÇØ¼­
-		// ÄÚµå Áßº¹µµ¸¦ ³·Ãß±â À§ÇØ¼­.
+		// ìƒì†ì˜ ëª©ì 
+		// íŠ¹ì • í´ë˜ìŠ¤ì˜ ê¸°ëŠ¥ì„ ë‚˜ì˜ í´ë˜ìŠ¤ì—ë„ ìƒì†ë°›ì•„ ì‚¬ìš©í•˜ê¸° ìœ„í•¨.
+		// ë‹¤í˜•ì„± ì„±ì§ˆì„ ì´ìš©í•˜ê¸° ìœ„í•´ì„œ
+		// ì½”ë“œ ì¤‘ë³µë„ë¥¼ ë‚®ì¶”ê¸° ìœ„í•´ì„œ.
 
-		// È¸¿ø°ü¸® ½Ã½ºÅÛÀÇ Ä¡¸íÀûÀÎ ¹®Á¦Á¡ 3°¡Áö
-		// 1. ÄÚµå Áßº¹µµ°¡ ³ô´Ù. - »ó¼Ó ¹®¹ıÀ» ÅëÇØ ÇØ°á
-		// 2. ÄÚµå °áÇÕµµ°¡ ³ô´Ù. (À¯Áö º¸¼ö¿¡ ºÒ¸®) - ´ÙÇü¼º ¹®¹ıÀ» ÅëÇØ ÇØ°á
-		// 3. ÀúÀå¼Ò ¹®Á¦ - Collection Framework ÇØ°á
+		// íšŒì›ê´€ë¦¬ ì‹œìŠ¤í…œì˜ ì¹˜ëª…ì ì¸ ë¬¸ì œì  3ê°€ì§€
+		// 1. ì½”ë“œ ì¤‘ë³µë„ê°€ ë†’ë‹¤. - ìƒì† ë¬¸ë²•ì„ í†µí•´ í•´ê²°
+		// 2. ì½”ë“œ ê²°í•©ë„ê°€ ë†’ë‹¤. (ìœ ì§€ ë³´ìˆ˜ì— ë¶ˆë¦¬) - ë‹¤í˜•ì„± ë¬¸ë²•ì„ í†µí•´ í•´ê²°
+		// 3. ì €ì¥ì†Œ ë¬¸ì œ - Collection Framework í•´ê²°
 
 		Manager manager = new Manager();
 		Scanner sc = new Scanner(System.in);
 
 		while (true) {
-			System.out.println("=== È¸¿ø °ü¸® ½Ã½ºÅÛ ===");
-			System.out.println("1. ½Å±Ô È¸¿ø µî·Ï");
-			System.out.println("2. È¸¿ø ¸ñ·Ï Ãâ·Â");
-			System.out.println("3. ½Ã½ºÅÛ Á¾·á");
+			System.out.println("=== íšŒì› ê´€ë¦¬ ì‹œìŠ¤í…œ ===");
+			System.out.println("1. ì‹ ê·œ íšŒì› ë“±ë¡");
+			System.out.println("2. íšŒì› ëª©ë¡ ì¶œë ¥");
+			System.out.println("3. ì‹œìŠ¤í…œ ì¢…ë£Œ");
 			System.out.print(">> ");
 			int menu = Integer.parseInt(sc.nextLine());
 
@@ -51,10 +51,10 @@ public class Main {
 				}
 //					System.out.println(manager.getMembers() + "\t");
 			} else if (menu == 3) {
-				System.out.println("½Ã½ºÅÛÀ» Á¾·áÇÕ´Ï´Ù.");
+				System.out.println("ì‹œìŠ¤í…œì„ ì¢…ë£Œí•©ë‹ˆë‹¤.");
 				System.exit(0);
 			} else {
-				System.out.println("¸Ş´º¸¦ ´Ù½Ã È®ÀÎÇÏ¼¼¿ä.");
+				System.out.println("ë©”ë‰´ë¥¼ ë‹¤ì‹œ í™•ì¸í•˜ì„¸ìš”.");
 			}
 		}
 	}

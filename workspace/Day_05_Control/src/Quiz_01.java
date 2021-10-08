@@ -5,12 +5,12 @@ public class Quiz_01 {
 		int sum = 0;
 		
 		while (true) {
-			System.out.printf("¼ıÀÚ ÀÔ·Â : ");
+			System.out.printf("ìˆ«ì ì…ë ¥ : ");
 			int num = sc.nextInt();
 			sum += num;
 			if (num == 0) {break;}
 		}
-		System.out.println("ÀÔ·ÂµÈ ¼ıÀÚÀÇ ÃÑ ÇÕÀº " + sum);
+		System.out.println("ì…ë ¥ëœ ìˆ«ìì˜ ì´ í•©ì€ " + sum);
 		
 	}
 }

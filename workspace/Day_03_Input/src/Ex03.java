@@ -4,30 +4,30 @@ public class Ex03 {
 
 	public static void main(String[] ar) {
 		Scanner sc = new Scanner(System.in);
-		// ÀÌ¸§ : È«±æµ¿
-		// ±¹¾î : 100, ¿µ¾î : 98, ¼öÇĞ : 75
-		// ÇÕ°è : 273, Æò±Õ : 91.00
-		System.out.println("¼ºÀû °ü¸®ÇÁ·Î±×·¥ ver2.1");
+		// ì´ë¦„ : í™ê¸¸ë™
+		// êµ­ì–´ : 100, ì˜ì–´ : 98, ìˆ˜í•™ : 75
+		// í•©ê³„ : 273, í‰ê·  : 91.00
+		System.out.println("ì„±ì  ê´€ë¦¬í”„ë¡œê·¸ë¨ ver2.1");
 		System.out.println("===================");
-		System.out.print("ÀÌ ¸§ : ");
+		System.out.print("ì´ ë¦„ : ");
 		String name = sc.nextLine();
 		System.out.println("===================");
-		System.out.print("±¹ ¾î : ");
+		System.out.print("êµ­ ì–´ : ");
 		int kor = Integer.parseInt(sc.nextLine());
-		System.out.print("¿µ ¾î : ");
+		System.out.print("ì˜ ì–´ : ");
 		int eng = Integer.parseInt(sc.nextLine());
-		System.out.print("¼ö ÇĞ : ");
+		System.out.print("ìˆ˜ í•™ : ");
 		int math = Integer.parseInt(sc.nextLine());
 		System.out.println("====================");
 		int total = kor + eng + math;
 		double avg = total / 3.0;
-		System.out.println("ÇÕ °è : " + total);
-		System.out.printf("Æò ±Õ : %.2f%n", avg);
+		System.out.println("í•© ê³„ : " + total);
+		System.out.printf("í‰ ê·  : %.2f%n", avg);
 		System.out.println("====================");
 
-		// nextInt´Â ¼ıÀÚ¸¦ °¡Á®°£ÈÄ ¿£ÅÍÅ°¸¦ ³²°ÜµĞ´Ù.
-		// nextInt¸¦ ´Ù½Ã »ç¿ëÇÑ´Ù¸é nextInt´Â ¿£ÅÍ¸¦ ¹«½ÃÇÏ¹Ç·Î ±¦ÂúÁö¸¸
-		// nextLine´Â ¹öÆÛ¿¡ ³²¾ÆÀÖ´Â ¿£ÅÍÅ°¸¦ °¡Á®¿À´Âµ¥ »ç¿ëµÊÀ¸·Î X
+		// nextIntëŠ” ìˆ«ìë¥¼ ê°€ì ¸ê°„í›„ ì—”í„°í‚¤ë¥¼ ë‚¨ê²¨ë‘”ë‹¤.
+		// nextIntë¥¼ ë‹¤ì‹œ ì‚¬ìš©í•œë‹¤ë©´ nextIntëŠ” ì—”í„°ë¥¼ ë¬´ì‹œí•˜ë¯€ë¡œ ê´œì°®ì§€ë§Œ
+		// nextLineëŠ” ë²„í¼ì— ë‚¨ì•„ìˆëŠ” ì—”í„°í‚¤ë¥¼ ê°€ì ¸ì˜¤ëŠ”ë° ì‚¬ìš©ë¨ìœ¼ë¡œ X
 
 	}
 }

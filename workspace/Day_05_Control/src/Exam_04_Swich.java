@@ -6,21 +6,21 @@ public class Exam_04_Swich {
 
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.println("°úÀÏÀ» ¼±ÅÃÇÏ¼¼¿ä.");
-		System.out.println("1.¸Á°í 2.Æ÷µµ 3.¹Ù³ª³ª");
+		System.out.println("ê³¼ì¼ì„ ì„ íƒí•˜ì„¸ìš”.");
+		System.out.println("1.ë§ê³  2.í¬ë„ 3.ë°”ë‚˜ë‚˜");
 		System.out.println(">> ");
 		int menu = sc.nextInt();
 		
-		switch(menu/* ¹®ÀÚ¿­µµ °¡´ÉÇÏ´Ù. boolean°ªÀº ºÒ°¡´É */) {
+		switch(menu/* ë¬¸ìì—´ë„ ê°€ëŠ¥í•˜ë‹¤. booleanê°’ì€ ë¶ˆê°€ëŠ¥ */) {
 		case 1:
-			// ½ºÀ§Ä¡¹® ¾È¿¡¼­µµ ¸ğµç Á¦¾î¹® »ç¿ëÀÌ °¡´ÉÇÏ´Ù.
-			System.out.println("¸Á°í´Â ¿µ¾î·Î Mango");
+			// ìŠ¤ìœ„ì¹˜ë¬¸ ì•ˆì—ì„œë„ ëª¨ë“  ì œì–´ë¬¸ ì‚¬ìš©ì´ ê°€ëŠ¥í•˜ë‹¤.
+			System.out.println("ë§ê³ ëŠ” ì˜ì–´ë¡œ Mango");
 			break;
 		case 2:
-			System.out.println("Æ÷µµ´Â ¿µ¾î·Î Grape");
+			System.out.println("í¬ë„ëŠ” ì˜ì–´ë¡œ Grape");
 			break;
 		case 3:
-			System.out.println("¹Ù³ª³ª´Â ¿µ¾î·Î Banana");
+			System.out.println("ë°”ë‚˜ë‚˜ëŠ” ì˜ì–´ë¡œ Banana");
 			break;
 		default:
 		}

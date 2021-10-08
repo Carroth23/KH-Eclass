@@ -20,17 +20,17 @@ public class Quiz_02_gangsa {
                System.out.print(">> ");
                menu = Integer.parseInt(sc.nextLine());
 
-               if(0 < menu && menu < 4) {break;} // Á¦´ë·Î µÈ °ªÀÌ ÀÔ·Â‰çÀ» °æ¿ì while Å»Ãâ
-               System.out.println("¸Ş´º¸¦ ´Ù½Ã È®ÀÎÇØÁÖ¼¼¿ä.");
+               if(0 < menu && menu < 4) {break;} // ì œëŒ€ë¡œ ëœ ê°’ì´ ì…ë ¥Â‰ç‘› ê²½ìš° while íƒˆì¶œ
+               System.out.println("ë©”ë‰´ë¥¼ ë‹¤ì‹œ í™•ì¸í•´ì£¼ì„¸ìš”.");
             }catch(Exception e) {
-               System.out.println("¸Ş´º´Â ¼ıÀÚ·Î ÀÔ·ÂÇØ¾ß ÇÕ´Ï´Ù.");
+               System.out.println("ë©”ë‰´ëŠ” ìˆ«ìë¡œ ì…ë ¥í•´ì•¼ í•©ë‹ˆë‹¤.");
             }
          }
 
          if(menu == 1) {
             int playerScore = 0;
-            int target = (int)(Math.random() * 100 + 1); // ÀÌ°Ô ¸ÂÃß¾î¾ß ÇÏ´Â Á¤´ä
-            System.out.println("Á¤´ä : " + target);
+            int target = (int)(Math.random() * 100 + 1); // ì´ê²Œ ë§ì¶”ì–´ì•¼ í•˜ëŠ” ì •ë‹µ
+            System.out.println("ì •ë‹µ : " + target);
 
             System.out.println("<< Game Start >>");
             while(true) {
@@ -38,15 +38,15 @@ public class Quiz_02_gangsa {
                //---------------------------------------- Player turn
                System.out.println("<< Player Turn >>");
                System.out.print("Input Number : ");
-               int input = Integer.parseInt(sc.nextLine()); // ´äÀ» ¸ÂÃß±â À§ÇÑ ÇÃ·¹ÀÌ¾îÀÇ ½Ãµµ
+               int input = Integer.parseInt(sc.nextLine()); // ë‹µì„ ë§ì¶”ê¸° ìœ„í•œ í”Œë ˆì´ì–´ì˜ ì‹œë„
 
                if(input < target) {
                   System.out.println("<< UP! >>");
                }else if(input > target) {
                   System.out.println("<< DOWN! >>");
                }else {
-                  System.out.println("<< Á¤´ä! >>");   
-                  System.out.println("ÇÃ·¹ÀÌ¾î°¡ ½Â¸®Çß½À´Ï´Ù.");
+                  System.out.println("<< ì •ë‹µ! >>");   
+                  System.out.println("í”Œë ˆì´ì–´ê°€ ìŠ¹ë¦¬í–ˆìŠµë‹ˆë‹¤.");
                   playerWin++;
                   break;
                }
@@ -61,17 +61,17 @@ public class Quiz_02_gangsa {
                }else if(com > target) {
                   System.out.println("<< DOWN! >>");
                }else {
-                  System.out.println("<< Á¤´ä! >>");
-                  System.out.println("ÄÄÇ»ÅÍ°¡ ½Â¸®Çß½À´Ï´Ù.");
+                  System.out.println("<< ì •ë‹µ! >>");
+                  System.out.println("ì»´í“¨í„°ê°€ ìŠ¹ë¦¬í–ˆìŠµë‹ˆë‹¤.");
                   comWin++;
                   break;
                }
             }
          }else if(menu == 2) {
-            System.out.println("Player : " + playerWin + " ½Â " + comWin + " ÆĞ ");
-            System.out.println("Computer : " + comWin + " ½Â " + playerWin + " ÆĞ ");
+            System.out.println("Player : " + playerWin + " ìŠ¹ " + comWin + " íŒ¨ ");
+            System.out.println("Computer : " + comWin + " ìŠ¹ " + playerWin + " íŒ¨ ");
          }else if(menu == 3) {
-            System.out.println("°ÔÀÓÀ» Á¾·áÇÕ´Ï´Ù.");
+            System.out.println("ê²Œì„ì„ ì¢…ë£Œí•©ë‹ˆë‹¤.");
             System.exit(0);
          }
       }

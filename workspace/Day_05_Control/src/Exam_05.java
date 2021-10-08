@@ -8,23 +8,23 @@ public class Exam_05 {
 //		String b = "Hello";
 		
 //		System.out.println(a == b);
-		// ±âº»ÇüÀº Stack¿¡ ÀÖ°í
-		// ÂüÁ¶ÇüÀº heap¿¡ ÀÖ´Ù.
-		// String a ¿¡ ´ã°ÜÀÖ´Â°Ç µ¥ÀÌÅÍ°¡ ´ã°ÜÀÖ´Â °ø°£ÀÇ ÁÖ¼Ò°¡ ´ã°ÜÀÖ³ª.
-		// ±×·¯´Ï±î ÂüÁ¶ÀÚ·áÇüµéÀº heap¿¡ µ¥ÀÌÅÍ¸¦ ÀúÀåÇÏ°í Stack¿¡ ±× ÁÖ¼Ò°ªÀ» ÀúÀåÇÔ.
-		// ±Ùµ¥ String b = new String("Hello");·Î ¸¸µé¸é Heap¿¡ ´Ù¸¥ °ø°£À» ¶Ç ¸¸µë.
+		// ê¸°ë³¸í˜•ì€ Stackì— ìžˆê³ 
+		// ì°¸ì¡°í˜•ì€ heapì— ìžˆë‹¤.
+		// String a ì— ë‹´ê²¨ìžˆëŠ”ê±´ ë°ì´í„°ê°€ ë‹´ê²¨ìžˆëŠ” ê³µê°„ì˜ ì£¼ì†Œê°€ ë‹´ê²¨ìžˆë‚˜.
+		// ê·¸ëŸ¬ë‹ˆê¹Œ ì°¸ì¡°ìžë£Œí˜•ë“¤ì€ heapì— ë°ì´í„°ë¥¼ ì €ìž¥í•˜ê³  Stackì— ê·¸ ì£¼ì†Œê°’ì„ ì €ìž¥í•¨.
+		// ê·¼ë° String b = new String("Hello");ë¡œ ë§Œë“¤ë©´ Heapì— ë‹¤ë¥¸ ê³µê°„ì„ ë˜ ë§Œë“¬.
 		
 		Scanner sc = new Scanner(System.in);
-		System.out.println("¸Þ¼¼Áö¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
-		String msg = sc.nextLine(); // ³»ºÎÀûÀ¸·Î new String("Apple")¶ó°í ¸¸µé¾î »ç¿ëÀ» ÇÑ´Ù.
+		System.out.println("ë©”ì„¸ì§€ë¥¼ ìž…ë ¥í•˜ì„¸ìš”.");
+		String msg = sc.nextLine(); // ë‚´ë¶€ì ìœ¼ë¡œ new String("Apple")ë¼ê³  ë§Œë“¤ì–´ ì‚¬ìš©ì„ í•œë‹¤.
 		
 		if (msg == "Apple") {
-			System.out.println("ÀÔ·ÂµÈ ´Ü¾î´Â »ç°ú ÀÔ´Ï´Ù.");
+			System.out.println("ìž…ë ¥ëœ ë‹¨ì–´ëŠ” ì‚¬ê³¼ ìž…ë‹ˆë‹¤.");
 		}
-		// Ãâ·ÂÀÌ ¾ÈµÇ´Â ÀÌÀ¯´Â À§¿¡ ¸¸µç°ÍÃ³·³ new·Î ¸¸µé¾ú±â¶§¹®¿¡ ÁÖ¼Ò°ªÀÌ ´Þ¶óÁü. 
-		// ¹®ÀÚ¿­³¢¸®´Â ÁÖ¼Ò°ªÀ¸·Î ºñ±³ÇÏ±â¶§¹®.
-//		±×·¡¼­ ¹®ÀÚ¿­³¢¸® ºñ±³ÇÒ¶© 
-//		if (msg.equals("Apple")) ¸¦ »ç¿ëÇØÁà¾ß ÇÔ. (msg¾È¿¡ ´ã°ÜÀÖ´Â ¹®ÀÚ¿­ÀÌ "Apple"°¡ ¸Â½À´Ï±î.)
+		// ì¶œë ¥ì´ ì•ˆë˜ëŠ” ì´ìœ ëŠ” ìœ„ì— ë§Œë“ ê²ƒì²˜ëŸ¼ newë¡œ ë§Œë“¤ì—ˆê¸°ë•Œë¬¸ì— ì£¼ì†Œê°’ì´ ë‹¬ë¼ì§. 
+		// ë¬¸ìžì—´ë¼ë¦¬ëŠ” ì£¼ì†Œê°’ìœ¼ë¡œ ë¹„êµí•˜ê¸°ë•Œë¬¸.
+//		ê·¸ëž˜ì„œ ë¬¸ìžì—´ë¼ë¦¬ ë¹„êµí• ë• 
+//		if (msg.equals("Apple")) ë¥¼ ì‚¬ìš©í•´ì¤˜ì•¼ í•¨. (msgì•ˆì— ë‹´ê²¨ìžˆëŠ” ë¬¸ìžì—´ì´ "Apple"ê°€ ë§žìŠµë‹ˆê¹Œ.)
 	}
 
 }

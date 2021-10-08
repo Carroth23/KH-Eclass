@@ -1,4 +1,3 @@
-
 public class Exam_01_01 {
 
 	public static int minus(int num1, int num2) {
@@ -7,7 +6,7 @@ public class Exam_01_01 {
 	}
 	
 	public static int mply(int num1, int num2) {
-		return num1 * num2; // ÀÌ°Íµµ °¡´É
+		return num1 * num2; // ì´ê²ƒë„ ê°€ëŠ¥
 	}
 	
 	public static double divide(int num1, int num2) {
@@ -20,36 +19,36 @@ public class Exam_01_01 {
 			return num1;
 		} else if (num1 < num2) {
 			return num2;
-		} else /*else if·Î ÀÛ¼º½Ã ¿¡·¯(¾Æ¹«°Íµµ ½ÇÇà ¾ÈµÉ¼öÀÖ´Ù°í ÄÄÇ»ÅÍ´Â »ı°¢ÇÔ.)*/{
+		} else /*else ifë¡œ ì‘ì„±ì‹œ ì—ëŸ¬(ì•„ë¬´ê²ƒë„ ì‹¤í–‰ ì•ˆë ìˆ˜ìˆë‹¤ê³  ì»´í“¨í„°ëŠ” ìƒê°í•¨.)*/{
 			return 0;
 		}
 	}
 	
-	public static void/*¸®ÅÏ°ª ¾øÀ½(¸®ÅÏÅ¸ÀÔ¿¡¸¸ void »ç¿ë°¡´É)*/ hello()/*¸Å°³º¯¼ö ¾øÀ½*/ {
+	public static void/*ë¦¬í„´ê°’ ì—†ìŒ(ë¦¬í„´íƒ€ì…ì—ë§Œ void ì‚¬ìš©ê°€ëŠ¥)*/ hello()/*ë§¤ê°œë³€ìˆ˜ ì—†ìŒ*/ {
 		System.out.println("Hello Java");
 	}
 	
 	public static void main(String[] args) {
-		// µÎ Á¤¼ö¸¦ ÀÎÀÚ°ªÀ¸·Î Àü´Ş ¹Ş¾Æ, »¬¼ÀÇÑ °á°ú¸¦ int·Î returnÇÏ´Â minus ¸Ş¼­µå ¸¸µé±â.
+		// ë‘ ì •ìˆ˜ë¥¼ ì¸ìê°’ìœ¼ë¡œ ì „ë‹¬ ë°›ì•„, ëº„ì…ˆí•œ ê²°ê³¼ë¥¼ intë¡œ returní•˜ëŠ” minus ë©”ì„œë“œ ë§Œë“¤ê¸°.
 		System.out.println(minus(10, 5));
 
-		// µÎ Á¤¼ö¸¦ ÀÎÀÚ·Î Àü´Ş ¹Ş¾Æ, °ö¼ÀÇÑ °á°ú¸¦ int·Î return ÇÏ´Â mply ¸Ş¼­µå ¸¸µé±â
+		// ë‘ ì •ìˆ˜ë¥¼ ì¸ìë¡œ ì „ë‹¬ ë°›ì•„, ê³±ì…ˆí•œ ê²°ê³¼ë¥¼ intë¡œ return í•˜ëŠ” mply ë©”ì„œë“œ ë§Œë“¤ê¸°
 		System.out.println(mply(10, 5));
 		
-		// µÎ Á¤¼ö¸¦ ÀÎÀÚ·Î Àü´Ş ¹Ş¾Æ, ³ª´°¼ÀÇÑ °á°ú¸¦ double·Î return ÇÏ´Â divide ¸Ş¼­µå ¸¸µé±â
+		// ë‘ ì •ìˆ˜ë¥¼ ì¸ìë¡œ ì „ë‹¬ ë°›ì•„, ë‚˜ëˆ—ì…ˆí•œ ê²°ê³¼ë¥¼ doubleë¡œ return í•˜ëŠ” divide ë©”ì„œë“œ ë§Œë“¤ê¸°
 		System.out.printf("%.2f%n", divide(10, 3));
 		System.out.printf("%.2f%n", tmp(10, 3));
 		
-		// µÎ Á¤¼ö¸¦ ÀÎÀÚ·Î Àü´Ş ¹Ş¾Æ, ´õ Å« ¼ö¸¦ int ·Î return ÇÏ´Â bigger ¸Ş¼­µå ¸¸µé±â
-		// ´Ü, µÎ ¼ö°¡ °°À» °æ¿ì 0 À» return
+		// ë‘ ì •ìˆ˜ë¥¼ ì¸ìë¡œ ì „ë‹¬ ë°›ì•„, ë” í° ìˆ˜ë¥¼ int ë¡œ return í•˜ëŠ” bigger ë©”ì„œë“œ ë§Œë“¤ê¸°
+		// ë‹¨, ë‘ ìˆ˜ê°€ ê°™ì„ ê²½ìš° 0 ì„ return
 		System.out.println(bigger(20, 20));
 		
-		//ÀÎÀÚ°ªÀÌ ¾ø°í, return°ªµµ ¾ø´Â hello¸Ş¼­µå ¸¸µé±â
-		//¸Ş¼­µå°¡ ½ÇÇàµÇ¸é "Hello Java" ¶ó°í Ãâ·Â
+		//ì¸ìê°’ì´ ì—†ê³ , returnê°’ë„ ì—†ëŠ” helloë©”ì„œë“œ ë§Œë“¤ê¸°
+		//ë©”ì„œë“œê°€ ì‹¤í–‰ë˜ë©´ "Hello Java" ë¼ê³  ì¶œë ¥
 		hello();
 	}
 
-	public static double tmp(int num1, double num2) { // ¹Ø¿¡ ÀÛ¼ºµµ °¡´É
+	public static double tmp(int num1, double num2) { // ë°‘ì— ì‘ì„±ë„ ê°€ëŠ¥
 		return (double)num1 / num2;
 	}
 	

@@ -7,16 +7,16 @@ public class Exam_01_Insert {
 
 		// OJDBC : Oracle Java DataBase Connection
 
-		// 1. OJDBC µå¶óÀÌ¹ö ·Îµù(¿À¶óÅ¬ µå¶óÀÌ¹ö ÀÎ½ºÅÍ½º »ı¼ºÀÛ¾÷)
+		// 1. OJDBC ë“œë¼ì´ë²„ ë¡œë”©(ì˜¤ë¼í´ ë“œë¼ì´ë²„ ì¸ìŠ¤í„°ìŠ¤ ìƒì„±ì‘ì—…)
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 		} catch (Exception e) {
-			e.printStackTrace(); // ¿¡·¯¹ß»ı ¿øÀÎÀ» Ãâ·Â(°³¹ß ¿Ï·á ÈÄ Á¦°Å)
-			System.out.println("OJDBC µå¶óÀÌ¹ö¸¦ ¹ß°ß ÇÏÁö ¸øÇÏ¿´½À´Ï´Ù.");
+			e.printStackTrace(); // ì—ëŸ¬ë°œìƒ ì›ì¸ì„ ì¶œë ¥(ê°œë°œ ì™„ë£Œ í›„ ì œê±°)
+			System.out.println("OJDBC ë“œë¼ì´ë²„ë¥¼ ë°œê²¬ í•˜ì§€ ëª»í•˜ì˜€ìŠµë‹ˆë‹¤.");
 			System.exit(0);
 		}
 
-		// 2. DBMS¿¡ Á¢¼Ó
+		// 2. DBMSì— ì ‘ì†
 		String url = "jdbc:oracle:thin:@175.123.204.32:1521:xe";
 		String username = "kh";
 		String password = "kh";
@@ -24,29 +24,29 @@ public class Exam_01_Insert {
 		try {
 			Connection con = DriverManager.getConnection(url, username, password);
 
-			// 3. Query¸¦ Àü´ŞÇÒ ¼ö ÀÖ´Â ÀÎ½ºÅÏ½º »ı¼º
+			// 3. Queryë¥¼ ì „ë‹¬í•  ìˆ˜ ìˆëŠ” ì¸ìŠ¤í„´ìŠ¤ ìƒì„±
 			Statement stat = con.createStatement();
 			String sql = "insert into cafe_menu values(cafe_menu_seq.nextval, 'Latte', 2000)";
 			int result = stat.executeUpdate(sql);
 
-//			stat.executeUpdate("¿©±â¿¡ ¹Ù·Î Äõ¸®¹® ½áµµ µÊ");
-			// executeQuery ´Â selectµî µ¥ÀÌÅÍ Á¶È¸ÇÒ¶§ (¸®ÅÏ°ª¶§¹®)
-			// executeUpdate ´Â µ¥ÀÌÅÍ ¼öÁ¤°°Àº°É ÇÏ´Â Äõ¸®¸¦ ¾µ¶§
+//			stat.executeUpdate("ì—¬ê¸°ì— ë°”ë¡œ ì¿¼ë¦¬ë¬¸ ì¨ë„ ë¨");
+			// executeQuery ëŠ” selectë“± ë°ì´í„° ì¡°íšŒí• ë•Œ (ë¦¬í„´ê°’ë•Œë¬¸)
+			// executeUpdate ëŠ” ë°ì´í„° ìˆ˜ì •ê°™ì€ê±¸ í•˜ëŠ” ì¿¼ë¦¬ë¥¼ ì“¸ë•Œ
 			
-			System.out.println("°á °ú : " + result);
+			System.out.println("ê²° ê³¼ : " + result);
 
 			if (result > 0) {
-				System.out.println("¼º°øÀûÀ¸·Î ÀÔ·ÂµÇ¾ú½À´Ï´Ù.");
+				System.out.println("ì„±ê³µì ìœ¼ë¡œ ì…ë ¥ë˜ì—ˆìŠµë‹ˆë‹¤.");
 			} else {
-				System.out.println("ÀÔ·Â¿¡ ½ÇÆĞÇß½À´Ï´Ù.");
+				System.out.println("ì…ë ¥ì— ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤.");
 			}
 
-//			con.setAutoCommit(false); // ¿ÀÅäÄ¿¹Ô Ãë¼Ò
-//			con.commit(); // ojdbc8 ¹öÀü¿¡¼± ÇÊ¿ä¾øÀ½ autoÄ¿¹ÔµÊ.
-			con.close(); // Áß¿ä ¹İµå½Ã ÇØ¾ßÇÔ(³¡³»Áö¾ÊÀ¸¸é °è¼Ó ¿¬°áÀÌ ´Ã¾î³ª¼­ ¿¬°á´ë±âÁÙÀÌ ²ËÂü).
+//			con.setAutoCommit(false); // ì˜¤í† ì»¤ë°‹ ì·¨ì†Œ
+//			con.commit(); // ojdbc8 ë²„ì „ì—ì„  í•„ìš”ì—†ìŒ autoì»¤ë°‹ë¨.
+			con.close(); // ì¤‘ìš” ë°˜ë“œì‹œ í•´ì•¼í•¨(ëë‚´ì§€ì•Šìœ¼ë©´ ê³„ì† ì—°ê²°ì´ ëŠ˜ì–´ë‚˜ì„œ ì—°ê²°ëŒ€ê¸°ì¤„ì´ ê½‰ì°¸).
 		} catch (Exception e) {
 			e.printStackTrace();
-			System.out.println("Á¢¼Ó¿¡ ½ÇÆĞÇß½À´Ï´Ù.");
+			System.out.println("ì ‘ì†ì— ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤.");
 			System.exit(0);
 		}
 	}

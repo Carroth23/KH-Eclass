@@ -6,14 +6,14 @@ public class Quiz_01 {
 		Scanner sc = new Scanner(System.in);
 		int sum = 0;
 		
-		System.out.println("***ATM ½Ã¹Ä·¹ÀÌÅÍ***");
+		System.out.println("***ATM ì‹œë®¬ë ˆì´í„°***");
 		
 		while(true) {
 			System.out.println("****************");
-			System.out.println("1. ÀÜ¾×Á¶È¸");
-			System.out.println("2. ÀÔ±İÇÏ±â");
-			System.out.println("3. Ãâ±İÇÏ±â");
-			System.out.println("4. Á¾·áÇÏ±â");
+			System.out.println("1. ì”ì•¡ì¡°íšŒ");
+			System.out.println("2. ì…ê¸ˆí•˜ê¸°");
+			System.out.println("3. ì¶œê¸ˆí•˜ê¸°");
+			System.out.println("4. ì¢…ë£Œí•˜ê¸°");
 			System.out.println(">> ");
 			
 			int num = 0;
@@ -22,16 +22,16 @@ public class Quiz_01 {
 					num = Integer.parseInt(sc.nextLine());
 					break;
 				} catch (Exception e) {
-					System.out.println("¸Ş´º ¼ıÀÚ¸¦ È®ÀÎÇØÁÖ¼¼¿ä.");
+					System.out.println("ë©”ë‰´ ìˆ«ìë¥¼ í™•ì¸í•´ì£¼ì„¸ìš”.");
 				}
 			}
 			
 			switch (num) {
 			case 1:
-				System.out.println("ÇöÀç º¸À¯ÁßÀÎ ÀÜ¾×Àº " + sum + "¿ø ÀÔ´Ï´Ù.");
+				System.out.println("í˜„ì¬ ë³´ìœ ì¤‘ì¸ ì”ì•¡ì€ " + sum + "ì› ì…ë‹ˆë‹¤.");
 				break;
 			case 2:
-				System.out.println("¾ó¸¶¸¦ ÀÔ±İÇÏ½Ã°Ú½À´Ï±î?");
+				System.out.println("ì–¼ë§ˆë¥¼ ì…ê¸ˆí•˜ì‹œê² ìŠµë‹ˆê¹Œ?");
 				
 				int put = 0;
 				while (true) {
@@ -39,14 +39,14 @@ public class Quiz_01 {
 						put = Integer.parseInt(sc.nextLine());
 						break;
 					} catch (Exception e) {
-						System.out.println("¼ıÀÚ¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä.");
+						System.out.println("ìˆ«ìë¥¼ ì…ë ¥í•´ ì£¼ì„¸ìš”.");
 					}
 				}
 				sum += put;
-				System.out.println(put + "¿øÀÌ ÀÔ±İ µÇ¾ú½À´Ï´Ù.");
+				System.out.println(put + "ì›ì´ ì…ê¸ˆ ë˜ì—ˆìŠµë‹ˆë‹¤.");
 				break;
 			case 3:
-				System.out.println("¾ó¸¶¸¦ Ãâ±İÇÏ½Ã°Ú½À´Ï±î?");
+				System.out.println("ì–¼ë§ˆë¥¼ ì¶œê¸ˆí•˜ì‹œê² ìŠµë‹ˆê¹Œ?");
 				
 				int out = 0;
 				while (true) {
@@ -54,24 +54,24 @@ public class Quiz_01 {
 						out = Integer.parseInt(sc.nextLine());
 						break;
 					} catch (Exception e) {
-						System.out.println("¼ıÀÚ¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä.");
+						System.out.println("ìˆ«ìë¥¼ ì…ë ¥í•´ ì£¼ì„¸ìš”.");
 					}
 				}
 				if (sum >= out) {
 					sum -= out;
-					System.out.println(out + "¿øÀÌ Ãâ±İµÇ¾ú½À´Ï´Ù.");
+					System.out.println(out + "ì›ì´ ì¶œê¸ˆë˜ì—ˆìŠµë‹ˆë‹¤.");
 				} else {
-					System.out.println("ÀÜ¾×ÀÌ ºÎÁ·ÇÕ´Ï´Ù. ÀÜ¾×À» È®ÀÎÇØÁÖ½Ê½Ã¿À.");
+					System.out.println("ì”ì•¡ì´ ë¶€ì¡±í•©ë‹ˆë‹¤. ì”ì•¡ì„ í™•ì¸í•´ì£¼ì‹­ì‹œì˜¤.");
 				}
 				break;
 			case 4:
-				System.out.println("ÇÁ·Î±×·¥À» Á¾·áÇÏ°Ú½À´Ï´Ù.");
-//				break; // È¤Àº ºê·¹ÀÌÅ©¿Í while¹®¿¡ ÀÌ¸§À» Áà¼­ whileÀ» ³ª°¥¼öµµ ÀÖ´Ù.
-				 System.exit(0); // À¸·Îµµ Á¾·á½ÃÄÑ¹ö¸±¼ö ÀÖ´Ù.
+				System.out.println("í”„ë¡œê·¸ë¨ì„ ì¢…ë£Œí•˜ê² ìŠµë‹ˆë‹¤.");
+//				break; // í˜¹ì€ ë¸Œë ˆì´í¬ì™€ whileë¬¸ì— ì´ë¦„ì„ ì¤˜ì„œ whileì„ ë‚˜ê°ˆìˆ˜ë„ ìˆë‹¤.
+				 System.exit(0); // ìœ¼ë¡œë„ ì¢…ë£Œì‹œì¼œë²„ë¦´ìˆ˜ ìˆë‹¤.
 			default:
-				System.out.println("¸Ş´º¸¦ ´Ù½Ã È®ÀÎÇØÁÖ¼¼¿ä");
+				System.out.println("ë©”ë‰´ë¥¼ ë‹¤ì‹œ í™•ì¸í•´ì£¼ì„¸ìš”");
 			}
-//			if (num == 4) // ÀÌ°Íµµ Á¾·áÀÇ ÇÑ ¹æ¹ı
+//			if (num == 4) // ì´ê²ƒë„ ì¢…ë£Œì˜ í•œ ë°©ë²•
 //				break;
 		}
 		

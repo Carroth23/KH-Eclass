@@ -8,9 +8,9 @@ public class Quiz_02_algorithm {
 		int comscore = 0;
 		int playerscore = 0;
 
-		menu: while (true) { // ¸Ş´º¼±ÅÃÃ¢.
+		menu: while (true) { // ë©”ë‰´ì„ íƒì°½.
 			System.out.println("== Up & Down Game ==");
-			int menu = 0; // ¼±ÅÃÇÑ ¸Ş´º
+			int menu = 0; // ì„ íƒí•œ ë©”ë‰´
 
 			System.out.println("1. Game Start");
 			System.out.println("2. Game Score");
@@ -22,17 +22,17 @@ public class Quiz_02_algorithm {
 					if (0 < menu && menu < 4) {
 						break;
 					}
-					System.out.println("¸Ş´º¸¦ ´Ù½Ã È®ÀÎÇØ ÁÖ¼¼¿ä");
+					System.out.println("ë©”ë‰´ë¥¼ ë‹¤ì‹œ í™•ì¸í•´ ì£¼ì„¸ìš”");
 				} catch (Exception e) {
-					System.out.println("¸Ş´º´Â ¼ıÀÚ·Î ÀÔ·ÂÇØÁÖ¼¼¿ä.");
+					System.out.println("ë©”ë‰´ëŠ” ìˆ«ìë¡œ ì…ë ¥í•´ì£¼ì„¸ìš”.");
 				}
 			}
 
-			switch (menu) { // °ÔÀÓÇÁ·Î±×·¥ ÄÚµå
+			switch (menu) { // ê²Œì„í”„ë¡œê·¸ë¨ ì½”ë“œ
 			case 1:
 				System.out.println("<<  Game Start  >>");
 				int ran = ((int) (Math.random() * (100 - 1 + 1) + 1));
-				System.out.println("Á¤´ä : " + ran); ///////// ÁÖ¼® Á¦°Å½Ã Á¤´ä µ¿½ÃÃâ·Â //////
+				System.out.println("ì •ë‹µ : " + ran); ///////// ì£¼ì„ ì œê±°ì‹œ ì •ë‹µ ë™ì‹œì¶œë ¥ //////
 
 				int input = 0;
 				int upcom = 100;
@@ -40,14 +40,14 @@ public class Quiz_02_algorithm {
 				while (true) {
 					while (true) {
 						try {
-							System.out.print("1 ~ 100 ÀÔ·Â : ");
+							System.out.print("1 ~ 100 ì…ë ¥ : ");
 							input = Integer.parseInt(sc.nextLine());
 							if (1 <= input && input <= 100) {
 								break;
 							}
-							System.out.println("1 ~ 100À» ÀÔ·ÂÇØ ÁÖ¼¼¿ä");
+							System.out.println("1 ~ 100ì„ ì…ë ¥í•´ ì£¼ì„¸ìš”");
 						} catch (Exception e) {
-							System.out.println("¼ıÀÚ¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä.");
+							System.out.println("ìˆ«ìë¥¼ ì…ë ¥í•´ ì£¼ì„¸ìš”.");
 						}
 					}
 
@@ -56,20 +56,20 @@ public class Quiz_02_algorithm {
 					} else if (ran < input) {
 						System.out.println("<< D O W N >>");
 					} else {
-						System.out.println("<<  Á¤´ä  >>");
+						System.out.println("<<  ì •ë‹µ  >>");
 						playerscore++;
 						break;
 					}
 
 					while (true) {
 						int dom = ((int) (Math.random() * (upcom - downcom + 1) + downcom));
-						System.out.println("ÄÄÇ»ÅÍÀÇ ¼ıÀÚ : " + dom);
+						System.out.println("ì»´í“¨í„°ì˜ ìˆ«ì : " + dom);
 						if (ran > dom) {
 							downcom = dom + 1;
 						} else if (ran < dom) {
 							upcom = dom - 1;
 						} else if (ran == dom) {
-							System.out.println("ÄÄÇ»ÅÍ°¡ Á¤´äÀÔ´Ï´Ù!");
+							System.out.println("ì»´í“¨í„°ê°€ ì •ë‹µì…ë‹ˆë‹¤!");
 							comscore++;
 							continue menu;
 						}
@@ -79,16 +79,16 @@ public class Quiz_02_algorithm {
 				continue;
 
 			case 2:
-				System.out.println("³ªÀÇ ½Â¸®È½¼ö : " + playerscore);
-				System.out.println("ÄÄÇ»ÅÍÀÇ ½Â¸®È½¼ö : " + comscore);
+				System.out.println("ë‚˜ì˜ ìŠ¹ë¦¬íšŸìˆ˜ : " + playerscore);
+				System.out.println("ì»´í“¨í„°ì˜ ìŠ¹ë¦¬íšŸìˆ˜ : " + comscore);
 				continue;
 
 			case 3:
-				System.out.println("°ÔÀÓÀ» Á¾·áÇÕ´Ï´Ù.");
+				System.out.println("ê²Œì„ì„ ì¢…ë£Œí•©ë‹ˆë‹¤.");
 //				System.exit(0);
-				break; // switch¹®À» ³ª°¡°í
+				break; // switchë¬¸ì„ ë‚˜ê°€ê³ 
 			}
-			break; // ÀüÃ¼ while¹®À» ³ª°£´Ù.
+			break; // ì „ì²´ whileë¬¸ì„ ë‚˜ê°„ë‹¤.
 		}
 	}
 }

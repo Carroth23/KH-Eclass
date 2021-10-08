@@ -4,17 +4,17 @@ import java.util.*;
 public class Quiz_05 {
 	public static void main(String[] args) {
 
-		// Áßº¹µÇÁö¾Ê´Â 6°³ÀÇ 1 ~ 45»çÀÌÀÇ ¼ıÀÚ + º¸³Ê½º ¹øÈ£ ( ÃÑ 7°³ÀÇ ¼ıÀÚ )
-		// ¿À´ÃÀÇ ·Î¶Ç ¹øÈ£ ÃßÃµ ÇÁ·Î±×·¥
+		// ì¤‘ë³µë˜ì§€ì•ŠëŠ” 6ê°œì˜ 1 ~ 45ì‚¬ì´ì˜ ìˆ«ì + ë³´ë„ˆìŠ¤ ë²ˆí˜¸ ( ì´ 7ê°œì˜ ìˆ«ì )
+		// ì˜¤ëŠ˜ì˜ ë¡œë˜ ë²ˆí˜¸ ì¶”ì²œ í”„ë¡œê·¸ë¨
 
-		int[] lotto = new int[45]; // 45°³ÀÇ Ä­À» »ı¼º
+		int[] lotto = new int[45]; // 45ê°œì˜ ì¹¸ì„ ìƒì„±
 
-		// ·Î¶Ç¹øÈ£ ÃÊ±âÈ­ 1 ~ 45 ±îÁö ¼ø¼­´ë·Î
+		// ë¡œë˜ë²ˆí˜¸ ì´ˆê¸°í™” 1 ~ 45 ê¹Œì§€ ìˆœì„œëŒ€ë¡œ
 		for (int i = 0; i < lotto.length; i++) {
 			lotto[i] = i + 1;
 		}
 
-		// ¸ğµç ·Î¶Ç ¹øÈ£ Ä«µå ÇÑÀå¾¿ ¼¯±â
+		// ëª¨ë“  ë¡œë˜ ë²ˆí˜¸ ì¹´ë“œ í•œì¥ì”© ì„ê¸°
 		for (int i = 0; i < lotto.length; i++) {
 			int j = (int) (Math.random() * 45);
 			int tmp = lotto[i];
@@ -22,13 +22,13 @@ public class Quiz_05 {
 			lotto[j] = tmp;
 		}
 
-		// ÃßÃµ¹øÈ£¸¦ ÃßÃµ¹øÈ£ ¹è¿­¿¡ º¹»ç
-		int[] rcmd = new int[6]; // º¹»çÇÒ »õ·Î¿î 6Ä­ÀÇ ¹è¿­ »ı¼º
+		// ì¶”ì²œë²ˆí˜¸ë¥¼ ì¶”ì²œë²ˆí˜¸ ë°°ì—´ì— ë³µì‚¬
+		int[] rcmd = new int[6]; // ë³µì‚¬í•  ìƒˆë¡œìš´ 6ì¹¸ì˜ ë°°ì—´ ìƒì„±
 		for (int i = 0; i < 6; i++) {
 			rcmd[i] = lotto[i];
 		}
 
-		// ÃßÃµ ¹øÈ£ ¹è¿­ Á¤·Ä
+		// ì¶”ì²œ ë²ˆí˜¸ ë°°ì—´ ì •ë ¬
 		for (int i = 0; i < rcmd.length - 1; i++) {
 			for (int j = 0; j < rcmd.length - 1; j++) {
 				if (rcmd[j] > rcmd[j + 1]) {
@@ -39,12 +39,12 @@ public class Quiz_05 {
 			}
 		}
 
-		// ÃßÃµ ¹øÈ£ ¹ßÇ¥
-		System.out.print("¿À´ÃÀÇ ·Î¶Ç ¹øÈ£ : ");
+		// ì¶”ì²œ ë²ˆí˜¸ ë°œí‘œ
+		System.out.print("ì˜¤ëŠ˜ì˜ ë¡œë˜ ë²ˆí˜¸ : ");
 		for (int i = 0; i < rcmd.length; i++) {
 			System.out.print(rcmd[i] + " ");
 		}
-		System.out.println("º¸³Ê½º ¹øÈ£ : " + lotto[6]);
+		System.out.println("ë³´ë„ˆìŠ¤ ë²ˆí˜¸ : " + lotto[6]);
 	}
 
 }

@@ -6,13 +6,13 @@ public class Ex01 {
 
 		Scanner sc = new Scanner(System.in);
 
-		System.out.println("ÀÛ¼ºÀÚ¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä.");
+		System.out.println("ì‘ì„±ìë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”.");
 		String str = sc.nextLine();
 
-		System.out.println("³²±æ ¸Ş¼¼Áö¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä.");
+		System.out.println("ë‚¨ê¸¸ ë©”ì„¸ì§€ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”.");
 		String str2 = sc.nextLine();
 
-		System.out.println(str + " ´ÔÀÌ ³²±ä ¸Ş¼¼Áö");
+		System.out.println(str + " ë‹˜ì´ ë‚¨ê¸´ ë©”ì„¸ì§€");
 		System.out.println(str2);
 	}
 

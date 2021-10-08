@@ -1,19 +1,18 @@
-
 public class Exam_04_Overload {
 	
-	// ¸Ş¼­µå ¿À¹ö ·Îµù
-	// ¸Ş¼­µå ÀÌ¸§ÀÌ °°¾Æµµ ¸Å°³º¯¼öÀÇ Å¸ÀÔÀÌ ´Ù¸£°Å³ª °¹¼ö°¡ ´Ù¸£¸é ¼­·Î °°ÀºÀÌ¸§À» ÀÎÁ¤ÇØÁØ´Ù
-	// ¸Ş¼­µå ¿À¹ö·ÎµùÀº ¸Å°³º¯¼öÀÇ Â÷ÀÌ¿¡ ÀÇÇØ¼­¸¸ Á¤ÇØÁø´Ù.
+	// ë©”ì„œë“œ ì˜¤ë²„ ë¡œë”©
+	// ë©”ì„œë“œ ì´ë¦„ì´ ê°™ì•„ë„ ë§¤ê°œë³€ìˆ˜ì˜ íƒ€ì…ì´ ë‹¤ë¥´ê±°ë‚˜ ê°¯ìˆ˜ê°€ ë‹¤ë¥´ë©´ ì„œë¡œ ê°™ì€ì´ë¦„ì„ ì¸ì •í•´ì¤€ë‹¤
+	// ë©”ì„œë“œ ì˜¤ë²„ë¡œë”©ì€ ë§¤ê°œë³€ìˆ˜ì˜ ì°¨ì´ì— ì˜í•´ì„œë§Œ ì •í•´ì§„ë‹¤.
 	public static void func(int a) {
-		System.out.println("func1() ÀÔ´Ï´Ù.");
+		System.out.println("func1() ì…ë‹ˆë‹¤.");
 	}
 	
 	public static void func(String a) {
-		System.out.println("func2() ÀÔ´Ï´Ù.");
+		System.out.println("func2() ì…ë‹ˆë‹¤.");
 	}
 	
 	public static void func() {
-		System.out.println("func3() ÀÔ´Ï´Ù.");
+		System.out.println("func3() ì…ë‹ˆë‹¤.");
 	}
 	
 	public static void main(String[] args) {

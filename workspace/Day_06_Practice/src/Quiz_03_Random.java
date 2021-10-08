@@ -1,12 +1,11 @@
-
 public class Quiz_03_Random {
 
 	public static void main(String[] args) {
 
-		System.out.println("0 ~ 9 ±îÁöÀÇ ·£´ı ¼ö : " + (int)(Math.random() * 10));
-		System.out.println("1 ~ 10 ±îÁöÀÇ ·£´ı ¼ö : " + ((int)(Math.random() * 10) + 1));
-		System.out.println("20 ~ 35 ±îÁöÀÇ ·£´ı ¼ö : " + (int)(Math.random() * (35 - 20 +1) + 20));
-		System.out.println("0 ¶Ç´Â 1 : " + (int)(Math.random() * 2));
+		System.out.println("0 ~ 9 ê¹Œì§€ì˜ ëœë¤ ìˆ˜ : " + (int)(Math.random() * 10));
+		System.out.println("1 ~ 10 ê¹Œì§€ì˜ ëœë¤ ìˆ˜ : " + ((int)(Math.random() * 10) + 1));
+		System.out.println("20 ~ 35 ê¹Œì§€ì˜ ëœë¤ ìˆ˜ : " + (int)(Math.random() * (35 - 20 +1) + 20));
+		System.out.println("0 ë˜ëŠ” 1 : " + (int)(Math.random() * 2));
 		
 	}
 

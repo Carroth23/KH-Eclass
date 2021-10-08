@@ -1,4 +1,3 @@
-
 public class Ex05 {
 
 	public static void main(String[] args) {
@@ -7,10 +6,10 @@ public class Ex05 {
 		long l = 100L;
 		final byte ON = 1;
 		
-		// ¸®ÅÍ·² : 100, 100L, 1
-		// º¯¼ö : i, l
-		// »ó¼ö : ON
-		// ¿¹¾à¾î : final, byte, long, int ..µîµî
+		// ë¦¬í„°ëŸ´ : 100, 100L, 1
+		// ë³€ìˆ˜ : i, l
+		// ìƒìˆ˜ : ON
+		// ì˜ˆì•½ì–´ : final, byte, long, int ..ë“±ë“±
 	}
 
 }

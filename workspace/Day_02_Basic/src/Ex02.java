@@ -1,4 +1,3 @@
-
 public class Ex02 {
 
 	public static void main(String[] args) {
@@ -8,11 +7,11 @@ public class Ex02 {
 		int i = 100;
 		long l = 1000L;
 		
-		b = (byte)i; // ´ã°ÜÀÖ´Â °ª 100ÀÌ byteÀÇ À¯È¿¹üÀ§ÀÌÁö¸¸ int°ª ÀÚÃ¼°¡ Ä¿¼­ ¾ÈµÊ
+		b = (byte)i; // ë‹´ê²¨ìˆëŠ” ê°’ 100ì´ byteì˜ ìœ íš¨ë²”ìœ„ì´ì§€ë§Œ intê°’ ìì²´ê°€ ì»¤ì„œ ì•ˆë¨
 		ch = (char)b;
 		short s = (short)ch;
-		float f = (float)l; // Ä³½ºÆÃ ¾ø¾îµµ µÊ
-		i = (int)ch; // Ä³½ºÆÃ ¾ø¾îµµ µÊ
+		float f = (float)l; // ìºìŠ¤íŒ… ì—†ì–´ë„ ë¨
+		i = (int)ch; // ìºìŠ¤íŒ… ì—†ì–´ë„ ë¨
 	}
 
 }

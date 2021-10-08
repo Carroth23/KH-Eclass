@@ -5,17 +5,17 @@ public class Exam_05 {
 
 	public static void main(String[] args) {
 
-		// Áßº¹µÇÁö ¾Ê´Â ¼ö¸¦ ¸¸µå´Â ¹æ¹ı.
+		// ì¤‘ë³µë˜ì§€ ì•ŠëŠ” ìˆ˜ë¥¼ ë§Œë“œëŠ” ë°©ë²•.
 //		System.out.println((int)(Math.random() * 5 + 1));
 //		System.out.println((int)(Math.random() * 5 + 1));
 //		System.out.println((int)(Math.random() * 5 + 1));
 
-		// 1 ~ 5 »çÀÌÀÇ Áßº¹µÇÁö ¾Ê´Â ³­¼ö 3°³ ¸¸µé±â!
-		// Ä«µå¼¯±â ¾Ë°í¸®Áò
+		// 1 ~ 5 ì‚¬ì´ì˜ ì¤‘ë³µë˜ì§€ ì•ŠëŠ” ë‚œìˆ˜ 3ê°œ ë§Œë“¤ê¸°!
+		// ì¹´ë“œì„ê¸° ì•Œê³ ë¦¬ì¦˜
 
 		int[] arr = { 1, 2, 3, 4, 5 };
 
-		// ½¬¿î¹öÀü Ä«µå¼¯±â ¾Ë°í¸®Áò
+		// ì‰¬ìš´ë²„ì „ ì¹´ë“œì„ê¸° ì•Œê³ ë¦¬ì¦˜
 		for (int i = 0; i < arr.length * 100; i++) {
 			int x = (int) (Math.random() * 5); // 0 ~ 4
 			int y = (int) (Math.random() * 5); // 0 ~ 4

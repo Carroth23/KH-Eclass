@@ -11,16 +11,16 @@ public class Quiz_04 {
 		int[] eng = new int[3];
 		
 		for (int i = 0; i < name.length; i++) {
-			System.out.print(i+1 + " ¹øÂ° ÇÐ»ýÀÇ ÀÌ¸§ : ");
+			System.out.print(i+1 + " ë²ˆì§¸ í•™ìƒì˜ ì´ë¦„ : ");
 			name[i] = sc.nextLine();
-			System.out.print(name[i] + " ÇÐ»ýÀÇ ±¹¾î : ");
+			System.out.print(name[i] + " í•™ìƒì˜ êµ­ì–´ : ");
 			kor[i] = Integer.parseInt(sc.nextLine());
-			System.out.print(name[i] + " ÇÐ»ýÀÇ ¿µ¾î : ");
+			System.out.print(name[i] + " í•™ìƒì˜ ì˜ì–´ : ");
 			eng[i] = Integer.parseInt(sc.nextLine());
 		}
 		
-		System.out.println("============ °á °ú ============");
-		System.out.println("ÀÌ¸§\t±¹¾î\t¿µ¾î\tÇÕ°è\tÆò±Õ");
+		System.out.println("============ ê²° ê³¼ ============");
+		System.out.println("ì´ë¦„\têµ­ì–´\tì˜ì–´\tí•©ê³„\tí‰ê· ");
 		for (int i = 0; i < name.length; i++) {
 			System.out.printf("%s\t%d\t%d\t%3d\t%.1f%n", name[i], kor[i], eng[i], (kor[i] + eng[i]), (kor[i] + eng[i]) / 2.0);
 		}

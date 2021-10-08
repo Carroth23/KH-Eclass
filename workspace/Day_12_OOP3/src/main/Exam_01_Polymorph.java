@@ -2,20 +2,20 @@ package main;
 
 class A{
 	public void funcA() {
-		System.out.println("funcA ÀÔ´Ï´Ù.");
+		System.out.println("funcA ì…ë‹ˆë‹¤.");
 	}
 }
 
 class B extends A{
 	public void funcA() {
-		System.out.println("funcBÀÔ´Ï´Ù.");
+		System.out.println("funcBì…ë‹ˆë‹¤.");
 	}
 }
 
 public class Exam_01_Polymorph {
 	public static void main(String[] args) {
-		// ´ÙÇü¼º : Å¬·¡½º°£ »ó¼Ó°ü°Ô¿¡¼­¸¸ ¹ßÇöµÇ´Â ¼­·Î ´Ù¸¥ Å¸ÀÔÀÇ °ªÀ» °¡Áú ¼ö ÀÖ´Â ¼ºÁú
-		// ±ÔÄ¢ : »óÀ§Å¬·¡½º ÂüÁ¶º¯¼ö´Â ÀÚ½ÅÀ» »ó¼Ó¹Ş´Â ÇÏÀ§Å¬·¡½º ÀÎ½ºÅÏ½ºÀÇ ÁÖ¼Ò¸¦ ÀúÀåÇÒ ¼ö ÀÖ´Ù.
+		// ë‹¤í˜•ì„± : í´ë˜ìŠ¤ê°„ ìƒì†ê´€ê²Œì—ì„œë§Œ ë°œí˜„ë˜ëŠ” ì„œë¡œ ë‹¤ë¥¸ íƒ€ì…ì˜ ê°’ì„ ê°€ì§ˆ ìˆ˜ ìˆëŠ” ì„±ì§ˆ
+		// ê·œì¹™ : ìƒìœ„í´ë˜ìŠ¤ ì°¸ì¡°ë³€ìˆ˜ëŠ” ìì‹ ì„ ìƒì†ë°›ëŠ” í•˜ìœ„í´ë˜ìŠ¤ ì¸ìŠ¤í„´ìŠ¤ì˜ ì£¼ì†Œë¥¼ ì €ì¥í•  ìˆ˜ ìˆë‹¤.
 		
 		
 		

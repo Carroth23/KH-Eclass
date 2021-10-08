@@ -2,25 +2,25 @@ import java.util.Scanner;
 
 public class Exam_01_If {
 	public static void main(String[] args) {
-		// if - else¹® (Á¶°Ç ºĞ±â¹®)
-		// true, false¸¸À» ¹İÈ¯ÇÑ´Ù.
+		// if - elseë¬¸ (ì¡°ê±´ ë¶„ê¸°ë¬¸)
+		// true, falseë§Œì„ ë°˜í™˜í•œë‹¤.
 
 		Scanner sc = new Scanner(System.in);
 
-		System.out.println("´ç½ÅÀÌ ÁÁ¾ÆÇÏ´Â °úÀÏÀ» ¼±ÅÃÇÏ¼¼¿ä.");
-		System.out.println("1.»ç°ú 2.¹Ù³ª³ª 3.Æ÷µµ");
+		System.out.println("ë‹¹ì‹ ì´ ì¢‹ì•„í•˜ëŠ” ê³¼ì¼ì„ ì„ íƒí•˜ì„¸ìš”.");
+		System.out.println("1.ì‚¬ê³¼ 2.ë°”ë‚˜ë‚˜ 3.í¬ë„");
 		System.out.print(">> ");
 		int menu = Integer.parseInt(sc.nextLine());
 
-		if/* ¸¸¾à¿¡ ¸Ş´º¾ÈÀÇ °ªÀÌ 1°ú °°´Ù¸é */ (menu == 1) {
-			System.out.println("»ç°ú´Â ¿µ¾î·Î Apple ÀÔ´Ï´Ù.");
-		} else if/* ±×·¸Áö¾Ê´Ù¸é ¸¸¾à¿¡ */ (menu == 2) {
-			System.out.println("¹Ù³ª³ª´Â ¿µ¾î·Î Banana ÀÔ´Ï´Ù.");
-			System.out.println("±×¸®°í ¸ÀÀÖ¾î¿ä.");
+		if/* ë§Œì•½ì— ë©”ë‰´ì•ˆì˜ ê°’ì´ 1ê³¼ ê°™ë‹¤ë©´ */ (menu == 1) {
+			System.out.println("ì‚¬ê³¼ëŠ” ì˜ì–´ë¡œ Apple ì…ë‹ˆë‹¤.");
+		} else if/* ê·¸ë ‡ì§€ì•Šë‹¤ë©´ ë§Œì•½ì— */ (menu == 2) {
+			System.out.println("ë°”ë‚˜ë‚˜ëŠ” ì˜ì–´ë¡œ Banana ì…ë‹ˆë‹¤.");
+			System.out.println("ê·¸ë¦¬ê³  ë§›ìˆì–´ìš”.");
 		} else if (menu == 3) {
-			System.out.println("Æ÷µµ´Â ¿µ¾î·Î Grape ÀÔ´Ï´Ù.");
-		} else/* ±×·¸Áö ¾Ê´Ù¸é(else´Â if¹®¿¡ ºÙ¾î¼­¸¸ »ç¿ë°¡´É) *else¹®Àº Á¶°ÇÀÌ ¾ø´Ù. */ {
-			System.out.println("¸Ş´º¸¦ ´Ù½Ã È®ÀÎÇØÁÖ¼¼¿ä.");
+			System.out.println("í¬ë„ëŠ” ì˜ì–´ë¡œ Grape ì…ë‹ˆë‹¤.");
+		} else/* ê·¸ë ‡ì§€ ì•Šë‹¤ë©´(elseëŠ” ifë¬¸ì— ë¶™ì–´ì„œë§Œ ì‚¬ìš©ê°€ëŠ¥) *elseë¬¸ì€ ì¡°ê±´ì´ ì—†ë‹¤. */ {
+			System.out.println("ë©”ë‰´ë¥¼ ë‹¤ì‹œ í™•ì¸í•´ì£¼ì„¸ìš”.");
 		}
 	}
 }

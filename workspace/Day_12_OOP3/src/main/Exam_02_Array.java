@@ -8,36 +8,36 @@ public class Exam_02_Array {
 		arr[1] = "Java";
 		arr[2] = "World";
 		
-		// Ãâ·Â
+		// ì¶œë ¥
 		System.out.println(arr[0]);
 		System.out.println(arr[1]);
 		System.out.println(arr[2]);
 		System.out.println("----------------------------");
 		
-		// »èÁ¦
+		// ì‚­ì œ
 		arr[0] = arr[1];
 		arr[1] = arr[2];
 		arr[2] = null;
 		
-		// Ãâ·Â
+		// ì¶œë ¥
 		System.out.println(arr[0]);
 		System.out.println(arr[1]);
 		System.out.println(arr[2]);
 		System.out.println("----------------------------");
 		
-		// »ğÀÔ
+		// ì‚½ì…
 		arr[2] = arr[1];
 		arr[1] = arr[0];
 		arr[0] = "Good";
 		
-		// Ãâ·Â
+		// ì¶œë ¥
 		System.out.println(arr[0]);
 		System.out.println(arr[1]);
 		System.out.println(arr[2]);
 		
 		arr[3] = "Hello";
 		
-		// Ãâ·Â
+		// ì¶œë ¥
 		System.out.println(arr[0]);
 		System.out.println(arr[1]);
 		System.out.println(arr[2]);

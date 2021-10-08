@@ -5,27 +5,27 @@ public class Quiz_03_If {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 
-		// ÇÁ·Î±×·¥ ½ÃÀÛ
-		System.out.println("¼ºÀû °ü¸®ÇÁ·Î±×·¥ ver2.1");
+		// í”„ë¡œê·¸ë¨ ì‹œì‘
+		System.out.println("ì„±ì  ê´€ë¦¬í”„ë¡œê·¸ë¨ ver2.1");
 		System.out.println("===================");
-		System.out.print("ÀÌ ¸§ : ");
+		System.out.print("ì´ ë¦„ : ");
 		String name = sc.nextLine();
 
-		// Á¡¼ö ÀÔ·Â¶õ
+		// ì ìˆ˜ ì…ë ¥ë€
 		System.out.println("===================");
-		System.out.print("±¹ ¾î : ");
+		System.out.print("êµ­ ì–´ : ");
 		int kor = Integer.parseInt(sc.nextLine());
-		System.out.print("¿µ ¾î : ");
+		System.out.print("ì˜ ì–´ : ");
 		int eng = Integer.parseInt(sc.nextLine());
-		System.out.print("¼ö ÇĞ : ");
+		System.out.print("ìˆ˜ í•™ : ");
 		int math = Integer.parseInt(sc.nextLine());
 
-		// ÇÕ°è Ãâ·Â¶õ
+		// í•©ê³„ ì¶œë ¥ë€
 		System.out.println("====================");
 		int total = kor + eng + math;
 		double avg = total / 3.0;
 
-		// indentation - µé¿©¾²±â / ³»¾î¾²±â : Auto Indent = ctrl + i
+		// indentation - ë“¤ì—¬ì“°ê¸° / ë‚´ì–´ì“°ê¸° : Auto Indent = ctrl + i
 
 		String lev = "D";
 		if (avg >= 95) {
@@ -38,9 +38,9 @@ public class Quiz_03_If {
 			lev = "C";
 		}
 
-		System.out.println("ÇÕ °è : " + total);
-		System.out.printf("Æò ±Õ : %.2f%n", avg);
-		System.out.println("¼º Àû : " + lev);
+		System.out.println("í•© ê³„ : " + total);
+		System.out.printf("í‰ ê·  : %.2f%n", avg);
+		System.out.println("ì„± ì  : " + lev);
 		System.out.println("====================");
 
 	}

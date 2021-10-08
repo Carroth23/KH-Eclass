@@ -1,28 +1,27 @@
-
 public class Exam_01 {
 
-	public static void main(String[] args) throws Exception/* ¿¹¿Ü Ã³¸® (¹®Á¦¹ß»ı½Ã ÇÁ·Î±×·¥ Á¾·á) */ {
+	public static void main(String[] args) throws Exception/* ì˜ˆì™¸ ì²˜ë¦¬ (ë¬¸ì œë°œìƒì‹œ í”„ë¡œê·¸ë¨ ì¢…ë£Œ) */ {
 
-		// System.out.println("Hello World"); // È­¸é¿¡ Hello World¸¦ Ãâ·ÂÇÏ¼¼¿ä
+		// System.out.println("Hello World"); // í™”ë©´ì— Hello Worldë¥¼ ì¶œë ¥í•˜ì„¸ìš”
 
-		// System.in.read(); // ÇÁ·Î±×·¥ »ç¿ëÀÚ·ÎºÎÅÍ ÇÑ±ÛÀÚÀÇ ÀÔ·ÂÀ» ¹ŞÀ¸¼¼¿ä.
-		// ¸î±ÛÀÚ¸¦ ÀÔ·ÂÇÏ´ø ÀÔ·ÂµÈ ¸ğµç ±ÛÀÚÁß ¸Ç ¾ÕÀÇ ÇÑ±ÛÀÚ¸¸ ¹öÆÛ¿¡¼­ °¡Á®°¨.
+		// System.in.read(); // í”„ë¡œê·¸ë¨ ì‚¬ìš©ìë¡œë¶€í„° í•œê¸€ìì˜ ì…ë ¥ì„ ë°›ìœ¼ì„¸ìš”.
+		// ëª‡ê¸€ìë¥¼ ì…ë ¥í•˜ë˜ ì…ë ¥ëœ ëª¨ë“  ê¸€ìì¤‘ ë§¨ ì•ì˜ í•œê¸€ìë§Œ ë²„í¼ì—ì„œ ê°€ì ¸ê°.
 
-		System.out.print("¹®ÀÚ¸¦ ÇÑ±ÛÀÚ ÀÔ·ÂÇÏ¼¼¿ä : ");
-		int num = System.in.read(); // ÀÌ·± ÄÚµåµµ °¡´É. ¹öÆÛ¿¡¼­ ÇÑ±ÛÀÚ¸¸ ¶¼¾î°¨.
-		System.out.println("ÀÔ·Â¹ŞÀº ¹®ÀÚÀÇ °ªÀº : " + num);
+		System.out.print("ë¬¸ìë¥¼ í•œê¸€ì ì…ë ¥í•˜ì„¸ìš” : ");
+		int num = System.in.read(); // ì´ëŸ° ì½”ë“œë„ ê°€ëŠ¥. ë²„í¼ì—ì„œ í•œê¸€ìë§Œ ë–¼ì–´ê°.
+		System.out.println("ì…ë ¥ë°›ì€ ë¬¸ìì˜ ê°’ì€ : " + num);
 
-		System.out.print("¹®ÀÚ¸¦ ÇÑ±ÛÀÚ ÀÔ·ÂÇÏ¼¼¿ä : ");
+		System.out.print("ë¬¸ìë¥¼ í•œê¸€ì ì…ë ¥í•˜ì„¸ìš” : ");
 		int num2 = System.in.read(); //
-		System.out.println("ÀÔ·Â¹ŞÀº ¹®ÀÚÀÇ °ªÀº : " + num2);
+		System.out.println("ì…ë ¥ë°›ì€ ë¬¸ìì˜ ê°’ì€ : " + num2);
 
-		System.out.print("¹®ÀÚ¸¦ ÇÑ±ÛÀÚ ÀÔ·ÂÇÏ¼¼¿ä : ");
+		System.out.print("ë¬¸ìë¥¼ í•œê¸€ì ì…ë ¥í•˜ì„¸ìš” : ");
 		int num3 = System.in.read(); //
-		System.out.println("ÀÔ·Â¹ŞÀº ¹®ÀÚÀÇ °ªÀº : " + num3);
+		System.out.println("ì…ë ¥ë°›ì€ ë¬¸ìì˜ ê°’ì€ : " + num3);
 
-		System.out.print("¹®ÀÚ¸¦ ÇÑ±ÛÀÚ ÀÔ·ÂÇÏ¼¼¿ä : ");
+		System.out.print("ë¬¸ìë¥¼ í•œê¸€ì ì…ë ¥í•˜ì„¸ìš” : ");
 		int num4 = System.in.read(); //
-		System.out.println("ÀÔ·Â¹ŞÀº ¹®ÀÚÀÇ °ªÀº : " + num4); // ¹öÆÛ¿¡ ¾ÆÁ÷ ¿£ÅÍ°¡ ÀÖÁö¸¸ ½Ã½ºÅÛÀÌ ³¡³ª¼­ ÀüºÎ »ç¶óÁü.
+		System.out.println("ì…ë ¥ë°›ì€ ë¬¸ìì˜ ê°’ì€ : " + num4); // ë²„í¼ì— ì•„ì§ ì—”í„°ê°€ ìˆì§€ë§Œ ì‹œìŠ¤í…œì´ ëë‚˜ì„œ ì „ë¶€ ì‚¬ë¼ì§.
 
 	}
 

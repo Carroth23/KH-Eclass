@@ -5,10 +5,10 @@ public class Exam_02 {
 
 		Scanner sc = new Scanner(System.in);
 
-		// System.in.read(); // ÇÑ±ÛÀÚ¸¸ intÇüÀ¸·Î ÀÔ·Â¹Ş´Â´Ù.
+		// System.in.read(); // í•œê¸€ìë§Œ intí˜•ìœ¼ë¡œ ì…ë ¥ë°›ëŠ”ë‹¤.
 
-		System.out.println("³²±æ ¸Ş¼¼Áö¸¦ ÀÌ“ÒÇØÁÖ¼¼¿ä.");
-		String str = sc.nextLine(); // ÇÑ ¶óÀÎÀ» StringÇüÀ¸·Î ÀÔ·Â¹Ş´Â´Ù.
-		System.out.println("ÀÔ·ÂÇÑ ¸Ş¼¼Áö´Â : " + str);
+		System.out.println("ë‚¨ê¸¸ ë©”ì„¸ì§€ë¥¼ ì´Â“ï¤´è »ç²ì…€.");
+		String str = sc.nextLine(); // í•œ ë¼ì¸ì„ Stringí˜•ìœ¼ë¡œ ì…ë ¥ë°›ëŠ”ë‹¤.
+		System.out.println("ì…ë ¥í•œ ë©”ì„¸ì§€ëŠ” : " + str);
 	}
 }

@@ -1,12 +1,12 @@
-public class Exam_01_Concept { // Å¬·¡½º ÀÌ¸§Àº ÆÄÀÏ¸í°ú ¶È°°ÀÌ
-	public static void main(String[] args) { // ½ÃÀÛÁöÁ¡ (mainÀº ½ÃÀÛÄ¿¸Çµå)
+public class Exam_01_Concept { // í´ë˜ìŠ¤ ì´ë¦„ì€ íŒŒì¼ëª…ê³¼ ë˜‘ê°™ì´
+	public static void main(String[] args) { // ì‹œì‘ì§€ì  (mainì€ ì‹œì‘ì»¤ë§¨ë“œ)
 		
-		// () <-- ¼Ò°ıÈ£ , {} <-- Áß°ıÈ£, [] <-- ´ë°ıÈ£
+		// () <-- ì†Œê´„í˜¸ , {} <-- ì¤‘ê´„í˜¸, [] <-- ëŒ€ê´„í˜¸
 		
-		System.out.println("\"Hello World\""); // \´Â ÀÌ½ºÄÉÀÌÇÁ¹®ÀÚ
+		System.out.println("\"Hello World\""); // \ëŠ” ì´ìŠ¤ì¼€ì´í”„ë¬¸ì
 		System.out.println(100);
-		// ÀÌ ÄÚµå´Â 100À» ¼ıÀÚ·Î Ãâ·ÂÇÏ´Â ÄÚµå
-		// ÁÖ¼®Àº ÄÄÆÄÀÏ¿¡¼­ ¸ğµÎ ¶³¾îÁ®³ª°¨.
+		// ì´ ì½”ë“œëŠ” 100ì„ ìˆ«ìë¡œ ì¶œë ¥í•˜ëŠ” ì½”ë“œ
+		// ì£¼ì„ì€ ì»´íŒŒì¼ì—ì„œ ëª¨ë‘ ë–¨ì–´ì ¸ë‚˜ê°.
 		
 		System.out.println('A');
 		System.out.println(3.14);
@@ -15,9 +15,9 @@ public class Exam_01_Concept { // Å¬·¡½º ÀÌ¸§Àº ÆÄÀÏ¸í°ú ¶È°°ÀÌ
 }
 
 
-// Convention - °ü½À, °ü·Ê
+// Convention - ê´€ìŠµ, ê´€ë¡€
 
-// BSD Style Áß°ıÈ£ Ç¥±â¹ı(¹ØÀ¸·Î ³»·Á¾´´Ù)
+// BSD Style ì¤‘ê´„í˜¸ í‘œê¸°ë²•(ë°‘ìœ¼ë¡œ ë‚´ë ¤ì“´ë‹¤)
 //public class Exam_01
 //{
 //	public static void main(String[] args)
@@ -26,7 +26,7 @@ public class Exam_01_Concept { // Å¬·¡½º ÀÌ¸§Àº ÆÄÀÏ¸í°ú ¶È°°ÀÌ
 //	}
 //}
 
-//GNU Style (¹ØÀ¸·Î ³»¸®°í ¿À¸¥ÂÊÀ¸·Î ÇÑ¹ø ¹Ò)
+//GNU Style (ë°‘ìœ¼ë¡œ ë‚´ë¦¬ê³  ì˜¤ë¥¸ìª½ìœ¼ë¡œ í•œë²ˆ ë°ˆ)
 //public class Exam_01
 //	{
 //	public static void main(String[] args)
@@ -34,7 +34,7 @@ public class Exam_01_Concept { // Å¬·¡½º ÀÌ¸§Àº ÆÄÀÏ¸í°ú ¶È°°ÀÌ
 //		}
 //	}
 
-//K&R Style (À¯¸í°³¹ßÀÚ µÎ »ç¶÷ÀÇ Ç¥±â¹ıÀ» µû¶ó¾²´Â °¡Àå´ëÁßÀûÀÎ ¹æ½Ä)
+//K&R Style (ìœ ëª…ê°œë°œì ë‘ ì‚¬ëŒì˜ í‘œê¸°ë²•ì„ ë”°ë¼ì“°ëŠ” ê°€ì¥ëŒ€ì¤‘ì ì¸ ë°©ì‹)
 //public class Exam_01 {
 //	public static void main(String[] args) {
 //		

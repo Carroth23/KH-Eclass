@@ -4,15 +4,15 @@ public class Ex02 {
 	public static void main(String[] args) {
 
 		Scanner sc = new Scanner(System.in);
-		// ¿©·¯ÀÚ¸® ¼ıÀÚ µÎ °³¸¦ ÀÔ·Â¹Ş¾Æ
-		// µ¡¼ÀÇÑ °á°ú¸¦ Ãâ·ÂÇÏ´Â ÇÁ·Î±×·¥À» ÀÛ¼ºÇÏ¼¼¿ä.
+		// ì—¬ëŸ¬ìë¦¬ ìˆ«ì ë‘ ê°œë¥¼ ì…ë ¥ë°›ì•„
+		// ë§ì…ˆí•œ ê²°ê³¼ë¥¼ ì¶œë ¥í•˜ëŠ” í”„ë¡œê·¸ë¨ì„ ì‘ì„±í•˜ì„¸ìš”.
 
-		System.out.println("Ã¹¹øÂ° ¼ıÀÚ¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä.");
+		System.out.println("ì²«ë²ˆì§¸ ìˆ«ìë¥¼ ì…ë ¥í•´ ì£¼ì„¸ìš”.");
 		int num1 = Integer.parseInt(sc.nextLine());
-		System.out.println("µÎ¹øÂ° ¼ıÀÚ¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä.");
+		System.out.println("ë‘ë²ˆì§¸ ìˆ«ìë¥¼ ì…ë ¥í•´ ì£¼ì„¸ìš”.");
 		int num2 = Integer.parseInt(sc.nextLine());
 
-		System.out.println("µ¡¼ÀÇÑ °á°ú´Â : " + (num1 + num2) + " ÀÔ´Ï´Ù.");
+		System.out.println("ë§ì…ˆí•œ ê²°ê³¼ëŠ” : " + (num1 + num2) + " ì…ë‹ˆë‹¤.");
 	}
 
 }

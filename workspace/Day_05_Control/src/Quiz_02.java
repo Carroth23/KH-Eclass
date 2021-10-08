@@ -5,35 +5,35 @@ public class Quiz_02 {
 	public static void main(String[] args) {
 		
 		Scanner sc = new Scanner(System.in);
-		System.out.println("=== °è»ê±â ÇÁ·Î±×·¥ ===");
+		System.out.println("=== ê³„ì‚°ê¸° í”„ë¡œê·¸ë¨ ===");
 		
 		while (true) {
-			System.out.println(); // ÁÙ¹Ù²Ş
-			System.out.println("¿¬»êÀÚ ÀÔ·Â (+, -, *, /) : ");
-			String oper = sc.nextLine(); // ÀÔ·Â°ª ÀúÀå
+			System.out.println(); // ì¤„ë°”ê¿ˆ
+			System.out.println("ì—°ì‚°ì ì…ë ¥ (+, -, *, /) : ");
+			String oper = sc.nextLine(); // ì…ë ¥ê°’ ì €ì¥
 
 			if (!oper.equals("+") && !oper.equals("-") && !oper.equals("*") && !oper.equals("/")) {
-				// ¿¬»êÀÚ ÀÌ¿ÜÀÇ °ªÀ» ´©¸£¸é Àç½ÃÀÛ
-				System.out.println("º¸±â¿¡ Á¦½ÃµÈ ¿¬»êÀÚ°¡ ¾Æ´Õ´Ï´Ù.");
-				System.out.println(); // ÁÙ¹Ù²Ş
+				// ì—°ì‚°ì ì´ì™¸ì˜ ê°’ì„ ëˆ„ë¥´ë©´ ì¬ì‹œì‘
+				System.out.println("ë³´ê¸°ì— ì œì‹œëœ ì—°ì‚°ìê°€ ì•„ë‹™ë‹ˆë‹¤.");
+				System.out.println(); // ì¤„ë°”ê¿ˆ
 				
-				System.out.println("¿¬»êÀ» Á¾·áÇÏ½Ã°Ú½À´Ï±î? Y/N"); // ´õÇÒÁö ¸»Áö Äù½ºÃÅ
+				System.out.println("ì—°ì‚°ì„ ì¢…ë£Œí•˜ì‹œê² ìŠµë‹ˆê¹Œ? Y/N"); // ë”í• ì§€ ë§ì§€ í€˜ìŠ¤ì³”
 				String qes1 = sc.nextLine();
 				if (qes1.equals("y") || qes1.equals("Y")) {
-					System.out.println("ÇÁ·Î±×·¥À» Á¾·áÇÕ´Ï´Ù.");
+					System.out.println("í”„ë¡œê·¸ë¨ì„ ì¢…ë£Œí•©ë‹ˆë‹¤.");
 					break;
 				}
-				continue; // ´Ù½Ã½ÃÀÛ
+				continue; // ë‹¤ì‹œì‹œì‘
 			}
 			
-			System.out.println("Ã¹ ¹øÂ° ¼ıÀÚ ÀÔ·Â : ");
+			System.out.println("ì²« ë²ˆì§¸ ìˆ«ì ì…ë ¥ : ");
 			int num1 = Integer.parseInt(sc.nextLine());
 			
-			System.out.println("µÎ ¹øÂ° ¼ıÀÚ ÀÔ·Â : ");
+			System.out.println("ë‘ ë²ˆì§¸ ìˆ«ì ì…ë ¥ : ");
 			int num2 = Integer.parseInt(sc.nextLine());
 			
-			System.out.println(); // ÁÙ¹Ù²Ş
-			System.out.println("====== °á °ú ======");
+			System.out.println(); // ì¤„ë°”ê¿ˆ
+			System.out.println("====== ê²° ê³¼ ======");
 			System.out.println();
 
 			switch (oper) {
@@ -51,10 +51,10 @@ public class Quiz_02 {
 				break;
 			}
 			
-			System.out.println("¿¬»êÀ» Á¾·áÇÏ½Ã°Ú½À´Ï±î? Y/N"); // ´õÇÒÁö ¸»Áö Äù½ºÃÅ
+			System.out.println("ì—°ì‚°ì„ ì¢…ë£Œí•˜ì‹œê² ìŠµë‹ˆê¹Œ? Y/N"); // ë”í• ì§€ ë§ì§€ í€˜ìŠ¤ì³”
 			String qes2 = sc.nextLine();
 			if (qes2.equals("y") || qes2.equals("Y")) {
-				System.out.println("ÇÁ·Î±×·¥À» Á¾·áÇÕ´Ï´Ù.");
+				System.out.println("í”„ë¡œê·¸ë¨ì„ ì¢…ë£Œí•©ë‹ˆë‹¤.");
 				break;
 			}
 		}

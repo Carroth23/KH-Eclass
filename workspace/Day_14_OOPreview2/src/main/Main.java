@@ -14,19 +14,19 @@ public class Main {
 		Manager manager = new Manager();
 
 		while (true) {
-			System.out.println("== Ä«Æä ¸Ş´º °ü¸® ==");
-			System.out.println("1. ½Å±Ô ¸Ş´º µî·Ï");
-			System.out.println("2. ¸Ş´º ¸ñ·Ï Ãâ·Â");
-			System.out.println("3. ¸Ş´º Á¤º¸ »èÁ¦");
-			System.out.println("4. ½Ã½ºÅÛ Á¾·á");
+			System.out.println("== ì¹´í˜ ë©”ë‰´ ê´€ë¦¬ ==");
+			System.out.println("1. ì‹ ê·œ ë©”ë‰´ ë“±ë¡");
+			System.out.println("2. ë©”ë‰´ ëª©ë¡ ì¶œë ¥");
+			System.out.println("3. ë©”ë‰´ ì •ë³´ ì‚­ì œ");
+			System.out.println("4. ì‹œìŠ¤í…œ ì¢…ë£Œ");
 			System.out.print(">> ");
 			String menu = sc.nextLine();
 
 			if (menu.equals("1")) {
-//				System.out.print("¸Ş´º ÀÌ¸§ : ");
+//				System.out.print("ë©”ë‰´ ì´ë¦„ : ");
 //				String name = sc.nextLine();
 //
-//				System.out.print("¸Ş´º °¡°İ : ");
+//				System.out.print("ë©”ë‰´ ê°€ê²© : ");
 //				int price = Integer.parseInt(sc.nextLine());
 //
 //				Menu m = new Menu(seq++, name, price);
@@ -39,27 +39,27 @@ public class Main {
 
 			} else if (menu.equals("2")) {
 				ArrayList<Menu> menus = manager.getMenus();
-				System.out.println("¸Ş´º¹øÈ£\t¸Ş´ºÀÌ¸§\t¸Ş´º°¡°İ");
+				System.out.println("ë©”ë‰´ë²ˆí˜¸\të©”ë‰´ì´ë¦„\të©”ë‰´ê°€ê²©");
 				for (Menu m : menus) {
 					System.out.println(m.getId() + "\t" + m.getName() + "\t" + m.getPrice());
 				}
 			} else if (menu.equals("3")) {
 
 				ArrayList<Menu> menus = manager.getMenus();
-				System.out.println("¸Ş´º¹øÈ£\t¸Ş´ºÀÌ¸§\t¸Ş´º°¡°İ");
+				System.out.println("ë©”ë‰´ë²ˆí˜¸\të©”ë‰´ì´ë¦„\të©”ë‰´ê°€ê²©");
 				for (Menu m : menus) {
 					System.out.println(m.getId() + "\t" + m.getName() + "\t" + m.getPrice());
 				}
 
-				System.out.print("»èÁ¦ÇÒ Ç×¸ñÀÇ ID : ");
+				System.out.print("ì‚­ì œí•  í•­ëª©ì˜ ID : ");
 				int target = Integer.parseInt(sc.nextLine());
 
 				manager.deleteMenu(target);
 			} else if (menu.equals("4")) {
-				System.out.println("½Ã½ºÅÛÀ» Á¾·áÇÕ´Ï´Ù.");
+				System.out.println("ì‹œìŠ¤í…œì„ ì¢…ë£Œí•©ë‹ˆë‹¤.");
 				System.exit(0);
 			} else {
-				System.out.println("¸Ş´º¸¦ ´Ù½Ã È®ÀÎÇÏ¼¼¿ä.");
+				System.out.println("ë©”ë‰´ë¥¼ ë‹¤ì‹œ í™•ì¸í•˜ì„¸ìš”.");
 			}
 		}
 

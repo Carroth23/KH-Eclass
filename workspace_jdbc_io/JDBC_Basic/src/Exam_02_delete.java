@@ -5,16 +5,16 @@ import java.sql.Statement;
 public class Exam_02_delete {
 	public static void main(String[] args) {
 		
-		// ·Îµù
+		// ë¡œë”©
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 		} catch (Exception e) {
 			e.printStackTrace();
-			System.out.println("OJDBC µå¶óÀÌ¹ö¸¦ ¹ß°ßÇÏÁö ¸øÇß½À´Ï´Ù.");
+			System.out.println("OJDBC ë“œë¼ì´ë²„ë¥¼ ë°œê²¬í•˜ì§€ ëª»í–ˆìŠµë‹ˆë‹¤.");
 			System.exit(0);
 		}
 		
-		// Á¢¼Ó
+		// ì ‘ì†
 		String url = "jdbc:oracle:thin:@175.123.204.32:1521:xe";
 		String username = "kh";
 		String password = "kh";
@@ -22,21 +22,21 @@ public class Exam_02_delete {
 		try {
 			Connection con = DriverManager.getConnection(url, username, password);
 			
-			// Query¹ß»ç
+			// Queryë°œì‚¬
 			Statement stat = con.createStatement();
 			int result = stat.executeUpdate("delete from cafe_menu where id = '1008'");
 			
 			if (result > 0) {
-				System.out.println("»èÁ¦¿Ï·á");
+				System.out.println("ì‚­ì œì™„ë£Œ");
 			} else {
-				System.out.println("»èÁ¦ ½ÇÆĞ");
+				System.out.println("ì‚­ì œ ì‹¤íŒ¨");
 			}
 			
 			con.close();
 			
 		} catch (Exception e) {
 			e.printStackTrace();
-			System.out.println("Á¢¼Ó¿¡ ½ÇÆĞÇß½À´Ï´Ù.");
+			System.out.println("ì ‘ì†ì— ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤.");
 			System.exit(0);
 		}
 	}

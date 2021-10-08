@@ -4,20 +4,20 @@ public class Quiz_01_If {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		System.out.println("ÀÔ·Â°ª ºñ±³ÇÁ·Î±×·¥ ver1.2");
-		System.out.println("Ã¹¹øÂ° °ªÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä.>");
+		System.out.println("ì…ë ¥ê°’ ë¹„êµí”„ë¡œê·¸ë¨ ver1.2");
+		System.out.println("ì²«ë²ˆì§¸ ê°’ì„ ì…ë ¥í•´ì£¼ì„¸ìš”.>");
 		int num1 = sc.nextInt();
-		System.out.println("µÎ¹øÂ° °ªÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä.>");
+		System.out.println("ë‘ë²ˆì§¸ ê°’ì„ ì…ë ¥í•´ì£¼ì„¸ìš”.>");
 		int num2 = Integer.parseInt(sc.nextLine());
 
-		System.out.println("==== °á °ú ====");
+		System.out.println("==== ê²° ê³¼ ====");
 		System.out.println();
 		if (num1 > num2) {
-			System.out.println("Ã¹ ¹øÂ° ÀÔ·ÂÇÑ °ªÀÌ ´õ Å®´Ï´Ù.");
+			System.out.println("ì²« ë²ˆì§¸ ì…ë ¥í•œ ê°’ì´ ë” í½ë‹ˆë‹¤.");
 		} else if (num1 < num2) {
-			System.out.println("µÎ ¹øÂ° ÀÔ·ÂÇÑ °ªÀÌ ´õ Å®´Ï´Ù.");
+			System.out.println("ë‘ ë²ˆì§¸ ì…ë ¥í•œ ê°’ì´ ë” í½ë‹ˆë‹¤.");
 		} else {
-			System.out.println("µÎ °ªÀÌ °°½À´Ï´Ù.");
+			System.out.println("ë‘ ê°’ì´ ê°™ìŠµë‹ˆë‹¤.");
 		}
 	}
 

@@ -5,68 +5,68 @@ public class Exam_03_Try {
 	public static void main(String[] args) {
 
 		Scanner sc = new Scanner(System.in);
-		System.out.println("=== °è»ê±â ÇÁ·Î±×·¥ ===");
+		System.out.println("=== ê³„ì‚°ê¸° í”„ë¡œê·¸ë¨ ===");
 
 		while (true) {
-			System.out.println(); // ÁÙ¹Ù²Ş
-			System.out.println("¿¬»êÀÚ ÀÔ·Â (+, -, *, /) : ");
-			String oper = sc.nextLine(); // ÀÔ·Â°ª ÀúÀå
+			System.out.println(); // ì¤„ë°”ê¿ˆ
+			System.out.println("ì—°ì‚°ì ì…ë ¥ (+, -, *, /) : ");
+			String oper = sc.nextLine(); // ì…ë ¥ê°’ ì €ì¥
 
 			if (!oper.equals("+") && !oper.equals("-") && !oper.equals("*") && !oper.equals("/")) {
-				// ¿¬»êÀÚ ÀÌ¿ÜÀÇ °ªÀ» ´©¸£¸é Àç½ÃÀÛ
-				System.out.println("º¸±â¿¡ Á¦½ÃµÈ ¿¬»êÀÚ°¡ ¾Æ´Õ´Ï´Ù.");
-				System.out.println(); // ÁÙ¹Ù²Ş
+				// ì—°ì‚°ì ì´ì™¸ì˜ ê°’ì„ ëˆ„ë¥´ë©´ ì¬ì‹œì‘
+				System.out.println("ë³´ê¸°ì— ì œì‹œëœ ì—°ì‚°ìê°€ ì•„ë‹™ë‹ˆë‹¤.");
+				System.out.println(); // ì¤„ë°”ê¿ˆ
 
-				System.out.println("¿¬»êÀ» Á¾·áÇÏ½Ã°Ú½À´Ï±î? Y/N"); // ´õÇÒÁö ¸»Áö Äù½ºÃÅ
+				System.out.println("ì—°ì‚°ì„ ì¢…ë£Œí•˜ì‹œê² ìŠµë‹ˆê¹Œ? Y/N"); // ë”í• ì§€ ë§ì§€ í€˜ìŠ¤ì³”
 				String qes1 = sc.nextLine();
 				if (qes1.equals("y") || qes1.equals("Y")) {
-					System.out.println("ÇÁ·Î±×·¥À» Á¾·áÇÕ´Ï´Ù.");
+					System.out.println("í”„ë¡œê·¸ë¨ì„ ì¢…ë£Œí•©ë‹ˆë‹¤.");
 					break;
 				}
-				continue; // ´Ù½Ã½ÃÀÛ
+				continue; // ë‹¤ì‹œì‹œì‘
 			}
 			
 			int num1 = 0;
 			int num2 = 0;
 
-//			while (true) { ÀÌ·¸°Ô ¹­À» ¼ö ÀÖÁö¸¸, ÀÌ·¯¸é »ç¿ëÀÚ°¡ ºÒÆíÇÏ´Ù.
+//			while (true) { ì´ë ‡ê²Œ ë¬¶ì„ ìˆ˜ ìˆì§€ë§Œ, ì´ëŸ¬ë©´ ì‚¬ìš©ìê°€ ë¶ˆí¸í•˜ë‹¤.
 //				try {
-//					System.out.println("Ã¹ ¹øÂ° ¼ıÀÚ ÀÔ·Â : ");
+//					System.out.println("ì²« ë²ˆì§¸ ìˆ«ì ì…ë ¥ : ");
 //					num1 = Integer.parseInt(sc.nextLine());
 //
-//					System.out.println("µÎ ¹øÂ° ¼ıÀÚ ÀÔ·Â : ");
+//					System.out.println("ë‘ ë²ˆì§¸ ìˆ«ì ì…ë ¥ : ");
 //					num2 = Integer.parseInt(sc.nextLine());
 //					break;
 //				} catch (Exception e) {
-//					System.out.println("¼ıÀÚ¸¦ È®ÀÎÇØÁÖ¼¼¿ä.");
+//					System.out.println("ìˆ«ìë¥¼ í™•ì¸í•´ì£¼ì„¸ìš”.");
 //					continue;
 //				}
 //			}
 			
 			while (true) {
 				try {
-					System.out.println("Ã¹ ¹øÂ° ¼ıÀÚ ÀÔ·Â : ");
+					System.out.println("ì²« ë²ˆì§¸ ìˆ«ì ì…ë ¥ : ");
 					num1 = Integer.parseInt(sc.nextLine());
 					break;
 				} catch (Exception e) {
-					System.out.println("¼ıÀÚ¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä.");
-//					continue; // ÄÁÆ¼´º´Â ¾ø¾îµµ µÈ´Ù. ¾îÂ÷ÇÇ À§·Î ¿Ã¶ó°¡±â ¶§¹®.
+					System.out.println("ìˆ«ìë¥¼ ì…ë ¥í•´ ì£¼ì„¸ìš”.");
+//					continue; // ì»¨í‹°ë‰´ëŠ” ì—†ì–´ë„ ëœë‹¤. ì–´ì°¨í”¼ ìœ„ë¡œ ì˜¬ë¼ê°€ê¸° ë•Œë¬¸.
 				}
 			}
 			
 			while (true) {
 				try {
-					System.out.println("µÎ ¹øÂ° ¼ıÀÚ ÀÔ·Â : ");
+					System.out.println("ë‘ ë²ˆì§¸ ìˆ«ì ì…ë ¥ : ");
 					num2 = Integer.parseInt(sc.nextLine());
 					break;
 				} catch (Exception e) {
-					System.out.println("¼ıÀÚ¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä.");
+					System.out.println("ìˆ«ìë¥¼ ì…ë ¥í•´ ì£¼ì„¸ìš”.");
 				}
 			}
 			
 			
-			System.out.println(); // ÁÙ¹Ù²Ş
-			System.out.println("====== °á °ú ======");
+			System.out.println(); // ì¤„ë°”ê¿ˆ
+			System.out.println("====== ê²° ê³¼ ======");
 			System.out.println();
 
 			switch (oper) {
@@ -84,10 +84,10 @@ public class Exam_03_Try {
 				break;
 			}
 
-			System.out.println("¿¬»êÀ» Á¾·áÇÏ½Ã°Ú½À´Ï±î? Y/N"); // ´õÇÒÁö ¸»Áö Äù½ºÃÅ
+			System.out.println("ì—°ì‚°ì„ ì¢…ë£Œí•˜ì‹œê² ìŠµë‹ˆê¹Œ? Y/N"); // ë”í• ì§€ ë§ì§€ í€˜ìŠ¤ì³”
 			String qes2 = sc.nextLine();
 			if (qes2.equals("y") || qes2.equals("Y")) {
-				System.out.println("ÇÁ·Î±×·¥À» Á¾·áÇÕ´Ï´Ù.");
+				System.out.println("í”„ë¡œê·¸ë¨ì„ ì¢…ë£Œí•©ë‹ˆë‹¤.");
 				break;
 			}
 		}

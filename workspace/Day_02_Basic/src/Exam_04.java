@@ -1,21 +1,20 @@
-
 public class Exam_04 {
 
 	public static void main(String[] args) {
 		
 //		short a = 10;
-//		byte b = (byte)a; // Çüº¯È¯
+//		byte b = (byte)a; // í˜•ë³€í™˜
 //		
 //		short a = 1000;
-//		byte b = (byte)a; // Çüº¯È¯À» ÇßÁö¸¸ ¿ª½Ã short¿¡´Â ¸øµé¾î°¡´Â °æ¿ì
+//		byte b = (byte)a; // í˜•ë³€í™˜ì„ í–ˆì§€ë§Œ ì—­ì‹œ shortì—ëŠ” ëª»ë“¤ì–´ê°€ëŠ” ê²½ìš°
 		
 //		System.out.println(b);
 		
-//		Char = short ¿ª½Ã CastingÇÊ¿ä
+//		Char = short ì—­ì‹œ Castingí•„ìš”
 		
 		int a = 5;
-		System.out.println("º¯¼ö a ¾È¿¡ ÀúÀåµÈ °ªÀº " + a + " ÀÔ´Ï´Ù.");
-//		float f = 3.14; //f¸¦ ¾ÈºÙ¿´À»¶§ ¿¡·¯°¡ ³ª´Â ÀÌÀ¯´Â ±âº»Å¸ÀÓÀº doubleÀÎµ¥ ±× ´õºíÀ» float¿¡ ³ÖÀ¸·Á ÇÏ±â¶§¹®
+		System.out.println("ë³€ìˆ˜ a ì•ˆì— ì €ì¥ëœ ê°’ì€ " + a + " ì…ë‹ˆë‹¤.");
+//		float f = 3.14; //fë¥¼ ì•ˆë¶™ì˜€ì„ë•Œ ì—ëŸ¬ê°€ ë‚˜ëŠ” ì´ìœ ëŠ” ê¸°ë³¸íƒ€ì„ì€ doubleì¸ë° ê·¸ ë”ë¸”ì„ floatì— ë„£ìœ¼ë ¤ í•˜ê¸°ë•Œë¬¸
 		
 	}
 }

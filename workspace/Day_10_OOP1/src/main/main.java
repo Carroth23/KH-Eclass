@@ -10,16 +10,16 @@ public class main {
 
 	public static void main(String[] args) throws Exception {
 
-//		new Èü¿¡´Ù ¸¸µé°Ú´Ù »õ·Î¿î°É ¸¸µé°Ú´Ù
-		Monitor m; // ¸ð´ÏÅÍ Å¬·¡½º°¡ ÂüÁ¶º¯¼öÇüÃ³·³ µÇ¾î¹ö¸² ÀÌ»óÅÂ´Â ¾ÆÁ÷ ¸ð´ÏÅÍ°¡ ¸Þ¸ð¸®¿¡ ¾ø´Ù
-//		Monitor m = new Monitor(); ÀÌ·¸°Ô ÀÛ¼ºÇØ¾ß ¸Þ¸ð¸®¿¡ ¿Ã¶ó¿È
-//		new Monitor(); ÀÌ·¸°Ô ÀÛ¼ºÇØµµ ¸Þ¸ð¸®¿¡ ¿Ã¶ó¿È
+//		new íž™ì—ë‹¤ ë§Œë“¤ê² ë‹¤ ìƒˆë¡œìš´ê±¸ ë§Œë“¤ê² ë‹¤
+		Monitor m; // ëª¨ë‹ˆí„° í´ëž˜ìŠ¤ê°€ ì°¸ì¡°ë³€ìˆ˜í˜•ì²˜ëŸ¼ ë˜ì–´ë²„ë¦¼ ì´ìƒíƒœëŠ” ì•„ì§ ëª¨ë‹ˆí„°ê°€ ë©”ëª¨ë¦¬ì— ì—†ë‹¤
+//		Monitor m = new Monitor(); ì´ë ‡ê²Œ ìž‘ì„±í•´ì•¼ ë©”ëª¨ë¦¬ì— ì˜¬ë¼ì˜´
+//		new Monitor(); ì´ë ‡ê²Œ ìž‘ì„±í•´ë„ ë©”ëª¨ë¦¬ì— ì˜¬ë¼ì˜´
 		
 		Scanner sc = new Scanner(System.in);
 		Monitor m1 = new Monitor();
 		Monitor m2 = new Monitor();
 		
-//		m. // . À» ÂüÁ¶¿¬»êÀÚ¶ó°í ºÎ¸¥´Ù.(ÁÖ¼Ò·Î Ã£¾Æ°¡¶ó)
+//		m. // . ì„ ì°¸ì¡°ì—°ì‚°ìžë¼ê³  ë¶€ë¥¸ë‹¤.(ì£¼ì†Œë¡œ ì°¾ì•„ê°€ë¼)
 		
 //		Robot r = new Robot();
 //		for (int i = 0; i < 100; i++) {
@@ -31,21 +31,21 @@ public class main {
 		lg.setChannel(10);
 		System.out.println(lg.getChannel());
 		
-//		Book bo = new Book(/*»ý¼ºÀÚ ÄÝÀÌ±â ¶§¹®¿¡ ¿©±â¿¡ ÆÄ¶ó¹ÌÅÍµµ ÀÔ·Â °¡´É*/ 1001, "¿¬±Ý¼ú»ç", 14000);
+//		Book bo = new Book(/*ìƒì„±ìž ì½œì´ê¸° ë•Œë¬¸ì— ì—¬ê¸°ì— íŒŒë¼ë¯¸í„°ë„ ìž…ë ¥ ê°€ëŠ¥*/ 1001, "ì—°ê¸ˆìˆ ì‚¬", 14000);
 //		bo.setId(1001);
 //		bo.setPrice(14000);
-//		bo.setTitle("·Î¹Ì¿À¿ÍÁÙ¸®¿§");
+//		bo.setTitle("ë¡œë¯¸ì˜¤ì™€ì¤„ë¦¬ì—£");
 		
 		
-//		Book bo2 = new Book(1002, "¾ÆÇÁ¸é º´¿ø°¡¶ó", 150); // »ý¼ºÀÚ¸¦ ÅëÇÑ °ª ¼¼ÆÃ
+//		Book bo2 = new Book(1002, "ì•„í”„ë©´ ë³‘ì›ê°€ë¼", 150); // ìƒì„±ìžë¥¼ í†µí•œ ê°’ ì„¸íŒ…
 //		bo2.setId(1002);
 //		bo2.setPrice(15000);
-//		bo2.setTitle("¿¬±Ý¼ú»ç");
+//		bo2.setTitle("ì—°ê¸ˆìˆ ì‚¬");
 		
 //		Book bo3 = new Book();
 //		bo3.setId(1003);
 //		bo3.setPrice(20000);
-//		bo3.setTitle("ÇØÄ¿½ºÅäÀÍ");
+//		bo3.setTitle("í•´ì»¤ìŠ¤í† ìµ");
 //		
 //		System.out.println(bo.getId());
 //		System.out.println(bo.getTitle());
@@ -57,7 +57,7 @@ public class main {
 //		System.out.println(bo3.getTitle());
 //		System.out.println(bo3.getPrice());
 //		
-//		System.out.println("Ã¥ 3±ÇÀÇ ÀüÃ¼ °¡°ÝÀº " + (bo.getPrice() + bo2.getPrice() + bo3.getPrice()));
+//		System.out.println("ì±… 3ê¶Œì˜ ì „ì²´ ê°€ê²©ì€ " + (bo.getPrice() + bo2.getPrice() + bo3.getPrice()));
 		
 		Student std1 = new Student(1001, "Jin", 90, 60, 80);
 		System.out.println(std1.getName());
@@ -87,11 +87,11 @@ public class main {
 		
 		
 		
-//		System.out.println("Jack ÇÐ»ýÀÇ ÃÑÁ¡ : " + (std1.getKor() + std1.getEng() + std1.getMath()));
-//		System.out.println("Jack ÇÐ»ýÀÇ ÃÑÁ¡ : " + std1.getSum());
-//		System.out.printf("Jack ÇÐ»ýÀÇ Æò±Õ : %.2f%n%n", std1.getDiv());
-//		System.out.println("Jane ÇÐ»ýÀÇ ÃÑÁ¡ : " + std2.getSum());
-//		System.out.printf("Jane ÇÐ»ýÀÇ Æò±Õ : %.2f%n", std2.getDiv());
+//		System.out.println("Jack í•™ìƒì˜ ì´ì  : " + (std1.getKor() + std1.getEng() + std1.getMath()));
+//		System.out.println("Jack í•™ìƒì˜ ì´ì  : " + std1.getSum());
+//		System.out.printf("Jack í•™ìƒì˜ í‰ê·  : %.2f%n%n", std1.getDiv());
+//		System.out.println("Jane í•™ìƒì˜ ì´ì  : " + std2.getSum());
+//		System.out.printf("Jane í•™ìƒì˜ í‰ê·  : %.2f%n", std2.getDiv());
 	}
 
 }

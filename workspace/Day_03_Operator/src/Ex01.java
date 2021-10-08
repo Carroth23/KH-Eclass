@@ -1,4 +1,3 @@
-
 public class Ex01 {
 	public static void main(String[] args) {
 		int x = 10;
@@ -7,10 +6,10 @@ public class Ex01 {
 		int result2;
 		result2 = x + y; // result2 = 30
 		System.out.println(x + " + " + y + " = " + result2); // 30
-		x = y = 2; // x, y¸¦ 2·Î ÃÊ±âÈ­
-		System.out.println("x = " + x++ + ", y = " + ++y); // x = 2, y = 3 y´Â ÀüÀ§ÇüÀÌ¹Ç·Î +1
-		System.out.println("x = " + x + ", y = " + y); // x = 3, y = 3 ÈÄÀ§ÇüÀÌ¾ú´ø x¸¦ +1
-		y = 10; // y¸¦ 10À¸·Î ÃÊ±âÈ­
+		x = y = 2; // x, yë¥¼ 2ë¡œ ì´ˆê¸°í™”
+		System.out.println("x = " + x++ + ", y = " + ++y); // x = 2, y = 3 yëŠ” ì „ìœ„í˜•ì´ë¯€ë¡œ +1
+		System.out.println("x = " + x + ", y = " + y); // x = 3, y = 3 í›„ìœ„í˜•ì´ì—ˆë˜ xë¥¼ +1
+		y = 10; // yë¥¼ 10ìœ¼ë¡œ ì´ˆê¸°í™”
 		result = !(((x > y) || (y == x)) || ((x != y) && (x < y))); // x = 3, y = 10
 		System.out.println(result); // false
 	}

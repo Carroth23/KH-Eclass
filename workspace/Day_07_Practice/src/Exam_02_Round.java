@@ -11,7 +11,7 @@ public class Exam_02_Round {
 		System.out.println(Math.round(b));
 		System.out.println(Math.round(a * 10) / 10.0);
 		
-		double result = (a > b) ? a : b; // »ïÇ×¿¬»êÀÚ (if - else)
+		double result = (a > b) ? a : b;
 		
 	}
 }

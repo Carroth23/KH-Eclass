@@ -5,42 +5,42 @@ public class Quiz_01 {
 
 		Scanner sc = new Scanner(System.in);
 
-		System.out.println("=== °¡À§ ¹ÙÀ§ º¸ °ÔÀÓ ===");
+		System.out.println("=== ê°€ìœ„ ë°”ìœ„ ë³´ ê²Œì„ ===");
 		int sel = 0;
 		while (true) {
 			try {
-				System.out.println("¼ıÀÚ¸¦ ¼±ÅÃÇÏ¼¼¿ä(1.°¡À§ / 2.¹ÙÀ§ / 3.º¸) : ");
+				System.out.println("ìˆ«ìë¥¼ ì„ íƒí•˜ì„¸ìš”(1.ê°€ìœ„ / 2.ë°”ìœ„ / 3.ë³´) : ");
 				sel = Integer.parseInt(sc.nextLine());
 				if (0 < sel && sel < 4) {break;}
-				System.out.println("¸Ş´º ¹üÀ§¸¦ ´Ù½Ã È®ÀÎÇØÁÖ¼¼¿ä.");
-			} catch (Exception e) {System.out.println("¸Ş´º¸¦ È®ÀÎÇÏ°í ´Ù½Ã ÀÔ·ÂÇØÁÖ¼¼¿ä.");}
+				System.out.println("ë©”ë‰´ ë²”ìœ„ë¥¼ ë‹¤ì‹œ í™•ì¸í•´ì£¼ì„¸ìš”.");
+			} catch (Exception e) {System.out.println("ë©”ë‰´ë¥¼ í™•ì¸í•˜ê³  ë‹¤ì‹œ ì…ë ¥í•´ì£¼ì„¸ìš”.");}
 		}
 		
-		System.out.println("======= °á°ú =======");
+		System.out.println("======= ê²°ê³¼ =======");
 		if (sel == 1) {
-			System.out.println("´ç½ÅÀº °¡À§¸¦ ³Â½À´Ï´Ù.");
+			System.out.println("ë‹¹ì‹ ì€ ê°€ìœ„ë¥¼ ëƒˆìŠµë‹ˆë‹¤.");
 		} else if (sel == 2) {
-			System.out.println("´ç½ÅÀº ¹ÙÀ§¸¦ ³Â½À´Ï´Ù.");
+			System.out.println("ë‹¹ì‹ ì€ ë°”ìœ„ë¥¼ ëƒˆìŠµë‹ˆë‹¤.");
 		} else if (sel == 3) {
-			System.out.println("´ç½ÅÀº º¸¸¦ ³Â½À´Ï´Ù.");
+			System.out.println("ë‹¹ì‹ ì€ ë³´ë¥¼ ëƒˆìŠµë‹ˆë‹¤.");
 		}
 		
-		int ran = (int) (Math.random() * 3 + 1); // ÄÄÇ»ÅÍ°¡ »ı¼ºÇÑ ³­¼ö
+		int ran = (int) (Math.random() * 3 + 1); // ì»´í“¨í„°ê°€ ìƒì„±í•œ ë‚œìˆ˜
 		if (ran == 1) {
-			System.out.println("ÄÄÇ»ÅÍ´Â °¡À§¸¦ ³Â½À´Ï´Ù.");
+			System.out.println("ì»´í“¨í„°ëŠ” ê°€ìœ„ë¥¼ ëƒˆìŠµë‹ˆë‹¤.");
 		} else if (ran == 2) {
-			System.out.println("ÄÄÇ»ÅÍ´Â ¹ÙÀ§¸¦ ³Â½À´Ï´Ù.");
+			System.out.println("ì»´í“¨í„°ëŠ” ë°”ìœ„ë¥¼ ëƒˆìŠµë‹ˆë‹¤.");
 		} else if (ran == 3) {
-			System.out.println("ÄÄÇ»ÅÍ´Â º¸¸¦ ³Â½À´Ï´Ù.");
+			System.out.println("ì»´í“¨í„°ëŠ” ë³´ë¥¼ ëƒˆìŠµë‹ˆë‹¤.");
 		}
 
 		System.out.println("====================");
 		if ((sel == 1 && ran == 3) || (sel == 2 && ran == 1) || (sel == 3 && ran == 2)) {
-			System.out.println("´ç½ÅÀÌ ÀÌ°å½À´Ï´Ù!");
+			System.out.println("ë‹¹ì‹ ì´ ì´ê²¼ìŠµë‹ˆë‹¤!");
 		} else if (sel == ran) {
-			System.out.println("ºñ°å½À´Ï´Ù.");
+			System.out.println("ë¹„ê²¼ìŠµë‹ˆë‹¤.");
 		} else {
-			System.out.println("ÄÄÇ»ÅÍ°¡ ÀÌ°å½À´Ï´Ù!");
+			System.out.println("ì»´í“¨í„°ê°€ ì´ê²¼ìŠµë‹ˆë‹¤!");
 		}
 
 	}

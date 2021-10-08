@@ -3,19 +3,19 @@ public class Quiz_11_While {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-//		=== 1~n±îÁöÀÇ ÇÕ ±¸ÇÏ±â===
-//		n ÀÔ·Â : 100
-//		1~100±îÁöÀÇ ÇÕÀº 5050ÀÔ´Ï´Ù.
+//		=== 1~nê¹Œì§€ì˜ í•© êµ¬í•˜ê¸°===
+//		n ì…ë ¥ : 100
+//		1~100ê¹Œì§€ì˜ í•©ì€ 5050ì…ë‹ˆë‹¤.
 		
-		System.out.println("=== 1 ~ n ±îÁöÀÇ ÇÕ ±¸ÇÏ±â ===");
-		System.out.println("n ÀÔ·Â : ");
+		System.out.println("=== 1 ~ n ê¹Œì§€ì˜ í•© êµ¬í•˜ê¸° ===");
+		System.out.println("n ì…ë ¥ : ");
 		int num = Integer.parseInt(sc.nextLine());
 		int sum = 1;
 		int i = 1;
 		while (i++ < num) {
 			sum += i;
 		}
-		System.out.printf("1 ~ %d ±îÁöÀÇ ÇÕÀº %d ÀÔ´Ï´Ù.", num, sum);
+		System.out.printf("1 ~ %d ê¹Œì§€ì˜ í•©ì€ %d ì…ë‹ˆë‹¤.", num, sum);
 		
 	}
 

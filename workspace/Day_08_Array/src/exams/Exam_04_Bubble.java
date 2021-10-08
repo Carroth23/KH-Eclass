@@ -6,15 +6,15 @@ public class Exam_04_Bubble {
 
 		int[] arr = { 10, 7, 8, 1, 2, 4, 5, 3, 9, 6 };
 
-		System.out.print("Á¤·Ä Àü : ");
+		System.out.print("ì •ë ¬ ì „ : ");
 		for (int i = 0; i < arr.length; i++) {
 			System.out.print(arr[i] + " ");
 		}
 		System.out.println();
 
-		// Bubble ¿ä¼Ò(n),  n-1¹øÀ» n-1¹ø µ¹·Á¾ß ÇÑ´Ù.
-		for (int i = 0; i < arr.length - i; i++) { // n-i(Å«¼ö¸¦ ³¡À¸·Î º¸³»°í È½¼ö¿¡¼­ Á¦¿Ü)
-			for (int j = 0; j < arr.length - 1; j++) { // ´Ù½Ã n-1(9¹ø µ¹¸²)
+		// Bubble ìš”ì†Œ(n),  n-1ë²ˆì„ n-1ë²ˆ ëŒë ¤ì•¼ í•œë‹¤.
+		for (int i = 0; i < arr.length - i; i++) { // n-i(í°ìˆ˜ë¥¼ ëìœ¼ë¡œ ë³´ë‚´ê³  íšŸìˆ˜ì—ì„œ ì œì™¸)
+			for (int j = 0; j < arr.length - 1; j++) { // ë‹¤ì‹œ n-1(9ë²ˆ ëŒë¦¼)
 				if (arr[j] > arr[j+1]) {
 					int tmp = arr[j];
 					arr[j] = arr[j+1];
@@ -23,9 +23,9 @@ public class Exam_04_Bubble {
 			}
 		}
 		
-		// Á¤·Ä ÄÚµå - Bubble sort
+		// ì •ë ¬ ì½”ë“œ - Bubble sort
 
-		System.out.print("Á¤·Ä ÈÄ : ");
+		System.out.print("ì •ë ¬ í›„ : ");
 		for (int i = 0; i < arr.length; i++) {
 			System.out.print(arr[i] + " ");
 		}

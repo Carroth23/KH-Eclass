@@ -5,13 +5,13 @@ import java.util.ArrayList;
 public class Exam_02_ArrayList {
 	public static void main(String[] args) {
 
-		// Object : ÀÚ¹Ù¿¡ Á¸ÀçÇÏ´Â ¸ğµçÅ¬·¡½ºÀÇ ÃÖ°í Á¶»ó
+		// Object : ìë°”ì— ì¡´ì¬í•˜ëŠ” ëª¨ë“ í´ë˜ìŠ¤ì˜ ìµœê³  ì¡°ìƒ
 		
 		
 		
 		
 		ArrayList arr = new ArrayList();
-		// ÀÔ·Â
+		// ì…ë ¥
 		arr.add("Hello");
 		arr.add("Java");
 		arr.add("World");
@@ -19,31 +19,31 @@ public class Exam_02_ArrayList {
 		
 		arr.size();
 		
-		// Ãâ·Â
+		// ì¶œë ¥
 		System.out.println(arr.get(0));
 		System.out.println(arr.get(1));
 		System.out.println(arr.get(2));
 		System.out.println("----------------------------");
 		
-		// »èÁ¦
+		// ì‚­ì œ
 		arr.remove(0);
 		
-		// Ãâ·Â
+		// ì¶œë ¥
 		System.out.println(arr.get(0));
 		System.out.println(arr.get(1));
-//		System.out.println(arr.get(2)); Á¸ÀçÇÏÁö ¾ÊÀ½
+//		System.out.println(arr.get(2)); ì¡´ì¬í•˜ì§€ ì•ŠìŒ
 		System.out.println("----------------------------");
 		
-		// »ğÀÔ
+		// ì‚½ì…
 		arr.add(0, "Good");
 		
-		// Ãâ·Â
+		// ì¶œë ¥
 		System.out.println(arr.get(0));
 		System.out.println(arr.get(1));
 		System.out.println(arr.get(2));
 		System.out.println("----------------------------");
 		
-		// µ¥ÀÌÅÍ °³¼ö¿¡ Á¦ÇÑ ¾øÀ½(¸Ş¸ğ¸®°¡ Çã°¡ ÇÏ´Â ÇÑ)
+		// ë°ì´í„° ê°œìˆ˜ì— ì œí•œ ì—†ìŒ(ë©”ëª¨ë¦¬ê°€ í—ˆê°€ í•˜ëŠ” í•œ)
 		arr.add("Hello");
 		arr.add("Java");
 		arr.add("World");

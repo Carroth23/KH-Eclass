@@ -6,33 +6,33 @@ public class Quiz_06_Lotto {
 
 		Scanner sc = new Scanner(System.in);
 
-		int bonus = 0; // º¸³Ê½º ¹øÈ£ ÀúÀåº¯¼ö »ı¼º
-		int bonusCh = 0; // º¸³Ê½º ´çÃ· È®ÀÎ¿ë º¯¼ö
+		int bonus = 0; // ë³´ë„ˆìŠ¤ ë²ˆí˜¸ ì €ì¥ë³€ìˆ˜ ìƒì„±
+		int bonusCh = 0; // ë³´ë„ˆìŠ¤ ë‹¹ì²¨ í™•ì¸ìš© ë³€ìˆ˜
 		
-		int[] lotto = new int[45]; // ·Î¶Ç ¹øÈ£ ÀúÀåÀ» À§ÇÑ 45°³ÀÇ ¹è¿­·Î ÀÌ·ç¾îÁø ¹æ »ı¼º
-		int[] mylotto = new int[45]; // ³» ¹øÈ£¸¦ À§ÇØ Àç»ı¼º
+		int[] lotto = new int[45]; // ë¡œë˜ ë²ˆí˜¸ ì €ì¥ì„ ìœ„í•œ 45ê°œì˜ ë°°ì—´ë¡œ ì´ë£¨ì–´ì§„ ë°© ìƒì„±
+		int[] mylotto = new int[45]; // ë‚´ ë²ˆí˜¸ë¥¼ ìœ„í•´ ì¬ìƒì„±
 		
-		for (int i = 0; i < lotto.length; i++) { // °¢ ¹æÀÇ ¼ø¼­¿¡ ¸Â°Ô 1 ~ 45¹øÈ£¸¦ ÃÊ±âÈ­
+		for (int i = 0; i < lotto.length; i++) { // ê° ë°©ì˜ ìˆœì„œì— ë§ê²Œ 1 ~ 45ë²ˆí˜¸ë¥¼ ì´ˆê¸°í™”
 			lotto[i] = i + 1;
 		}
-		for (int i = 0; i < mylotto.length; i++) { // ³»¹øÈ£ ÃÊ±âÈ­
+		for (int i = 0; i < mylotto.length; i++) { // ë‚´ë²ˆí˜¸ ì´ˆê¸°í™”
 			mylotto[i] = i + 1;
 		}
 		
-		System.out.println("========== ·Î¶Ç ´çÃ·½Ã¹Ä·¹ÀÌÅÍ ==========ver.324");
-		System.out.println("\"¾î¶°ÇÑ ±¸¸Å¹æ½ÄÀ» ¼±ÅÃÇÏ½Ã°Ú½À´Ï±î?\"");
-		System.out.println("[1. ¼öµ¿ ±¸¸Å]");
-		System.out.println("[2. ÀÚµ¿ ±¸¸Å]");
-		System.out.println("[3. 1µî ´çÃ·µÉ¶§±îÁö ÀÚµ¿]");
+		System.out.println("========== ë¡œë˜ ë‹¹ì²¨ì‹œë®¬ë ˆì´í„° ==========ver.324");
+		System.out.println("\"ì–´ë– í•œ êµ¬ë§¤ë°©ì‹ì„ ì„ íƒí•˜ì‹œê² ìŠµë‹ˆê¹Œ?\"");
+		System.out.println("[1. ìˆ˜ë™ êµ¬ë§¤]");
+		System.out.println("[2. ìë™ êµ¬ë§¤]");
+		System.out.println("[3. 1ë“± ë‹¹ì²¨ë ë•Œê¹Œì§€ ìë™]");
 		System.out.print(">>");
 		int menu = Integer.parseInt(sc.nextLine());
 
 		switch (menu) {
 		case 1:
-			System.out.println("ÀÌ ±â´ÉÀº ¾ÆÁ÷ ±¸ÇöµÇÁö ¾Ê¾Ò½À´Ï´Ù.");
+			System.out.println("ì´ ê¸°ëŠ¥ì€ ì•„ì§ êµ¬í˜„ë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.");
 			break;
 		case 2:
-				// ·Î¶Ç¹øÈ£ ¼¯±â
+				// ë¡œë˜ë²ˆí˜¸ ì„ê¸°
 				for (int i = 0; i < lotto.length * 100; i++) {
 					int x = (int) (Math.random() * 45);
 					int y = (int) (Math.random() * 45);
@@ -41,7 +41,7 @@ public class Quiz_06_Lotto {
 					lotto[y] = tmp;
 				}
 				
-				// ·Î¶Ç¹øÈ£ Á¤·Ä
+				// ë¡œë˜ë²ˆí˜¸ ì •ë ¬
 				for (int i = 0; i < 6; i++) {
 					for (int j = 0; j < 6; j++) {
 						if (lotto[j] > lotto[j + 1]) {
@@ -52,7 +52,7 @@ public class Quiz_06_Lotto {
 					}
 				}
 				
-				// ³ªÀÇ ·Î¶Ç¹øÈ£ ¼¯±â
+				// ë‚˜ì˜ ë¡œë˜ë²ˆí˜¸ ì„ê¸°
 				for (int i = 0; i < mylotto.length * 100; i++) {
 					int x = (int) (Math.random() * 45);
 					int y = (int) (Math.random() * 45);
@@ -61,7 +61,7 @@ public class Quiz_06_Lotto {
 					mylotto[y] = tmp;
 				}
 
-				// ³ªÀÇ ·Î¶Ç¹øÈ£ Á¤·Ä
+				// ë‚˜ì˜ ë¡œë˜ë²ˆí˜¸ ì •ë ¬
 				for (int i = 0; i < 6; i++) {
 					for (int j = 0; j < 6; j++) {
 						if (mylotto[j] > mylotto[j + 1]) {
@@ -72,19 +72,19 @@ public class Quiz_06_Lotto {
 					}
 				}
 				
-				// ·Î¶Ç¹øÈ£ ¹ßÇ¥
-				System.out.print("¿À´ÃÀÇ ´çÃ·¹øÈ£ : ");
+				// ë¡œë˜ë²ˆí˜¸ ë°œí‘œ
+				System.out.print("ì˜¤ëŠ˜ì˜ ë‹¹ì²¨ë²ˆí˜¸ : ");
 				for (int i = 0; i < 7; i++) {
-					if (i < 6) { // º¸³Ê½º
+					if (i < 6) { // ë³´ë„ˆìŠ¤
 						System.out.printf("%2d, ", lotto[i]);
 					} else {
-						System.out.printf("º¸³Ê½º %2d%n", lotto[i]);
-						bonus = lotto[i]; // º¸³Ê½º ¹øÈ£ µû·Î ÀúÀå
+						System.out.printf("ë³´ë„ˆìŠ¤ %2d%n", lotto[i]);
+						bonus = lotto[i]; // ë³´ë„ˆìŠ¤ ë²ˆí˜¸ ë”°ë¡œ ì €ì¥
 					}
 				}
 
-				// ³ªÀÇ ¹øÈ£ Ãâ·Â
-				System.out.print("³ªÀÇ ¹øÈ£´Â    : ");
+				// ë‚˜ì˜ ë²ˆí˜¸ ì¶œë ¥
+				System.out.print("ë‚˜ì˜ ë²ˆí˜¸ëŠ”    : ");
 				for (int i = 0; i < 6; i++) {
 					if (i < 5) {
 						System.out.printf("%2d, ", mylotto[i]);
@@ -92,10 +92,10 @@ public class Quiz_06_Lotto {
 						System.out.printf("%2d", mylotto[i]);
 					}
 				}
-				System.out.println("ÀÔ´Ï´Ù.");
+				System.out.println("ì…ë‹ˆë‹¤.");
 				
-				int cnt = 0; // ·Î¶Ç ¸ÂÀº°³¼ö È®ÀÎ¿ë º¯¼ö
-				for (int i = 0; i < 7; i++) { // ´çÃ· È®ÀÎ & º¸³Ê½º È®ÀÎ
+				int cnt = 0; // ë¡œë˜ ë§ì€ê°œìˆ˜ í™•ì¸ìš© ë³€ìˆ˜
+				for (int i = 0; i < 7; i++) { // ë‹¹ì²¨ í™•ì¸ & ë³´ë„ˆìŠ¤ í™•ì¸
 					for (int j = 0; j < 6; j++) {
 						if (lotto[i] == mylotto[j]) {
 							cnt++;
@@ -106,32 +106,32 @@ public class Quiz_06_Lotto {
 					}
 				}
 
-				// ¸ÂÀº °³¼ö ¸Ş¼¼Áö Ãâ·Â
+				// ë§ì€ ê°œìˆ˜ ë©”ì„¸ì§€ ì¶œë ¥
 				if (bonusCh == 1) {
-					System.out.printf("%d°³ ÀûÁß! + º¸³Ê½º ÀûÁß!%n", cnt);
+					System.out.printf("%dê°œ ì ì¤‘! + ë³´ë„ˆìŠ¤ ì ì¤‘!%n", cnt);
 				} else {
-					System.out.printf("%d°³ ÀûÁß!%n", cnt);
+					System.out.printf("%dê°œ ì ì¤‘!%n", cnt);
 				}
 
-				// ´çÃ· È®ÀÎ ¸Ş¼¼Áö Ãâ·Â
+				// ë‹¹ì²¨ í™•ì¸ ë©”ì„¸ì§€ ì¶œë ¥
 				if (cnt < 3) {
-					System.out.println("¾Æ½±½À´Ï´Ù ²ÎÀÔ´Ï´Ù.");
+					System.out.println("ì•„ì‰½ìŠµë‹ˆë‹¤ ê½ì…ë‹ˆë‹¤.");
 				} else if (cnt == 3) {
-					System.out.println("\t\t\t\t\t\t\tÃàÇÏµå¸³´Ï´Ù 5µîÀÔ´Ï´Ù.");
+					System.out.println("\t\t\t\t\t\t\tì¶•í•˜ë“œë¦½ë‹ˆë‹¤ 5ë“±ì…ë‹ˆë‹¤.");
 				} else if (cnt == 4) {
-					System.out.println("\t\t\t\t\t\t\tÈñ±ÍÇÏ³×¿ä 4µîÀÔ´Ï´Ù.");
+					System.out.println("\t\t\t\t\t\t\tí¬ê·€í•˜ë„¤ìš” 4ë“±ì…ë‹ˆë‹¤.");
 				} else if (cnt == 5 && bonusCh == 0) {
-					System.out.println("\t\t\t\t\t\t\t¿Í¿ì 3µî ÃàÇÏµå¸³´Ï´Ù.");
+					System.out.println("\t\t\t\t\t\t\tì™€ìš° 3ë“± ì¶•í•˜ë“œë¦½ë‹ˆë‹¤.");
 				} else if (cnt == 5 && bonusCh == 1) {
-					System.out.println("\t\t\t\t\t\t\t2µîÀÔ´Ï´Ù! ÁøÂ¥ ·Î¶Ç±¸¸Å¸¦ »ı°¢ÇØº¸¼¼¿ä");
+					System.out.println("\t\t\t\t\t\t\t2ë“±ì…ë‹ˆë‹¤! ì§„ì§œ ë¡œë˜êµ¬ë§¤ë¥¼ ìƒê°í•´ë³´ì„¸ìš”");
 				} else if (bonusCh == 0 && cnt == 6) {
-					System.out.println("\t\t\t\t\t\t\t¾î¼­ ÁøÂ¥ ·Î¶Ç»ç·¯ °¡¼¼¿ä!");
+					System.out.println("\t\t\t\t\t\t\tì–´ì„œ ì§„ì§œ ë¡œë˜ì‚¬ëŸ¬ ê°€ì„¸ìš”!");
 				}
 				break;
 		case 3:
-			int count = 0; // µµÀüÈ½¼ö
+			int count = 0; // ë„ì „íšŸìˆ˜
 			
-			// ·Î¶Ç¹øÈ£ ¼¯°í °íÁ¤
+			// ë¡œë˜ë²ˆí˜¸ ì„ê³  ê³ ì •
 			for (int i = 0; i < lotto.length * 100; i++) {
 				int x = (int) (Math.random() * 45);
 				int y = (int) (Math.random() * 45);
@@ -140,7 +140,7 @@ public class Quiz_06_Lotto {
 				lotto[y] = tmp;
 			}
 
-			// ·Î¶Ç¹øÈ£ Á¤·Ä
+			// ë¡œë˜ë²ˆí˜¸ ì •ë ¬
 			for (int i = 0; i < 6; i++) {
 				for (int j = 0; j < 6; j++) {
 					if (lotto[j] > lotto[j + 1]) {
@@ -151,21 +151,21 @@ public class Quiz_06_Lotto {
 				}
 			}
 			
-			// ´çÃ·µÉ¶§±îÁö ¹İº¹
+			// ë‹¹ì²¨ë ë•Œê¹Œì§€ ë°˜ë³µ
 			wp : while (true) {
-				System.out.print("¿À´ÃÀÇ ´çÃ·¹øÈ£ : "); // ·Î¶Ç¹øÈ£ °è¼Ó ¾Ë·ÁÁà¼­ Èñ¸Á°í¹®
+				System.out.print("ì˜¤ëŠ˜ì˜ ë‹¹ì²¨ë²ˆí˜¸ : "); // ë¡œë˜ë²ˆí˜¸ ê³„ì† ì•Œë ¤ì¤˜ì„œ í¬ë§ê³ ë¬¸
 				for (int i = 0; i < 7; i++) {
-					if (i < 6) { // º¸³Ê½º
+					if (i < 6) { // ë³´ë„ˆìŠ¤
 						System.out.printf("%2d, ", lotto[i]);
 					} else {
-						System.out.printf("º¸³Ê½º %2d%n", lotto[i]);
-						bonus = lotto[i]; // º¸³Ê½º ¹øÈ£ µû·Î ÀúÀå
+						System.out.printf("ë³´ë„ˆìŠ¤ %2d%n", lotto[i]);
+						bonus = lotto[i]; // ë³´ë„ˆìŠ¤ ë²ˆí˜¸ ë”°ë¡œ ì €ì¥
 					}
 				}
 				
-				int cnt2 = 0; // ·Î¶Ç ¸ÂÀº°³¼ö È®ÀÎ¿ë º¯¼ö
+				int cnt2 = 0; // ë¡œë˜ ë§ì€ê°œìˆ˜ í™•ì¸ìš© ë³€ìˆ˜
 				
-				// ³ªÀÇ ·Î¶Ç¹øÈ£ ¼¯±â
+				// ë‚˜ì˜ ë¡œë˜ë²ˆí˜¸ ì„ê¸°
 				for (int i = 0; i < mylotto.length * 300; i++) {
 					int x = (int) (Math.random() * 45);
 					int y = (int) (Math.random() * 45);
@@ -174,7 +174,7 @@ public class Quiz_06_Lotto {
 					mylotto[y] = tmp;
 				}
 
-				// ³ªÀÇ ¹øÈ£ Á¤·Ä
+				// ë‚˜ì˜ ë²ˆí˜¸ ì •ë ¬
 				for (int i = 0; i < 6; i++) {
 					for (int j = 0; j < 6; j++) {
 						if (mylotto[j] > mylotto[j + 1]) {
@@ -185,8 +185,8 @@ public class Quiz_06_Lotto {
 					}
 				}
 
-				// ³ªÀÇ ¹øÈ£ Ãâ·Â
-				System.out.print("³ªÀÇ ¹øÈ£´Â");
+				// ë‚˜ì˜ ë²ˆí˜¸ ì¶œë ¥
+				System.out.print("ë‚˜ì˜ ë²ˆí˜¸ëŠ”");
 				for (int i = 0; i < 6; i++) { 
 					if (i < 5) {
 						System.out.printf("%2d, ", mylotto[i]);
@@ -194,9 +194,9 @@ public class Quiz_06_Lotto {
 						System.out.printf("%2d", mylotto[i]);
 					}
 				}
-				System.out.println("ÀÔ´Ï´Ù.");
+				System.out.println("ì…ë‹ˆë‹¤.");
 				
-				// ´çÃ·È®ÀÎ & º¸³Ê½º È®ÀÎ
+				// ë‹¹ì²¨í™•ì¸ & ë³´ë„ˆìŠ¤ í™•ì¸
 				for (int i = 0; i < 7; i++) {
 					for (int j = 0; j < 6; j++) {
 						if (lotto[i] == mylotto[j]) {
@@ -207,28 +207,28 @@ public class Quiz_06_Lotto {
 						}
 					}
 				}
-				count++; // µµÀüÈ½¼ö Ä«¿îÆÃ
+				count++; // ë„ì „íšŸìˆ˜ ì¹´ìš´íŒ…
 				
-				// ¸ÂÀº °³¼ö ¸Ş¼¼Áö Ãâ·Â
+				// ë§ì€ ê°œìˆ˜ ë©”ì„¸ì§€ ì¶œë ¥
 				if (bonusCh == 1) {
-					System.out.println(count + "¹øÂ° ±¸¸Å");
-					System.out.printf("%d°³ ÀûÁß! + º¸³Ê½º ÀûÁß!%n", cnt2);
+					System.out.println(count + "ë²ˆì§¸ êµ¬ë§¤");
+					System.out.printf("%dê°œ ì ì¤‘! + ë³´ë„ˆìŠ¤ ì ì¤‘!%n", cnt2);
 				} else {
-					System.out.println(count + "¹øÂ° ±¸¸Å");
-					System.out.printf("%d°³ ÀûÁß!%n", cnt2);
+					System.out.println(count + "ë²ˆì§¸ êµ¬ë§¤");
+					System.out.printf("%dê°œ ì ì¤‘!%n", cnt2);
 				}
 				
-				// ´çÃ· ¸Ş¼¼Áö Ãâ·Â
+				// ë‹¹ì²¨ ë©”ì„¸ì§€ ì¶œë ¥
 				if (cnt2 == 3) {
-					System.out.println("\t\t\t\t\t\t\tÃàÇÏµå¸³´Ï´Ù 5µîÀÔ´Ï´Ù.");
+					System.out.println("\t\t\t\t\t\t\tì¶•í•˜ë“œë¦½ë‹ˆë‹¤ 5ë“±ì…ë‹ˆë‹¤.");
 				} else if (cnt2 == 4) {
-					System.out.println("\t\t\t\t\t\t\tÈñ±ÍÇÏ³×¿ä 4µîÀÔ´Ï´Ù.");
+					System.out.println("\t\t\t\t\t\t\tí¬ê·€í•˜ë„¤ìš” 4ë“±ì…ë‹ˆë‹¤.");
 				} else if (cnt2 == 5 && bonusCh == 0) {
-					System.out.println("\t\t\t\t\t\t\t¿Í¿ì 3µî ÃàÇÏµå¸³´Ï´Ù.");
+					System.out.println("\t\t\t\t\t\t\tì™€ìš° 3ë“± ì¶•í•˜ë“œë¦½ë‹ˆë‹¤.");
 				} else if (cnt2 == 5 && bonusCh == 1) {
-					System.out.println("\t\t\t\t\t\t\t2µîÀÔ´Ï´Ù! ÁøÂ¥ ·Î¶Ç±¸¸Å¸¦ »ı°¢ÇØº¸¼¼¿ä");
+					System.out.println("\t\t\t\t\t\t\t2ë“±ì…ë‹ˆë‹¤! ì§„ì§œ ë¡œë˜êµ¬ë§¤ë¥¼ ìƒê°í•´ë³´ì„¸ìš”");
 				} else if (bonusCh == 0 && cnt2 == 6) {
-					System.out.println("\t\t\t\t\t\t\t¾î¼­ ÁøÂ¥ ·Î¶Ç»ç·¯ °¡¼¼¿ä!");
+					System.out.println("\t\t\t\t\t\t\tì–´ì„œ ì§„ì§œ ë¡œë˜ì‚¬ëŸ¬ ê°€ì„¸ìš”!");
 					break wp;
 				}
 				

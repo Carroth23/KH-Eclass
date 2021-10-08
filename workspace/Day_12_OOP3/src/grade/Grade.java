@@ -1,7 +1,7 @@
 package grade;
 
-abstract public class Grade { // »ó¼ÓÀ» ÇØÁÖ´Â ÂÊ (ºÎ¸ğÅ¬·¡½º[»óÀ§Å¬·¡½º]) SuperClass
-//	abstract : Ãß»óÅ¬·¡½º°¡ µÊ
+abstract public class Grade { // ìƒì†ì„ í•´ì£¼ëŠ” ìª½ (ë¶€ëª¨í´ë˜ìŠ¤[ìƒìœ„í´ë˜ìŠ¤]) SuperClass
+//	abstract : ì¶”ìƒí´ë˜ìŠ¤ê°€ ë¨
 	private int id;
 	private String name;
 	private int point;
@@ -39,5 +39,5 @@ abstract public class Grade { // »ó¼ÓÀ» ÇØÁÖ´Â ÂÊ (ºÎ¸ğÅ¬·¡½º[»óÀ§Å¬·¡½º]) Super
 		this.point = point;
 	}
 
-	abstract public double getBonus(); // Ãß»ó ¸Ş¼­µå
+	abstract public double getBonus(); // ì¶”ìƒ ë©”ì„œë“œ
 }

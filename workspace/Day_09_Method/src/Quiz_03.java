@@ -1,9 +1,8 @@
-
 public class Quiz_03 {
 	
 	public static int countA(String str) {
 		int count = 0;
-//		1¹ø ¹æ¹ý		
+//		1ë²ˆ ë°©ë²•		
 //		for (int i = 0; i < str.length(); i++) {
 //			if (str.charAt(i) == 'A'){
 //				count++;
@@ -12,9 +11,9 @@ public class Quiz_03 {
 //		return count;
 //	}
 	
-//		2¹ø ¹æ¹ý
+//		2ë²ˆ ë°©ë²•
 		char[] arr = str.toCharArray();
-		for (int i = 0; i < arr.length/*¹è¿­ÀÇ length¿£ ()°¡ ¾ø´Ù.*/; i++) {
+		for (int i = 0; i < arr.length/*ë°°ì—´ì˜ lengthì—” ()ê°€ ì—†ë‹¤.*/; i++) {
 			if (arr[i] == 'A') {
 				count++;
 			}
@@ -27,7 +26,7 @@ public class Quiz_03 {
 		String str = "ASDFSGGFGHFGFDGFGGDSFGDSEWERHGSGAAAAHFDGSDFGDSFTGHJHJGHJKJHGKJLOIUYTTRJGNCVBVCBDFG";
 
 		
-		int count = countA(str); // Àü´Þ¹ÞÀº str ³»ÀÇ ¹®ÀÚ¿­¿¡¼­ ¾ËÆÄºª AÀÇ °³¼ö¸¦ Ä«¿îÆÃÇØ¼­ return ÇÏ´Â ¸Þ¼­µå
-		System.out.println("¾ËÆÄºª AÀÇ °³¼ö´Â : " + count);
+		int count = countA(str); // ì „ë‹¬ë°›ì€ str ë‚´ì˜ ë¬¸ìžì—´ì—ì„œ ì•ŒíŒŒë²³ Aì˜ ê°œìˆ˜ë¥¼ ì¹´ìš´íŒ…í•´ì„œ return í•˜ëŠ” ë©”ì„œë“œ
+		System.out.println("ì•ŒíŒŒë²³ Aì˜ ê°œìˆ˜ëŠ” : " + count);
 	}
 }

@@ -4,8 +4,8 @@ public class Quiz_08_While {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		// ÀÔ·Â È½¼ö¸¸Å­ Hello Java Ãâ·Â
-		System.out.println("Ãâ·Â ¹İº¹ È½¼ö : ");
+		// ì…ë ¥ íšŸìˆ˜ë§Œí¼ Hello Java ì¶œë ¥
+		System.out.println("ì¶œë ¥ ë°˜ë³µ íšŸìˆ˜ : ");
 		int num = Integer.parseInt(sc.nextLine());
 
 		int i = 0;

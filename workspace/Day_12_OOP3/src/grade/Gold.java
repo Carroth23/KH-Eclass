@@ -1,18 +1,18 @@
 package grade;
 
-public class Gold extends/*»ó¼Ó¹Ş´Â´Ù(È®Àå)*/ Grade{ // ÀÚ½ÄÅ¬·¡½º[ÇÏÀ§Å¬·¡½º] Derived Class
+public class Gold extends/*ìƒì†ë°›ëŠ”ë‹¤(í™•ì¥)*/ Grade{ // ìì‹í´ë˜ìŠ¤[í•˜ìœ„í´ë˜ìŠ¤] Derived Class
 	
 	public Gold() {}
 	public Gold(int id, String name, int point) {
-		// »ó¼ÓÀ» ¹Ş¾ÒÁö¸¸ private´Â Grade²¨¿©¼­ super·Î Grade¸¦ ºÎ¸¥´Ù(setter´Â ¹ø°Å·Î¿ò)
-		super(id, name, point);/*ÀÚ½ÅÀÇ »óÀ§ Å¬·¡½º¸¦ ºÎ¸£´Â°Í(super´Â »ı·«ÇØµµ Á¸ÀçÇÑ´Ù)*/
+		// ìƒì†ì„ ë°›ì•˜ì§€ë§Œ privateëŠ” Gradeêº¼ì—¬ì„œ superë¡œ Gradeë¥¼ ë¶€ë¥¸ë‹¤(setterëŠ” ë²ˆê±°ë¡œì›€)
+		super(id, name, point);/*ìì‹ ì˜ ìƒìœ„ í´ë˜ìŠ¤ë¥¼ ë¶€ë¥´ëŠ”ê²ƒ(superëŠ” ìƒëµí•´ë„ ì¡´ì¬í•œë‹¤)*/
 		
 //		this.setId(id);
 //		this.setName(name);
 //		this.setPoint(point);
 	}
 	
-	public double getBonus() { // ¸Ş¼­µå ¿À¹ö¶óÀÌµù
+	public double getBonus() { // ë©”ì„œë“œ ì˜¤ë²„ë¼ì´ë”©
 		return this.getPoint() * 0.03;
 	}
 	
