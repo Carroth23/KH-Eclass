@@ -1,0 +1,50 @@
+-- Join : 여러 테이블의 레코드를 조합해서 의미있는 Result Set 을 만들어내는 문법 => 매우 중요!! 
+-- 이중 for문과 유사한 구조로 작동
+
+
+-- << Cross Join >> => 결과 ResultSet을 카티션곱이라 부름
+select * from job, department;
+-- 또는
+select * from job cross join department;
+
+
+-- << Inner Join >> : 조건을 붙인 조인문
+-- 두 테이블의 관련 있는 칼럼을 기준으로 조인한다. 
+-- ex) employee 테이블의 dept_code와 department 테이블의 dept_id는 관련이 있다. 
+select 
+	emp_name,
+	dept_title
+from employee  e inner join department d on (e.dept_code = d.dept_id); -- inner 생략 가능
+
+
+-- << Outer Join >> : 한 쪽 테이블에 데이터가 일부 없는 경우(null), 데이터가 있는 쪽 테이블의 내용을 전부 출력
+-- 1. Left Outer Join : 왼쪽 테이블의 모든 결과를 가져온 뒤 오른쪽 테이블의 데이터와 매칭, 매칭되는 데이터가 없다면 null 출력
+-- ex) 왼쪽 테이블(employee)에 있는 모든 값이 나오게 해줘
+select emp_name, dept_title 
+from employee left outer join department on (employee.dept_code=department.dept_id); -- outer 생략 가능
+
+-- 2. Right Outer Join : 오른쪽 테이블의 모든 결과를 가져온 뒤 왼쪽 테이블의 데이터와 매칭, 매칭되는 데이터가 없다면 null 출력
+
+-- 3. Full Outer Join : Left Outer Join + Right Outer Join ( 양쪽 모두 조건이 일치하지 않는 것까지 출력)
+-- ex) 양쪽 테이블 모든 값 출력
+select emp_name, dept_title 
+from employee full outer join department on (employee.dept_code=department.dept_id);
+
+
+-- << Self Join >> : 같은 테이블끼리 조인!
+-- ex) 매니저 이름을 출력하고 싶을 때 
+select e1.emp_id 사번, e1.emp_name 직원명, nvl(e2.emp_name,'관리자 없음') "매니저 이름"  
+from employee e1 inner join employee e2  on (e1.manager_id = e2.emp_id); -- inner 생략 가능
+
+
+-- << 다중 조인 >> 
+select 
+    e.emp_name,
+    d.dept_title ,
+    d.location_id,
+    l.national_code,
+    n.national_name
+from 
+    employee e join department d on (e.dept_code = d.dept_id )
+    join location l on (d.location_id = l.local_code)
+    join national n on (l.national_code = n.national_code);

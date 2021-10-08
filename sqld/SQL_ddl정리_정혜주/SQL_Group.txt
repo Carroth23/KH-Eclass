@@ -1,0 +1,58 @@
+-- 그룹화(Group By + Having) : 특정 칼럼 기준으로 그룹화 시켜 데이터 만드는 기법 
+-- 			그룹화를 하면 그룹화된 데이터만 출력이 가능하다. 
+
+-- dept_code별로 그룹화
+select dept_code from employee group by dept_code ; 
+
+
+-- (응용) 그룹화 + 그룹함수
+-- 1. 부서별 부서코드와 "부서별 급여합계" 출력
+select dept_code, sum(salary) from employee group by dept_code ;
+-- 2. 부서별 급여 평균 & 부서별 급여 합계 & 부서별 인원수 & 부서내 급여를 가장 적게/많이 받는 사람 출력
+select
+	-- 부서 단위로 아래 칼럼들이 계산된다고 생각!
+	dept_code "부서 코드", 
+	to_char(sum(salary),'L999,999,999') "부서별 급여 합계", 
+    	to_char(floor(avg(salary)),'L999,999,999') "부서별 급여 평균",
+	count(*)||'명' "부서별 인원수", 
+	-- 그냥 count(*)는 row수를 출력하는데, 여기서는 그룹화했으니 각 부서별 row수 계산해서 출력함
+	min(salary),
+	max(salary) 
+from employee 
+group by dept_code ;
+
+
+-- (응용) 선택함수 + 그룹화
+-- 테이블 내 성별별 인원수 출력
+select
+	count(*) 인원수,
+	decode(substr(emp_no,8,1), 1, '남', 2, '여') 성별
+from employee
+group by 
+	decode(substr(emp_no,8,1), 1, '남', 2, '여'); -- 그룹화는 이미 존재하는 칼럼만을 기준으로 할 필요X
+
+
+-- group by도 여러 기준을 둘 수 있다. 
+-- 그룹별로 모인상태에서 또 그룹내에서 그룹 나누기
+-- 각 직급내 성별별 인원수 출력 ( 직급 / 성별 로 그룹화)
+select 
+    	job_code 직급,
+    	decode(substr(emp_no,8,1),1,'남',2,'여') 성별,
+    	count(*) 인원수
+from employee
+group by
+    	job_code,
+    	decode(substr(emp_no,8,1),1,'남',2,'여')
+order by job_code;
+
+
+-- Group by + Having : 그룹화 데이터에 조건 부여하는 구문
+-- *** 쿼리 실행 순서 : from -> where -> group by -> select -> order by => 결국 select에서 만든 별명은 order by에서만 사용 가능
+-- 쿼리 실행 순서에 의해 그룹화에 조건을 줄 때는 Having절을 추가로 이용한다.
+-- 부서별 급여 평균값이 250만 미만인 부서별 급여 합계 출력
+select 
+    	dept_code 부서코드,
+    	to_char(floor(avg(salary)),'L999,999,999') 급여평균
+from employee
+group by dept_code 
+	having avg(salary)<2500000 order by 1 ;

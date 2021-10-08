@@ -1,0 +1,133 @@
+------------------------------------ <함수,메소드> ------------------------------------
+------------------------------------ 1. 단일행 함수 : 한 행만 적용
+-------------------<기본적인 함수>
+-- nvl() 메소드
+-- 구조 : nvl(null 여부 검사하려는 값, null일때 치환할 값)
+-- 데이터가 null이면 우리가 지정한 null일 때 치환할 값으로 출력
+select emp_name, nvl(dept_code,'인턴') from employee; -- 부서코드가 null인 데이터들은 인턴으로 출력
+
+-- length : 인자값으로 전달된 문자열의 길이를 반환하는 함수 
+select length('가나다'), length('123'), length('abc') from dual;
+
+-- lengthb : 인자값으로 전달된 문자열의 사이즈를 반환하는 함수 
+select lengthb('ABCD') from dual; -- 4출력, 한글자당 1byte(한글은 3byte)
+
+-- instr : 찾는 문자(열)이 지정한 위치부터 지정한 번째만큼 나타난 시작 위치 반환
+-- 구조 : instr(target string, 찾은 문자(열), 몇번째 자리에서부터, 몇번째로 만나는)
+select instr('Hello World Hi High', 'H', 1,1) from dual; -- 첫번째 자리에서 첫번째로 만나는 H위치 출력 -> 1 
+
+-- 얘 많이 씀!!!!
+-- substr : 문자열 내에서 시작 인덱스부터 지정한 글자만큼 문자열을 추출 
+-- 구조 : substr(타겟 문자열, 잘라내고 싶은 문자열의 시작 인덱스, 지정한 글자수)
+select substr('A wise man will make more opportunities than he finds', 3, 4) from dual;
+-- 타겟 문자열에서 3번째부터 4글자 출력 -> wise 출력됨
+
+-- replace : 문자열 내에서 특정 문자열을 다른 문자열로 교체(대체)
+select replace('Oracle is not fun','not','very') from dual;
+-- not이라는 문자열을 very로 대체
+
+------------------------<숫자관련 함수>
+-- round : 반올림 함수
+select round(126.456, 2) from dual; -- 소숫점 두번째 자리까지 출력(세번째에서 반올림), 126.46
+
+-- floor : 소수점 버리는 함수 
+select floor(126.456) from dual; -- 126출력
+
+-- trunc : 원하는 자리까지 출력하며 나머지를 버리는 함수 
+select trunc(123.456,1) from dual; -- 소숫점 첫째 자리까지만 출력, 123.4 출력
+
+-- ceil : 올림함수 
+select ceil(123.456) from dual; -- 124출력
+
+-- abs : 절대값
+select abs(-1) from dual; -- 1출력
+
+
+------------------------<날짜관련 함수>
+-- sysdate : 시간(날짜) 출력.. 그런데 초까지만 가짐(초 이하의 ms는 갖지 못함)
+-- 날짜데이터에 산술 연산 가능(곱셈, 나눗셈은 안 됨)
+select sysdate from dual;
+
+-- localtimestamp : 더 디테일하게 ms까지 출력
+select localtimestamp from dual;
+
+-- months_between : 인자로 전달되는 두 개의 날짜사이의 개월수 리턴
+select emp_name, hire_date, floor(months_between(sysdate, hire_date)) 개월수 from employee;
+
+-- add_months : 인자로 전달받은 날짜에, 인자로 전달된 숫자만큼의 개월을 더하여 리턴하는 함수
+select sysdate+1 from dual; -- 1일 추가
+select add_months(sysdate, 1) from dual; -- 1개월 추가
+
+-- next_day : 인자로 전달받은 날짜로부터 가장 가까운 두번째 인자에 해당하는 요일의 날짜 리턴
+select next_day(sysdate, '월요일') from dual; -- sysdate날짜 기준으로 가장 가까운 월요일 출력
+
+-- last_day : 인자로 전달받은 날짜가 속한 달의 마지막 날짜 리턴
+select last_day(sysdate) from dual; -- sysdate가 속한 달의 마지막 날 리턴
+
+-- extract : 인자로 전달된 날짜로부터 연/월/일 값을 추출해서 리턴
+select extract(year from sysdate) from dual; -- sysdate에서 년도 추출
+
+-- to_date : 문자 또는 숫자를 날짜로 형변환 시켜 리턴하는 함수
+to_char(to_date(20301225), 'YYYY/MM/DD day')
+
+------------------------<형변환 함수>
+-- to_char : 숫자타입이나 날짜타입을 문자열로 변경하여 리턴하는 함수
+-- 1. 날짜 형식 지정 출력 ---------
+-- 구조 : to_char(어떤 숫자나 날짜를, 어떤 문자열 모양으로 출력?)
+select to_char(sysdate, 'YYYY-MM-DD') from dual; 
+select to_char(sysdate, 'YYYY/MM/DD DAY') from dual; -- DAY 쓰면 요일도 출력 가능
+select to_char(sysdate, 'YYYY/MM/DD DY') from dual; -- 글자'요일' 뺄 수 있음
+select to_char(sysdate, 'YYYY/MM/DD HH:MI:SS') from dual; -- 시분초까지
+select to_char(sysdate, 'DAY') from dual; -- 요일만 출력
+-- 그렇다고 아무 기호나 들어갈 수 없다. 
+-- 넣는 방법 "" 붙여주면 된다.
+select to_char(sysdate, 'YYYY"년 "MM"월 "DD"일 " DAY') from dual;
+-- 2. 금액 형식 지정 출력 ---------
+-- 자릿수가 충분해야 제대로 출력
+select emp_name, to_char(salary,'000,000,000') from employee; 
+select emp_name, to_char(salary,'999,999,999') from employee; -- 제일 많이 씀(빈자리는 0이 아니라 공백으로 채워짐)
+select emp_name, to_char(salary,'L999,999,999') from employee; -- 단위표시해줌(KOREAN 설정이라 원표시)
+
+-- to_number : 문자를 숫자로 바꿔서 리턴 
+-- 날짜를 숫자로 바꾸는 함수는 없다.
+-- 오라클은 문법 맥락을 분석하는 로직이 있어서 숫자와 문자열의 자동 형변환을 지원함
+-- 그래서 잘 사용 안 함
+
+
+------------------------<선택 함수>
+-- 1. decode : 자바의 switch 기능과 같다(== 비교를 통한 분기점 생성)
+-- dexode(switch케이스의 소괄호 안에 넣는 거랑 같음, 비교할 데이터, 경우, 비교할 데이터, 경우2....) 가변인자라 parameter 제한X
+-- default는 짝이없는 마지막 값
+select 
+    emp_name, 
+    decode(substr(emp_no,8,1),1,'남',2,'여', 3,'남',4,'여','없음') 성별 
+from 
+    employee;
+
+-- 2. case : 자바의 if 기능과  같다(<=, >=, <, > == 비교를 통한 분기점 생성)
+select 
+    emp_name, 
+    case
+        when substr(emp_no,8,1) = 1 then '남'
+        when substr(emp_no,8,1) = 2 then '여'
+        else '없음'
+    end 성별
+from employee;
+
+
+
+------------------------------------ 2. 그룹 함수 : 모든 행 적용
+-- 그룹함수는 그룹함수들만 붙을 수 있다. (단일행 함수랑 병행 출력 불가)
+-- 물론 그룹함수 쓰면서 인자로 안에 단일행 함수 쓸 수 있음..
+-- ex) min(substr(emp_no,1,2)) -- 이런식으로 겹쳐서 사용은 가능
+
+-- 합계함수 : (SUM)
+select sum(salary)  from employee;
+
+-- 평균 함수(AVG)
+select avg(salary) from employee;
+
+-- 개수측정(COUNT)
+-- NULL 값은 카운팅 하지 않음
+-- 따라서 NULL 여부 상관 없이 행 갯수 자체를 원한다면 count(*)을 쓰면 된다. 
+select count(dept_code) from employee; -- null 값은 제외
