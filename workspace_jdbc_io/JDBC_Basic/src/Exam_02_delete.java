@@ -14,7 +14,7 @@ public class Exam_02_delete {
 			System.exit(0);
 		}
 		
-		// 접속
+		// 접속 
 		String url = "jdbc:oracle:thin:@175.123.204.32:1521:xe";
 		String username = "kh";
 		String password = "kh";
