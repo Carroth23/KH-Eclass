@@ -1,9 +1,11 @@
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.Statement;
+import java.util.Scanner;
 
 public class Exam_02_delete {
 	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
 		
 		// 로딩
 		try {
@@ -19,12 +21,17 @@ public class Exam_02_delete {
 		String username = "kh";
 		String password = "kh";
 		
+		
+		System.out.println("삭제할 메뉴를 입력해 주세요.");
+		String name = sc.nextLine();
+		
+		
 		try {
 			Connection con = DriverManager.getConnection(url, username, password);
 			
 			// Query발사
 			Statement stat = con.createStatement();
-			int result = stat.executeUpdate("delete from cafe_menu where id = '1008'");
+			int result = stat.executeUpdate("delete from cafe_menu where name = '" + name + "'");
 			
 			if (result > 0) {
 				System.out.println("삭제완료");
@@ -32,7 +39,7 @@ public class Exam_02_delete {
 				System.out.println("삭제 실패");
 			}
 			
-			con.close();
+			con.close(); // 얘 빼먹으면 안됨.
 			
 		} catch (Exception e) {
 			e.printStackTrace();

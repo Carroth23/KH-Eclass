@@ -210,6 +210,11 @@ select replace('Oracle is not fun','not','very') from dual; -- 1번째 문자열에서 
 -- employee 테이블에서 직원의 이름과 이메일을 출력하되, 이메일은 kh.or.kr 에서 iei.or.kr로 변경해서 출력하세요.
 select emp_name, replace(email,'kh','iei') from employee;
 
+-- lpad, rpad : 빈공간을 특정 문자로 채우는 함수(14자리중 7자리를 표시하고 왼쪽,오른쪽을 지정한 문자 또는 빈공간으로 채움)
+select rpad(substr(emp_no,1,7), 14, '*') from employee;
+
+-- trim : 공백제거
+
 ----------------소수점 관련 함수---------------
 -- round : 반올림 함수
 select 126.456 from dual;
@@ -304,6 +309,9 @@ select to_char(to_date(20301225), 'YYYY/MM/DD day') from dual;
 select to_number('10') + '5' from dual;
 select '10' + '5' from dual;
 
+-- mod : 숫자를 나눈 나머지값을 반환
+select mod(15, 6) from dual;
+
 ------------------선택 함수-----------------
 -- decode : 자바의 switch와 같은 역할. == 비교를 통한 분기점 생성
 select
@@ -394,3 +402,7 @@ select
         else '야근없음'
     end 야근유무
 from employee order by dept_code;
+
+select * from employee;
+
+select d.emp_name, d.dept_code, d1.dept_title from (select * from employee where dept_code = 'D9') d, (select * from department) d1 where d.dept_code = d1.dept_id;

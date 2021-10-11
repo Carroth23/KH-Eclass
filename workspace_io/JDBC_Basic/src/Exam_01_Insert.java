@@ -1,13 +1,14 @@
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.Statement;
+import java.util.Scanner;
 
 public class Exam_01_Insert {
 	public static void main(String[] args) {
-
+		Scanner sc = new Scanner(System.in);
 		// OJDBC : Oracle Java DataBase Connection
 
-		// 1. OJDBC 드라이버 로딩(오라클 드라이버 인스터스 생성작업)
+		// 1. OJDBC 드라이버 로딩(오라클 드라이버 인스턴스 생성작업)
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 		} catch (Exception e) {
@@ -20,13 +21,22 @@ public class Exam_01_Insert {
 		String url = "jdbc:oracle:thin:@175.123.204.32:1521:xe";
 		String username = "kh";
 		String password = "kh";
+		
+		// insert를 위한 값 입력
+		System.out.println("신규 메뉴 이름 : ");
+		String name = sc.nextLine();
+		
+		System.out.println("신규 메뉴 가격 : ");
+		int price = Integer.parseInt(sc.nextLine());
 
+		
 		try {
 			Connection con = DriverManager.getConnection(url, username, password);
 
 			// 3. Query를 전달할 수 있는 인스턴스 생성
 			Statement stat = con.createStatement();
-			String sql = "insert into cafe_menu values(cafe_menu_seq.nextval, 'Latte', 2000)";
+//			String sql = "insert into cafe_menu values(cafe_menu_seq.nextval, 'Latte', 2000)";
+			String sql = "insert into cafe_menu values(cafe_menu_seq.nextval,'" + name + "', " + price + ")";
 			int result = stat.executeUpdate(sql);
 
 //			stat.executeUpdate("여기에 바로 쿼리문 써도 됨");
