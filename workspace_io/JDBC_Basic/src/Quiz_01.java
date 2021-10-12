@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import classes.Menu;
 import dao.CafeMenuDAO;
+import dto.MenuDTO;
 
 public class Quiz_01 {
 	public static void main(String[] args) { // main에선 throws안씀(여기서도 던지면 프로그램 안하겠단뜻)
@@ -36,8 +36,8 @@ public class Quiz_01 {
 					
 				} else if (menu.equals("2")) {
 					
-					ArrayList<Menu> list = dao.selectAll();
-					for (Menu m : list) {
+					ArrayList<MenuDTO> list = dao.selectAll();
+					for (MenuDTO m : list) {
 						System.out.println(m.getId() + " : " + m.getName() + " : " + m.getPrice());
 					}
 					
@@ -53,7 +53,7 @@ public class Quiz_01 {
 					System.out.println("메뉴의 새 가격 : ");
 					int price = Integer.parseInt(sc.nextLine());
 					
-					int result = dao.update(name, price, id);
+					int result = dao.update(new MenuDTO(id, name, price)); // 객체를 보낼수 있다.
 					if (result > 0) {
 						System.out.println("변경 성공.");
 					}

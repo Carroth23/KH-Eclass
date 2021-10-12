@@ -26,6 +26,12 @@ grant connect to 계정명;
 -- 테이블 생성 수정 삭제 삽입 권한
 grant resource to 계정명;
 
+/* 요런식으로 계정 생성하면 됨
+create user practice identified by practice;
+grant connect, resource to practice;
+grant unlimited tablespace to practice;
+*/
+
 grant unlimited tablespace to 계정명; -- 테이블스페이스권한 줌 밑에랑 같은거인듯
 ALTER USER 계정명 DEFAULT TABLESPACE USERS QUOTA UNLIMITED ON USERS; -- 데이터 삽입 가능
 grant create table, dba TO 계정명; -- dba권한은 사용자계정한테 함부로 주면안됨. 거의 모든권한이 들어가있기때문
