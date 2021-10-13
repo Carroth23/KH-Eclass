@@ -1,5 +1,5 @@
 package dto;
-
+// DTO : Data Transfer Object
 public class MenuDTO {
 	private int id;
 	private String name;
