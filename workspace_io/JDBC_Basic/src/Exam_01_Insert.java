@@ -7,7 +7,6 @@ public class Exam_01_Insert {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		// OJDBC : Oracle Java DataBase Connection
-
 		// 1. OJDBC 드라이버 로딩(오라클 드라이버 인스턴스 생성작업)
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
