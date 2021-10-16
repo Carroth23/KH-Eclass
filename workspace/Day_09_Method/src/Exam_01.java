@@ -34,7 +34,7 @@ public class Exam_01 { // Startup 기업 Exam_01
 		System.out.println(10 + 5);
 		
 		
-		Math.random();// 리턴타입이 void인 메서드 ()에 파라미터가 없다
+		Math.random();// 리턴타입? 리턴은 있겠지.이 void인 메서드 ()에 파라미터가 없다
 	}
 
 }

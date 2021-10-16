@@ -7,9 +7,6 @@ public class Exam_02_ArrayList {
 
 		// Object : 자바에 존재하는 모든클래스의 최고 조상
 		
-		
-		
-		
 		ArrayList arr = new ArrayList();
 		// 입력
 		arr.add("Hello");
@@ -18,11 +15,12 @@ public class Exam_02_ArrayList {
 		arr.add(123);
 		
 		arr.size();
-		
+		System.out.println(arr.size());
 		// 출력
 		System.out.println(arr.get(0));
 		System.out.println(arr.get(1));
 		System.out.println(arr.get(2));
+		System.out.println(arr.get(3));
 		System.out.println("----------------------------");
 		
 		// 삭제
@@ -31,7 +29,8 @@ public class Exam_02_ArrayList {
 		// 출력
 		System.out.println(arr.get(0));
 		System.out.println(arr.get(1));
-//		System.out.println(arr.get(2)); 존재하지 않음
+		System.out.println(arr.get(2));
+		System.out.println(arr.get(3)); // 존재하지 않음
 		System.out.println("----------------------------");
 		
 		// 삽입

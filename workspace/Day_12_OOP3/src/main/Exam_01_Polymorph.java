@@ -23,5 +23,6 @@ public class Exam_01_Polymorph {
 		a.funcA();
 //		a = new A();
 //		((B)a).funcB(); // down casting
+		// funcB가 나오는 이유는 리모콘은 A지만 실제 객체는 B이기 때문.
 	}
 }

@@ -11,7 +11,7 @@ public class Monitor {
 	// 지역변수 : 메서드 중괄호{}안에 있는것.
 	// 멤버변수 : 클래스 중괄호{}안에 있는것.
 	
-	String brand;
+	String brand; // 멤버변수 IV
 	int price;
 	
 	void powerOn() {

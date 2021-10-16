@@ -35,7 +35,7 @@ public class Exam_02_Array {
 		System.out.println(arr[1]);
 		System.out.println(arr[2]);
 		
-		arr[3] = "Hello";
+		arr[3] = "Hello"; // arr[3]은 0~2까지의 인덱스를 가진다.
 		
 		// 출력
 		System.out.println(arr[0]);
