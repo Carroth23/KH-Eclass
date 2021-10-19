@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>JDBC_Practice_01</name>
+	<name>JDBC_Practice_01_ConPool</name>
 	<comment></comment>
 	<projects>
 	</projects>

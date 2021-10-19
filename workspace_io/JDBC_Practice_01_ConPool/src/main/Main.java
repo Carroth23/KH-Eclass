@@ -11,7 +11,7 @@ import utils.DateUtils;
 public class Main {
 	public static void main(String[] args) {
 
-		MessageDAO dao = new MessageDAO();
+		MessageDAO dao = MessageDAO.getInstance(); // 하나의 인스턴스만 만듬.
 		Scanner sc = new Scanner(System.in);
 
 		while (true) {
@@ -50,6 +50,7 @@ public class Main {
 					for (MessageDTO dto : list) {
 						System.out.println(dto.getSeq() + "\t" + dto.getWriter() + "\t" + dto.getVisit_date()); // 날짜 출력
 						System.out.println(dto.getMessage());
+						System.out.println();
 					}
 
 				} else if (menu.equals("3")) {

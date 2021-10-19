@@ -2,23 +2,52 @@ package dao;
 
 import java.sql.Connection;
 import java.sql.Date;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.commons.dbcp2.BasicDataSource;
+
 import dto.MessageDTO;
 
 public class MessageDAO {
 
+	// 1. DBCP 라이브러리 가져오기.
+	
+//	private Connection getConnection() throws Exception {
+//		Class.forName("oracle.jdbc.driver.OracleDriver");
+//		String url = "jdbc:oracle:thin:@175.123.204.32:1521:xe";
+//		String id = "practice";
+//		String pw = "practice";
+//		return DriverManager.getConnection(url, id, pw);
+//	}
+	
+	
+	private static BasicDataSource bds = new BasicDataSource(); // Connection Pool 요녀석이 겟커넥션 안으로 가있으면 안됨 계속만듬.
+	
+	private static MessageDAO instance = null; // 그래서 요놈도 static이 붙는다.  ㅎ
+	
+	public static MessageDAO getInstance() { // 스태틱인 이유는 new 안하고 쓸거라서. ↑
+		if (instance == null) {
+			instance = new MessageDAO();
+		}
+		return instance;
+	}
+	
+	// Singleton Design Pattern
+	// 클래스의 인스턴스가 한개 이상 생성되지 않게 통제하는 기법
+	private MessageDAO() { // 연결할때 생성자로써 한번만 정보입력
+		bds.setDriverClassName("oracle.jdbc.driver.OracleDriver");
+		bds.setUrl("jdbc:oracle:thin:@175.123.204.32:1521:xe");
+		bds.setUsername("practice");
+		bds.setPassword("practice");
+		bds.setInitialSize(30); // 커넥션 풀 안에 몇개의 커넥션을 만들어 둘것인지.
+	}
+	
 	private Connection getConnection() throws Exception {
-		Class.forName("oracle.jdbc.driver.OracleDriver");
-		String url = "jdbc:oracle:thin:@175.123.204.32:1521:xe";
-		String id = "practice";
-		String pw = "practice";
-		return DriverManager.getConnection(url, id, pw);
+		return bds.getConnection();
 	}
 
 	public int insert(MessageDTO dto) throws Exception {
