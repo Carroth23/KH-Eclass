@@ -35,12 +35,11 @@ public class Client {
 
 			// 8. 3번에서 선택한 파일 이흠으로 클라이언트 경로에 저장한다.
 			File downloadFile = new File("C:/WebD/dest/" + fileName); // 다운받을 파일의 이름.
-			try (FileOutputStream fos = new FileOutputStream(downloadFile);
+			try (FileOutputStream fos = new FileOutputStream(downloadFile); // RAM에서 HDD로 보낼 다리
 				DataOutputStream fileDos = new DataOutputStream(fos)
 				) {
 				fileDos.write(fileContents);
 				fileDos.flush();
-				fileDos.close();
 			}
 		}
 

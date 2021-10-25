@@ -25,7 +25,7 @@ public class MessageDAO {
 //	}
 	
 	
-	private static BasicDataSource bds = new BasicDataSource(); // Connection Pool 요녀석이 겟커넥션 안으로 가있으면 안됨 계속만듬.
+	private BasicDataSource bds = new BasicDataSource(); // Connection Pool 요녀석이 겟커넥션 안으로 가있으면 안됨 계속만듬.
 	
 	private static MessageDAO instance = null; // 그래서 요놈도 static이 붙는다.  ㅎ
 	

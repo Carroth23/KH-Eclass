@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 속성 선택자 */
+        div[name*=ndi]{ /* *은 포함하는 name는 ndiv 이지만 *을 붙여 ndi를 포함한 걸로 침*/
+            border:1px solid black;
+        }
+        div[name^=qw]{ /* ^는 qw로 시작하는 대상만. */
+            border:1px solid red;
+        }
+        div[name$=di]{ /* $는 di로 끝나는 대상만. */
+            border:1px solid violet;
+        }
+    </style>
+</head>
+<body>
+    
+    <!--div{$ 번째 DIV 입니다.}*3-->
+    <div>1 번째 DIV 입니다.</div>
+    <div name="ndiv" asdf=qwer>2 번째 DIV 입니다.</div>
+    <div name="qwendi">3 번째 DIV 입니다.</div>
+</body>
+</html>

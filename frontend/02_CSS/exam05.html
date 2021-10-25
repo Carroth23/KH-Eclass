@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 동위(바로 뒤에있는 형제 하나) 선택자 : + */
+        h4+h5{
+            background-color:orange;
+        }
+        /* h4 뒤쪽으로 p태그인애들 전부 다 */
+        h4~p{
+            color:orange;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h5>Test0</h5>
+        <h4>Test1</h4>
+        <h5>Test2</h5>
+        <p>Test3</p>
+        <p>Test4</p>
+        <p>Test5</p>
+    </div>
+</body>
+</html>

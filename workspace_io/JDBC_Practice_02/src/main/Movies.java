@@ -10,7 +10,7 @@ import utils.DateUtils;
 public class Movies {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		MoviesDAO dao = new MoviesDAO();
+		MoviesDAO dao = MoviesDAO.getInstance();
 
 		while (true) {
 			System.out.println(" == Netflix 관리 시스템 == ");
@@ -58,21 +58,20 @@ public class Movies {
 					String description = sc.nextLine();
 					System.out.println("출시년월 yyyy/MM/dd : ");
 					Date rel_date = DateUtils.stringToSQLDate(sc.nextLine(), "yyyy/MM/dd");
-					
+
 					if (dao.update(new MoviesDTO(id, title, description, rel_date)) > 0) {
 						System.out.println("변경 완료.");
 					}
-					
+
 				} else if (menu == 5) {
 					System.out.println("어떤 방식으로 검색하시겠습니까?");
 					System.out.println("1. ID로 검색");
 					System.out.println("2. 제목으로 검색");
 					int choice = Integer.parseInt(sc.nextLine());
-					
+
 					if (choice == 1) {
 						System.out.println("검색할 영화의 ID 입력 : ");
 						int id = Integer.parseInt(sc.nextLine());
-						
 						MoviesDTO dto = dao.searchId(id);
 						if (dto.getId() != 0) {
 							System.out.println(dto.getId() + "\t" + dto.getTitle());
@@ -83,13 +82,13 @@ public class Movies {
 					} else if (choice == 2) {
 						System.out.println("검색할 영화의 제목 입력 : ");
 						String title = sc.nextLine();
-						
-						for(MoviesDTO dto : dao.selectAll(title)) {
+
+						for (MoviesDTO dto : dao.selectAll(title)) {
 							System.out.println(dto.getId() + "\t" + dto.getTitle());
 							System.out.println(dto.getDescription() + "\t" + dto.getReldate());
 						}
 					}
-					
+
 				} else if (menu == 6) {
 					System.out.println("시스템을 종료합니다.");
 					System.exit(0);

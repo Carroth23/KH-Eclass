@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 선택자는 범위가 넓을 수록 우선순위가 떨어진다. */
+        /* 태그 선택자 < 클래스 선택자 < ID 선택자 < inline-style < important*/
+        #id-class{
+            background-color:pink;
+        }
+
+        .p-class{
+            background-color:orange;
+        }
+
+        p{
+            background-color:green !important; /* !important 최상위 우선순위*/
+        }
+
+    </style>
+</head>
+<body>
+    <p class="p-class" id="id-class" style="background-color:turquoise">p 태그 입니다.</p>
+</body>
+</html>

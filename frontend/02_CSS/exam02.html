@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 전체 선택자 */
+        /* *{background-color:pink;} */
+        
+        /* 태그 선택자 */
+        /* p{background-color:rgb(143, 143, 224);}
+        h4{background-color:forestgreen;} */
+
+        /* 만약 첫번째 p태그만 백그라운드 컬러를 주고 싶다면 */
+        /*id선택자 - 중복을 불허하여 단일 항목에 부여할 스타일 설정*/
+        #p-first{background-color:blanchedalmond;}
+        #p-second{background-color:chartreuse;}
+        #p-second,#p-third,#p-fourth{color:violet;}
+        /*class 선택자*/
+        /*사용자 정의로 분류된 카테고리 - 중복을 허용하여 특정 분류에 스타일 적용*/
+        .c-violet{color:violet}
+    </style>
+</head>
+<body>
+    <!-- 선택자 -->
+
+    <p id="p-first">첫 번째 p 태그 입니다.</p>
+    <h4>Header 사이즈 4 태그입니다.</h4>
+    <p id="p-second" class="c-violet">두 번째 P 태그 입니다.</p>
+    <div> 첫 번째 div 입니다.</div>
+    <p id="p-third" class="c-violet">세 번째 p 태그 입니다.</p>
+    <p id="p-fourth" class="c-violet">네 번째 p 태그입니다.</p>
+    <p>다섯 번째 p 태그입니다.</p>
+    <p id="p-fifth" class="c-violet">여섯 번째 p 태그입니다.</p>
+</body>
+</html>

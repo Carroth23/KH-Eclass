@@ -8,24 +8,39 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.commons.dbcp2.BasicDataSource;
+
 import dto.MoviesDTO;
 
 public class MoviesDAO {
-
-	private Connection getConnection() throws Exception {
-		Class.forName("oracle.jdbc.driver.OracleDriver");
-		String url = "jdbc:oracle:thin:@175.123.204.32:1521:xe";
-		String id = "practice";
-		String pw = "practice";
-		return DriverManager.getConnection(url, id, pw);
+	
+	private BasicDataSource bds = new BasicDataSource(); // Connection pool
+	
+	private static MoviesDAO instance = null;
+	public static MoviesDAO getInstance() {
+		if (instance == null) {
+			instance = new MoviesDAO();
+		}
+		return instance;
+	}
+	private MoviesDAO() { // 연결할때 생성자로써 한번만 정보입력.
+		bds.setDriverClassName("oracle.jdbc.driver.OracleDriver");
+		bds.setUrl("jdbc:oracle:thin:@175.123.204.32:1521:xe");
+		bds.setUsername("practice");
+		bds.setPassword("practice");
+		bds.setInitialSize(30); // 커넥션 풀 안에 몇개의 커넥션을 만들어둘것인지.
 	}
 
-	public int insert(MoviesDTO dao) throws Exception {
+	private Connection getConnection() throws Exception {
+		return bds.getConnection();
+	}
+
+	public int insert(MoviesDTO dto) throws Exception {
 		String sql = "insert into movies values(movies_seq.nextval, ?, ?, ?)";
 		try (Connection con = getConnection(); PreparedStatement pstat = con.prepareStatement(sql);) {
-			pstat.setString(1, dao.getTitle());
-			pstat.setString(2, dao.getDescription());
-			pstat.setDate(3, dao.getReldate());
+			pstat.setString(1, dto.getTitle());
+			pstat.setString(2, dto.getDescription());
+			pstat.setDate(3, dto.getReldate());
 			return pstat.executeUpdate();
 		}
 	}

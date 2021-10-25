@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 구조 선택자 */
+        .container1 p:first-child{ /* p태그 이면서 container1 첫번째 자손인 */
+            color:orange;
+        }
+        .container1 p:last-child{
+            color:orangered;
+        }
+
+        .container2 p:nth-child(even/*홀수는 odd*/){
+            color:violet;
+        }
+        .container2 p:nth-child(3n){ /* 3의 배수 */
+            color:royalblue;
+        }
+
+        .container3 p:nth-child(5){ /* p태그 이면서 5번째 인것 */
+            color:violet;
+        }
+
+        .container3 p:nth-of-type(4){ /* p태그 타입중에서 4번째것 */
+            color:tomato;
+        }
+    </style>
+</head>
+<body>
+    
+<div class="container1">
+    <p>1 번째 텍스트</p>
+    <p>2 번째 텍스트</p>
+    <p>3 번째 텍스트</p>
+</div>
+
+<hr>
+<div class="container2">
+    <p>1 번째 텍스트</p>
+    <p>2 번째 텍스트</p>
+    <p>3 번째 텍스트</p>
+    <p>4 번째 텍스트</p>
+    <p>5 번째 텍스트</p>
+    <p>6 번째 텍스트</p>
+    <p>7 번째 텍스트</p>
+    <p>8 번째 텍스트</p>
+    <p>9 번째 텍스트</p>
+    <p>10 번째 텍스트</p>
+</div>
+<hr>
+
+<div class="container3">
+    <p>1 번쨰 텍스트</p>
+    <div>1 번째 텍스트</div>
+    <p>2 번쨰 텍스트</p>
+    <div>2 번째 텍스트</div>
+    <p>3 번쨰 텍스트</p>
+    <div>3 번째 텍스트</div>
+    <p>4 번쨰 텍스트</p>
+    <div>4 번째 텍스트</div>
+    <p>5 번쨰 텍스트</p>
+    <div>5 번째 텍스트</div>
+</div>
+
+</body>
+</html>

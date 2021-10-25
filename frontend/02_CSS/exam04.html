@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 자손 선택자 : > */
+        
+        div.container>h4{
+            background-color:thistle;
+        }
+        /* 후손 선택자 : 띄어쓰기 */
+        div.container h4{
+            background-color:turquoise
+        }
+        div.container>ul>h4{
+            background-color:yellow
+        }
+    </style>
+</head>
+<body>
+    <p class="container">
+        나도 컨테이너에요!    
+    </p>
+    <div>
+        난 div!
+    </div>
+    <!-- div.container -->
+    <div class="container"> <!-- 부모태그 -->
+        <h4>First H4</h4> <!-- 자손 태그 -->
+        <h4>Second H4</h4>
+        <ul>
+            <h4>Fruits</h4>
+            <li>Apple</li> <!-- 후손 태그 (ul입장에서는 자손)-->
+            <li>Orange</li> <!-- 후손 태그 -->
+        </ul>
+    </div>
+</body>
+</html>
