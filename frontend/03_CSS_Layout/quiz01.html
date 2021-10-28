@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <style>
+        *{box-sizing:border-box;text-align:center;}
+        div{border:1px solid black;}
+
+        .container{
+            min-width:500px;
+            max-width:800px;
+            margin:auto;
+        }
+
+        .header{height:100px;}
+        .header>div{float:left;height:100%;}
+        .header>.logo{width:30%;}
+        .header>.title{width:70%;}
+
+        .navi{height:50px;}
+
+        .body{height:400px;}
+        .body>div{float:left;}
+        .body>.contents{width:70%;height:100%;}
+        .body>.side{width:30%;height:100%;}
+        .body>.side>.login{height:25%;}
+        .body>.side>.banner{height:75%;}
+
+        .footer{height:80px;}
+        .footer>div{float:left;width:50%;height:100%;}
+
+        .navi>ul{
+            list-style-type:none;
+            margin:0;
+            padding:0;
+            overflow:hidden;
+        }
+        .navi>ul li{
+            text-align:center;
+            float:left;
+            width:25%;
+            height:100%;
+            line-height:50px;
+            background-color:rgb(224, 239, 255);
+            color:black;
+            transition: all 0.5s;
+        }
+        .navi>ul li:hover{
+            cursor:pointer;
+            background-color:rgb(132, 188, 226);
+            color:white;
+        }
+
+        /*Login Box*/
+        .login_header{height:35%;line-height:30px;}
+        .login_footer_left{height:65%;width:65%;float:left;}
+        .login_footer_right{float:left;width:35%;height:65%}
+        .id_input{width:100%;height:50%;}
+        .pw_input{width:100%;height:50%;float:left;}
+        .login_button{width:100%;height:100%;float:left;line-height:55px;}
+
+        /*mailbox*/
+        .mailbox_title{
+            height:15%;
+            text-align: center;
+            line-height: 250%;
+        }
+        .mailbox_con{
+            height:85%;
+            overflow: auto;
+        }
+        .mailbox_con div{
+            height:18%;
+            line-height: 250%;
+            transition: all 0.3s;
+        }
+        .mailbox_con div:hover{
+            background-color:rgb(238,238,238);
+            cursor:pointer;
+        }
+
+        /*Contents*/
+        .contents>div{
+            width:50%;
+            height:50%;
+            float:left;
+            padding:5px;
+        }
+        img{
+            width:100%;
+            height:100%;
+        }
+        .contents .conimg{width:100%;height:80%;padding:3px;}
+        .contents .context{width:100%;height:20%;line-height:200%}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <img src="logo.png">
+            </div>
+            <div class="title">
+                <img src="title.png">
+            </div>
+        </div>
+        <div class="navi">
+            <ul>
+                <li>Home</li>
+                <li>About</li>
+                <li>Me</li>
+                <li>School</li>
+            </ul>
+        </div>
+        <div class="body">
+            <div class="contents">
+                <div class="con1">
+                    <div class="conimg"><img src="youdo.jpg"></div>
+                    <div class="context">야</div>
+                </div>
+                <div class="con2">
+                    <div class="conimg"><img src="youdo.jpg"></div>
+                    <div class="context">너두</div>
+                </div>
+                <div class="con3">
+                    <div class="conimg"><img src="youdo.jpg"></div>
+                    <div class="context">할수</div>
+                </div>
+                <div class="con4">
+                    <div class="conimg"><img src="youdo.jpg"></div>
+                    <div class="context">있어</div>
+                </div>
+            </div>
+            <div class="side">
+                <div class="login">
+                    <div class="login_header">
+                        Login-Box
+                    </div>
+                    <div class="login_footer_left">
+                        <div class="id_input">
+                            <input type="text" placeholder="input your id" size=12 style=width:100%;height:100%;>
+                        </div>
+                        <div class="pw_input">
+                            <input type="password" placeholder="input your password"  size=12 style=width:100%;height:100%;>
+                        </div>
+                    </div>
+                    <div class="login_footer_right">
+                        <div class="login_button">
+                            <input type="button" value="Login" style=width:60px;height:40px;>
+                        </div>
+                    </div>
+                </div>
+                <div class="banner">
+                    <div class="mailbox_title">
+                        <i class="fas fa-envelope-open-text"></i>MailBox
+                    </div>
+                    <div class="mailbox_con">
+                        <div>1 번째 메일입니다.</div>
+                        <div>2 번째 메일입니다.</div>
+                        <div>3 번째 메일입니다.</div>
+                        <div>4 번째 메일입니다.</div>
+                        <div>5 번째 메일입니다.</div>
+                        <div>6 번째 메일입니다.</div>
+                        <div>7 번째 메일입니다.</div>
+                        <div>8 번째 메일입니다.</div>
+                        <div>9 번째 메일입니다.</div>
+                        <div>10 번째 메일입니다.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="left">Left</div>
+            <div class="right">Right</div>
+        </div>
+    </div>
+</body>
+</html>

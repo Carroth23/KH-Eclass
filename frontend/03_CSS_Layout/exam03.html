@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            border:1px solid black;
+        }
+        .box{width:100px;height:100px;}
+        #container{width:800px;}
+        #container div{
+            float:left;
+            height:300px;
+            box-sizing:border-box;
+        }
+        #container .left{width:200px;}
+        #container .center{width:500px;}
+        #container .right{width:100px;}
+
+        /* #box1{float:left;}
+        #box2{float:left;} float 에어리에서는 display block이 적용 안됨. 그래서 오른쪽으로 밀려남. */
+        /* #container{width:800px;} */
+    </style>
+</head>
+<body>
+
+    <!-- <div class="box" id="box1"></div>
+    <div class="box" id="box2"></div> -->
+
+    <div id="container">
+        <div class="left"></div>
+        <div class="center"></div>
+        <div class="right"></div>
+    </div>
+</body>
+</html>

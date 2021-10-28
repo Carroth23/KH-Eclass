@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{box-sizing:border-box}
+        div{border:1px solid black;}
+        .container{
+            width:300px;
+            height:300px;
+            margin:auto;
+            position:relative;
+        }
+        .box{
+            width:100px;
+            height:100px;
+            /*position:relative;*/ /*원래 자신의 위치로부터 이동하는 포지션 속성*/
+            position:absolute; /*position:static이 아닌 부모를 만나면 그걸 기준으로 함.*/
+        }
+        .box:hover{z-index: 10;}
+        #box1{
+            position:absolute;
+            bottom:50px;
+            right:50px;
+            background-color: #00ffff50;
+        }
+        #box2{
+            bottom:100px;
+            right:90px;
+            position:absolute;
+            background-color:#ffebcd;
+        }
+        #box3{
+            top:150px;
+            left:70px;
+            position:absolute;
+            background-color: #7fff0050;
+        }
+        .ebox{
+            width:100px;
+            height:100px;
+            position:fixed;
+        }
+    </style>
+</head>
+<body>
+    <div class="ebox"></div>
+    <div class="container">
+        <div class="box" id="box1"></div>
+        <div class="box" id="box2"></div>
+        <div class="box" id="box3"></div>
+    </div>
+</body>
+</html>
