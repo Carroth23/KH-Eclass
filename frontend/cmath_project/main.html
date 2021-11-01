@@ -1,0 +1,737 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>시매쓰</title>
+	<link rel="shortcut icon" href="image/favicon.ico">
+	<!--아이콘 넣는법-->
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+		body {
+			font-family: 'Nanum Gothic', sans-serif;
+		}
+
+		* {
+			/* 전체선택자 */
+			margin: 0;
+			padding: 0;
+		}
+
+		html,
+		body {
+			width: 100%;
+			height: 100%;
+		}
+
+		li {
+			/*목록에 점 없애기 */
+			list-style: none;
+		}
+
+		a {
+			/* 하이퍼링크 밑줄없앰 */
+			text-decoration: none;
+		}
+
+		#top_btn {
+			position: fixed;
+			right: 10px;
+			bottom: 20px;
+			z-index: 9999;
+		}
+
+		.top_btn1 {
+			margin: 15px 0 0 14px;
+		}
+
+		#top_btn div {
+			margin-top: 3px;
+			transition: all .5s;
+		}
+
+		#top_btn div:hover {
+			opacity: 0.85;
+			transform: scale(1.05, 1.05);
+			cursor: pointer;
+		}
+
+		/* ========== 탑 홈메뉴 ========= */
+		.top_line {
+			border-top: 20px solid #c90c0c;
+			width: 100%;
+		}
+
+		.top_line2 {
+			border-top: 10px solid #6985b2;
+			width: 100%;
+			margin-bottom: 10px;
+		}
+
+		.tophom_in {
+			position: absolute;
+			left: 44%;
+		}
+
+		.tophom_in ul li {
+			display: block;
+			font-size: 13px;
+			color: #fff;
+			margin: 1px 10px 1px 10px;
+			transition: all .3s;
+			float: left;
+		}
+
+		.tophom_in ul li:hover {
+			transform: scale(1.02, 1.02);
+			background: #554a92;
+			padding: 3px 0 0 0;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+
+		/* ========= 로그인 회원가입 ========= */
+
+		.nav {
+			margin: 0 auto;
+			width: 1000px;
+			height: 30px;
+			display: block;
+		}
+
+		.nav_area {
+			float: right;
+		}
+
+		.nav ul li {
+			float: left;
+			color: #545151;
+			font-size: 12px;
+			font-weight: bold;
+			margin: 5px 10px 10px 10px;
+			z-index: 9000;
+		}
+
+		.nav ul li:hover {
+			border-bottom: 1px solid red;
+			cursor: pointer;
+		}
+
+		/* =========== 메뉴창 ========== */
+
+		.menu {
+			width: 900px;
+			height: 50px;
+			margin: 0 auto;
+			margin-top: 5px;
+			/*background:pink;*/
+		}
+
+		.menu>li {
+			float: left;
+			width: 180px;
+			text-align: center;
+			height: inherit;
+			line-height: 50px;
+			color: #252525;
+			display: block;
+			font-size: 15px;
+			font-weight: bold;
+			transition: all 1s;
+		}
+
+		.menu1 {
+			transition: all .3s;
+		}
+
+		.menu1>li:hover {
+			color: #fff;
+			background: #658ada;
+			border-radius: 15px;
+			cursor: pointer;
+		}
+
+		.menu1:hover {
+			color: #fff;
+			background: #658ada;
+			border-radius: 15px;
+			cursor: pointer;
+		}
+
+		.menu_logo:hover {
+			opacity: 0.8;
+			cursor: pointer;
+		}
+
+		.submenu {
+			width: 180px;
+			height: 0px;
+			overflow: hidden;
+			transition: all .5s;
+		}
+
+		.menu li:hover .submenu {
+			height: 200px;
+		}
+
+		.submenu li {
+			background: rgba(248, 248, 248, 0.8);
+			cursor: pointer;
+			transition: all .7s;
+		}
+
+		.submenu li:hover {
+			color: #fff;
+			background: #81a3ec;
+			font-weight: bold;
+			border-radius: 10px;
+		}
+
+		.submenu li:hover {
+			color: #fff;
+		}
+
+		.submenu li {
+			color: #000;
+			font-size: 13px;
+		}
+
+		.mvisual {
+			position: relative;
+			margin-top: 20px;
+			background: #dbf9f9;
+			width: 100%;
+			text-align: center;
+			z-index: -1;
+			margin-bottom: 20px;
+		}
+
+		/* ====== 화살표 ====== */
+		.left_point {
+			position: absolute;
+			font-size: 40px;
+			color: #bec4c4;
+			top: 400px;
+			left: 210px;
+		}
+
+		.right_point {
+			position: absolute;
+			font-size: 40px;
+			color: #bec4c4;
+			top: 400px;
+			right: 210px;
+		}
+
+		.point:hover {
+			cursor: pointer;
+		}
+
+		/* =========== con =========== */
+
+		.content {
+			width: 980px;
+			/*height:1200px;*/
+			margin: 0 auto;
+			background: #f9f9f9;
+			position: relative;
+			margin-top: 100px;
+		}
+
+		.con_box a img {
+			position: relative;
+		}
+
+		.con_box {
+			position: relative;
+			display: inline-block;
+			transition: all 0.5s;
+		}
+
+		.con_over li {
+			height: 0;
+			width: 0;
+			display: block;
+			position: absolute;
+			overflow: hidden;
+			top: 36px;
+			left: 30px;
+			transition: all .5s
+		}
+
+		.con_over li {
+			transition: all 0.5s;
+		}
+
+		.con_box img {
+			z-index: 60;
+		}
+
+		.con_over li {
+			z-index: 50;
+		}
+
+		/* 펼쳐짐 호버 */
+		.con_box1:hover li:first-child {
+			height: 213px;
+			width: 155px;
+			left: 319px;
+		}
+
+		.con_box1:hover li:nth-child(2) {
+			height: 213px;
+			width: 155px;
+			left: 475px;
+		}
+
+		.con_box1:hover li:last-child {
+			height: 213px;
+			width: 155px;
+			left: 631px;
+		}
+
+		.con_box1 li:hover {
+			box-shadow: 0 0 10px #6f6f70;
+			transform: rotate(3deg);
+			cursor: pointer;
+		}
+
+		.con_box1 {
+			margin-left: 10px;
+			transition: all .5s;
+		}
+
+		.con_box1:hover {
+			opacity: 0.9;
+			transform: translate(-10px);
+			z-index: 80;
+			cursor: pointer;
+		}
+
+		/* === 두번째 박스 === */
+
+		.con_box2:hover li:first-child {
+			height: 213px;
+			width: 155px;
+			left: -156px;
+		}
+
+		.con_box2:hover li:nth-child(2) {
+			height: 213px;
+			width: 155px;
+			left: -312px;
+		}
+
+		.con_box2:hover li:last-child {
+			height: 213px;
+			width: 155px;
+			left: 318px;
+		}
+
+		.con_box2 li:hover {
+			box-shadow: 0 0 10px #6f6f70;
+			transform: rotate(-3deg);
+			cursor: pointer;
+		}
+
+		.con_box2 {
+			transition: all .5s;
+		}
+
+		.con_box2:hover {
+			opacity: 0.9;
+			z-index: 80;
+			cursor: pointer;
+		}
+
+		/* === 세번째 박스 === */
+
+		.con_box3:hover li:first-child {
+			height: 213px;
+			width: 160px;
+			left: -161px;
+		}
+
+		.con_box3:hover li:nth-child(2) {
+			height: 213px;
+			width: 160px;
+			left: -322px;
+		}
+
+		.con_box3:hover li:last-child {
+			height: 213px;
+			width: 160px;
+			left: -483px;
+		}
+
+		.con_box3 li:hover {
+			box-shadow: 0 0 10px #6f6f70;
+			transform: rotate(-3deg);
+			cursor: pointer;
+		}
+
+		.con_box3 {
+			transition: all .5s;
+		}
+
+		.con_box3:hover {
+			opacity: 0.9;
+			transform: translate(10px);
+			z-index: 80;
+			cursor: pointer;
+		}
+
+		/* ===중간 이미지 === */
+		.sub_visual p {
+			text-align: center;
+			margin-top: 60px;
+		}
+
+		.sub_txt {
+			font-family: 'Nanum Gothic', sans-serif;
+			font-weight: bold;
+			font-size: 40px;
+			color: #3fc0c6;
+		}
+
+		.sub_txt2 {
+			font-family: 'Nanum Gothic', sans-serif;
+			font-weight: bold;
+			font-size: 40px;
+			color: #c63f3f;
+		}
+
+		.sub_txt:hover {
+			color: #babc1e;
+		}
+
+		.sub_txt2:hover {
+			color: gray;
+		}
+
+		/* === 전국센터 === */
+		.mconbox ul li {
+			float: left;
+			box-shadow: 0 1px 1px #6f6f70;
+			transition: all .7s;
+		}
+
+		.mconbox ul li:hover {
+			transform: scale(1.02, 1.02);
+			opacity: 0.7;
+			cursor: pointer;
+		}
+
+		/* === 오른쪽 작은 박스 === */
+
+		.right_box {
+			width: 100px;
+			height: 600px;
+			position: absolute;
+			right: -130px;
+			top: 50px;
+			/* background:pink; */
+		}
+
+		.right_box ul li {
+			margin: 3px 0;
+			transition: all .4s;
+		}
+
+		.right_box ul li:hover {
+			transform: translate(10px);
+			opacity: 0.9;
+			cursor: pointer;
+		}
+
+		/* ====== 공지사항 ===== */
+
+		.foot_up {
+			width: 1000px;
+			height: 220px;
+			margin: 30px auto;
+			/* 	background:pink; */
+		}
+
+		.foot_up li{
+			font-family: 'Nanum Gothic', sans-serif;
+			font-size:13px;
+		}
+
+		.notice {
+			float: left;
+			width: 400px;
+			border: 0.5px solid #ddd;
+			padding: 10px;
+			line-height: 20px;
+			margin: 0 20px 0 20px;
+		}
+
+		.notice ul li span {
+			float: right;
+		}
+
+		.more {
+			float: right;
+			margin-top: 72px;
+			color: gray;
+			cursor: pointer;
+		}
+
+		.notice_line {
+			margin-top: 5px;
+		}
+
+		.notice ul li {
+			color: gray;
+		}
+
+		.notice ul li:hover {
+			cursor: pointer;
+			color: black;
+		}
+
+		.news {
+			margin-left: 50px;
+		}
+
+		.news1 {
+			margin-left: 40px;
+		}
+
+		/* ========== 푸우터 =========== */
+
+		footer {
+			width: 1000px;
+			height: 100px;
+			margin: 0 auto;
+			/* background:#eaeaea; */
+		}
+
+		.foot_logo {
+			float: left;
+			padding: 10px;
+		}
+
+		.foot_util ul li {
+			float: left;
+		}
+
+		.foot_util ul li {
+			border-right: 1px solid #ccc;
+			margin-top: 20px;
+		}
+
+		.foot_util ul li a {
+			margin: 30px;
+			color: #4f4f4f;
+			font-family: 'Nanum Gothic', sans-serif;
+			font-size:14px;
+		}
+
+		.foot_util ul li:last-child {
+			border: none;
+		}
+
+		.foot_util ul li a:hover {
+			border-bottom: 1px solid #333;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="top_btn">
+		<div><img src="image/icon_quick01.png"></div>
+		<div><img src="image/icon_quick02.png"></div>
+		<div><img src="image/icon_quick03.png"></div>
+		<div class="top_btn1"><a href="#top"><img src="image/quick_top.png"></a></div>
+	</div>
+	<div class="tophom_in">
+		<ul>
+			<li>시매쓰 홈</li>
+			<li>시매쓰 학원</li>
+			<li>시매쓰 출판</li>
+		</ul>
+	</div>
+
+	<div class="top_line"></div>
+	<div class="top_line2"></div>
+
+	<div id="wrap">
+
+		<div class="nav">
+			<ul class="nav_area">
+				<li>로그인</li>
+				<li>회원가입</li>
+			</ul>
+		</div>
+
+		<header>
+			<div class="drop_menu">
+				<ul class="menu">
+					<li class="menu1">시매쓰 학원
+						<ul class="submenu sub_menu1">
+							<li>시매쓰학원 소개</li>
+							<li>전국센터</li>
+							<li>가맹안내</li>
+							<li>시매쓰 스토리</li>
+						</ul>
+					</li>
+					<li class="menu1">학원 프로그램
+						<ul class="submenu sub_menu2">
+							<li>사고력수학NC</li>
+							<li>사고력수학AP</li>
+							<li>뉴기프티드</li>
+							<li>위니매쓰</li>
+						</ul>
+					</li>
+					<li class="menu_logo"><img src="image/logo.png"></li>
+					<li class="menu1">시매쓰 출판
+						<ul class="submenu sub_menu3">
+							<li>시매쓰출판 소개</li>
+							<li>교재가이드</li>
+							<li>정오표</li>
+							<li>정답 및 해설</li>
+						</ul>
+					</li>
+					<li class="menu1">출판 교재
+						<ul class="submenu sub_menu4">
+							<li>교과학습</li>
+							<li>영역별학습</li>
+							<li>영재학습</li>
+							<li>보드게임</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</header>
+		<div class="left_point point">&#60;</div>
+		<div class="right_point point">&#62;</div>
+		<div class="mvisual"><img src="image/cmath.png"></div>
+
+		<div class="content">
+			<div class="right_box">
+				<ul>
+					<li><img src="image/visual_bnr01.png"></li>
+					<li><img src="image/visual_bnr02.png"></li>
+					<li><img src="image/visual_bnr03.png"></li>
+					<li><img src="image/visual_bnr04.png"></li>
+					<li><img src="image/visual_bnr05.png"></li>
+					<li><img src="image/visual_bnr06.png"></li>
+				</ul>
+			</div>
+			<div class="content_in">
+				<ul>
+					<li class="con_box con_box1">
+						<img src="image/contents_01.png">
+						<ul class="con_over">
+							<li>
+								<img src="image/math1-1.png">
+							</li>
+							<li>
+								<img src="image/math1-2.png">
+							</li>
+							<li>
+								<img src="image/math1-3.png">
+							</li>
+						</ul>
+					</li>
+					<li class="con_box con_box2">
+						<img src="image/contents_02.png">
+						<ul class="con_over">
+							<li>
+								<img src="image/math2-1.png">
+							</li>
+							<li>
+								<img src="image/math2-2.png">
+							</li>
+							<li>
+								<img src="image/math2-3.png">
+							</li>
+						</ul>
+					</li>
+					<li class="con_box con_box3">
+						<img src="image/contents_03.png">
+						<ul class="con_over">
+							<li>
+								<img src="image/math3-1.png">
+							</li>
+							<li>
+								<img src="image/math3-2.png">
+							</li>
+							<li>
+								<img src="image/math3-3.png">
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div class="sub_visual">
+				<p>
+					<span class="sub_txt">시매쓰의 </span><span class="sub_txt2">우수성</span>
+				</p>
+				<img src="image/subimg.png">
+			</div>
+
+			<div class="contentbox">
+				<div class="mconbox">
+					<ul>
+						<li><img src="image/visual_nav01.png"></li>
+						<li><img src="image/visual_nav02.png"></li>
+						<li><img src="image/visual_nav03.png"></li>
+						<li><img src="image/visual_nav04.png"></li>
+						<li><img src="image/visual_nav05.png"></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="foot_up">
+			<div class="notice news1">
+				<img src="image/news_01.png">
+				<div class="more">더보기</div>
+				<hr class="notice_line">
+				<ul>
+					<li>[설명회] 경기 화정 시매쓰 오픈<span>2021.10.28</span></li>
+					<li>[설명회] 시매쓰 만수 학부모 설명회<span>2021.10.11</span></li>
+					<li>[설명회] 시매쓰 광명 학부모 설명회<span>2021.09.03</span></li>
+					<li>[시매쓰학원] 시매쓰, 유아 사고력수학<span>2021.07.22</span></li>
+					<li>[시매쓰출판] 생각수학 개정판 출시 기념<span>2021.07.01</span></li>
+				</ul>
+			</div>
+
+			<div class="notice news">
+				<img src="image/news_02.jpg">
+				<div class="more">더보기</div>
+				<hr class="notice_line">
+				<ul>
+					<li>[시매쓰학원] 시매쓰, 게임식 수학 체험<span>2021.10.25</span></li>
+					<li>[시매쓰출판] 시매쓰출판, '생각수학' 시리즈<span>2021.10.22</span></li>
+					<li>[시매쓰출판] 초등수학 '시매쓰출판'. 생각수<span>2021.09.18</span></li>
+					<li>[시매쓰출판] 시매쓰출판 '생각수학 3,4학<span>2021.08.29</span></li>
+					<li>[시매쓰학원] 시매쓰, 6~7세 유아 사고력수<span>2021.07.15</span></li>
+				</ul>
+			</div>
+		</div>
+
+		<footer>
+			<div class="foot_logo">
+				<a href="#none"><img src="image/footer_logo.png"></a>
+			</div>
+			<div class="foot_util">
+				<ul>
+					<li><a href="#none">회사소개</a></li>
+					<li><a href="#none">인재채용</a></li>
+					<li><a href="#none">개인정보취급방침</a></li>
+					<li><a href="#none">이용약관</a></li>
+					<li><a href="#none">가맹문의</a></li>
+					<li><a href="#none">고객문의</a></li>
+				</ul>
+			</div>
+		</footer>
+	</div>
+</body>
+
+</html>
