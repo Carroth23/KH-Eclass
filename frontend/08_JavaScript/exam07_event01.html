@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <button id="pop">Pop!</button>
+
+        <script>
+            let btn = document.getElementById("pop");
+
+            // 버튼객체에 대하여 클릭을 했을때 이 함수를 실행해라.
+            // onclick(이벤트 리스너) function(이벤트 핸들러)
+            btn.onclick = function() {
+                alert("버튼 클릭 감지!");
+            }; // callback function : 시스템이 상황에 따라 자동으로 call해주는 함수
+            
+
+            // Event : 브라우저 상에서 사용자가 행하는 모든 행동
+            // EventSource : 이벤트가 발생 한 근원 element
+            // Event Listener : 이벤트의 종류에 따라 감시하는 감시자들
+            // Event Handler : 이벤트 리스너가 이벤트를 감지했을 때 취할 행동을 가지는 함수
+        </script>
+    </body>
+</html>

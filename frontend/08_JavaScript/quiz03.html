@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      // 행과 열을 물어보고 그것을 입력하면 테이블 생성.
+      let row = prompt("행 입력");
+      let column = prompt("열 입력");
+      let count = 0;
+
+      document.write('<table border="1">');
+      for (let i = 0; i < row; i++) {
+        document.write("<tr>");
+        for (let j = 0; j < column; j++) {
+          document.write("<td>");
+          document.write(count++);
+          document.write("</td>");
+        }
+        document.write("</tr>");
+      }
+      document.write("</table>");
+    </script>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            // 함수란걸 알리기 위해 function
+            //                // 매개변수
+            // function plus(num1, num2) {
+            //     let result = num1 + num2;
+            //     return result;
+            // }
+
+            // 리턴값이 없는 함수.
+            function hello() {
+                console.log("Hello");
+            }
+
+            // let result = plus(10, 20);
+            // console.log(result);
+            // hello();
+
+            // function -> first class function
+
+            //plus는 함수의 주소값. ()를 붙이면 그 주소로 찾아가서 실행하라는 명령
+            // let func = plus;
+            // let result = func(5, 10);
+            // console.log(result);
+
+            // 이걸
+            // function plus (num1, num2) {
+            //     return num1 + num2;
+            // };
+            // 이렇게도 함수를 만들 수도 있다.
+            let plus = function (num1, num2) {
+                return num1 + num2;
+            };
+
+            // 일회성으로 만들자마자 사용하고 버리는 함수
+            (function (num1, num2) {
+                return num1 + num2;
+            })(10, 5); // Immediately Invoke Function Expression
+        </script>
+    </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            border:1px solid black;
+        }
+    </style>
+</head>
+<body>
+
+    <input type="text" id="txt">
+    <button id="but">Event!</button>
+    <div id="gaol">여기가 목적지</div>
+
+    <script>
+        let msg = document.getElementById("txt");
+        let butt = document.getElementById("but");
+        let gol = document.getElementById("gaol");
+        butt.onclick = function(){
+            gol.innerHTML = msg.value;
+            msg.value="";
+            msg.focus();
+        }
+
+    </script>
+</body>
+</html>

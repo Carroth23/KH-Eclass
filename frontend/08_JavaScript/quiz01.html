@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- promp 창에 1.사과 / 2.포도 / 3.수박 -->
+    <script>
+        let result = prompt("1.사과 / 2.포도 / 3.수박");
+
+        // 1번일 경우 document.write로 사과는 영어로 apple입니다.
+        // 2번일 경우 grape 입니다.
+        // 3번일 경우 subak 입니다ㅋ.
+
+        if(result == "사과") { // 자스는 문자열도 숫자도 다 ==을 쓴다.
+            document.write("사과는 영어로 apple입니다.");
+        } else if (result == "포도") {
+            document.write("포도는 영어로 grape입니다.");
+        }  else if (result == "수박") {
+            document.write("수박은 영어로 ssubak입니다.ㅋ");
+        }
+    </script>
+</body>
+</html>
