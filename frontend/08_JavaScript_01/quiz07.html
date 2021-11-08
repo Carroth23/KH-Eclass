@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            border: 1px solid black;
+        }
+
+        .container {
+            width: 200px;
+            height: 200px;
+            margin: auto;
+        }
+
+        #box {
+            text-align: center;
+            line-height: 200px;
+        }
+
+        #control {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="box">I'm Box!</div>
+        <div id="control">
+            <button id="red" color="pink">RED</button>
+            <button id="green" color="forestgreen">GREEN</button>
+            <button id="blue" color="dodgerblue">BLUE</button>
+        </div>
+    </div>
+    <script>
+
+        let btnArr = document.getElementsByTagName("button");
+
+        for (let i = 0; i < btnArr.length; i++) {
+            btnArr[i].onclick = function () {
+                document.getElementById("box").setAttribute("style", "background-color: " + btnArr[i].getAttribute("color"));
+                // document.getElementById("box").setAttribute("style", "background-color:" + btnArr[i].innerHTML);
+                // document.getElementById("box").setAttribute("style", "background-color:" + this.innerHTML);
+            }
+        }
+
+
+
+
+        // document.getElementById("red").onclick=function(){
+        //     document.getElementById("box").setAttribute("style","background-color:pink;");
+        // }
+        // document.getElementById("green").onclick=function(){
+        //     document.getElementById("box").setAttribute("style","background-color:forestgreen;");
+        // }
+        // document.getElementById("blue").onclick=function(){
+        //     document.getElementById("box").setAttribute("style","background-color:dodgerblue;");
+        // }
+    </script>
+</body>
+
+</html>

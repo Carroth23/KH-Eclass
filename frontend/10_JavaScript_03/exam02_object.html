@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let person = {
+            name: "Jack",
+            contact: "01012341234",
+            hello: function () {
+                console.log(`Hello Everyone. I'm ${this.name}`);
+            },
+            hobby: ["Java", "Book", "Guitar"], // 배열
+            score: { // 객체안에 객체넣기
+                kor: 100,
+                eng: 90,
+                math: 80
+            },
+            favoriteFruits: function () {
+                return ["Apple", "Orange", "Mango"];
+            },
+            abilities: function () {
+                return {
+                    Java: function() {return 100;},
+                    css: function() {return 90;},
+                    js: function() {return 80;}
+                };
+            },
+            helloTo: function(friend) {
+                console.log(`Hello ${friend.name}`);
+            },
+            Dron: function() {
+                this.brand = "Samsung";
+                this.price = 200000;
+            }
+        }
+        console.log(person.name);
+        console.log(person.contact);
+        person.hello();
+        console.log(person.hobby[0]); // 배열 꺼내기
+
+        // Jack의 영어점수를 출력하려면?
+        console.log(person.score.eng); // 객체안의 객체의 값
+
+        // Jack이 가장 좋아하는 과일 중 세번째 항목을 출력해보세요.
+        console.log(person.favoriteFruits().slice(2, 3)); // 내가푼거
+        console.log(person.favoriteFruits()[2]); // 강사님 답
+
+        // Jack의 css 점수를 출력해보세요.
+        console.log(person.abilities().css());
+
+        // Hello Tom
+        person.helloTo({name: 'Tom'}/*얘 자체가 객체로 넘어간것*/); // 1. 객체 리터럴 방식
+
+        let friend = new Object(); // 2. 기본 객체 방식
+        friend.name = "Tom";
+        person.helloTo(friend);
+
+        function Friend(name) { // 3. 생성자 방식
+            this.name = name;
+        }
+        person.helloTo(new Friend("Tom"));
+
+
+
+        //
+        let dron = new person.Dron();
+        console.log(dron.brand);
+        console.log(dron.price);
+    </script>
+</body>
+
+</html>

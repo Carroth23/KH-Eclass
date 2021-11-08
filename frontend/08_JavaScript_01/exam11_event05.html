@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        window.onload = function () { // 윈도우 로딩이 완료되었을때 실행됨
+            document.getElementById("event").onclick = function () {
+                open("http://www.naver.com", "pop1", "width=400px,height=300px"); // popup창 띄우기
+            }
+        }
+
+        // window.onload 온로드는 또쓰면 덮어씌워짐. 걍 첫번재에 다 쓰면됨.
+
+        window.onunload = function () { // 페이지를 나가기 전에
+            
+        }
+    </script>
+</head>
+
+<body>
+
+    <button id="event">Event!</button>
+
+</body>
+
+</html>

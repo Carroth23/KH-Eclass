@@ -1,156 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        crossorigin="anonymous"></script>
-    <style>
-        /*기본세팅*/
-        div[class*=col] {
-            padding: 0;
-            margin: 0;
-        }
-
-        div[class*=row] {
-            padding: 0;
-            margin: 0;
-        }
-
-        li {
-            list-style-type: none;
-        }
-
-        div {
-            border: 1px solid black;
-        }
-
-        /* 로고 */
-        .logo>img {
-            width: 120px;
-        }
-
-        .tlogo>img {
-            width: 120px;
-        }
-
-        /* 로그인박스 */
-        .login {
-            position: relative;
-        }
-
-        .login>ul li {
-            float: left;
-            padding: 2px;
-        }
-
-        .kong {
-            position: absolute;
-            left: 50px;
-            background-image: url("image/kongstore_off.png");
-            width: 60px;
-            height: 25px;
-        }
-
-        .log {
-            position: absolute;
-            left: 120px;
-            font-size: 13px;
-        }
-
-        .myhappy {
-            position: absolute;
-            left: 180px;
-            font-size: 13px;
-        }
-
-        .signup {
-            position: absolute;
-            left: 250px;
-            font-size: 13px;
-        }
-
-        .login>ul li {
-            transition: all 0.5s;
-        }
-
-        .log:hover {
-            box-shadow: inset 0 -3px 0 green;
-            cursor: pointer;
-        }
-
-        .myhappy:hover {
-            box-shadow: inset 0 -3px 0 green;
-            cursor: pointer;
-        }
-
-        .signup:hover {
-            box-shadow: inset 0 -3px 0 green;
-            cursor: pointer;
-        }
-
-        .kong:hover {
-            background-image: url("image/kongstore_on.png");
-            box-shadow: none;
-            cursor: pointer;
-        }
-
-        /* nav */
-        .nav {
-            width: 100%;
-            background-color: rgb(87, 214, 87);
-        }
-        .nav>div{
-            color:white;
-            font-size: 15px;
-            font-weight: 600;
-            padding:10px;
-        }
-    </style>
 </head>
-
 <body>
-    <div class="container">
+    
+    <!-- REPL -->
+    <!-- Read Eval Print Loop -->
+    <script>
+        console.log('Hello World!');
+        console.log('줄바꿈\n기릿');
+        console.log(typeof function(){}); // 타입 확인
+        console.log(typeof""); // 얘도 문자열
+        console.log("'");
+        console.log('"정말"그랬니?');
+        console.log('how\'re you?');
+        // 코드 중간 줄바꿈은 쉬프트+엔터
 
-        <div class="row header">
-            <div class="logo text-center align-self-center col-lg-4">
-                <img src="/myToy/image/naver2.png">
-            </div>
-            <div class="tlogo text-center align-self-center col-lg-4">
-                <img src="image/tlogo.png">
-            </div>
-            <div class="login align-self-center col-lg-4">
-                <ul>
-                    <li class="kong"></li>
-                    <li class="log">로그인</li>
-                    <li class="myhappy">My해피빈</li>
-                    <li class="signup">회원가입</li>
-                </ul>
-            </div>
-        </div>
+        // NaN = Not a Number
 
-        <div class="row nav">
-            <div class="col text-center">
-                모금이야기
-            </div>
-            <div class="col text-center">
-                펀딩
-            </div>
-            <div class="col text-center">
-                굿액션
-            </div>
-            <div class="col text-center">
-                문화캠페인
-            </div>
-        </div>
+        parseInt('123'); // 문자열을 숫자로 변환
+        Number('123'); // 문자열을 숫자로 변환
+        parseInt('3.14'); // 3
+        parseFloat('3.14'); // 3.14
+        Number('3.14'); // 3.14
+        // parseInt(111, 2); // 111을 2진법으로 해석
+        // parseInt(prompt()); prompt()로 값을 입력 후 parseInt함
+        // 2**3 // 2의 3거듭제곱
+        // '1' + 0 = '10'
+        // '123' - 23 = 100
+        // 2 / 0 // Infinity
 
-    </div>
+        // 0.1 + 0.2 = 0.30000000000000004 // 부동소수점 문제
+        // (0.3 *10 - 0.1 *10) / 10 // 0.2 // 부동소수점 문제 극복
+
+        // NaN == NaN // false 얘는 왜 false 일까
+        // true > false // true // 결국 true가 1과 비슷 false가 0
+
+
+        // '&'.charCodeAt() // 65286
+        // 'a'.charCodeAt() // 98
+
+        // '3' < 5; // true // <은 '3'을 숫자로 만들어버림
+        // 0 < true = true
+
+
+        // 1 == '1' = true // 값만 비교
+        // 1 == true = true
+        // 1 === '1' = false // 자료형까지 비교
+        // 1 === true = false
+
+        // 1 != '1' = false // 값만 비교
+        // 1 !== '1' = true // 자료형까지 비교
+
+        // !!'a'; // 문자가 true인지 false 인지. !!로 두번 뒤집어 현재의 값을 알아냄.
+        // 근데 대부분 true다.
+
+        // typeof null == object // 얘는 유명한 버그 원래 null이 나와야 정상
+    </script>
 </body>
-
 </html>

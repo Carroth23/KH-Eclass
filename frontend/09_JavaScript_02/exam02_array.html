@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = ["Java","C++","Python","Ruby"];
+        let result = arr.indexOf("Python");
+        console.log(`Python 의 Index : ${result}`);
+
+        // join : 배열의 모든 요소를 파라미터를 이용하여 하나의 문자열로 연결하는 함수
+        let result2 = arr.join(":");
+        console.log(`배열 join 결과 : ${result2}`);
+
+        console.log(`reverse 하기 전 : ${arr}`);
+        arr.reverse();
+        console.log(`reverse 한 후 : ${arr}`);
+
+    </script>
+</body>
+</html>

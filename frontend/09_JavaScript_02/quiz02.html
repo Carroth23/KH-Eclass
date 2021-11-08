@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <fieldset>
+        <legend>목록</legend>
+        <div id="list"></div>
+    </fieldset>
+    <input type="text" id="addtxt" placeholder="추가할 단어를 입력하세요." onkeyup="enkey()">
+    <button id="add">추가하기</button><br>
+    <input type="text" id="deltxt" placeholder="삭제할 단어를 입력하세요.">
+    <button id="del">삭제하기</button>
+
+    <script>
+        let arr = [];
+        let list = document.getElementById("list");
+        let addtxt = document.getElementById("addtxt");
+        let add = document.getElementById("add");
+        let deltxt = document.getElementById("deltxt");
+        let del = document.getElementById("del");
+
+        add.onclick = function () {
+            arr.push(addtxt.value);
+            list.innerHTML = arr;
+            addtxt.value = "";
+            addtxt.focus();
+        }
+        function enkey() {
+            if (event.keyCode == 13) {
+                arr.push(addtxt.value);
+                list.innerHTML = arr;
+                addtxt.value = "";
+                addtxt.focus();
+            }
+        }
+        del.onclick = function () {
+            let result = arr.indexOf(deltxt.value);
+            arr.splice(result, result);
+            list.innerHTML = arr;
+            deltxt.value = "";
+            deltxt.focus();
+        }
+
+    </script>
+</body>
+
+</html>

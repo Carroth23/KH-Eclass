@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{box-sizing:border-box;}
+        div{border:1px solid black;}
+        .container{
+            width:200px;
+            height:200px;
+            margin:auto;
+            text-align: center;
+        }
+        .container>div{height:25%;}
+        .container>.num>input{width:100%;height:100%;text-align: center;}
+        .container>.btns>button{width:50px;height:100%;}
+        .container>.result{line-height:50px;}
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="num">
+            <input type="text" id="num1" placeholder="첫 번째 수">
+        </div>
+        <div class="num">
+            <input type="text" id="num2" placeholder="첫 번째 수">
+        </div>
+        <div class="btns">
+            <button id="plus">+</button>
+        </div>
+        <div class="result" id="result">
+            Result
+        </div>
+    </div>
+
+
+    <script>
+        let plusBtn = document.getElementById("plus");
+        plusBtn.onclick = function(){
+            let num1 = parseInt(document.getElementById("num1").value);
+            let num2 = parseInt(document.getElementById("num2").value);
+
+            let result = num1 + num2;
+            document.getElementById("result").innerHTML = result;
+
+            document.getElementById("num1").value="";
+            document.getElementById("num2").value="";
+            document.getElementById("num1").focus();
+        }
+
+        // document.write는 덮어쓴다
+    </script>
+
+</body>
+
+</html>

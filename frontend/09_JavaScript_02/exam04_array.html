@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // indexOf, join, reverse, pop, push, shift, unshift, slice, splice
+
+        let arr = [1,2,3,4,5,6,7,8];
+        // slice : 배열 안에서 특정 범위 내의 요소들을 추출하는 기능(원본 수정X)
+        // 첫번째 파라미터 : start (Inclusive) / 두번째 파라미터 : end (Exclusive)
+        let subarr = arr.slice(1,4);
+        console.log(`추출된 항목 배열 : ${subarr}`);
+        console.log(`원본 배열은 유지된다 : ${arr}`);
+
+
+        // splice : 배열 내에서 특정 시작점부터 특정개수만큼의 데이터를 삭제하거나,
+        //          특정 위치에 데이터를 끼워넣는 함수 ( 원본 수정 o )
+        // 첫번째 파라미터 : 시작 Index (Inclusive) / 두번째 파라미터는 : 삭제 할 데이터 개수
+        console.log(`삭제 하기 전 배열 : ${arr}`);
+        arr.splice(1,2); // 1번 Index에서부터 2개를 삭제
+        // arr.splice(4); // 4번째부터 다지워라
+        // arr.splice(-3); // 뒤에서 3번째부터 다지워라
+        // arr.splice(몇번째로부터, 몇번째까지 지우고, 그자리에 이걸 끼워넣어라);
+        // arr.splice(1, 0, "Hi"); // 1번자리에서 하나도 지우지말고 Hi를 끼워넣어라.
+        // arr.splice(3,2,"Hi","Hello","Test"); // 여러개 끼워넣기 가능
+        console.log(`1번 항목부터 2개를 삭제한 후의 배열 : ${arr}`);
+
+    </script>
+</body>
+</html>

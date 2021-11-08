@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 값 비워둘땐 null을 쓰자 언디파인드쓰면 초기화를 안한줄알수도있음
+        // null로 해두면 의도적으로 빈값을 만들었다는 메세지를 줄수있다.
+
+        // 변수는 let를 쓴다 var은 옛날꺼.
+        // const는 상수.(근데 바꿀수있는 경우도 있음)
+        // const는 선언과 동시에 초기화를 꼭해줘야됨 선언만 하면 에러남(못바꾸는 값이니까.)
+
+        // var의 특징. 1. 다시 선언이 가능. var q = 1; var q = 1; 이게 가능
+        //            2. 예약어를 이름으로 사용할수도 있음
+        //            3. 이거 아마 스코프도 차이있음 {}
+
+        // 조건문은 자바랑 너무 똑같아서 필기 생략
+        // shift + esc 누르면 브라우저 작업관리자가 뜸
+
+        // for (;;) {} // 무한반복
+
+
+        // 펑션은 한가지일만 하게 작성하자.
+        // JS에서 펑션은 오브젝트이다.
+        function printHello() {
+            console.log('Hello');
+        }
+        function log(message = "sorryy") { // 디폴트 파라미터 파라미터가 없을때 기본으로 나올 값
+            console.log(message);
+        }
+        log();
+
+        // 함수를 사용할때는 Early return, early exit 하자.
+        // 조건이 맞지않는경우 바로 리턴을 먼저 시켜버리고
+        // 조건이 맞는경우의 로직을 넣자.
+
+        // 호이스팅: 선언을 끌어올림
+
+        // Arrow function
+        // const add = function (a, b) {
+        //      return a + b;
+        // }
+        // 위의 펑션을 애로우펑션으로 바꾸면 밑에처럼 됨
+        // const add = (a, b) => a + b;
+
+
+
+        // IIFE
+        (function hello() {
+            console.log('IIFE');
+        })();
+        // 함수를 만들자마자 바로 호출하는것.
+    </script>
+</body>
+
+</html>

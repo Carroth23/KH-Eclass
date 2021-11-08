@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = [];
+
+        // 배열의 가장 뒤로 값을 삽입.
+        arr.push("Java");
+        console.log(arr);
+        arr.push("C++");
+        console.log(arr);
+        arr.push("C#");
+        console.log(arr);
+
+        // 배열의 가장 뒤의 값을 아예 뽑아냄
+        let popData = arr.pop();
+        console.log(`${arr} : ${popData}`);
+
+        // 배열의 가장 앞의 값을 아예 뽑아냄
+        let shiftData = arr.shift();
+        console.log(`${arr} : ${shiftData}`)
+
+        // 맨 앞으로 값을 끼워넣는것.
+        arr.unshift("Python");
+        console.log(arr);
+    </script>
+</body>
+</html>

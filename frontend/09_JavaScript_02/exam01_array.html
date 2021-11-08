@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box"></div>
+    <script>
+
+        // 자스에서 배열을 만드는 방법은 대괄호
+        // 자스의 배열은 자바의 리스트와 비슷하다.
+        let arr = [];
+        arr[0] = "Hello";
+        arr[2] = 30;
+        arr[3] = document.getElementById("box");
+        arr[4] = function(num1, num2){
+            return num1 + num2;
+        }
+        arr[5] = [1,2,3];
+
+        console.log(arr);
+        console.log(arr[0]);
+        console.log(arr[1]);
+        console.log(arr[2]);
+        arr[3].innerHTML = "Hello World"
+        let result = arr[4](10,20);
+        console.log(`배열 4번에 저장된 함수 실행 결과 : ${result}`)
+        console.log(arr[5][0]);
+    </script>
+</body>
+</html>

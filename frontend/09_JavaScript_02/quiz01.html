@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <fieldset style="margin-bottom: 15px;">
+        <legend>
+            fruits
+        </legend>
+        <div id="list"></div>
+    </fieldset>
+    <input type="text" id="front" placeholder="앞에 추가할 값">
+    <button id="frontadd">앞쪽에 추가</button>
+    <button id="frontdel">앞에서 삭제</button><br>
+    <input type="text" id="back" placeholder="뒤에 추가할 값">
+    <button id="backadd">뒤쪽에 추가</button>
+    <button id="backdel">뒤에서 삭제</button>
+
+
+    <script>
+        let arr = ['Apple', 'Mango', 'Banana', 'Tomato'];
+        let list = document.getElementById("list");
+        let front = document.getElementById("front");
+        let frontadd = document.getElementById("frontadd");
+        let frontdel = document.getElementById("frontdel");
+
+        let back = document.getElementById("back");
+        let backadd = document.getElementById("backadd");
+        let backdel = document.getElementById("backdel");
+        
+        list.innerHTML = arr;
+        frontadd.onclick = function(){
+            arr.unshift(front.value);
+            list.innerHTML = arr;
+        }
+        frontdel.onclick = function(){
+            arr.shift();
+            list.innerHTML = arr;
+        }
+        backadd.onclick = function(){
+            arr.push(back.value);
+            list.innerHTML = arr;
+        }
+        backdel.onclick = function(){
+            arr.pop();
+            list.innerHTML = arr;
+        }
+    </script>
+</body>
+
+</html>

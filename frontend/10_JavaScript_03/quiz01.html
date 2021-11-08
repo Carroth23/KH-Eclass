@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 1. shop 변수 안에 객체를 생성 -->
+    <!-- 2. shop 내부에 menu라는 키값에 객체를 생성 -->
+    <!--    > menu 객체 내부에 bread 라는 배열 생성 -->
+    <!--        - bread배열에 문자열 Muffin, Tart, Morning Bread 저장 -->
+    <!--    > menu 객체 내부에 beverage 라는 배열 생성 -->
+    <!--        - beverage 배열에 문자열 Americano, Cafe Latte, Orange Juice 저장 -->
+    <!-- 3. shop 내부에 employee라는 키값에 배열을 생성 -->
+    <!--    > employee 배열의 0번 요소에 익명함수를 생성 -->
+    <!--        - 익명함수는 객체를 return -->
+    <!--        - return 객체는 name키값에 jack, age키값에 25, contact키값에 01012344321 을 저장 -->
+    <!--    > employee 배열의 1번 요소에 객체를 저장 -->
+    <!--        - 해당 객체는 name키값에 susan, age키값에 22, contact키값에 01043211234 를 저장-->
+
+    <script>
+        let shop = {
+            menu: {
+                bread: ["Muffin", "Tart", "Morning Bread"],
+                beverage: ["Americano", "Cafe Latte", "Orange Juice"]
+            },
+            employee: [
+                function () {
+                    return {
+                        name: "jack",
+                        age: 25,
+                        contact: "01012344321"
+                    };
+                },
+                {
+                    name: "susan",
+                    age: 22,
+                    contact: "01043211234"
+                }
+            ]
+        }
+
+        console.log(shop.employee[0]());
+        console.log(shop.employee[1]);
+
+        // 가게 메뉴 중 빵종류에서 0번 항목 출력해보기.
+        console.log(shop.menu.bread[0]);
+        // 가게 직원 중 Susan직원의 나이 출력해보기.
+        console.log(shop.employee[1].age);
+        // 가게 직원 중 jack 직원의 연락처 출력해보기.
+        console.log(shop.employee[0]().contact);
+    </script>
+</body>
+
+</html>
