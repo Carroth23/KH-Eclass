@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+
+
+    <!-- JQuery -->
+    <!-- 자바스크립트 라이브러리 -->
+    <!-- 자바스크립트를 더 편하게 사용하자. -->
+
+
+    <input typt="text" id="message" value="JQuery value">
+
+    <div id="message2">JQuery value2</div>
+
+    <script>
+        // JQuery.
+        // $. 이 두개는 같다. 더 편하게 쓰기위해 $사용.
+
+        let obj1 = document.getElementById("message");
+        let obj2 = $("#message") // CSS의 선택자를 사용가능 위에껄 JQuery사용
+        // obj1과 obj2는 객체타입이 다르다. obj2는 자바스크립트객체를 제이쿼리로 한번 감싼느낌
+        // 그래서 사용할 수 있는 기능도 다르다.
+
+        // $("#message").val("JQuery Practice"); // value값을 세팅하는 코드
+        // JQueryNode에는 멤버필드가 없다 모든게 펑션임
+
+        // let result = $("#message").val(); input message의 값을 꺼내오는 코드
+        console.log($("#message2").html()); // message2값 console
+        // $("#message2").html("Modified by JQuery"); // message2값 바꾸기
+        // console.log(result);
+    </script>
+</body>
+
+</html>

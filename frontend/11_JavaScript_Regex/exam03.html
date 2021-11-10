@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = ["Apple","Orange"];
+        console.log(arr.length);
+
+
+        let str = '여보세요! 저는 jane 입니다. 급한 일은 010-1112-3342 or 010-1234-4321 로 연락주세요.';
+        
+        // let regexPhone = /010-?\d{4}-?\d{4}/g;
+
+        // console.log(regexPhone.exec(str)); // 한번만 하면 글로벌옵션의 포인터가 한번 검색하고 멈춰있어서 1개만 찾고 멈춤
+        // console.log(regexPhone.exec(str)); // 이렇게 한번 더쓰면 하나를 더찾음
+    
+        
+        let regexPhone = /(010-?\d{4}-?\d{4}) or (010-?\d{4}-?\d{4})/;
+        
+        // exec는 그룹화 데이터를 배열로 담아서 리턴함 $1, $2처럼 사용하는것.
+        let result = regexPhone.exec(str);
+        console.log(result[0]); // $&
+
+        console.log(result[1]); // $1
+        console.log(RegExp.$1);
+
+        console.log(result[2]); // $2
+        console.log(RegExp.$2);
+    </script>
+</body>
+</html>

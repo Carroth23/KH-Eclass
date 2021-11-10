@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+    <form action="exam01.html" id="frm">
+        <input type="text" id="id" placeholder="ID를 입력하세요.">
+        <input type="text" id="phone" placeholder="사용할 핸드폰 번호를 입력해주세요.">
+        <input type="submit">
+    </form>
+    <!-- Submit를 눌렀을 때, ID가 다음의 조건을 만족한다면, exam01.html로 이동하여 -->
+    <!-- 제출에 성공했습니다. 메세지를 보이게 하고 -->
+    <!-- 다음의 조건을 만족하지 못한다면, exam01.html로 이동하지 못하게 막는 프로그램을 만드세요. -->
+    <!-- 경고메세지는 개인 재량 -->
+
+    <!-- 조건1: 소문자 또는 숫자로만 구성될 것 -->
+    <!-- 조건2: 6자 이상 10자 이하 일것 -->
+    <!-- 조건3: 숫자는 맨 첫글자로 올 수 없음 -->
+    <script>
+        let frm = document.getElementById("frm")
+
+        frm.onsubmit = function() {
+            let idVal = document.getElementById("id").value;
+            let phoneVal = document.getElementById("phone").value;
+            let idRegex = /^[a-z][a-z\d]{5,9}$/;
+            let phoneRegex = /^010-?\d{4}-?\d{4}$/;
+            
+
+            if (!idRegex.test(idVal)) {
+                Swal.fire('ID를 확인해주세요');
+                return false;
+            }
+            if (!phoneRegex.test(phoneVal)) {
+                Swal.fire('Phone번호를 확인해주세요')
+                return false;
+            }
+        }
+    </script>
+</body>
+
+</html>

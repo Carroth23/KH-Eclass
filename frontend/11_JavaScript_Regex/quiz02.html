@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="box">
+    <button id="btn">유효성 검사</button>
+    <span id="txt"></span>
+    <script>
+        let box = document.getElementById("box");
+        let btn = document.getElementById("btn");
+        let txt = document.getElementById("txt");
+
+        let regex = /^\d{3}-?\d{3,4}-?\d{4}$/g;
+        // global플래그는 한번 찾은 후 포인터가 그 다음걸 찾으려고 한다.
+        btn.onclick = function () {
+            // let regex = /^\d{3}-?\d{3,4}-?\d{4}$/g; 여기서 주면 됨. 지역변수라 클릭할때마다 재선언되기때문
+
+            let result = regex.test(box.value);
+            if (result) {
+                txt.innerHTML = '핸드폰 번호입니다.'
+            } else {
+                txt.innerHTML = '핸드폰 번호가 아닙니다.'
+            }
+        }
+        console.log(str);
+    </script>
+</body>
+
+</html>

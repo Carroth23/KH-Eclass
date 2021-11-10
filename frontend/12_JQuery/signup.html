@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        div {
+            border: 1px solid black;
+            padding: 1px;
+            font-size: 14px;
+        }
+
+        [class*=col] {
+            padding: 0px;
+        }
+
+        .container {
+            margin-top: 10px;
+            width: 70%;
+        }
+
+        .header {
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .nametag {
+            text-align: right;
+        }
+
+        .footer {
+            text-align: center;
+        }
+
+        .post {
+            width: 100%;
+        }
+
+        button {
+            border: 1px solid gray;
+        }
+
+        input {
+            border: 1px solid gray;
+            margin: 1px;
+        }
+
+        #pwo1 {
+            float: left;
+            border: 0;
+        }
+
+        #pwo {
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="success.html" method="get" id="frm">
+        <div class="container">
+            <div class="row">
+                <div class="col header">회원 가입 정보 입력</div>
+            </div>
+            <div class="row">
+                <div class="col-2 nametag">아이디(6자~14자 소문자또는 숫자만 사용가능, 첫글자는 소문자만 가능) :</div>
+                <div class="col-10"><input type="text" id="idInput"><button type="button" id="idConfirm">중복확인</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2 nametag">패스워드(8자 이상) :</div>
+                <div class="col-10"><input type="text" id="pw"></div>
+            </div>
+            <div class="row">
+                <div class="col-2 nametag">패스워드 확인:</div> <!-- 유효성 검사 -->
+                <div class="col-10">
+                    <input type="text" id="pwo">
+                    <div id="pwo1"></div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-2 nametag">이름(가~힣 로만 5글자 이하) :</div>
+                <div class="col-10"><input type="text" id="yourName"></div>
+            </div>
+            <div class="row">
+                <div class="col-2 nametag">성별(둘중 한가지 선택) :</div>
+                <div class="col-10">
+                    <input type="radio" name="gender">남성
+                    <input type="radio" name="gender">여성
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2 nametag">핸드폰 번호 :</div>
+                <div class="col-10">
+                    <select>
+                        <option>010</option>
+                        <option>011</option>
+                        <option>017</option>
+                        <option>018</option>
+                    </select>
+                    -
+                    <input type="text" id="phone1">
+                    -
+                    <input type="text" id="phone2">
+                    <button type="button" id="phoneConfirm">휴대폰 인증</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2 nametag">이메일(@포함 .com으로 끝나야함) :</div>
+                <div class="col-10"><input type="text" id="email"></div>
+            </div>
+            <div class="row">
+                <div class="col-2 nametag">우편번호 :</div>
+                <div class="col-10"><input type="text" id="postcode"><button type="button" id="postsearch">찾기</button></div>
+            </div>
+            <div class="row">
+                <div class="col-2 nametag">도로명 주소 :</div>
+                <div class="col-10"><input type="text" class="post" id="roadAddress"></div>
+            </div>
+            <div class="row">
+                <div class="col-2 nametag">상세 주소 :</div>
+                <div class="col-10"><input type="text" class="post" id="jibunAddress"></div>
+            </div>
+            <div class="row">
+                <div class="col footer">
+                    <button type="submit" id="subm">회원가입</button>
+                    <button type="reset">다시 입력</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <script>
+        let flag0 = false;
+        let flag1 = false;
+        let flag2 = false;
+        let flag3 = false;
+        let flag4 = false;
+        let flag5 = false;
+
+        // 패스워드 확인
+        let pw = document.getElementById("pw");
+        let pwo = document.getElementById("pwo");
+        let pwo1 = document.getElementById("pwo1");
+        pwo.oninput = function () {
+            let regex = /^.{8,}$/;
+            if (pw.value != pwo.value) {
+                pwo1.setAttribute("style", "color:pink;");
+                pwo1.innerHTML = "패스워드 형식에 맞지않습니다.(8자이상)";
+                flag0 = false;
+            } else if ((pw.value == pwo.value) && regex.test(pwo.value)) {
+                pwo1.setAttribute("style", "color:blue;");
+                pwo1.innerHTML = "패스워드 사용가능";
+                flag0 = true;
+            }
+        }
+
+        // 주소 API
+        document.getElementById("postsearch").onclick = function () {
+            new daum.Postcode({
+                oncomplete: function (data) {
+                    document.getElementById('postcode').value = data.zonecode;
+                    document.getElementById("roadAddress").value = data.roadAddress;
+                    document.getElementById("jibunAddress").value = data.jibunAddress;
+                }
+            }).open();
+        }
+
+        // 아이디 체크
+        document.getElementById("idConfirm").onclick = function () {
+            let id = document.getElementById("idInput").value;
+            let regex = /^[a-z][a-z\d]{5,13}$/;
+            if (!regex.test(id)) {
+                alert("ID를 확인해주세요.");
+                flag1 = false;
+            } else {
+                alert("사용 가능한 ID입니다.");
+                flag1 = true;
+            }
+        }
+
+        // 이름 체크
+        document.getElementById("yourName").oninput = function () {
+            let name = document.getElementById("yourName").value;
+            let regex = /^[가-힣]{0,5}$/;
+            if (!regex.test(name)) {
+                flag2 = false;
+            } else {
+                flag2 = true;
+            }
+        }
+
+        // 핸드폰 번호 체크
+        document.getElementById("phoneConfirm").onclick = function () {
+            let regex = /^[\d]{4}$/;
+
+            let phone1 = document.getElementById("phone1").value;
+            let phone2 = document.getElementById("phone2").value;
+            if (regex.test(phone1) && regex.test(phone2)) {
+                flag4 = true;
+            } else {
+                flag4 = false;
+            }
+        }
+
+        // 이메일 체크
+        document.getElementById("email").oninput = function () {
+            regex = /^.+@.+\.com$/;
+            let email = document.getElementById("email").value;
+            if (regex.test(email)) {
+                flag5 = true;
+            } else {
+                flag5 = false;
+            }
+        }
+
+        document.getElementById("subm").onclick = function () { // submit
+            if (!flag0) {
+                alert("패스워드를 확인해주세요.");
+                return false;
+            } else if (!flag1) {
+                alert("ID를 확인해주세요.");
+                return false;
+            } else if (!flag2) {
+                alert("이름을 확인해주세요.");
+                return false;
+            } else if ($("#frm input[type=radio]:checked").length == 0) { // 누른순간 체크되어있는지 확인
+                alert("성별을 체크해주세요.");
+                return false;
+            } else if (!flag4) {
+                alert("핸드폰번호를 확인해주세요.");
+                return false;
+            } else if (!flag5) {
+                alert("이메일을 확인해주세요.");
+                return false;
+            } else {
+                return true;
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

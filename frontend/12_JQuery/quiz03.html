@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="num">
+            <input type="text" id="num1" placeholder="첫 번째 수">
+            <button id="plus">+</button>
+        </div>
+        <div class="num">
+            <input type="text" id="num2" placeholder="첫 번째 수">
+        </div>
+        <div class="result" id="result">
+            여기에 값이 표시됩니다.
+        </div>
+    </div>
+
+
+    <script>
+
+        $("#plus").on("click",function(){
+            let num1 = $("#num1").val();
+            let num2 = $("#num2").val();
+
+            let result = parseInt(num1) + parseInt(num2);
+            $("#result").html(result);
+
+        });
+
+        // document.write는 덮어쓴다
+    </script>
+</body>
+</html>

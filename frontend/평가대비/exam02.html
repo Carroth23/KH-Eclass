@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- reset 버튼의 역할 -->
+    <!-- button 태그의 기본 동작 -->
+    <!-- Form 태그의 Method 속성 -->
+    <!-- Request 방식 두 가지 -->
+        <!-- get : 데이터를 Request 패킨 Header 영역의 URL 속성에 담아서 전송하는 방식 -->
+        <!-- - Header 영역의 URL 속성에 담아 보내기 때문에 데이터 크기에 제한이 있음. (소량 데이터만 전송 가능) -->
+        <!-- 절대주소값을 얻을 수 있다. -->
+
+        <!-- post : 데이터를 Request 패킷 Body 영역에 담아서 전송하는 방식 -->
+        <!-- - post 방식은 데이터를 URL에 노출시키지 않아 최소한의 보안성을 가지고, 대량 데이터 전송에 사용될 수 있다. -->
+        <!-- 절대 주소값을 얻을 수 없다. -->
+        
+    <form action="exam01.html" method="get"> <!-- get으로 보내는건 url에 담는것. post는 body에 담아서 보내는것.-->
+        <input type="text"><br>
+        <input type="text"><br>
+        <input type="text"><br>
+        <input type="submit">
+        <input type="reset">
+        <input type="button" value="제출"> <!-- 얜 아무일도 일어나지않음 --> 
+        <button>버튼</button> <!-- 버튼태그는 기본적으로 submit으로 동작한다. -->
+        <!-- <button type="button">버튼</button> 이라고 써야 버튼으로 사용할수있다. -->
+    </form>
+    
+    <!-- <input type="submit"> 폼 밖에 있으면 아무런 동작도 하지않는다. -->
+    <!-- <input type="reset"> 마찬가지로 폼밖에선 아무런 동작도 하지않는다. -->
+    <!-- 리퀘스트 : 서버에서 클라이언트에게 전달하는 통신 -->
+</body>
+</html>

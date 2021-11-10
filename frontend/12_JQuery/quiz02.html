@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div>P1</div>
+    <br>
+    <div>P2</div>
+    <br>
+    <div>P3</div>
+    <br>
+    <div>P4</div>
+    <br>
+
+    <input type="text" id="linenum" placeholder="줄 번호를 입력하세요.">
+    <input type="text" id="linecol" placeholder="색을 입력하세요.">
+    <button id="btn">적용</button>
+
+    <script>
+        let arr = $("div");
+        $("#btn").on("click",function(){
+            let num = $("#linenum").val();
+            $(arr[num-1]).css("background-color",$("#linecol").val());
+        });
+    </script>
+</body>
+</html>

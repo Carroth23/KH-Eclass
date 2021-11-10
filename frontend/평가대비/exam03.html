@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <!-- JQuery에서 이벤트를 할당하는 방법 두가지 -->
+    <!-- onblur , onfocusout -->
+    <button id="btn">버튼</button>
+    <script>
+        $("#btn").on("click",function(){
+            alert("Test");
+        }) // Dynamic Binding 사용가능
+
+        $("#btn").click(function(){
+            alert("Test");
+        })
+
+        // 위의 두개는 같다 하지만 위쪽방법을 좀더 추천함.
+    </script>
+</body>
+</html>

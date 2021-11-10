@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    
+    <p id="target">Hello JQuery0</p>
+    <p id="target">Hello JQuery1</p>
+    <p id="target">Hello JQuery2</p>
+    <p id="target">Hello JQuery3</p>
+    <script>
+        $("#target").css("background-color","pink");
+        $("#target").css("border","1px solid gray");
+
+        // $("#target").css({ // 객체타입으로 주는법
+        //     "background-color":"pink",
+        //     "border":"1px solid gray"
+        // });
+
+        // 홀수번째에만 백그라운드
+        // $("p:nth-child(odd)").css("background-color","dodgerblue");
+
+        let arr = $("p");
+        console.log(arr); // 여기까지는 제이쿼리노드
+        console.log(arr[0]); // 이렇게 꺼내면 자바스크립트 객체가 나옴
+        //                      그래서 제이쿼리 함수를 사용할 수 없다
+        console.log($(arr[0])); // 이렇게 다시 제이쿼리로 감싸버리면 제이쿼리함수 사용가능
+
+        for (let i = 0; i < arr.length; i++) {
+            if (i % 2 == 1) {
+                arr[i].css("background-color","dodgerblue");
+            } // 이게 안먹는 이유는 제이쿼리의 배열로 꺼낸 객체는 자바스크립트 객체라 css함수가 없다
+        }
+
+        // 제이쿼리는 대상을 선택할때 배열로 반환함.
+        console.log($("p")[0]);
+        $("p") // 선택자를 선택할때는 쌍따옴표를 넣는다.
+        $(arr) // 객체나 변수를 선택할때는 쌍따옴표를 넣지않는다.
+    </script>
+</body>
+</html>

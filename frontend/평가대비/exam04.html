@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <form action="exam01.html" method="get" id="frm">
+        <input type="text" id="id"><br>
+
+        <textarea id="msg"></textarea><br>
+        당신이 좋아하는 기업은 어디입니까?<br>
+        (최소 1개 이상 선택)<br>
+        <input type="checkbox" value="Apple">Apple
+        <input type="checkbox" value="Microsoft">Microsoft
+        <input type="checkbox" value="Google">Google<br>
+        <hr>
+
+        당신이 좋아하는 언어는 무엇인가요? <br>
+        (최소한 한개는 선택해주세요)<br>
+        <!-- 라디오박스는 name속성 없으면 여러개가 다체크됨. -->
+        <input type="radio" value="Java" name="lang">Java
+        <input type="radio" value="C++" name="lang">Python
+        <input type="radio" value="C" name="lang">C
+
+
+        <br><br><input type="submit">
+    </form>
+
+    <script>
+
+        $("#frm").on("submit", function () {
+
+            // if ($("#id").val() == "") {
+            //     alert("아이디를 입력하세요.");
+            //     return false;
+            // }
+
+            // if ($("#msg").val() == "") {
+            //     alert("메세지를 입력하세요.");
+            //     return false;
+            // }
+
+            if ($("#frm input[type=checkbox]:checked").length == 0) {
+                alert("최소 1개는 선택해주세요.");
+                return false;
+            } 
+            // else {
+            //     let arr = $("#frm input[type=checkbox]:checked");
+            //     for (let i = 0; i < arr.length; i++) {
+            //         console.log(arr[i].value);
+            //     }
+            //     return false;
+            // }
+
+            if ($("#frm input[type=radio]:checked").length == 0) {
+                alert("최소 1개는 선택");
+                return false;
+            }
+
+
+            // let regex = //;
+            // if() 유효성 검사....
+        })
+    </script>
+</body>
+
+</html>

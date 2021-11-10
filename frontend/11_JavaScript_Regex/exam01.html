@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    여기가 exam01입니다.
+    <script>
+        let str = '안녕하세요! 저는 Jane 입니다. 급한 일은 010-1234-4321 로 연락주세요.';
+
+        let regex = /Jane/; // 정규식도 JS에선 하나의 자료형이다.
+
+        // 정규표현식 적용함수 1. test : 문자열 안에 정규표현식에 해당하는 데이터가 존재하면 true 아니면 false를 return 한다.
+        let result = regex.test(str);
+        console.log(result);        
+
+
+
+        // 정규표현식 적용함수 2. exec : test 함수보다 더 많은 정보를 반환하며, 그룹화 데이터를 다루기에 용이하다.
+
+        // global플래그는 한번 찾은 후 포인터가 그 다음걸 찾으려고 한다.
+    </script>
+</body>
+</html>

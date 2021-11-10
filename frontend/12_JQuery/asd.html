@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <div><input type="text" id="num1"></div>
+        <div><input type="text" id="num2"></div>
+        <div><button id="btn">+</button></div>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        $("#btn").on("click",function(){
+            let num1 = parseInt($("#num1").val());
+            let num2 = parseInt($("#num2").val());
+
+            $("#result").html(num1+num2);
+
+        })
+    </script>
+</body>
+</html>

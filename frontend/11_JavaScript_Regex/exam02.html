@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <a href="exam01.html">이동</a> 얜 그냥 이동 -->
+
+    <form action="exam01.html" id="inputform">
+
+        <input type="text" id="phone" placeholder="사용할 핸드폰 번호를 입력해주세요.">
+
+        <input type="submit"> <!-- submit은 form태그와 짝이다. -->
+        <!-- submit는 1개의 기본 이벤트 핸들러를 가지고 있다(form안에 있을때만) -->
+        <!-- submit를 누르면 form의 exam01로 이동함 -->
+        <!-- from태그의 submit은 form안의 작성된 데이터를 가지고 exam01로 이동함 -->
+
+    </form>
+
+    <script>
+        let frm = document.getElementById("inputform");
+
+        frm.onsubmit = function () { // frm을 sumbit하려고 할때
+
+            let phoneVal = document.getElementById("phone").value;
+            let phoneRegex = /^010-?\d{4}-?\d{4}$/;
+            let result = phoneRegex.test(phoneVal);
+
+            if (!result) {
+                alert('전화번호를 다시 확인해주세요');
+                return false;
+            }
+            // return false; 리턴이 false면 submit이 취소됨.
+        }
+    </script>
+
+
+</body>
+
+</html>
