@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Element 동적 제어 -->
+
+    <div id="wrapper">
+        내용<br>
+    </div>
+
+
+    <script>
+        // let wrapper = document.getElementById("wrapper"); 
+        // let wrapper = $("#wrapper");
+        // 위의 두개는 다르다.
+        // document.getElementById('temp'); 는 HTML DOM 객체를 리턴하고
+        // $('#temp') 는 jQuery 객체를 리턴한다.
+
+        // let wrapper = $("#wrapper");
+
+        // let item = $("<div>");
+        // item.addClass("item");
+        
+        // let itemImg = $("<div>");
+        // itemImg.addClass("img");
+
+        // let img = $("<img>");
+        // img.attr("src","abc.jpg");
+        
+        // let itemDesc = $("<div>");
+        // itemDesc.addClass("desc");
+        // itemDesc.append("어쩌구 저쩌구....");
+
+        // itemImg.append(img); // prepend도 가능. 어차피 빈곳에 들어가는거기때문
+        // item.append(itemImg);
+        // item.append(itemDesc);
+
+        // wrapper.prepend(item);
+
+        let wrapper = $("#wrapper");  //  <div id="wrapper">
+        let item = $("<div>");        //      <div class="item">
+        item.addClass("item");        //  
+        let itemImg = $("<div>");     //          <div class="img">
+        itemImg.addClass = ("img");   //
+        let img = $("<img>");         //              <img src="img.jpg">
+        img.attr("src","img.jpg");
+                                      //          </div>
+                                      //      </div>
+        let itemDesc = $("<div>");    //      <div class="desc">
+                                      //          어쩌구 저쩌구...</div>
+        itemDesc.addClass("desc");    //  </div>
+        itemDesc.append("어쩌구 저쩌구...");
+        itemImg.append(img);
+        item.append(itemImg);
+        item.append(itemDesc);
+        wrapper.prepend(item);
+
+
+
+        // let wrapper = $("#wrapper");
+        // wrapper.prepend(`
+        // <div class='item'>
+        //     <div class='img'>
+        //         <img src='abc.jpg'>
+        //     </div>
+        //     <div class='desc'>
+        //         어쩌구 저쩌구...
+        //     </div>
+        // </div>`);
+
+    </script>
+
+</body>
+
+</html>

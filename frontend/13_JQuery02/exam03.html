@@ -1,0 +1,51 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+
+    <!-- prev/next : 형제 중, 바로 이전 또는 바로 다음 요소를 반환  : sibling(선택자) : 형제중에서 선택자에 해당하는 요소를 반환 -->
+    <!-- parent : 자신을 포함하는 직계 부모 요소를 반환             :  closest(선택자) : 자신의 모든 부모 중 선택자로 검색되는 요소를 반환 -->
+    <!-- children : 자신에 포함되어 있는 직계 자손을 반환 -->
+    <!-- find : 자신에게 포함되어있는 자손 또는 후손을 검색하여 반환 -->
+    <div class="container">
+        <div class="header">
+            <p class="title">This is title</p>
+            <ul class="fruits">
+                <li class="fruit">Apple</li>
+                <li class="fruit">Orange</li>
+                <li class="fruit">Grape</li>
+            </ul>
+        </div>
+        <div class="body">
+            <p class="body_title">This is title</p>
+            <ul class="fruits">
+                <li class="fruit test">Apple</li>
+                <li class="fruit">Orange</li>
+                <li class="fruit">Grape</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Header에 있는 Apple를 green 색으로 변경
+        // console.log($(".container").children(".header").find(".fruit").first().css("backgrund-color","palegreen"));
+        // $(".fruit.test").closest(".container").find(".fruits").first().children().first().css("background-color","pink");
+
+        // .append("<li>Mango</li>")
+
+
+        /////// 답안
+        let mango = $("<li>");
+        mango.addClass("fruit");
+        mango.text("Mango");
+        
+        console.log($($(".test").closest(".container").find(".fruit")[1]).after(mango));
+    </script>
+</body>
+
+</html>

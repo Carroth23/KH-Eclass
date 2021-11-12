@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        div {
+            border: 1px solid gray;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div>
+            <p id="pid1">Data1</p><button id="btn">X1</button>
+        </div>
+        <div>
+            <p id="pid2">Data2</p><button>X2</button>
+        </div>
+        <div>
+            <p id="pid3">Data3</p><button>X3</button>
+        </div>
+        <div>
+            <p id="pid4">Data4</p><button>X4</button>
+        </div>
+        <div>
+            <p id="pid5">Data5</p><button>X5</button>
+        </div>
+        <script>
+            // $("#pid3").remove(); // 대상 지우기
+            // $("#wrapper").empty(); // 지정한 대상의 후손들 지우기
+
+            $("button").on("click", function () {
+                // $(this).prev().remove();
+                // $(this).parent().remove();
+                $("#wrapper").children()[0].remove();
+            });
+
+            // let btns = document.getElementsByTagName("button");
+            // for (let i = 0; i < btns.length; i++){
+            //     btns[i].onclick = function(){
+                    
+            //         this.remove();
+            //     }
+            // }
+        </script>
+</body>
+
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        span {
+            display: inline-block;
+            width: 120px;
+            text-align: right;
+        }
+
+        #pwCheck {
+            width: 240px;
+            text-align: left;
+        }
+
+        fieldset {
+            margin: auto;
+            width: 600px;
+            height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <fieldset>
+        <legend>회원가입</legend>
+        <form action="result.html" method="get" id="frm">
+            <div id="container">
+                <div id="idBox">
+                    <span id="idLabel">아이디</span><input type="text" id="idInput">
+                </div>
+                <div id="pwBox">
+                    <span>패스워드</span><input type="password" id="pwInput"><span id="pwCheck"></span><br>
+                    <span>패스워드 확인</span><input type="password" id="rePwInput">
+                </div>
+                <div>
+                    <span>이름</span><input type="text" id="nameInput">
+                </div>
+                <div id="genderBox">
+                    <span>성별</span>
+                    남<input type="radio" name="gender"> 여<input type="radio" name="gender">
+                </div>
+                <div>
+                    <span>이메일</span><input type="text" id="emailInput">
+                </div>
+
+                <button type="submit" id="signup">회원가입</button>
+                <button type="reset">취소</button>
+            </div>
+        </form>
+    </fieldset>
+
+    <script>
+        let flagId = false;
+        let flagPw = false;
+
+        // 아이디쪽 클릭시 포커스반영
+        document.getElementById("idBox").onclick = function () {
+            document.getElementById("idInput").focus();
+        }
+
+        // 포커스 해제시 이벤트 발생
+        document.getElementById("idInput").onblur = function () {
+            let regex = /^[^\s]+$/;
+            let idConfirm = regex.test(document.getElementById("idInput").value);
+            if (!idConfirm) {
+                if (document.getElementById("idInput").value == "") {
+                    alert("아이디를 입력하세요");
+                    flagId = false;
+                } else {
+                    alert("아이디 조건에 맞지 않습니다.");
+                    document.getElementById("idInput").value = "";
+                    flagId = false;
+                }
+            }
+            flagId = true;
+        }
+
+        // 패스워드 확인창
+        document.getElementById("rePwInput").oninput = function () {
+            if (document.getElementById("pwInput").value == "") {
+                alert("패스워드를 입력하세요");
+                document.getElementById("rePwInput").value = "";
+                document.getElementById("pwInput").focus();
+            }
+            if (document.getElementById("pwInput").value != document.getElementById("rePwInput").value) {
+                document.getElementById("pwCheck").setAttribute("style", "color:red;");
+                document.getElementById("pwCheck").innerHTML = "패스워드가 일치하지 않습니다";
+                flagPw = false;
+            } else {
+                document.getElementById("pwCheck").setAttribute("style", "color:green;");
+                document.getElementById("pwCheck").innerHTML = "패스워드가 일치합니다";
+                flagPw = true;
+            }
+        }
+
+        // 회원가입버튼 클릭시 최종확인
+        document.getElementById("signup").onclick = function () {
+            if (!flagId) {
+                alert("ID를 확인해주세요");
+                return false;
+            } else if (!flagPw) {
+                alert("PW를 확인해주세요");
+                return false;
+            } else if (document.getElementById("nameInput").value == "") {
+                alert("이름을 입력해주세요");
+                return false;
+            } else if ($("#frm input[type=radio]:checked").length == 0) {
+                alert("성별을 체크해주세요");
+                return false;
+            } else if (document.getElementById("emailInput").value == "") {
+                alert("이메일을 입력해주세요");
+                return false;
+            }
+        }
+    </script>
+</body>
+
+</html>

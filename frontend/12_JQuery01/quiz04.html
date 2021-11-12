@@ -13,16 +13,7 @@
     <div id="result"></div>
 
     <script>
-        $("#repw").on("input",function(){
-            let pw = $("#pw").val();
-            let repw = $("#repw").val();
-            if (pw != repw) {
-                $("#result").html("패스워드가 일치하지않습니다.");
-            } else {
-                $("#result").html("패스워드가 일치합니다.");
-            }
-        })
-        $("#pw").on("input",function(){
+        $("#repw,#pw").on("input",function(){
             let pw = $("#pw").val();
             let repw = $("#repw").val();
             if (pw != repw) {

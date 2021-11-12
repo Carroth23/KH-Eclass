@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        #wrapper{
+            width:200px;
+            border:1px solid gray;
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- Element 동적 제어 -->
+
+    <!-- <input type="text"> 정적 요소 -->
+
+    <!-- 이벤트에 의해 생겨난 버튼이이나 엘레먼트가 있다면 그것이 동적 요소 -->
+    <div id="wrapper">
+        내용<br>
+    </div>
+
+    <script>
+        
+        $("#wrapper").before("여기가 Before<br>");
+        $("#wrapper").prepend("여기가 Prepend<br>");
+        $("#wrapper").append("여기가 Append<br>");
+        $("#wrapper").after("여기가 After");
+        // document.write(""); 얘도 동적요소긴 한데 기존페이지 내용을 다 지워버리고 추가함 그래서 의미가 없다.
+
+        // before
+        // prepend
+        // append
+        // after
+
+        // 스트링형식으로 넣는법(별로 추천 안함)
+        $("#wrapper").prepend("<div class='line'>여기가 Prepend</div>");
+        
+        // 변수화 시켜서 넣는법
+        // let line = "<div>여기가 Prepend</div>";
+        // $("#wrapper").prepend(line);
+        
+        // 제이쿼리 노드로 만드는것(얘를 추천)
+        let line = $("<div>"); // 임의의 div하나 만든것(알아서 </div>됨)
+        line.append("내용추가!"); // 여기서 임의의 div에 내용추가가 들어갔고
+
+        $("#wrapper").prepend(line); // 내용이 추가된 임의의 div가 #wrapper에 들어옴
+
+
+        // text는 텍스트만 뽑아내고 html은 태그까지 뽑아냄
+    </script>
+</body>
+</html>

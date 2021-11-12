@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>KH</title>
+
+    <script>
+
+        window.onload = function () {
+
+            var btn = document.getElementsByTagName("button");
+
+            btn.addEventListener("click", function () {
+
+                color = document.getElementById("color");
+
+                color.style.width = "100px";
+
+                color.style.height = "100px";
+
+                color.style.background = this.innerText;
+
+            });
+
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+    <p>
+
+        색상을 선택하세요
+
+        <button>Red</button>
+
+        <button>Orange</button>
+
+        <button>Yellow</button>
+
+        <button>Green</button>
+
+        <button>Blue</button>
+
+    </p>
+
+    <div id="color"></div>
+
+</body>
+
+</html>
