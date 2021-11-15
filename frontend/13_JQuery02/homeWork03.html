@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    /* 전체 옵션 */
+    * {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+    }
+
+    /* 컨테이너 */
+    #container {
+      width: 500px;
+      margin: auto;
+    }
+
+    /* 채팅들이 들어가는 위쪽 박스 */
+    #chattingBox {
+      height: 300px;
+      border: 1px solid gray;
+      overflow: auto;
+      background-color: darkseagreen;
+    }
+
+    /* 입력과 이모티콘버튼이 들어가는 아래쪽 박스 */
+    #inputBox {
+      height: 150px;
+      border: 1px solid gray;
+    }
+
+    /* 메세지입력칸 */
+    #inputBox>.input {
+      width: 80%;
+      height: 100%;
+      float: left;
+    }
+
+    .input>input {
+      width: 100%;
+      height: 100%;
+    }
+
+    /* 이모티콘 버튼 */
+    .iconInput {
+      width: 20%;
+      height: 100%;
+      float: left;
+    }
+
+    .iconInput>button {
+      width: 100%;
+      height: 100%;
+      transition: all 1s;
+    }
+
+    .iconInput>button:hover {
+      cursor: pointer;
+      background-color: bisque;
+      border: none;
+    }
+
+    /* 말풍선 */
+    .chatBox {
+      width: fit-content;
+      background-color: khaki;
+      border: 1px solid black;
+      border-radius: 5px;
+      margin: 4px;
+      padding: 5px;
+    }
+
+    /* 말풍선 삭제버튼 */
+    .delBtn {
+      border: none;
+      background-color: khaki;
+      cursor: pointer;
+      color: red;
+    }
+
+    /* 아이콘 내려오는 박스 */
+    #iconBox {
+      width: 500px;
+      height: 300px;
+      background-color: pink;
+      position: absolute;
+      display: none;
+    }
+
+    /* 아이콘을 감싸는 박스 */
+    .icons {
+      width: 20%;
+      height: 30%;
+      float: left;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      transition: all 0.3s;
+    }
+
+    .icons>img:hover{
+      cursor: pointer;
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="container">
+    <div id="chattingBox">
+
+      <div id="iconBox">
+        <div class="icons"><img src="icon1.gif" alt="kakao"></div>
+        <div class="icons"><img src="icon2.gif" alt="kakao"></div>
+        <div class="icons"><img src="icon3.gif" alt="kakao"></div>
+        <div class="icons"><img src="icon4.gif" alt="kakao"></div>
+        <div class="icons"><img src="icon5.gif" alt="kakao"></div>
+        <div class="icons"><img src="icon6.gif" alt="kakao"></div>
+        <div class="icons"><img src="icon7.gif" alt="kakao"></div>
+        <div class="icons"><img src="icon8.gif" alt="kakao"></div>
+      </div>
+    </div>
+
+    <div id="inputBox">
+      <div class="input">
+        <input type="text" placeholder="메세지를 입력하세요." id="msgInput">
+      </div>
+      <div class="iconInput">
+        <button id="icon">이모티콘</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+
+    // JQuery
+    $("#msgInput").on("keydown", function (e) {
+      if (e.keyCode == 13) {
+        if ($("#msgInput").val() == "") {
+          alert("메세지를 입력해 주세요.");
+        } else {
+          let msg = $("#msgInput");
+          let div = $("<div>");
+          div.addClass("chatBox");
+          div.append(msg.val());
+          $("#chattingBox").append(div);
+          $('#chattingBox').scrollTop($('#chattingBox').prop('scrollHeight'));
+          msg.val("");
+        }
+      }
+    });
+
+    // 버튼 기본설정
+    let button = $("<button>");
+    button.addClass("delBtn");
+    button.text("X");
+
+    // 말풍선 마우스오버시 X 표현
+    $("#chattingBox").on("mouseover", ".chatBox", function () {
+      let flag = 0;
+      if (flag == 0) {
+        $(this).append(button);
+        flag++
+      }
+    });
+
+    // 말풍선 마우스 아웃시 X사라짐
+    $("#chattingBox").on("mouseleave", ".chatBox", function () {
+      $(button).remove();
+    });
+
+    // 말풍선X 클릭시 해당 말풍선 삭제
+    $("#chattingBox").on("click", ".delBtn", function () {
+      $(this).parent().remove();
+    })
+
+    // 이모티콘 버튼 클릭시 이모티콘박스 스르륵
+    let iconFlag = true;
+    $("#icon").on("click", function () {
+      if (iconFlag) {
+        $("#iconBox").slideDown(800);
+        iconFlag = !true;
+      } else {
+        $("#iconBox").slideUp(800);
+        iconFlag = !false;
+      }
+    })
+
+    // 이모티콘 선택
+
+  </script>
+
+
+</body>
+
+</html>

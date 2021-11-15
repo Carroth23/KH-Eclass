@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    .box{
+      width:200px;
+      height:200px;
+      border:1px solid black;
+      text-align:center;
+      line-height:200px;
+      margin:auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    box
+  </div>
+  <button id="hide">Hide</button>
+  <button id="show">Show</button>
+
+  <script>
+    $("#hide").on("click",function(){
+      // $(".box").hide(); // display:none;
+      // $(".box").hide(1000); // 1초에 걸쳐서 숨겨라
+      // $(".box").hide(1000,function(){
+      //   alert("숨기기 완료!"); // 숨기기가 완료된 후 CallBack함수 실행
+      // });
+
+      // $(".box").slideUp(1000);
+
+      $(".box").fadeOut(1000);
+    });
+    $("#show").on("click",function(){
+      // $(".box").show(1000);
+
+      // $(".box").slideDown(1000);
+
+      $(".box").fadeIn(1000);
+    })
+  </script>
+</body>
+</html>

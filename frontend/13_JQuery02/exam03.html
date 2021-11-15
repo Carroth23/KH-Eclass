@@ -45,6 +45,10 @@
         mango.text("Mango");
         
         console.log($($(".test").closest(".container").find(".fruit")[1]).after(mango));
+        
+        let goguma = $("<li class='fruit'>");
+        goguma.text("고구마");
+        console.log($($(".test").closest(".container").find(".fruit")[2]).after(goguma));
     </script>
 </body>
 

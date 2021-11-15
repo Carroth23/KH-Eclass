@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    #files {
+      width: 300px;
+      border: 1px solid black;
+    }
+
+    button {
+      margin: 5px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <button id="addFile">Add</button>
+  <!-- <button id="delFile">Remove</button> -->
+  <fieldset id="files">
+    <legend>Files</legend>
+  </fieldset>
+
+  <script defer>
+    $("#addFile").on("click", function () {
+
+      let line = $("<div>");
+      let newFile = $("<input type=file>");
+      let delButton = $("<button>");
+      delButton.addClass("btnDel");
+      delButton.text("X");
+
+
+      // delButton.on("click",function(){ // 버튼을 만들고 바로 이벤트를 할당해야 작동한다.(방법1)
+      //   alert("Test");
+      // })
+
+
+      line.append(newFile);
+      line.append(delButton);
+
+      $("#files").append(line);
+    });
+
+    // Static Event Binding
+    // $(".btnDel").on("click",function(){ //여기에 이벤트를 주면 클릭당시에는 버튼들이 없으므로 X(동적바인딩)
+    //   alert("Test");
+    // })
+
+    // Dynamic Event Binding
+    $("#files").on("click",".btnDel",function(){ // 동적바인딩 (동적으로 생겨나는 요소의 페어런츠중 고정적 요소에 이벤트 부여)
+      $(this).parent().remove();
+    })
+
+    // $("#delFile").on("click", function () {
+    //   $("input[type=file]").last().remove();
+    // })
+  </script>
+</body>
+
+</html>

@@ -13,9 +13,28 @@
         table tr td{
             border:1px solid gray;
         }
+        button{
+            transition: all 0.3s;
+        }
+        button:hover{
+            border: none;
+            background-color:cadetblue;
+            cursor: pointer;
+            font-size: 12px;
+            border-radius: 10%;
+            color:cornsilk;
+        }
     </style>
 </head>
 <body>
+
+    <!-- JQuery 노드를 만드는 법
+    prepend / append / after / before
+    remove / empty
+    prev / next / cloeset / parent / children / find / sibling
+    dynamic event binding -->
+
+
     <div id="container">
         <div>
             <span>제목 : </span>
@@ -29,7 +48,10 @@
             <span>작성자 : </span>
             <input type="text" id="writer">
         </div>
-        <button id="btn">테이블에 추가</button>
+        <button id="btn">테이블에 추가</button><br>
+        <input type="text" id="delInput">
+        <button id="delBtn">삭제하기</button>
+
         <div id="tab">
             <table id="table">
                 <tr>
@@ -52,7 +74,10 @@
             let td1 = $("<td>");
             let td2 = $("<td>");
             let td3 = $("<td>");
-
+            let delButton = $("<button>");
+            delButton.addClass("delBtn");
+            delButton.text("삭제");
+            
             $("#table").append(tr);
             tr.append(td1);
             td1.append(title);
@@ -60,7 +85,26 @@
             td2.append(contents);
             td2.after(td3);
             td3.append(writer);
-        })
+            tr.append(delButton);
+
+            // 시각효과
+            tr.hide();
+            tr.fadeIn(1000);
+        });
+
+        $("#delBtn").on("click",function(){
+            let delVal = $("#delInput").val();
+            let trs = $("tr");
+            for (let i = 1; i < trs.length; i++){
+                if(trs[i].children[0].innerHTML == delVal){
+                    trs[i].remove();
+                }
+            }
+        });
+
+        $("#table").on("click",".delBtn",function(){
+            $(this).parent().remove();
+        });
     </script>
 </body>
 </html>
