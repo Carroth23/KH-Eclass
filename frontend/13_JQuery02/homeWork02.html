@@ -8,203 +8,151 @@
   <title>Document</title>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <style>
-    /* 전체 옵션 */
+    /* 전체 설정 */
     * {
       box-sizing: border-box;
-      padding: 0;
       margin: 0;
+      padding: 0;
+    }
+
+    div {
+      border: 1px solid gray;
+    }
+
+    body {
+      padding-top: 50px;
     }
 
     /* 컨테이너 */
     #container {
-      width: 500px;
+      width: 800px;
+      height: 140px;
+      background-color: pink;
       margin: auto;
     }
 
-    /* 채팅들이 들어가는 위쪽 박스 */
-    #chattingBox {
-      height: 300px;
-      border: 1px solid gray;
-      overflow: auto;
-      background-color: darkseagreen;
+    #idBox {
+      width: 100%;
+      height: 30px;
+      background-color: rgb(219, 219, 219);
     }
 
-    /* 입력과 이모티콘버튼이 들어가는 아래쪽 박스 */
-    #inputBox {
-      height: 150px;
-      border: 1px solid gray;
+    /* 아이디박스와 아래박스 */
+    #reBox {
+      width: 100%;
+      height: 110px;
     }
 
-    /* 메세지입력칸 */
-    .input {
+    #reInputBox {
       width: 80%;
       height: 100%;
       float: left;
+      background-color: green;
     }
 
-    #msgInput {
+    /* 메세지창과 버튼 */
+    #reInput {
       width: 100%;
       height: 100%;
     }
 
-    /* placeholder 사용 */
-    [contenteditable=true]:empty:before {
-      content: attr(placeholder);
-    }
-
-    /* 이모티콘 버튼 */
-    .iconInput {
+    #reBtnBox {
       width: 20%;
       height: 100%;
       float: left;
     }
 
-    .iconInput>button {
+    #reBtn {
       width: 100%;
       height: 100%;
-      transition: all 1s;
     }
-
-    .iconInput>button:hover {
-      cursor: pointer;
-      background-color: bisque;
-      border: none;
+    hr {
+      margin-top: 10px;
+      margin-bottom: 10px;
     }
-
-    /* 말풍선 */
-    .chatBox {
-      width: fit-content;
-      background-color: khaki;
-      border: 1px solid black;
-      border-radius: 5px;
-      margin: 4px;
-      padding: 5px;
-    }
-
-    /* 말풍선 삭제버튼 */
-    .delBtn {
-      border: none;
-      background-color: khaki;
-      cursor: pointer;
-      color: red;
+    #reBox{
+      background-color:pink;
     }
 
 
-    /* 아이콘 내려오는 박스 */
-    #iconBox {
-      width: 500px;
-      height: 300px;
-      background-color: pink;
-      position: absolute;
-      display: none;
+    /* 동적 */
+    .container{
+      margin:auto;
+      width:800px;
+      height:120px;
     }
-
-    /* 아이콘을 감싸는 박스 */
-    .icons {
-      width: 20%;
-      height: 30%;
-      float: left;
+    .msgBox{
+      width:80%;
+      height:100%;
+      float:left;
+      padding:5px;
     }
-
-    img {
-      width: 100%;
-      height: 100%;
-      transition: all 0.3s;
+    .idBox{
+      background-color: rgb(219, 219, 219);
+      height:20px;
     }
-
-    .icons>img:hover{
-      cursor: pointer;
-      transform: scale(1.1);
+    .btnBox{
+      width:20%;
+      height:100%;
+      float:left;
+      text-align: center;
+      line-height: 120px;
     }
   </style>
 </head>
 
 <body>
-
   <div id="container">
-    <div id="chattingBox">
-
-      <div id="iconBox">
-        <div class="icons"><img src="icon1.gif" alt="kakao"></div>
-        <div class="icons"><img src="icon2.gif" alt="kakao"></div>
-        <div class="icons"><img src="icon3.gif" alt="kakao"></div>
-        <div class="icons"><img src="icon4.gif" alt="kakao"></div>
-        <div class="icons"><img src="icon5.gif" alt="kakao"></div>
-        <div class="icons"><img src="icon6.gif" alt="kakao"></div>
-        <div class="icons"><img src="icon7.gif" alt="kakao"></div>
-        <div class="icons"><img src="icon8.gif" alt="kakao"></div>
-      </div>
+    <div id="idBox">
+      <input type="text" id="idInput">
     </div>
-
-    <div id="inputBox">
-      <div class="input">
-        <div contentEditable="true" id="msgInput" placeholder="여기에 메세지를 입력해주세요."></div>
+    <div id="reBox">
+      <div id="reInputBox">
+        <input type="text" id="reInput">
       </div>
-      <div class="iconInput">
-        <button id="icon">이모티콘</button>
+      <div id="reBtnBox">
+        <button id="reBtn">리플달기</button>
       </div>
     </div>
   </div>
+  <hr id = "line">
+  <div id="reBox"></div>
 
   <script>
 
-    // JQuery
-    $("#msgInput").on("keydown", function (e) {
-      if (e.keyCode == 13) {
-        if ($("#msgInput").text() == "") {
-          alert("메세지를 입력해 주세요.");
-        } else {
-          let msg = $("#msgInput");
-          let div = $("<div>");
-          div.addClass("chatBox");
-          div.append(msg.text());
-          $("#msgInput").focus();
-          $("#chattingBox").append(div);
-          $('#chattingBox').scrollTop($('#chattingBox').prop('scrollHeight'));
-          msg.text("");
-        }
-      }
+    $("#reBtn").on("click",function(){
+      let line = $("#line");
+      let id = $("#idInput").val();
+      let msg = $("#reInput").val();
+
+      // div 할당
+      let container = $("<div>");
+      container.addClass("container");
+      let msgBox = $("<div>");
+      msgBox.addClass("msgBox");
+      let idBox = $("<div>");
+      idBox.addClass("idBox");
+      let btnBox = $("<div>");
+      btnBox.addClass("btnBox");
+      let delBtn = $("<button>");
+      delBtn.addClass("delBtn");
+      
+      // div 구조화
+      container.append(msgBox);
+      container.append(btnBox);
+      msgBox.append(idBox);
+      idBox.append(id + " 님의 메세지");
+      msgBox.append(msg);
+      btnBox.append(delBtn);
+      delBtn.append("삭제");
+      $("#reBox").append(container);
     });
 
-    // 버튼 기본설정
-    let button = $("<button>");
-    button.addClass("delBtn");
-    button.text("X");
-
-    // 말풍선 마우스오버시 X 표현
-    $("#chattingBox").on("mouseover", ".chatBox", function () {
-      let flag = 0;
-      if (flag == 0) {
-        $(this).append(button);
-        flag++
-      }
-    });
-
-    // 말풍선 마우스 아웃시 X사라짐
-    $("#chattingBox").on("mouseleave", ".chatBox", function () {
-      $(button).remove();
-    });
-
-    // 말풍선X 클릭시 해당 말풍선 삭제
-    $("#chattingBox").on("click", ".delBtn", function () {
-      $(this).parent().remove();
-    })
-
-    // 이모티콘 버튼 클릭시 이모티콘박스 스르륵
-    let iconFlag = true;
-    $("#icon").on("click", function () {
-      if (iconFlag) {
-        $("#iconBox").slideDown(1000);
-        iconFlag = !true;
-      } else {
-        $("#iconBox").slideUp(1000);
-        iconFlag = !false;
-      }
+    $("#reBtnBox").on("click",".delBtn",function(){
+      $("#container").remove();
     })
 
   </script>
-
-
 </body>
 
 </html>
