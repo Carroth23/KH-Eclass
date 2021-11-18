@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- <link rel="stylesheet" href="css/style.css"> -->
+  <style>
+    i, small{
+      color:aquamarine;
+    }
+    *{
+      color:black;
+    }
+    .cls1{
+      color:red;
+    }
+    a[href]{
+      color:brown;
+    }
+    a[href="http://www.naver.com"]{
+      color:cadetblue;
+    }
+    #box1{
+      width:100px;
+      height:100px;
+      border:1px solid black;
+      background-image: url("부리.png");
+      background-size: cover;
+    }
+    #box1:hover{
+      background-color:cadetblue;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <p style="color:aqua">힘세고강한아침</p>
+    <strong>힘세고강한아침</strong><br>
+    <i class="cls1 cls2">이태릭</i><br>
+    <em>em태그는 이태릭과같지만 의미론적으로 좀더 중요하다</em><br>
+    <small>이것이스몰</small><br>
+    <p>이것이<mark>마크</mark>.</p>
+    <p>이것이<del>del</del></p>
+    <p>이것이<ins>ins</ins></p>
+    <pre>pre태그로 쓰면  내가 쓴        그대로
+      여기에            들어
+      온다네!!
+    </pre>
+    <a href="http://www.naver.com" target="_blank" rel="noopener noreferrer">줄바꾸기 되나</a>
+    <a href="javascript:alert('Hello');">자스</a><br>
+
+    <form action="http://naver.com" method="get">
+      ID : <input type="text">
+      <input type="submit" value="전송?"><input type="reset" value="지우기">
+    </form>
+    <div id="box1">박스1입니다</div>
+  </div>
+</body>
+</html>
