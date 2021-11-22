@@ -8,22 +8,23 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.ContactDAO;
+import dao.StudentDAO;
 
-@WebServlet("/servlet")
-public class servlet extends HttpServlet {
-	// Controller (Model, View, Controller 이셋 을 합쳐 디자인패턴 MVC라고 부름)
+@WebServlet("/InputProc")
+public class InputProc extends HttpServlet {
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		ContactDAO dao = new ContactDAO();
-
+		StudentDAO dao = new StudentDAO();
+		
 		String name = request.getParameter("name");
-		String contact = request.getParameter("contact");
-
+		int kor = Integer.parseInt(request.getParameter("kor"));
+		int eng = Integer.parseInt(request.getParameter("eng"));
+		
 		try {
-			dao.insert(name, contact);
+			dao.insert(name, kor, eng);
 			response.sendRedirect("index.html");
-		}catch(Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 			response.sendRedirect("error.html");
 		}

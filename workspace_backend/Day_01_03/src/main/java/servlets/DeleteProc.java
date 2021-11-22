@@ -10,20 +10,18 @@ import javax.servlet.http.HttpServletResponse;
 
 import dao.ContactDAO;
 
-@WebServlet("/servlet")
-public class servlet extends HttpServlet {
-	// Controller (Model, View, Controller 이셋 을 합쳐 디자인패턴 MVC라고 부름)
+@WebServlet("/DeleteProc")
+public class DeleteProc extends HttpServlet {
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		int delSeq = Integer.parseInt(request.getParameter("delID"));
+
 		ContactDAO dao = new ContactDAO();
-
-		String name = request.getParameter("name");
-		String contact = request.getParameter("contact");
-
 		try {
-			dao.insert(name, contact);
-			response.sendRedirect("index.html");
-		}catch(Exception e) {
+			int result = dao.delete(delSeq);
+			response.sendRedirect("OutputProc");
+		} catch (Exception e) {
 			e.printStackTrace();
 			response.sendRedirect("error.html");
 		}

@@ -8,22 +8,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.ContactDAO;
+import dao.StudentDAO;
 
-@WebServlet("/servlet")
-public class servlet extends HttpServlet {
-	// Controller (Model, View, Controller 이셋 을 합쳐 디자인패턴 MVC라고 부름)
+@WebServlet("/DeleteProc")
+public class DeleteProc extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		ContactDAO dao = new ContactDAO();
-
-		String name = request.getParameter("name");
-		String contact = request.getParameter("contact");
-
+		int delSeq = Integer.parseInt(request.getParameter("delID"));
+		
+		StudentDAO dao = new StudentDAO();
 		try {
-			dao.insert(name, contact);
-			response.sendRedirect("index.html");
-		}catch(Exception e) {
+			dao.delete(delSeq);
+			response.sendRedirect("OutputProc");
+		} catch (Exception e) {
 			e.printStackTrace();
 			response.sendRedirect("error.html");
 		}
