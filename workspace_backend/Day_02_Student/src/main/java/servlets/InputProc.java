@@ -22,8 +22,11 @@ public class InputProc extends HttpServlet {
 		int eng = Integer.parseInt(request.getParameter("eng"));
 		
 		try {
-			dao.insert(name, kor, eng);
-			response.sendRedirect("index.html");
+			int result = dao.insert(name, kor, eng);
+			
+			request.setAttribute("result", result); // result라는 키값으로 result를 가져가라
+			request.getRequestDispatcher("inputView.jsp").forward(request, response);
+//			response.sendRedirect("inputView.jsp");
 		} catch (Exception e) {
 			e.printStackTrace();
 			response.sendRedirect("error.html");

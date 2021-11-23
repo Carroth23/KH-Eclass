@@ -22,8 +22,10 @@ public class StudentDAO {
 		return instance;
 	}
 	
-	private StudentDAO() {}; // (싱글턴 관련 코드)
+	private StudentDAO() {};
+	// 이 위는 (싱글턴 관련 코드) 메모리 효율성때문에 싱글턴은 유지하는게 나음
 	
+	// JNDI
 	private Connection getConnection() throws Exception {
 		Context ctx = new InitialContext(); //javax.naming.Context;
 		DataSource ds = (DataSource)ctx.lookup("java:comp/env/jdbc/oracle"); // javax.sql.DataSource;

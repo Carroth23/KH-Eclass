@@ -25,7 +25,7 @@ public class _servlet extends HttpServlet {
 
 		// 넘어온 데이터를 데이터베이스에 저장
 		// 다이나믹 웹프로젝트에선 라이브러리 추가시에 src->main->webapp->WEB-INF->lib폴더에 jar파일을 넣는다.
-		// 빌드패스에 안넣음
+		// 빌드패스로 넣는거 아님 ㅎㅎ
 //		String url = "jdbc:oracle:thin:@175.123.204.32:1521:xe";
 //		String username = "kh";
 //		String password = "kh";

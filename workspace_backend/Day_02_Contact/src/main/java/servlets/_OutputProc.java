@@ -14,8 +14,8 @@ import dao.ContactDAO;
 import dto.ContactDTO;
 
 
-@WebServlet("/OutputProc")
-public class OutputProc extends HttpServlet {
+@WebServlet("/_OutputProc")
+public class _OutputProc extends HttpServlet {
 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -24,10 +24,12 @@ public class OutputProc extends HttpServlet {
 		try {
 			List<ContactDTO> list = dao.selectAll();
 			
-			
+			// MVC2
 			request.setAttribute("list", list);
 			request.getRequestDispatcher("outputView.jsp").forward(request, response);
 			
+			
+			// MVC1. 이제는 안씀.
 //			pw.append("<html>");
 //			pw.append("<head>");
 //			pw.append("</head>");

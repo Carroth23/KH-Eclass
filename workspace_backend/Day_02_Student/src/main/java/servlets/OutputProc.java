@@ -18,53 +18,33 @@ public class OutputProc extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		StudentDAO dao = StudentDAO.getInstance();
-		PrintWriter pw = response.getWriter();
 		
-		try {
-			List<StudentDTO> list = dao.selectAll();
-			
-			pw.append("<html>");
-			pw.append("<head>");
-			pw.append("</head>");
-			pw.append("<body>");
-			pw.append("<table border=1 align=center>");
-			pw.append("<tr>");
-			pw.append("<td>Number");
-			pw.append("<td>Name");
-			pw.append("<td>KOR");
-			pw.append("<td>ENG");
-			pw.append("<td>SUM");
-			pw.append("<td>AVG");
-			pw.append("</tr>");
-			for(StudentDTO dto : list) {
-				pw.append("<tr>");
-				pw.append("<td>" + dto.getSeq());
-				pw.append("<td>" + dto.getName());
-				pw.append("<td>" + dto.getKor());
-				pw.append("<td>" + dto.getEng());
-				pw.append("<td>" + (dto.getEng() + dto.getKor()));
-				pw.append("<td>" + (dto.getEng() + dto.getKor()) / 2);
-				pw.append("</tr>");
-			}
-			pw.append("<tr>");
-			pw.append("<td colspan=6>");
-			pw.append("<form action='DeleteProc' method=get>");
-			pw.append("<input type=text name=delID placeholder='delID Input'>");
-			pw.append("<button>Delete</button>");
-			pw.append("</form>");
-			pw.append("</tr>");
-			pw.append("<tr>");
-			pw.append("<th colspan=6 align=center><a href='index.html'>back</a>");
-			pw.append("</tr>");
-			pw.append("</table>");
-			pw.append("</body>");
-			pw.append("</html>");
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-			response.sendRedirect("error.html");
-		}
+		String[] arr = new String[] {"Apple","Mango","Orange"};
+		StudentDTO dto = new StudentDTO(100,"Hong",70,80);
+		
+		
+		
+		request.setAttribute("simple1", 10); // request에 값을 넣은것.
+		request.setAttribute("simple2", "Hello");
+		request.setAttribute("array", arr);
+		request.setAttribute("student", dto);
+		
+		request.getRequestDispatcher("outputView.jsp").forward(request, response);
+		
+		
+//		StudentDAO dao = StudentDAO.getInstance();
+//		PrintWriter pw = response.getWriter();
+//		
+//		try {
+//			List<StudentDTO> list = dao.selectAll();
+//			
+//			request.setAttribute("list", list);
+//			request.getRequestDispatcher("outputView.jsp").forward(request, response);
+//			
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//			response.sendRedirect("error.html");
+//		}
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
