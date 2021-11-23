@@ -15,7 +15,7 @@ public class InputProc extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		StudentDAO dao = new StudentDAO();
+		StudentDAO dao = StudentDAO.getInstance();
 		
 		String name = request.getParameter("name");
 		int kor = Integer.parseInt(request.getParameter("kor"));

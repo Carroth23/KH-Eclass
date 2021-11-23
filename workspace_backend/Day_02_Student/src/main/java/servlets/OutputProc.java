@@ -18,7 +18,7 @@ public class OutputProc extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		StudentDAO dao = new StudentDAO();
+		StudentDAO dao = StudentDAO.getInstance();
 		PrintWriter pw = response.getWriter();
 		
 		try {

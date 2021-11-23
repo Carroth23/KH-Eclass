@@ -1,23 +1,33 @@
 package dao;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.sql.DataSource;
+
 import dto.StudentDTO;
 
 public class StudentDAO {
+	
+	private static StudentDAO instance = null;
+	public static StudentDAO getInstance() {
+		if (instance == null) {
+			instance = new StudentDAO();
+		}
+		return instance;
+	}
+	
+	private StudentDAO() {}; // (싱글턴 관련 코드)
+	
 	private Connection getConnection() throws Exception {
-		String username = "Study";
-		String password = "Study";
-		String url = "jdbc:oracle:thin:@175.123.204.32:1521:xe";
-
-		Class.forName("oracle.jdbc.driver.OracleDriver");
-		Connection con = DriverManager.getConnection(url, username, password);
-		return con;
+		Context ctx = new InitialContext(); //javax.naming.Context;
+		DataSource ds = (DataSource)ctx.lookup("java:comp/env/jdbc/oracle"); // javax.sql.DataSource;
+		return ds.getConnection();
 	}
 	
 	public int insert(String name, int kor, int eng) throws Exception {

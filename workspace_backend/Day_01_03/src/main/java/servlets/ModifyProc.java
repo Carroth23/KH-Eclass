@@ -15,7 +15,7 @@ import dao.ContactDAO;
 public class ModifyProc extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		ContactDAO dao = new ContactDAO();
+		ContactDAO dao = ContactDAO.getInstance();
 		int seq = Integer.parseInt(request.getParameter("seq"));
 		String name = request.getParameter("name");
 		String contact = request.getParameter("contact");
