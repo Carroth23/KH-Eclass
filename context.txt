@@ -1,0 +1,9 @@
+<Resource
+    name="jdbc/oracle"
+    auth="Container"
+    type="javax.sql.DataSource"
+    driverClassName="oracle.jdbc.driver.OracleDriver"
+    url="jdbc:oracle:thin:@175.123.204.32:1521:xe"
+    username="kh"
+    password="kh"
+    />
