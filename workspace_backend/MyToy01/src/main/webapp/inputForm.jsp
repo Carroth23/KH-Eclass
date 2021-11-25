@@ -8,7 +8,7 @@
 </head>
 <body>
 	<div>
-		<form action="input.con" method="get">
+		<form action="insert.con" method="get">
 			<input type="text" placeholder="name" name="name"><br>
 			<input type="text" placeholder="contact" name="contact"><br>
 			<input type="submit" value="commit">

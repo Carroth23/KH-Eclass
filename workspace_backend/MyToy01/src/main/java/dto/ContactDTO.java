@@ -3,18 +3,18 @@ package dto;
 public class ContactDTO {
 	private int seq;
 	private String name;
-	private String contat;
+	private String contact;
 
 	public ContactDTO() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public ContactDTO(int seq, String name, String contat) {
+	public ContactDTO(int seq, String name, String contact) {
 		super();
 		this.seq = seq;
 		this.name = name;
-		this.contat = contat;
+		this.contact = contact;
 	}
 
 	public int getSeq() {
@@ -33,11 +33,11 @@ public class ContactDTO {
 		this.name = name;
 	}
 
-	public String getContat() {
-		return contat;
+	public String getContact() {
+		return contact;
 	}
 
-	public void setContat(String contat) {
-		this.contat = contat;
+	public void setContact(String contact) {
+		this.contact = contact;
 	}
 }

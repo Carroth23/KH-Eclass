@@ -84,6 +84,9 @@ create table product(
 insert into product values('p1001', 'LG-TV', 1000000);
 insert into product values('p1002', 'ipad', 600000);
 
+-- 컬럼 지정삽입
+insert into member(id, pw, name, signup_date) values('joetheblack', '1234', 'joe', sysdate);
+
 delete from product where pid = 'p1001';
 drop table product; -- 테이블 삭제
 

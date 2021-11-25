@@ -53,7 +53,7 @@ input[type="text"] {
     <div class="header">
       회원 로그인
     </div>
-    <form action="?" method="get">
+    <form action="loginCheck.mem" method="post">
       <div class="inputBoxs">
         <div class="idtag">아이디</div>
         <div class="idinput"><input type="text" name="id"></div>
