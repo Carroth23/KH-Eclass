@@ -80,6 +80,22 @@ public class MemberDTO {
 		this.address2 = address2;
 		this.signup_date = signup_date;
 	}
+	
+	// 임시 생성자
+	public MemberDTO(String id, String pw, String name, String phone, String email, String zipcode, String address1,
+			String address2) {
+		super();
+		this.id = id;
+		this.pw = pw;
+		this.name = name;
+		this.phone = phone;
+		this.email = email;
+		this.zipcode = zipcode;
+		this.address1 = address1;
+		this.address2 = address2;
+	}
+	
+	
 	public MemberDTO() {
 		super();
 		// TODO Auto-generated constructor stub

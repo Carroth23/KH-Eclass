@@ -58,17 +58,36 @@ public class MemberDAO {
 		}
 	}
 
-	public MemberDTO loginCheck (String id, String pw) throws Exception {
+	// 강사님꺼
+	public boolean loginCheck2(String id, String pw) throws Exception {
 		String sql = "select * from member where id = ? and pw = ?";
-		try(Connection con = this.getConnection();
-				PreparedStatement pstat = con.prepareStatement(sql);){
+		try (Connection con = this.getConnection(); PreparedStatement pstat = con.prepareStatement(sql);) {
 			pstat.setString(1, id);
 			pstat.setString(2, pw);
-			try (ResultSet rs = pstat.executeQuery()){
+			try (ResultSet rs = pstat.executeQuery()) {
+				return rs.next();
+			}
+		}
+	}
+
+	public int delete(String id) throws Exception {
+		String sql = "delete from member where id = ?";
+		try (Connection con = this.getConnection(); PreparedStatement pstat = con.prepareStatement(sql);) {
+			pstat.setString(1, id);
+			int result = pstat.executeUpdate();
+			return result;
+		}
+	}
+
+	public MemberDTO selectAll(String id) throws Exception {
+		String sql = "select * from member where id = ?";
+		try (Connection con = this.getConnection(); PreparedStatement pstat = con.prepareStatement(sql);) {
+			pstat.setString(1, id);
+			try (ResultSet rs = pstat.executeQuery()) {
 				MemberDTO dto = null;
-				while(rs.next()) {
-					String idProc = rs.getString("id");
-					String pwProc = rs.getString("pw");
+				while (rs.next()) {
+					String idi = rs.getString("id");
+					String pw = rs.getString("pw");
 					String name = rs.getString("name");
 					String phone = rs.getString("phone");
 					String email = rs.getString("email");
@@ -76,10 +95,26 @@ public class MemberDAO {
 					String address1 = rs.getString("address1");
 					String address2 = rs.getString("address2");
 					Date signup_date = rs.getDate("signup_date");
-					dto = new MemberDTO(idProc, pwProc, name, phone, email, zipcode, address1, address2, signup_date);
+					dto = new MemberDTO(idi, pw, name, phone, email, zipcode, address1, address2, signup_date);
 				}
 				return dto;
 			}
+		}
+	}
+	
+	public int modify(MemberDTO dto) throws Exception {
+		String sql = "update member set pw = ?, name = ?, phone = ?, email = ?, zipcode = ?, address1 = ?, address2 = ? where id = ?";
+		try (Connection con = this.getConnection(); PreparedStatement pstat = con.prepareStatement(sql);) {
+			pstat.setString(1, dto.getPw());
+			pstat.setString(2, dto.getName());
+			pstat.setString(3, dto.getPhone());
+			pstat.setString(4, dto.getEmail());
+			pstat.setString(5, dto.getZipcode());
+			pstat.setString(6, dto.getAddress1());
+			pstat.setString(7, dto.getAddress2());
+			pstat.setString(8, dto.getId());
+			int result = pstat.executeUpdate();
+			return result;
 		}
 	}
 

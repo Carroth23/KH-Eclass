@@ -11,7 +11,7 @@
 <body>
 	<div id="container">
 		로그인에 성공했습니다.<br>
-		${dto.name} 님의 정보는 : ${dto.id } , ${dto.phone } , ${dto.email }입니다.
+		${dto.name} 님의 정보는 : ${dto.id } , ${dto.phone } , ${dto.signup_date }입니다.
 	</div>
 </body>
 </html>

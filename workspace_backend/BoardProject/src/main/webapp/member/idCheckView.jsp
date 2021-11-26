@@ -19,10 +19,9 @@
 					<td>이미 사용중인 ID 입니다. <br> 다른 ID를 사용해주세요.
 				</tr>
 				<tr>
-					<td align=center><button id="close">닫기</button>
-					<script>
-						$("#close").on("click",function(){
-							opener.document.getElementById("id").value=""; // 팝업창을 열어준 오프너의 id칸을 비움
+					<td align=center><button id="close">닫기</button> <script>
+						$("#close").on("click", function() {
+							opener.document.getElementById("id").value = ""; // 팝업창을 열어준 오프너의 id칸을 비움
 							opener.document.getElementById("id").focus();
 							window.close();
 							// 열어준 브라우저는 opener
@@ -43,17 +42,21 @@
 					</tr>
 					<tr>
 						<td align=center><button id="use">사용</button>
-						<td align=center><button id="cancel">취소</button>
-						<script>
-						$("#use").on("click",function(){
-							window.close();	
-						})
-						$("#cancel").on("click",function(){
-							opener.document.getElementById("id").value="";
-							opener.document.getElementById("id").focus();
-							window.close();	
-						})
-					</script>
+						<td align=center><button id="cancel">취소</button> <script>
+							$("#use").on("click", function() {
+								window.close();
+							})
+							$("#cancel")
+									.on(
+											"click",
+											function() {
+												opener.document
+														.getElementById("id").value = "";
+												opener.document.getElementById(
+														"id").focus();
+												window.close();
+											})
+						</script>
 					</tr>
 				</table>
 			</div>
