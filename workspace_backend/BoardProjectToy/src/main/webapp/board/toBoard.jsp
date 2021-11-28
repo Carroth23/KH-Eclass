@@ -16,29 +16,37 @@
 			<td align="center" colspan="5"><b>자유게시판</b>
 		</tr>
 		<tr align="center">
-			<td width="50">
-			<td width="450">제목 
+			<td width="50" style="background-color: hotpink;">
+			<td width="450">제목
 			<td width="100">작성자
 			<td width="80">날짜
 			<td>조회
 		</tr>
 		<tr>
-			<td colspan="5" height="340" align="center">표시할 내용이 없습니다.
+				<c:forEach var="post_List" items="${post_List }">
+					<tr align="center">
+						<td width="50">${post_List.seq }
+						<td width="450">${post_List.title }
+						<td width="100">${post_List.writer }
+						<td width="80">${post_List.write_Date }
+						<td>${post_List.view_Count }
+					</tr>
+				</c:forEach>
 		</tr>
 		<tr>
 			<td colspan="5" align="center">1 2 3 4 5 6 7 8 9 10
 		</tr>
 		<tr>
-			<td colspan="5" align="right"><input type="button" value="작성하기" id="write">
+			<td colspan="5" align="right"><input type="button" value="작성하기"
+				id="write">
 		</tr>
 	</table>
-	
+
 	<script>
-		$("#write").on("click",function(){
+		$("#write").on("click", function() {
 			console.log("클릭감지");
-			location.href="/boardWrite.board";
+			location.href = "/boardWrite.board";
 		})
-	
 	</script>
 </body>
 </html>

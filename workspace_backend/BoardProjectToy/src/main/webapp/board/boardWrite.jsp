@@ -12,27 +12,27 @@
 </head>
 <body>
 	<table border="1">
-		<form action="writeComplete" method="post">
+		<form action="/writeComplete.board" method="post">
 		<tr>
 			<td colspan="2" width="800" align="center"><b>자유게시판 글 작성하기</b>
 		</tr>
 		<tr>
-			<td><input type="text" placeholder="글 제목을 입력하세요" size="60">
+			<td><input type="text" placeholder="글 제목을 입력하세요" size="60" name="title">
 		</tr>
 		<tr>
 			<td colspan="2" height="400"><textarea
-					placeholder="글 정보를 입력하세요." cols="112" rows="25"></textarea>
+					placeholder="글 내용을 입력하세요." cols="112" rows="25" name="contents"></textarea>
 		</tr>
 		<tr>
 			<td colspan="2" align="right"><input type="button" value="목록으로" id="boardList">
-				<input type="button" value="작성완료">
+				<input type="submit" value="작성완료">
 		</tr>
 		</form>
 	</table>
 
 	<script>
 		$("#boardList").on("click",function(){
-			location.href="/toBoard.jsp"; // 이거 고쳐야됨 
+			location.href="/toboard.board"; // 이거 고쳐야됨 
 		})
 	</script>
 </body>

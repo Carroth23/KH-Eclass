@@ -91,9 +91,6 @@ input[type="text"] {
 				})
 			</script>
 
-
-
-
 		</c:when>
 
 		<c:otherwise>
