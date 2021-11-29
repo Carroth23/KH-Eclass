@@ -34,14 +34,14 @@ public class BoardController extends HttpServlet {
 				List<BoardDTO> dto = dao.selectAll();
 				request.setAttribute("post_List", dto); // 작성된 글목록 불러와서 request에 담아버리기
 				request.getRequestDispatcher("/board/toBoard.jsp").forward(request, response);
-//				response.sendRedirect("/board/toBoard.jsp"); 포워드시켜야될듯 ㅎㅎ
+//				response.sendRedirect("/board/toBoard.jsp"); 포워드시켜야될듯
 				
 			} else if (cmd.equals("/boardWrite.board")) { // 작성하기 눌렀을때 오는곳.
 				System.out.println("여기 옴");
 				response.sendRedirect("/board/boardWrite.jsp");
 
 			} else if (cmd.equals("/writeComplete.board")) {
-				// 게시판 목록에서 아예 데이터베이스를 만들고 여기서 DB에 추가만 하면 될듯 ㅎㅎㅎ
+				// 게시판 목록에서 아예 데이터베이스를 만들고 여기서 DB에 추가만 하면 될듯
 				HttpSession session = request.getSession();
 				String writer = (String) session.getAttribute("loginID");
 				String title = request.getParameter("title");
@@ -53,6 +53,22 @@ public class BoardController extends HttpServlet {
 				if(result > 0) {
 					System.out.println("작성 완료");
 					response.sendRedirect("/toboard.board"); // .board로 안보내고 페이지로 보내도 글이 올라오는지 확인해야됨 = 확인결과 .jsp로 바로보내면 안올라옴
+				}
+			} else if (cmd.equals("/detail.board")) {
+				
+				int seq = Integer.parseInt(request.getParameter("seq"));
+				BoardDTO dto = dao.selectBySeq(seq); // seq와 동일한 작성글 하나를 꺼내온다.
+				
+				int result = dao.addViewCount(seq); // 조회수 올리기
+				
+				request.setAttribute("post_One", dto);
+				request.getRequestDispatcher("/board/detail.jsp").forward(request, response);
+				
+			} else if (cmd.equals("/delete.board")) {
+				int seq = Integer.parseInt(request.getParameter("seq"));
+				int result = dao.delete(seq);
+				if (result > 0) {
+					response.sendRedirect("/toboard.board");
 				}
 			}
 

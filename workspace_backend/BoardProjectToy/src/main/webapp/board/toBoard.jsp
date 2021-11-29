@@ -26,9 +26,9 @@
 				<c:forEach var="post_List" items="${post_List }">
 					<tr align="center">
 						<td width="50">${post_List.seq }
-						<td width="450">${post_List.title }
+						<td width="450" id = "title"><a href="/detail.board?seq=${post_List.seq }">${post_List.title }</a>
 						<td width="100">${post_List.writer }
-						<td width="80">${post_List.write_Date }
+						<td width="80">${post_List.detailDate }
 						<td>${post_List.view_Count }
 					</tr>
 				</c:forEach>
@@ -44,7 +44,6 @@
 
 	<script>
 		$("#write").on("click", function() {
-			console.log("클릭감지");
 			location.href = "/boardWrite.board";
 		})
 	</script>

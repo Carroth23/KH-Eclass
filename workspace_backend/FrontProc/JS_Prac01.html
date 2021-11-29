@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+
+	<!-- JS기본 -->
+	<!-- <script>
+		'use strict' // 엄격 모드
+		변수만들때는 let 사용
+		상수만들때는 const사용
+		var 사용 ㄴㄴ
+
+		let age = prompt('나이를 입력해 주세요.', 100); // 100은 기본으로 입력되어 있는 값.
+		alert(`당신의 나이는 ${age}살 입니다.`);
+
+		let isBoss = confirm("당신이 주인인가요?");
+		alert(isBoss);
+	</script> -->
+
+	<!-- 형변환 -->
+	<!-- <script>
+		let value = true;
+		alert(typeof value); // boolean
+
+		value = String(value); // 이렇게도 형변환 하네
+		value = Number(value); // 이렇게 바꾸면 NaN
+		alert(typeof value);
+
+		// 숫자 0, 빈 문자열, null, undefined, NaN과 같이 직관적으로도 “비어있다고” 느껴지는 값들은 false
+		alert(Boolean("0")); // true 왜냐? 비어있지 않으니까.
+	</script> -->
+
+	<!-- 연산 -->
+	<script>
+		let x = 1;
+		x = -x; // 부호를 뒤집는다.
+
+		alert(5 % 2); // 5를 2로 나눈 나머지 1을 출력
+
+		// ** : 거듭제곱 a ** b를 평가하면 a를 b번 곱한 값이 반환
+		// alert( 2 ** 4 ); // 16 (2 * 2 * 2 * 2)
+
+		alert(2 + 2 + '1' ); // '221'이 아니라 '41'이 출력 (자바도 마찬가지)
+
+		alert( 6 - '2' ); // 4, '2'를 숫자로 바꾼 후 연산이 진행
+		alert( '6' / '2' ); // 3, 두 피연산자가 숫자로 바뀐 후 연산이 진행
+		// 문자열 연결은 +만의 특징인듯(JS)
+		alert(+true); // 1 숫자형으로 바꿔버림
+		alert(+""); // 0
+
+		let a = "2";
+		let b = "3";
+		alert(+a + +b); // 숫자로 변환되어 계산된다. Number형변환보다 짧음
+		a = b = c = 2 + 2; // 할당 연산 체이닝 a, b, c 전부 4
+
+	</script>
+</body>
+</html>

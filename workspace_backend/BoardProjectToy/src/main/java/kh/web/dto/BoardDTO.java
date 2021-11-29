@@ -1,6 +1,7 @@
 package kh.web.dto;
 
 import java.sql.Date;
+import java.text.SimpleDateFormat;
 
 public class BoardDTO {
 	private int seq;
@@ -56,5 +57,30 @@ public class BoardDTO {
 	}
 	public void setView_Count(int view_Count) {
 		this.view_Count = view_Count;
+	}
+	
+	public String getFormedDate() { // 날짜값 내가 정해서 꺼내는것
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd hh:mm:ss");
+		return sdf.format(this.write_Date.getTime());
+	}
+	
+	public String getDetailDate() { // 몇분전 몇시간전 이런식으로 작성일 꺼내는거
+		long current_time = System.currentTimeMillis(); // 현재의 TimeStamp
+		long write_time = this.write_Date.getTime();	// 글이 작성된 시점의 TimeStamp
+		
+		long time_gap = current_time - write_time; // 작성된 시점과 현재시간의 갭
+		
+		if(time_gap < 60000) {
+			return "1분 이내";
+		} else if (time_gap < 300000) {
+			return "5분 이내";
+		} else if (time_gap < 3600000) {
+			return "1시간 이내";
+		} else if (time_gap < 86400000) {
+			return "오늘";
+		} else {
+			return getFormedDate();
+		}
+		
 	}
 }

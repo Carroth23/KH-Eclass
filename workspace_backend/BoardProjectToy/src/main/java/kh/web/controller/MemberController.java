@@ -81,10 +81,10 @@ public class MemberController extends HttpServlet {
 				// - 얘는 장바구니나 뭐 그런거에씀 (노출되도 상관없는 기능들쓸때)
 				// 2. 세션을 이용한 로그인 - 서버에 정보를 저장하고(이 저장소를 세션이라 부름)
 				// - 그걸 열수 있는 키를 생성하고 클라이언트에게 키값를 줌.(얘가 보안성 더 좋음)
-				// - 그리고 키값과 정보들을 램(메모리)에 담는다. 이러면 훔치기 훨씬 힘들어진다. 키값이 일치하면 이제 문이 열림 ㅎㅎ
+				// - 그리고 키값과 정보들을 램(메모리)에 담는다. 이러면 훔치기 훨씬 힘들어진다. 키값이 일치하면 이제 문이 열림
 				
 				// 리퀘스트에 안넣는 이유는 세션과의 라이프사이클 차이때문
-				// 리퀘스트에 넣으면 포워드되는 영역까지만 생존. 페이지가 바뀌면 아예 정보가 사라짐(원래 없던것이됨) ㅎㅎ
+				// 리퀘스트에 넣으면 포워드되는 영역까지만 생존. 페이지가 바뀌면 아예 정보가 사라짐(원래 없던것이됨)
 				// 세션객체는 tomcat이 가동되는 순간부터 생성되어, tomcat이 종료되는 순간까지 생존한다.
 				String id = request.getParameter("id");
 				String pw = EncryptUtils.getSHA512(request.getParameter("pw"));
@@ -108,7 +108,7 @@ public class MemberController extends HttpServlet {
 					System.out.println("로그인 성공");
 					response.sendRedirect("/index.jsp"); // 다시 인덱스로 가도 서버쪽 세션에 아이디와 키값이 저장되어 있다.
 					// 포워드로 안보내는것은 어차피 세션에 정보가 있으니까
-					// 클라이언트는 접속하자마자 세션키값을 하나 받는다. 근데 그 키가 맞는곳엔 비어있겠지 ㅎㅎ
+					// 클라이언트는 접속하자마자 세션키값을 하나 받는다. 근데 그 키가 맞는곳엔 비어있겠지..
 					// 세션은 톰캣 켜자마자 만들어짐.
 					// 키값은 브라우저마다 만들어짐 크롬에서 로그인하고 엣지로 다시 들어가면 로그인 안되있는것처럼
 					// 크롬 다끄면 세션 사라짐(아마?)
@@ -137,7 +137,7 @@ public class MemberController extends HttpServlet {
 				String id = (String) request.getSession().getAttribute("loginID");
 				MemberDTO dto = dao.selectAll(id);
 				request.setAttribute("dto", dto);
-				request.getRequestDispatcher("member/myPage.jsp").forward(request, response);
+				request.getRequestDispatcher("/member/myPage.jsp").forward(request, response);
 				
 				
 				request.setAttribute("id", dto.getId());

@@ -85,7 +85,8 @@ public class MemberDAO {
 			pstat.setString(1, id);
 			try (ResultSet rs = pstat.executeQuery()) {
 				MemberDTO dto = null;
-				while (rs.next()) {
+				// 여기서 MemberDTO dto = new MemberDTO() 만들어두고 밑에서 dto.set에 넣어도 됨
+				if (rs.next()) {
 					String idi = rs.getString("id");
 					String pw = rs.getString("pw");
 					String name = rs.getString("name");
@@ -118,4 +119,9 @@ public class MemberDAO {
 		}
 	}
 
+	
+	
+	
+	
+	
 }

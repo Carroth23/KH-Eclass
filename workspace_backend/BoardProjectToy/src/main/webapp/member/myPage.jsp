@@ -81,7 +81,7 @@ input {
 			<div class="row">
 				<div class="col-2 nametag">아이디 :</div>
 				<div class="col-10" name="id">
-					${dto.id }
+					${dto.id } <!-- input 속성에 disabled로 해도 됨 -->
 				</div>
 			</div>
 			<div class="row">
@@ -135,7 +135,7 @@ input {
 				<div class="col-2 nametag">상세 주소 :</div>
 				<div class="col-10">
 					<input type="text" class="post" id="jibunAddress"
-						name="jibunAddress" value="${dto.address1 }">
+						name="jibunAddress" value="${dto.address2 }">
 				</div>
 			</div>
 			<div class="row">
