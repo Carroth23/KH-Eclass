@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+    let a = 1 // 전역변수
+    function showMessage() { // 기본적인 함수 선언 방식
+      alert("Hello World!");
+      let a = 2; // 지역 변수
+    }
+    showMessage() // 함수 호출
+    console.log(a); // 1 (함수는 외부변수에 접근하지 않는다.)
+
+    function showMessage(from, text) { // JS는 파라미터 타입 안붙여도 쓸수있구나
+      alert(from + " : " + text);
+    }
+    showMessage("Ann", "Hello");
+
+    function show(from, text = "no text") { // 파라미터 기본값 설정하기
+      alert(`${from} : ${text}`);
+    }
+    show("Ann");
+
+    function show2(text) { // 기본값 설정하기2
+      if (text === undefined) {
+        text = '빈 문자열';
+      }
+      // text = text || '빈 문자열'; 이렇게도 가능(깔끔)
+      // alert(text ?? '빈 문자열'); 더깔끔..
+      alert(text);
+    }
+    show2();
+
+    function sum(a, b) { // 반환형 명시 안해도 되네..
+      return a + b;
+    }
+  </script>
+
+  <script>
+    let sayHi = function() { // 함수 표현식
+      alert("hello");
+    }
+    alert(sayHi); // 함수 코드가 보임 sayHi옆에 ()가 없어서 sayHi함순는 실행안됨.
+    
+    function sayBye(){ // 함수 생성
+      alert("Bye");
+    }
+    let func = sayBye; //함수 복사(sayBye에 괄호가 붙어있다면 함수 호출 결과값을 저장하는것이 된다.)
+    func(); // 복사한 함수 사용
+    sayBye(); // 기존 함수 사용
+
+
+    callHi("John"); // 함수가 선언되기 전에 실행가능(함수호이스팅인듯)
+    function callHi(name){
+      alert(`hello${name}`);
+    }
+
+    callBye("john"); // 에러
+    let callBye = function(name){ // 함수 표현식으로 만든건 호이스팅 불가
+      alert(`Bye${name}`);
+    }
+  </script>
+
+  <script>
+    let sum = (a, b) => a + b; // 화살표 함수(람다식)
+
+    // let sum = function(a, b){ 위의 람다식은 이 함수의 축약버전이다
+    //   return a + b;
+    // }
+
+    let double = n => n * 2; // 인수가 하나면 ()괄호 생략가능
+    let sayHi = () => alert("안녕하세요!"); // 인수가 하나도 없으면 괄호만 작성(생략불가)
+
+    let age = prompt("나이를 알려 주세요", 18);
+    let welcome = (age < 18) ? () => alert("안녕") : () => alert("안녕하세요");
+
+    let sum = (a, b) => {
+      let result = a + b;
+      return result; // 람다식에서 중괄호를 사용했으면 return으로 결과값을 반환해야 한다.
+    }
+  </script>
+
+</body>
+
+</html>

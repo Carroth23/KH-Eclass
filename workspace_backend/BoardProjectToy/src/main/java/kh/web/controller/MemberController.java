@@ -91,6 +91,7 @@ public class MemberController extends HttpServlet {
 				boolean loginCheck = dao.loginCheck2(id, pw);
 				if(loginCheck) {
 					HttpSession session = request.getSession(); // 이게 세션 꺼낸거(금고)
+					// 생각해보니 세션 얘도 밖에 있어도 되는거 아닌가?
 					
 					MemberDTO dto = dao.selectAll(id);
 					

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+    let col = prompt("당근은 무슨색입니까?");
+    if (col == '빨강') {
+      alert("정답");
+    }
+
+    let firstName = "";
+    let lastName = "";
+    let nickName = "바이올렛";
+
+    alert(firstName || lastName || nickName || "익명"); // 바이올렛
+    // 왼쪽부터 평가하고 처음 true로 나온 값을 반환.(모든 변수가 false면 맨 마지막 값 반환)
+
+    true || alert("not printed"); // 숏컷연산(alert가 실행되지않음)
+    alert( 1 && 0 ); // 0 이것도 숏컷연산이다.
+    alert( !!"non-empty string" ); // true boolean값으로 변환
+
+    alert(firstName ?? lastName ?? nickName ?? "익명의 사용자"); // 바이올렛
+    // ?? 연산자는 최근에 등장한것. 
+
+
+    let i = 3;
+    while(i){ // i가 0이되면 false가 되므로 반복 중지
+      console.log(i);
+      i--;
+    }
+
+    outer: for (let i = 0; i < 3; i++) { // 레이블 브레이커
+      for (let j = 0; j < 3; j++) {
+        let input = prompt(`(${i},${j})의 값`,'');
+        if (!input) break outer;
+      }
+    }
+  </script>
+
+
+</body>
+
+</html>

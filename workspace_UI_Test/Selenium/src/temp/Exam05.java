@@ -18,7 +18,7 @@ public class Exam05 {
 		options.addArguments("--window-size=1920,1080"); // 풀스크린으로 띄우는 옵션
 		// driver에 넣어서 실행
 		
-		WebDriver driver = new ChromeDriver();
+		WebDriver driver = new ChromeDriver(); // 여기에 options를 추가하면 옵션 적용
 		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
 		driver.get("http://175.123.204.32:5500/14_Temp/temp2.html");
 

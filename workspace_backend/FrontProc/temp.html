@@ -1,34 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Document</title>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
 </head>
+
 <body>
-	<table border="1">
 
-		<tr>
-      ${post_One.seq}
-			<td colspan="2" width="800" align="center"><b>${post_One.title}</b>
-		</tr>
-		<tr>
-			<td colspan="2" height="400"><textarea
-					placeholder="글 내용을 입력하세요." cols="112" rows="25" name="contents" value=${post_One.contents}></textarea>
-		</tr>
-		<tr>
-			<td colspan="2" align="right"><input type="button" value="목록으로" id="boardList">
-				<input type="button" value="수정하기">
-		</tr>
-
-	</table>
 
 	<script>
-		$("#boardList").on("click",function(){
-			location.href="/toboard.board";
-		})
+
+		function sayBye() { // 함수 생성
+			alert("Bye");
+		}
+		let func = sayBye; //함수 복사
+		func(); // 복사한 함수 사용
+		sayBye(); // 기존 함수 사용
 	</script>
 </body>
+
 </html>

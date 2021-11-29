@@ -18,7 +18,6 @@ public class Quiz01 {
 		driver.get("https://nid.naver.com/nidlogin.login?mode=form&url=https%3A%2F%2Fwww.naver.com");
 		
 		
-		
 		script.executeScript("document.getElementById('id').value=arguments[0]", "Test");
 		script.executeScript("document.getElementById('pw').value=arguments[0]", "Test");
 		// 자바스크립트 코드 arguments[0]의 값이 Test라는 뜻(얘로하면 캡챠 안뜸)
@@ -28,7 +27,7 @@ public class Quiz01 {
 //		WebElement inputId = driver.findElement(By.id("id")); 페이지에 id값을 가져온것
 //		WebElement inputPw = driver.findElement(By.id("pw"));
 		
-
+		
 		
 		// 아이디 (네이버 키패드보안때문에 한글자씩 사용했음. 원래는 걍 하나에 다씀)
 //		inputId.sendKeys("g");
