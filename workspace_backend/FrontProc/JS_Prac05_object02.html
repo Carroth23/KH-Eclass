@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+    let user = {name: "john"};
+    let admin = user; // 객체는 참조값이 저장된다(자바랑 비슷 객체의 주소를 가르키는것)
+    admin.name = "Pete";
+    alert(user.name); // "Pete"
+
+    user == admin // true
+    user === admin // true 같은 객체를 참조하기 때문에 true
+  </script>
+
+</body>
+</html>

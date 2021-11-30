@@ -1,25 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
 	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+	<title>Insert title here</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<style>
+		* {
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0;
+		}
+
+		#container {
+			width: 300px;
+			height: 200px;
+			margin: auto;
+		}
+
+		.header {
+			text-align: center;
+			font-size: 18px;
+		}
+
+		.idtag {
+			float: left;
+			width: 30%;
+		}
+
+		.pwtag {
+			float: left;
+			width: 30%;
+		}
+
+		input[type="text"] {
+			width: 70%;
+			height: 100%;
+		}
+
+		.btns {
+			text-align: center;
+		}
+
+		.btns>* {
+			margin: 1px;
+			margin-top: 5px;
+		}
+	</style>
 </head>
 
 <body>
-
-
-	<script>
-
-		function sayBye() { // 함수 생성
-			alert("Bye");
-		}
-		let func = sayBye; //함수 복사
-		func(); // 복사한 함수 사용
-		sayBye(); // 기존 함수 사용
-	</script>
+	<div id="container">
+		<div class="header">회원 로그인</div>
+		<form action="/loginCheck.mem" method="post">
+			<div class="inputBoxs">
+				<div class="idtag">아이디</div>
+				<div class="idinput">
+					<input type="text" name="id">
+				</div>
+				<div class="pwtag">비밀번호</div>
+				<div class="pwinput">
+					<input type="text" name="pw">
+				</div>
+			</div>
+			<div class="btns">
+				<input type="submit" value="로그인"><a href="signup.mem"><button type="button">회원가입</button></a>
+			</div>
+		</form>
+	</div>
 </body>
 
 </html>

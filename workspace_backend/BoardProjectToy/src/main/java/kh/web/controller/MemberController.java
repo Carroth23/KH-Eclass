@@ -33,6 +33,8 @@ public class MemberController extends HttpServlet {
 		String cmd = uri.substring(ctx.length());
 		System.out.println("요청 CMD : " + cmd);
 
+		String cmd2 = request.getServletPath(); // 얘로 꺼내면 위에꺼 안써도 된다! 알아두자
+		// 세션도 아에 꺼내두면 편할듯
 		// DAO칸
 		MemberDAO dao = MemberDAO.getInstance();
 		try {
@@ -145,6 +147,7 @@ public class MemberController extends HttpServlet {
 				
 				
 			} else if (cmd.equals("/modify.mem")) {
+				// 여기선 DB꺼 꺼내오는게 더 맞는거인듯
 				String id = (String) request.getSession().getAttribute("loginID");
 				String pw = EncryptUtils.getSHA512(request.getParameter("pw"));
 				String name = request.getParameter("name");
