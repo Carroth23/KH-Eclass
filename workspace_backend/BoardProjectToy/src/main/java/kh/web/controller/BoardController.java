@@ -20,19 +20,37 @@ public class BoardController extends HttpServlet {
 			throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		String uri = request.getRequestURI();
-		System.out.println("요청 URI : " + uri);
 		String ctx = request.getContextPath();
-		System.out.println("요청 CTX : " + ctx);
 		String cmd = uri.substring(ctx.length());
 		System.out.println("요청 CMD : " + cmd);
 
 //		MemberDAO dao = MemberDAO.getInstance(); 필요하면 쓸거
 		BoardDAO dao = BoardDAO.getInstance();
+		
+		
+//		try { 페이징연습을 위해 사용. 켜면 145개 글 등록되서 난리남
+//			dao.insertDummy();
+//		} catch (Exception e1) {
+//			// TODO Auto-generated catch block
+//			e1.printStackTrace();
+//		}
+		
 		try {
 			if (cmd.equals("/toboard.board")) { // board눌렀을때 오는곳
 				
-				List<BoardDTO> dto = dao.selectAll();
+				// 게시판 입장시 1페이지를 보니까 1페이지를 받아온것(이게 현재 페이지가 된다.)
+				int currentPage = Integer.parseInt(request.getParameter("cpage"));
+				
+//				1 -> 1 ~ 10
+//				2 -> 11 ~ 20
+				int start = currentPage * 10 - 9; // 10에는 recordCountPerPage를 써야됨
+				int end = currentPage * 10;
+				
+				List<BoardDTO> dto = dao.selectByBound(start, end);
+				String navi = dao.getPageNavi(currentPage); // 네비 dao
+				
 				request.setAttribute("post_List", dto); // 작성된 글목록 불러와서 request에 담아버리기
+				request.setAttribute("navi", navi); // 네비도 속성값 부여
 				request.getRequestDispatcher("/board/toBoard.jsp").forward(request, response);
 //				response.sendRedirect("/board/toBoard.jsp"); 포워드시켜야될듯
 				
@@ -70,6 +88,13 @@ public class BoardController extends HttpServlet {
 				if (result > 0) {
 					response.sendRedirect("/toboard.board");
 				}
+			} else if (cmd.equals("/modify.board")) {
+				int seq = Integer.parseInt(request.getParameter("seq"));
+				String title = request.getParameter("title");
+				String contents = request.getParameter("contents");
+				
+				int result = dao.modify(seq, title, contents);
+				response.sendRedirect("/detail.board?seq="+seq);
 			}
 
 		} catch (Exception e) {

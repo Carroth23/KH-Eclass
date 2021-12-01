@@ -87,7 +87,7 @@ input[type="text"] {
 				})
 				
 				$("#toboard").on("click",function(){
-					location.href="/toboard.board";
+					location.href="/toboard.board?cpage=1"; // 입장하면 당연히 1페이지를 보니까 1
 				})
 			</script>
 

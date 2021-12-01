@@ -176,11 +176,11 @@ input {
 		idCheck.addEventListener("click",function(){
 			let idval = document.getElementById("id").value;
 			location.href="/idCheck.mem?idval=" + idval;
-			if(${idChecked}){
-				alert("사용 가능한 ID입니다.");
-			} else {
-				alert("이미 존재하는 ID입니다.")
-			}
+			//
+			// 아이디 체크 해결해야됨 중복확인버튼 누르면 얼럿으로 띄울거
+			//
+			//
+			
 		});
 	</script>
 </body>
