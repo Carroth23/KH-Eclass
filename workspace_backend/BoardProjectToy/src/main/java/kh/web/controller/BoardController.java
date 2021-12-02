@@ -74,7 +74,7 @@ public class BoardController extends HttpServlet {
 				int result = dao.insert(new BoardDTO(0, writer, title, contents, null, 0));
 				if(result > 0) {
 					System.out.println("작성 완료");
-					response.sendRedirect("/toboard.board"); // .board로 안보내고 페이지로 보내도 글이 올라오는지 확인해야됨 = 확인결과 .jsp로 바로보내면 안올라옴
+					response.sendRedirect("/toboard.board?cpage=1"); // .board로 안보내고 페이지로 보내도 글이 올라오는지 확인해야됨 = 확인결과 .jsp로 바로보내면 안올라옴
 				}
 			} else if (cmd.equals("/detail.board")) {
 				
@@ -90,7 +90,7 @@ public class BoardController extends HttpServlet {
 				int seq = Integer.parseInt(request.getParameter("seq"));
 				int result = dao.delete(seq);
 				if (result > 0) {
-					response.sendRedirect("/toboard.board");
+					response.sendRedirect("/toboard.board?cpage=1");
 				}
 			} else if (cmd.equals("/modify.board")) {
 				int seq = Integer.parseInt(request.getParameter("seq"));
