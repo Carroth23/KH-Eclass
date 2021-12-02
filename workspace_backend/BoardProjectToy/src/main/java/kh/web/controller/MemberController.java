@@ -47,10 +47,11 @@ public class MemberController extends HttpServlet {
 				String id = request.getParameter("id");
 				System.out.println("서버로 전달된 id : " + id);
 				boolean result = dao.isIdExist(id);
-				System.out.println(result);
-
-				request.setAttribute("result", result);
-				request.getRequestDispatcher("/member/idCheckView.jsp").forward(request, response);
+				response.getWriter().append(String.valueOf(result)); // String으로 바꿔서 값 걍 보내버림
+				
+//				request.setAttribute("result", result);
+				// forward는 jsp의 코드들을 다 response에 담아서 줌 그럼 클라이언트에서 렌더링하는데 ajax는 렌더링 안함
+//				request.getRequestDispatcher("/member/idCheckView.jsp").forward(request, response);
 
 			} else if (cmd.equals("/sign.mem")) { // 회원가입 눌렀을때오는곳
 

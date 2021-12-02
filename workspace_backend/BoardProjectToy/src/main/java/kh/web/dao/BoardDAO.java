@@ -13,6 +13,7 @@ import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
 import kh.web.dto.BoardDTO;
+import kh.web.statics.Statics;
 
 public class BoardDAO {
 	private static BoardDAO instance = null;
@@ -53,31 +54,45 @@ public class BoardDAO {
 			return rs.getInt(1); // 거기에 첫번째에 나오는 카운트값을 리턴시킴
 		}
 	}
+	
+	public int getPageTotalCount() throws Exception{
+		int recordTotalCount = this.getRecordCount(); // 총 몇개의 레코드(게시글)를 가지고 있는지?
+		int pageTotalCount = 0; // 총 페이지의 갯수 정해두기
+		if (recordTotalCount % Statics.RECORD_COUNT_PER_PAGE == 0) { // 총 페이지의 갯수(게시글 수 / 한페이지보여줄 글 갯수가 0으로 떨어지면 +1이 필요없다.)
+			pageTotalCount = recordTotalCount / Statics.RECORD_COUNT_PER_PAGE;
+		} else {
+			pageTotalCount = recordTotalCount / Statics.RECORD_COUNT_PER_PAGE + 1;
+		}
+		return pageTotalCount;
+	}
 
 	public String getPageNavi(int currentPage) throws Exception { // currentPage(컨트롤러부터 받아온 현재페이지)
 
-		int recordTotalCount = this.getRecordCount(); // 총 몇개의 레코드(게시글)를 가지고 있는지?
-		int recordCountPerPage = 10; // 한페이지에 보여줄 게시글의 갯수
-		int naviCountPerPage = 10; // 한 페이지네 네비는 몇개가 보일건지.(1~10페이지, 11~20페이지 이런식?)
-
-		int pageTotalCount = 0; // 총 페이지의 갯수 정해두기
-		if (recordTotalCount % recordCountPerPage == 0) { // 총 페이지의 갯수(게시글 수 / 한페이지보여줄 글 갯수가 0으로 떨어지면 +1이 필요없다.)
-			pageTotalCount = recordTotalCount / recordCountPerPage;
-		} else {
-			pageTotalCount = recordTotalCount / recordCountPerPage + 1;
-		}
-
-		// 보안작업 (다른사람들이 get방식으로 장난질 칠걸 대비)
-		if (currentPage < 1) {
-			currentPage = 1;
-		} else if (currentPage > pageTotalCount) {
-			currentPage = pageTotalCount;
-		}
+//		int recordTotalCount = this.getRecordCount(); // 총 몇개의 레코드(게시글)를 가지고 있는지?
+//		
+////		int recordCountPerPage = 10; // 한페이지에 보여줄 게시글의 갯수 (static으로 대체)
+////		int naviCountPerPage = 10; // 한 페이지네 네비는 몇개가 보일건지.(1~10페이지, 11~20페이지 이런식?)
+//
+//		int pageTotalCount = 0; // 총 페이지의 갯수 정해두기
+//		if (recordTotalCount % Statics.RECORD_COUNT_PER_PAGE == 0) { // 총 페이지의 갯수(게시글 수 / 한페이지보여줄 글 갯수가 0으로 떨어지면 +1이 필요없다.)
+//			pageTotalCount = recordTotalCount / Statics.RECORD_COUNT_PER_PAGE;
+//		} else {
+//			pageTotalCount = recordTotalCount / Statics.RECORD_COUNT_PER_PAGE + 1;
+//		}
+//
+//		// 보안작업 (다른사람들이 get방식으로 장난질 칠걸 대비)
+//		if (currentPage < 1) {
+//			currentPage = 1;
+//		} else if (currentPage > pageTotalCount) {
+//			currentPage = pageTotalCount;
+//		} 현재는 컨트롤러에 있으니 여기서 필요가 없다 나중에 서비스레이어로 옮겨야됨
+		
+		int pageTotalCount = this.getPageTotalCount(); // 위에서 메서드로 만들어놨으니 그걸 받아옴
 
 		// 현재 페이지에서 첫페이지 번호 (예를 들어 14에 있으면 11{요놈} ~ 20)
-		int startNavi = (currentPage - 1) / naviCountPerPage * naviCountPerPage + 1;
+		int startNavi = (currentPage - 1) / Statics.NAVI_COUNT_PER_PAGE * Statics.NAVI_COUNT_PER_PAGE + 1;
 		// 현재 페이지에서 끝에 나오는 페이지 번호 (예를 들어 14에 있으면 11 ~ 20{요놈})
-		int endNavi = startNavi + (naviCountPerPage - 1);
+		int endNavi = startNavi + (Statics.NAVI_COUNT_PER_PAGE - 1);
 
 		// 공식에 의해 발생한 endNavi값이 실제 페이지 전체 개수보다 클 경우 조정
 		if (endNavi > pageTotalCount) {endNavi = pageTotalCount;}

@@ -22,18 +22,16 @@
 <script>
 //html 실행 한 뒤 마지막에 실행하는 스크립트.
 	$(function() {
-		$("#idCheck").on(
-				"click",
-				function() {
-					let idC = /^[a-z0-9]{4,12}$/;
-					let id = $("#id").val();
-					if (id == "") {
-						alert("아이디를 입력하세요.");
-						return;
-					}
-					window.open("/idCheck.mem?id=" + $("#id").val(), "",
-							"width=300px,height=200px,top=200px,left=200px"); // 팝업창 띄우는 명령어. 인자값 3개중 두번째는 안써도 됨.
-				}); // /를 붙이면 절대경로 프로젝트의 제일 꼭대기에서 찾겠다. (나중에 전부 절대경로로 씀)
+		//$("#idCheck").on("click", function() {
+				//	let idC = /^[a-z0-9]{4,12}$/;
+				//	let id = $("#id").val();
+				//	if (id == "") {
+				//		alert("아이디를 입력하세요.");
+					//	return;
+					//}
+					//window.open("/idCheck.mem?id=" + $("#id").val(), "",
+					//		"width=300px,height=200px,top=200px,left=200px"); // 팝업창 띄우는 명령어. 인자값 3개중 두번째는 안써도 됨.
+				//}); // /를 붙이면 절대경로 프로젝트의 제일 꼭대기에서 찾겠다. (나중에 전부 절대경로로 씀)
 		// ../ 는 바로 상위폴더를 찾는것
 		// 상대경로 : 내 위치를 기준으로 상대를 부른것.
 		// 절대경로 : /하나를 붙이면 프로젝트의 (webapp부터긴 한데)제일 꼭대기부터 찾음. 음.. 걍 처음부터 끝까지 경로 다쓰는것?
@@ -41,6 +39,23 @@
 		// 그래서 프로젝트명을 안쓰는 설정을 해야함. server.xml가서 path:지워버림 그럼 프로젝트명 없이 접속가능(짱편함)
 		// 포트번호도 server.xml <Connector 여기서 80으로 바꿨음 그럼 포트번호 안써도 됨 (이클립스에서 사용하는 서버의 포트를 바꾼것)
 		// 리다이렉트는 클라이언트한테 주소 다시지정해주는거임 ㅎㅎ
+		
+		// ajax비동기 처리
+		$("#idCheck").on("click", function(){ // 여기를 인풋으로 바꾸면 글자 쓸때마다 유효성검사시킴
+			$.ajax({
+				url: "/idCheck.mem",
+				data: {id: $("#id").val()}
+			}).done(function(resp){
+				if(resp == "true"){
+					alert("이미 사용중인 ID입니다.");
+					 // $("#checkResult").alert("이미 사용중인 ID입니다.");
+				} else {
+					alert("사용 가능한 ID입니다.");
+					// $("#checkResult").css("color","pink");
+					// $("#checkResult").text("사용 가능한 ID입니다.");
+				}
+			})
+		})
 	})
 </script>
 <style>
@@ -105,7 +120,7 @@ input {
 				<div class="col-2 nametag">아이디 :</div>
 				<div class="col-10">
 					<input type="text" id="id" name="id">
-					<button type="button" id="idCheck">중복확인</button>
+					<button type="button" id="idCheck">중복확인</button><span id="checkResult"></span>
 				</div>
 			</div>
 			<div class="row">

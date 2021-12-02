@@ -12,6 +12,7 @@ import javax.servlet.http.HttpSession;
 
 import kh.web.dao.BoardDAO;
 import kh.web.dto.BoardDTO;
+import kh.web.statics.Statics;
 
 @WebServlet("*.board")
 public class BoardController extends HttpServlet {
@@ -41,10 +42,13 @@ public class BoardController extends HttpServlet {
 				// 게시판 입장시 1페이지를 보니까 1페이지를 받아온것(이게 현재 페이지가 된다.)
 				int currentPage = Integer.parseInt(request.getParameter("cpage"));
 				
+				if(currentPage < 1) {currentPage = 1;} // -1로 들어오는 페이지 방어
+				if(currentPage > dao.getPageTotalCount()) {currentPage = dao.getPageTotalCount();}
+				
 //				1 -> 1 ~ 10
 //				2 -> 11 ~ 20
-				int start = currentPage * 10 - 9; // 10에는 recordCountPerPage를 써야됨
-				int end = currentPage * 10;
+				int start = currentPage * Statics.RECORD_COUNT_PER_PAGE - (Statics.RECORD_COUNT_PER_PAGE - 1);
+				int end = currentPage * Statics.RECORD_COUNT_PER_PAGE;
 				
 				List<BoardDTO> dto = dao.selectByBound(start, end);
 				String navi = dao.getPageNavi(currentPage); // 네비 dao

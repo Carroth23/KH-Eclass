@@ -57,13 +57,14 @@ input[type="text"] {
 		<c:when test="${loginID != null }">
 			<table border=1 align=center>
 				<tr>
-					<th colspan=4>${loginID }님안녕하세요.
+					<th colspan=5>${loginID }님안녕하세요.
 				</tr>
 				<tr>
 					<td><button id="toboard">To board</button>
 					<td><button id="mypage">MyPage</button>
 					<td><button id="logout">logOut</button>
 					<td><button id="leave">Leave</button>
+					<td><button id="translate">Translate</button>
 				</tr>
 
 
@@ -88,6 +89,10 @@ input[type="text"] {
 				
 				$("#toboard").on("click",function(){
 					location.href="/toboard.board?cpage=1"; // 입장하면 당연히 1페이지를 보니까 1
+				})
+				
+				$("#translate").on("click", function(){
+					location.href="/toPage.trs";
 				})
 			</script>
 
