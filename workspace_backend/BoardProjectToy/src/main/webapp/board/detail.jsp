@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,27 +16,35 @@
 <body>
 	<table border="1">
 		<form action="/modify.board" method="post" id="frmDetail">
-		<tr>
-			${post_One.seq} ${post_One.writer}
-			<td colspan="2" width="800" align="center">
-			<input type="hidden" value="${post_One.seq}" name="seq">  <!-- 눈에 보이지 않지만 제출되는 hidden -->
-			<input type="text" id="title" name="title" style="width:70%" readonly value="${post_One.title}">
-		</tr>
-		<tr>
-			<td colspan="2" height="400"><textarea
-					placeholder="글 내용을 입력하세요." cols="112" rows="25" id="contents"
-					name="contents" disabled>${post_One.contents}</textarea>
-		</tr>
-		<tr>
-			<td colspan="2" align="right"><input type="button" value="목록으로"
-				id="boardList"> <c:if test="${post_One.writer == loginID }">
-					<!-- 내가 쓴 글일때만 삭제하기 띄우기 -->
-					<button type="button" id="mod">수정하기</button>
-					<button type="button" id="del">삭제하기</button>
-					<button type="button" id="modOk" style="display: none">수정완료</button>
-					<button type="button" id="modCancel" style="display: none">취소</button>
-				</c:if>
-		</tr>
+			<tr>
+				${post_One.seq} ${post_One.writer}
+				<td colspan="2" width="800" align="center"><input type="hidden"
+					value="${post_One.seq}" name="seq"> <!-- 눈에 보이지 않지만 제출되는 hidden -->
+					<input type="text" id="title" name="title" style="width: 70%"
+					readonly value="${post_One.title}">
+			</tr>
+			<tr>
+				<td colspan="2" height="400"><textarea
+						placeholder="글 내용을 입력하세요." cols="112" rows="25" id="contents"
+						name="contents" disabled>${post_One.contents}</textarea><br>
+						<button type="button" id="fileListBtn">파일 목록 갱신</button><br>
+						<fieldset>
+							<legend>
+								파일 목록
+							</legend>
+
+						</fieldset>
+			</tr>
+			<tr>
+				<td colspan="2" align="right"><input type="button" value="목록으로"
+					id="boardList"> <c:if test="${post_One.writer == loginID }">
+						<!-- 내가 쓴 글일때만 삭제하기 띄우기 -->
+						<button type="button" id="mod">수정하기</button>
+						<button type="button" id="del">삭제하기</button>
+						<button type="button" id="modOk" style="display: none">수정완료</button>
+						<button type="button" id="modCancel" style="display: none">취소</button>
+					</c:if>
+			</tr>
 		</form>
 	</table>
 
@@ -78,10 +89,27 @@
 			}
 		})
 
-		$("#modOk").on("click", function(){ // JS로도 서브밋 시킬수있다
-			if(confirm("이대로 수정하시겠습니까?")){
+		$("#modOk").on("click", function() { // JS로도 서브밋 시킬수있다
+			if (confirm("이대로 수정하시겠습니까?")) {
 				$("#frmDetail").submit();
 			}
+		})
+
+		$("#fileListBtn").on("click", function(){
+			$.ajax({
+				url: "/fileList.file",
+				dataType: "json"
+			}).done(function(res){
+				for(let i = 0; i < res.length; i++){
+					let div = $("<div>");
+					let anker = $("<a>");
+						console.log("콘솔실행");
+					anker.attr("href","/files/" + res[i].sysName);
+					anker.text(res[i].oriName);
+					div.append(anker);
+					$("legend").after(div);
+				}
+			});
 		})
 	</script>
 </body>

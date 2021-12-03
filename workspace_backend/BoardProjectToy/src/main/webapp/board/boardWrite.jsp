@@ -12,7 +12,7 @@
 </head>
 <body>
 	<table border="1">
-		<form action="/writeComplete.board" method="post">
+		<form action="/writeComplete.board" method="post" enctype="multipart/form-data">
 		<tr>
 			<td colspan="2" width="800" align="center"><b>자유게시판 글 작성하기</b>
 		</tr>
@@ -21,7 +21,8 @@
 		</tr>
 		<tr>
 			<td colspan="2" height="400"><textarea
-					placeholder="글 내용을 입력하세요." cols="112" rows="25" name="contents"></textarea>
+					placeholder="글 내용을 입력하세요." cols="112" rows="25" name="contents"></textarea><br>
+					<input type="file" name="file">
 		</tr>
 		<tr>
 			<td colspan="2" align="right"><input type="button" value="목록으로" id="boardList">

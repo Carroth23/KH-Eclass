@@ -26,7 +26,7 @@ public class BoardDAO {
 	}
 
 	private BoardDAO() {
-	};
+	}
 
 	private Connection getConnection() throws Exception {
 		Context ctx = new InitialContext();
