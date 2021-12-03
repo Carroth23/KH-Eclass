@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +21,7 @@
 			<td width="450">제목
 			<td width="100">작성자
 			<td width="80">날짜
-			<td>조회
+			<td>조회수
 		</tr>
 		<tr>
 				<c:forEach var="post_List" items="${post_List }">
@@ -38,6 +39,7 @@
 				${navi } <!-- 네비게이션 바 -->
 		</tr>
 		<tr>
+			<td colspan="2"><input type="text" id="searchInput" placeholder="Search"> <button type="button" id="searchBtn">검색</button>
 			<td colspan="5" align="right"><input type="button" value="작성하기"
 				id="write">
 		</tr>
@@ -46,6 +48,10 @@
 	<script>
 		$("#write").on("click", function() {
 			location.href = "/boardWrite.board";
+		})
+		$("#searchBtn").on("click", function(){
+			let searchTitle = $("#searchInput").val();
+			location.href = "/toboard.board?search="+searchTitle+"&cpage=1";
 		})
 	</script>
 </body>

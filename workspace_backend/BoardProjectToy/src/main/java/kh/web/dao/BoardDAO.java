@@ -143,6 +143,28 @@ public class BoardDAO {
 			}
 		}
 	}
+	
+	public List<BoardDTO> selectBySearch(int start, int end, String search) throws Exception {
+		String sql = "SELECT * FROM (SELECT board.*, row_number() over(order by seq desc) AS rn FROM board) WHERE rn between ? and ? and title like ?";
+		try (Connection con = this.getConnection(); PreparedStatement pstat = con.prepareStatement(sql);) {
+			pstat.setInt(1, start);
+			pstat.setInt(2, end);
+			pstat.setString(3, search);
+			try (ResultSet rs = pstat.executeQuery()) {
+				List<BoardDTO> dto = new ArrayList<>();
+				while (rs.next()) {
+					int seq = rs.getInt("seq");
+					String writer = rs.getString("writer");
+					String title = rs.getString("title");
+					String contents = rs.getString("contents");
+					Date write_Date = rs.getDate("write_date");
+					int view_Count = rs.getInt("view_count");
+					dto.add(new BoardDTO(seq, writer, title, contents, write_Date, view_Count));
+				}
+				return dto;
+			}
+		}
+	}
 
 	public int insert(BoardDTO dto) throws Exception { // 글을 작성하는 메서드
 		String sql = "insert into board values(board_seq.nextval, ?, ?, ?, sysdate, ?)";

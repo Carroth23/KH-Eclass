@@ -58,12 +58,21 @@ public class BoardController extends HttpServlet {
 //				2 -> 11 ~ 20
 				int start = currentPage * Statics.RECORD_COUNT_PER_PAGE - (Statics.RECORD_COUNT_PER_PAGE - 1);
 				int end = currentPage * Statics.RECORD_COUNT_PER_PAGE;
-				
-				List<BoardDTO> dto = dao.selectByBound(start, end);
 				String navi = dao.getPageNavi(currentPage); // 네비 dao
-				
-				request.setAttribute("post_List", dto); // 작성된 글목록 불러와서 request에 담아버리기
 				request.setAttribute("navi", navi); // 네비도 속성값 부여
+				
+				// 이쯤에서 검색으로 들어오는거 분기시켜보기
+				String search = request.getParameter("search");
+				if(search == null) {
+					List<BoardDTO> dto = dao.selectByBound(start, end);
+					request.setAttribute("post_List", dto); // 작성된 글목록 불러와서 request에 담아버리기
+					
+				} else {
+					List<BoardDTO> dto = dao.selectBySearch(start, end, search);
+					request.setAttribute("post_List", dto);
+				}
+				
+				
 				request.getRequestDispatcher("/board/toBoard.jsp").forward(request, response);
 //				response.sendRedirect("/board/toBoard.jsp"); 포워드시켜야될듯
 				
