@@ -117,6 +117,12 @@ table button:hover {
 						location.href = "/leave.mem";
 					}
 				});
+				document.getElementById("mypage").addEventListener("click", function(){
+					location.href = "/mypage.mem";
+				})
+				document.getElementById("toboard").addEventListener("click", function(){
+					location.href= "/toboard.board";
+				})
 			</script>
 
 		</c:when>

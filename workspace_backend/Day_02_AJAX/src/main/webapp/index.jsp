@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
@@ -53,7 +53,7 @@
 
 		document.getElementById("ajax01").addEventListener("click", function() {
 			fetch("/exam01.ajax").then(function(res) { // promise 를 반환 promise상태는 3가지가 있음 pending, fullfilled, rejected (실행중, 성공, 실패)
-				response.text().then(function(text){
+				response.text().then(function(text) {
 					alert(text);
 				})
 			})
@@ -76,7 +76,6 @@
 			});
 		})
 
-		
 		$("#ajax03").on("click", function() {
 			$.ajax({
 				url : "/exam03.ajax"

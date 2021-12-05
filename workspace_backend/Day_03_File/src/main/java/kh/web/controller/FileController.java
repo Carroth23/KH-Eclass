@@ -58,7 +58,7 @@ public class FileController extends HttpServlet {
 				// 업로드 날짜 시간, 파일 사이즈(얘넨 선택사항)
 
 				
-				multi.getParameter(savePath); // index에서 인코딩을 multi로 설정해줬으면 여기서도 얘로 꺼내야 잘 꺼내진다
+				multi.getParameter("name"); // index에서 인코딩을 multi로 설정해줬으면 여기서도 얘로 꺼내야 잘 꺼내진다
 				String oriName = multi.getOriginalFileName("file");
 				String sysName = multi.getFilesystemName("file"); // 넘어온 파일의 name="name"값
 				dao.insert(new FileDTO(0, oriName, sysName, 0));

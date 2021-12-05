@@ -57,6 +57,7 @@ public class FileController extends HttpServlet {
 
 				// 업로드 날짜 시간, 파일 사이즈(얘넨 선택사항)
 
+				// DB에 저장할때와 가져올때 파일 이름을 알아야 하기 때문에 여기서 값을 얻음
 				String oriName = multi.getOriginalFileName("file");
 				String sysName = multi.getFilesystemName("file"); // 넘어온 파일의 name="name"값
 				dao.insert(new FileDTO(0, oriName, sysName, 0));

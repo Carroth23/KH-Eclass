@@ -60,6 +60,7 @@ public class MemberDAO {
 		}
 	}
 	
+	// 로그인 후 정보 빼내기
 	public MemberDTO loginCheck(String id, String pw) throws Exception {
 		String sql = "select * from member where id = ? and pw = ?";
 		try (Connection con = this.getConnection();
@@ -79,6 +80,31 @@ public class MemberDAO {
 				}
 				return null;
 			}
+		}
+	}
+	
+	public int leave(String id) throws Exception {
+		String sql = "delete from member where id = ?";
+		try(Connection con = this.getConnection();
+				PreparedStatement pstat = con.prepareStatement(sql)){
+			pstat.setString(1, id);
+			return pstat.executeUpdate();
+		}
+	}
+//	update member set pw = ?, name = ?, phone = ?, email = ?, zipcode = ?, address1 = ?, address2 = ? where id = ? 수전 전꺼
+	public int modify(String id, String pw, String name, String phone, String email, String zipcode, String address1, String address2) throws Exception {
+		String sql = "update member set pw = ?, name = ?, phone = ?, email = ?, zipcode = ?, address1 = ?, address2 = ? where id = ?";
+		try(Connection con = this.getConnection();
+				PreparedStatement pstat = con.prepareStatement(sql)) {
+			pstat.setString(1, pw);
+			pstat.setString(2, name);
+			pstat.setString(3, phone);
+			pstat.setString(4, email);
+			pstat.setString(5, zipcode);
+			pstat.setString(6, address1);
+			pstat.setString(7, address2);
+			pstat.setString(8, id);
+			return pstat.executeUpdate();
 		}
 	}
 

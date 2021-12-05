@@ -67,25 +67,6 @@ public class BoardDAO {
 	}
 
 	public String getPageNavi(int currentPage) throws Exception { // currentPage(컨트롤러부터 받아온 현재페이지)
-
-//		int recordTotalCount = this.getRecordCount(); // 총 몇개의 레코드(게시글)를 가지고 있는지?
-//		
-////		int recordCountPerPage = 10; // 한페이지에 보여줄 게시글의 갯수 (static으로 대체)
-////		int naviCountPerPage = 10; // 한 페이지네 네비는 몇개가 보일건지.(1~10페이지, 11~20페이지 이런식?)
-//
-//		int pageTotalCount = 0; // 총 페이지의 갯수 정해두기
-//		if (recordTotalCount % Statics.RECORD_COUNT_PER_PAGE == 0) { // 총 페이지의 갯수(게시글 수 / 한페이지보여줄 글 갯수가 0으로 떨어지면 +1이 필요없다.)
-//			pageTotalCount = recordTotalCount / Statics.RECORD_COUNT_PER_PAGE;
-//		} else {
-//			pageTotalCount = recordTotalCount / Statics.RECORD_COUNT_PER_PAGE + 1;
-//		}
-//
-//		// 보안작업 (다른사람들이 get방식으로 장난질 칠걸 대비)
-//		if (currentPage < 1) {
-//			currentPage = 1;
-//		} else if (currentPage > pageTotalCount) {
-//			currentPage = pageTotalCount;
-//		} 현재는 컨트롤러에 있으니 여기서 필요가 없다 나중에 서비스레이어로 옮겨야됨
 		
 		int pageTotalCount = this.getPageTotalCount(); // 위에서 메서드로 만들어놨으니 그걸 받아옴
 

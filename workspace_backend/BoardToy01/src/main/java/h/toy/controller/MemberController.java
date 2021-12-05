@@ -20,7 +20,6 @@ public class MemberController extends HttpServlet {
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		String cmd = request.getServletPath();
-		System.out.println(request.getRequestURI());
 		System.out.println(cmd);
 		HttpSession session = request.getSession(); // 세션 꺼내고
 		MemberDAO dao = MemberDAO.getInstance();
@@ -75,12 +74,43 @@ public class MemberController extends HttpServlet {
 			} else if (cmd.equals("/logout.mem")) { // 로그아웃
 				session.invalidate(); // 세션삭제
 				response.sendRedirect("/index.jsp");
-			} else if (cmd.equals("/leave.mem")) {
-				
-				
-				
-			} else if (cmd.equals("")) {
-
+			} else if (cmd.equals("/leave.mem")) { // 회원 탈퇴
+				String id = (String) session.getAttribute("loginId");
+				dao.leave(id);
+				response.sendRedirect("/index.jsp");
+			} else if (cmd.equals("/mypage.mem")) { // 마이페이지
+				String id = (String) session.getAttribute("loginId");
+				String pw = (String) session.getAttribute("loginPw");
+				MemberDTO dto = dao.loginCheck(id, pw);
+				request.setAttribute("dto", dto);
+				request.getRequestDispatcher("/member/mypage.jsp").forward(request, response);
+			} else if (cmd.equals("/modify.mem")) {
+				String id = (String) session.getAttribute("loginId");
+				String pw = EncryptUtils.getSHA512(request.getParameter("pw"));
+				String name = request.getParameter("name");
+				String phone = request.getParameter("phone");
+				String email = request.getParameter("email");
+				String zipcode = request.getParameter("zipcode");
+				String address1 = request.getParameter("address1");
+				String address2 = request.getParameter("address2");
+				System.out.println(id);
+				System.out.println(name);
+				System.out.println(email);
+				int result = dao.modify(id, pw, name, phone, email, zipcode, address1, address2);
+				if (result > 0) {
+					System.out.println("수정완료");
+				} else {
+					System.out.println("수정실패");
+				}
+				session.setAttribute(id, "loginId"); // 세션에 다시담기 노가다
+				session.setAttribute(pw, "pw");
+				session.setAttribute(name, "name");
+				session.setAttribute(phone, "phone");
+				session.setAttribute(email, "email");
+				session.setAttribute(zipcode, "zipcode");
+				session.setAttribute(address1, "adress1");
+				session.setAttribute(address2, "address2");
+				response.sendRedirect("/index.jsp");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
