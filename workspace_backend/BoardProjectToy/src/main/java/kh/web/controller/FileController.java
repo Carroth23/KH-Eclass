@@ -1,9 +1,13 @@
 package kh.web.controller;
 
+import java.io.DataInputStream;
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.List;
 
 import javax.servlet.ServletException;
+import javax.servlet.ServletOutputStream;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -26,14 +30,33 @@ public class FileController extends HttpServlet {
 		
 		try {
 			if (cmd.equals("/fileList.file")) {
-				System.out.println("여기옴");
-				List<FileDTO> list = dao.selectAll();
-				System.out.println(list);
+				int detailseq = Integer.parseInt(request.getParameter("detailseq"));
+				System.out.println(cmd);
+				List<FileDTO> list = dao.selectSeqFiles(detailseq);
 				Gson g = new Gson();
 				String result = g.toJson(list);
 				response.setContentType("text/html;charset=utf8;");
 				response.getWriter().append(result);
-				System.out.println("fileList 실행됨");
+			} else if (cmd.equals("/fileDown.file")) {
+				String path = request.getServletContext().getRealPath("files");
+				
+				String sysName = request.getParameter("sysName");
+				String oriName = request.getParameter("oriName");
+				
+				File targetFile = new File(path + "/" + sysName);
+				response.reset();
+				response.setHeader("Content-Disposition", "attachment; filename=\""+ oriName +"\"");
+				
+				byte[] fileContent = new byte[(int) targetFile.length()];
+				
+				try(ServletOutputStream sos = response.getOutputStream();
+						DataInputStream dis = new DataInputStream(new FileInputStream(targetFile))){
+					dis.readFully(fileContent);
+					
+					sos.write(fileContent);
+					sos.flush();
+				}
+				
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

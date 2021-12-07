@@ -24,6 +24,7 @@ import kh.web.statics.Statics;
 @WebServlet("*.board")
 public class BoardController extends HttpServlet {
 
+	// 파일 첨부한 글은 보드컨트롤러로 보내서 보드컨트롤러에서 BoardDAO와 FileDAO 두개를 다 사용해도 됨.
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8"); // 얘는 걍 냅둘것
@@ -75,6 +76,7 @@ public class BoardController extends HttpServlet {
 					request.setAttribute("post_List", dto); // 작성된 글목록 불러와서 request에 담아버리기
 
 				} else {
+					System.out.println("검색어 : " + search);
 					List<BoardDTO> dto = dao.selectBySearch(start, end, search);
 					request.setAttribute("post_List", dto);
 				}
@@ -103,7 +105,6 @@ public class BoardController extends HttpServlet {
 				multi.getParameter(savePath);
 				String oriName = multi.getOriginalFileName("file");
 				String sysName = multi.getFilesystemName("file");
-				fdao.insert(new FileDTO(0, oriName, sysName, 0));
 				// 여기까지 파일업로드 관련
 
 				// 게시판 목록에서 아예 데이터베이스를 만들고 여기서 DB에 추가만 하면 될듯
@@ -113,8 +114,12 @@ public class BoardController extends HttpServlet {
 //				String contents = request.getParameter("contents");
 				String title = multi.getParameter("title");
 				String contents = multi.getParameter("contents");
-
+				
 				int result = dao.insert(new BoardDTO(0, writer, title, contents, null, 0));
+				
+				int targetSeq = dao.getSelectSeq();
+				System.out.println(targetSeq);
+				fdao.insert(new FileDTO(0, oriName, sysName, targetSeq));
 
 				if (result > 0) {
 					System.out.println("작성 완료");

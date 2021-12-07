@@ -157,6 +157,17 @@ public class BoardDAO {
 			return pstat.executeUpdate();
 		}
 	}
+	
+	public int getSelectSeq() throws Exception {
+		String sql = "select seq from board order by seq desc";
+		try (Connection con = this.getConnection();
+				PreparedStatement pstat = con.prepareStatement(sql);
+				ResultSet rs = pstat.executeQuery()) {
+			rs.next();
+			int result = rs.getInt("seq");
+			return result;
+		}
+	}
 
 	public List<BoardDTO> selectAll() throws Exception { // 모든 글을 꺼내오는 메서드
 		String sql = "select * from board order by seq desc"; // 역순으로 해야 최신글이 위로 온다.

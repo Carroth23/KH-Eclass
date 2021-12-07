@@ -24,7 +24,7 @@
 	</firldset>
 	
 	<script>
-		$("#fileList").on("click", function(){
+		$("#fileList").on("click", function(){ // ajax가 아니더라도 다운로드는 ajax로 작동함.
 			$.ajax({
 				url: "/list.file",
 				dataType: "json"
@@ -34,7 +34,7 @@
 					
 					let anker = $("<a>");
 					// 다운로드 구현방법 1. 파일에 링크 걸어버리는것. <- 얘는 통제가 안됨
-					anker.attr("href","/files/" + res[i].sysName);
+					anker.attr("href","/download.file?sysName=" + res[i].sysName + "&oriName=" + res[i].oriName); // 서버에서 쓸 내용들을 보내줌
 					anker.text(res[i].oriName);
 					div.append(anker);
 					$("legend").after(div);

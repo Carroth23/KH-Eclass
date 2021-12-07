@@ -97,17 +97,18 @@
 
 		$("#fileListBtn").on("click", function(){
 			$.ajax({
-				url: "/fileList.file",
+				url: "/fileList.file?detailseq=" + ${post_One.seq},
 				dataType: "json"
 			}).done(function(res){
+					$("legend").empty(); // 일단 비우기는 완료 근데 legend도 여기서 붙여서 리셋시켜야될듯
 				for(let i = 0; i < res.length; i++){
 					let div = $("<div>");
 					let anker = $("<a>");
-						console.log("콘솔실행");
-					anker.attr("href","/files/" + res[i].sysName);
+					console.log("콘솔실행");
+					anker.attr("href","/fileDown.file?sysName=" + res[i].sysName + "&oriName=" + res[i].oriName); // 파일의 저장 당시 이름과 현재 이름 가지고 이동
 					anker.text(res[i].oriName);
 					div.append(anker);
-					$("legend").after(div);
+					$("legend").append(div);
 				}
 			});
 		})
