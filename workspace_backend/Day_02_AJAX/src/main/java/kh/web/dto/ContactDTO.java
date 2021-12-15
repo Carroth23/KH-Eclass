@@ -2,6 +2,9 @@ package kh.web.dto;
 
 public class ContactDTO {
 	private int id;
+	private String name;
+	private String contact;
+	
 	public ContactDTO() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -30,6 +33,4 @@ public class ContactDTO {
 	public void setContact(String contact) {
 		this.contact = contact;
 	}
-	private String name;
-	private String contact;
 }

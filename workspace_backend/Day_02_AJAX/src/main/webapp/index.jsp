@@ -103,13 +103,10 @@
 			})
 		})
 
-		$("#ajax06").on(
-				"click",
-				function() {
+		$("#ajax06").on("click", function() {
 					$.ajax({
 						url : "/exam06.ajax"
-					}).done(
-							function(resp) {
+					}).done(function(resp) {
 								let result = JSON.parse(resp);
 								for (let i = 0; i < result.length; i++) {
 									console.log(result[i].id + " : "
