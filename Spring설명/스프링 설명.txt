@@ -1,0 +1,60 @@
+Framework
+- 툴 + 작업
+
+Spring Framework - 1
+
+> Maven : 라이브러리 관리 / 배포 관리
+> Spring : 인스턴스 라이프사이클 관리 / 디자인패턴 관리 / 횡단관심사 관리 / 스케쥴링 관리 / 트랜잭션 관리..
+	- 편리함
+	- 유지보수에 장점 ()
+
+SpringMVC
+
+
+
+IOC
+DL / DI
+AOP
+
+
+스프링에서는 forward로만 jsp갈수있을것이다
+
+스프링 프로젝트에서
+src/main/java에는 dao같은거
+src/main/resources 는 xml문서같은거
+src/test/java	- 잘 안씀
+src/test/resources	- 잘 안씀
+Maven Dependencies 라이브러리 관리
+pom.xml은 메이븐 관리 - 결국 라이브러리 관리
+- target폴더는 앵간하면 손대지 말것.
+- src html css js뭐 그런거 모이는곳
+- jsp는 views에 모음
+- spring폴더 안에 있는 두개의 xml(context)은 설정파일?(이 구조는 바꿀필요없음)
+classes폴더는 지우면 안됨 ㅎ
+
+pom.xml 에 메이븐리파지토리 디펜던시 붙여넣으면 걍 설치됨ㅎ
+
+WEB-INF 폴더는 외부에서 접근하는걸 막아주는 폴더임ㅎ
+
+기본 home.jsp는 인코딩설정 이상해서 걍 삭제 후 다시만듬
+
+
+
+☆프로젝트 실행 과정☆
+1. Tomcat 실행(server.xml에서 설정된 정보들 읽어들임)
+2. web.xml 분석(자기한테 가까운(프로젝트 안에있는)){둘 다 실행하긴 함}
+3. web.xml분석중에 Spring Container 생성
+4. Spring Container 가동되며 servlet-context.xml & root-context.xml분석
+5. servlet-context.xml 분석 중에 InternalResourceViewResolver 라는 인스턴스를 생성
+6. Component-scan 이 실행되면서 특정 @Annotation이 붙은 클래스들을 인스턴스로 생성
+
+
+
+web.xml을 읽어드리는 과정중에 스프링 컨테이너를 생성하는 과정이 포함되어있다.
+<!-- Creates the Spring Container shared by all Servlets and Filters -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+이부분
+
+스프링은 클래스들을 싱글턴으로 실행시킴 ㅎㅎ
