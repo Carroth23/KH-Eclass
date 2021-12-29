@@ -79,3 +79,8 @@ springJDBC는 버전에 맞게 사용 (스프링 버전 변수를 가져다 JDBC
 
 
 img태그 자체가 request다
+
+
+Spring의 지향점.
+POJO - Plain Old Java Object 평범하고 오래된 자바를 사용하는걸 추천
+그래서 스프링은 컨트롤러를 서블릿말고 클래스로 만든다

@@ -189,13 +189,6 @@
   <uri name="http://xmlns.jcp.org/xml/ns/javaee/web-partialresponse_2_0.xsd" uri="jar:file:/C:/WebD/eclipse/plugins/org.eclipse.jst.standard.schemas_1.2.400.v202101070609.jar!/dtdsAndSchemas/web-partialresponse_2_0.xsd"/>
   <uri name="http://xmlns.jcp.org/xml/ns/javaee/web-partialresponse_2_2.xsd" uri="jar:file:/C:/WebD/eclipse/plugins/org.eclipse.jst.standard.schemas_1.2.400.v202101070609.jar!/dtdsAndSchemas/web-partialresponse_2_2.xsd"/>
   <uri name="http://xmlns.jcp.org/xml/ns/javaee/web-partialresponse_2_3.xsd" uri="jar:file:/C:/WebD/eclipse/plugins/org.eclipse.jst.standard.schemas_1.2.400.v202101070609.jar!/dtdsAndSchemas/web-partialresponse_2_3.xsd"/>
-  <system systemId="http://maven.apache.org/maven-v4_0_0.xsd" uri="jar:file:/C:/WebD/eclipse/plugins/org.eclipse.m2e.model.edit_1.18.1.20210607-0802.jar!/xsd/maven-v4_0_0.xsd"/>
-  <system systemId="http://maven.apache.org/xsd/maven-4.0.0.xsd" uri="jar:file:/C:/WebD/eclipse/plugins/org.eclipse.m2e.model.edit_1.18.1.20210607-0802.jar!/xsd/maven-v4_0_0.xsd"/>
-  <system systemId="http://maven.apache.org/xsd/settings-1.0.0.xsd" uri="jar:file:/C:/WebD/eclipse/plugins/org.eclipse.m2e.model.edit_1.18.1.20210607-0802.jar!/xsd/settings-v1_0_0.xsd"/>
-  <system systemId="http://maven.apache.org/xsd/profiles-1.0.0.xsd" uri="jar:file:/C:/WebD/eclipse/plugins/org.eclipse.m2e.model.edit_1.18.1.20210607-0802.jar!/xsd/profiles-v1_0_0.xsd"/>
-  <system systemId="http://maven.apache.org/xsd/archetype-1.0.0.xsd" uri="jar:file:/C:/WebD/eclipse/plugins/org.eclipse.m2e.model.edit_1.18.1.20210607-0802.jar!/xsd/archetype-1.0.0.xsd"/>
-  <system systemId="http://maven.apache.org/xsd/archetype-catalog-1.0.0.xsd" uri="jar:file:/C:/WebD/eclipse/plugins/org.eclipse.m2e.model.edit_1.18.1.20210607-0802.jar!/xsd/archetype-catalog-1.0.0.xsd"/>
-  <system systemId="http://maven.apache.org/xsd/archetype-descriptor-1.0.0.xsd" uri="jar:file:/C:/WebD/eclipse/plugins/org.eclipse.m2e.model.edit_1.18.1.20210607-0802.jar!/xsd/archetype-descriptor-1.0.0.xsd"/>
   <public publicId="-//WAPFORUM//DTD WML 1.1//EN" uri="jar:file:/C:/WebD/eclipse/plugins/org.eclipse.wst.standard.schemas_1.0.800.v201901071922.jar!/dtds/wml11.dtd"/>
   <public publicId="-//W3C//DTD XHTML 1.0 Strict//EN" uri="jar:file:/C:/WebD/eclipse/plugins/org.eclipse.wst.standard.schemas_1.0.800.v201901071922.jar!/dtds/xhtml1-strict.dtd" webURL="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"/>
   <public publicId="-//W3C//DTD XHTML 1.0 Transitional//EN" uri="jar:file:/C:/WebD/eclipse/plugins/org.eclipse.wst.standard.schemas_1.0.800.v201901071922.jar!/dtds/xhtml1-transitional.dtd" webURL="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"/>
@@ -227,5 +220,12 @@
   <uri id="org.w3c.xinclude" name="http://www.w3.org/2001/XInclude" uri="jar:file:/C:/WebD/eclipse/plugins/org.eclipse.wst.xsl.core_1.2.100.v201907231732.jar!/xslt-schemas/xinclude.xsd"/>
   <public publicId="-//SPRING//DTD BEAN//EN" uri="platform:/plugin/org.springframework.beans/org/springframework/beans/factory/xml/spring-beans.dtd" webURL="https://www.springframework.org/dtd/spring-beans.dtd"/>
   <public publicId="-//SPRING//DTD BEAN 2.0//EN" uri="jar:file:/C:/WebD/eclipse/plugins/org.springframework.beans_4.3.23.20190313-CI.jar!/org/springframework/beans/factory/xml/spring-beans-2.0.dtd" webURL="https://www.springframework.org/dtd/spring-beans-2.0.dtd"/>
-  <public publicId="-//LOG4J//DTD LOG4J//EN" uri="jar:file:/C:/WebD/eclipse/plugins/org.springsource.ide.eclipse.commons.ui_4.9.0.202012131915.jar!/dtd/log4j-1.2.dtd" webURL="https://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/xml/doc-files/log4j.dtd"/>
+  <system systemId="http://maven.apache.org/maven-v4_0_0.xsd" uri="jar:file:/C:/WebD/eclipse/plugins/org.eclipse.m2e.model.edit_1.18.2.20211002-1029.jar!/xsd/maven-v4_0_0.xsd"/>
+  <system systemId="http://maven.apache.org/xsd/maven-4.0.0.xsd" uri="jar:file:/C:/WebD/eclipse/plugins/org.eclipse.m2e.model.edit_1.18.2.20211002-1029.jar!/xsd/maven-v4_0_0.xsd"/>
+  <system systemId="http://maven.apache.org/xsd/settings-1.0.0.xsd" uri="jar:file:/C:/WebD/eclipse/plugins/org.eclipse.m2e.model.edit_1.18.2.20211002-1029.jar!/xsd/settings-v1_0_0.xsd"/>
+  <system systemId="http://maven.apache.org/xsd/profiles-1.0.0.xsd" uri="jar:file:/C:/WebD/eclipse/plugins/org.eclipse.m2e.model.edit_1.18.2.20211002-1029.jar!/xsd/profiles-v1_0_0.xsd"/>
+  <system systemId="http://maven.apache.org/xsd/archetype-1.0.0.xsd" uri="jar:file:/C:/WebD/eclipse/plugins/org.eclipse.m2e.model.edit_1.18.2.20211002-1029.jar!/xsd/archetype-1.0.0.xsd"/>
+  <system systemId="http://maven.apache.org/xsd/archetype-catalog-1.0.0.xsd" uri="jar:file:/C:/WebD/eclipse/plugins/org.eclipse.m2e.model.edit_1.18.2.20211002-1029.jar!/xsd/archetype-catalog-1.0.0.xsd"/>
+  <system systemId="http://maven.apache.org/xsd/archetype-descriptor-1.0.0.xsd" uri="jar:file:/C:/WebD/eclipse/plugins/org.eclipse.m2e.model.edit_1.18.2.20211002-1029.jar!/xsd/archetype-descriptor-1.0.0.xsd"/>
+  <public publicId="-//LOG4J//DTD LOG4J//EN" uri="jar:file:/C:/WebD/eclipse/plugins/org.springsource.ide.eclipse.commons.ui_4.12.0.202109130547.jar!/dtd/log4j-1.2.dtd" webURL="https://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/xml/doc-files/log4j.dtd"/>
 </catalog>
