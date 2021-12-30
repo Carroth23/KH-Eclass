@@ -5,8 +5,9 @@
     <fullyQualifiedTypeName name="java.sql.Connection"/>
     <fullyQualifiedTypeName name="java.sql.Timestamp"/>
     <fullyQualifiedTypeName name="java.lang.Boolean"/>
-    <fullyQualifiedTypeName name="kh.spring.utils.EncryptUtils"/>
-    <fullyQualifiedTypeName name="org.springframework.jdbc.core.RowMapper"/>
     <fullyQualifiedTypeName name="java.sql.Date"/>
     <fullyQualifiedTypeName name="kh.spring.dto.ReplyDTO"/>
+    <fullyQualifiedTypeName name="kh.spring.utils.EncryptUtils"/>
+    <fullyQualifiedTypeName name="kh.spring.statics.Statics"/>
+    <fullyQualifiedTypeName name="org.springframework.jdbc.core.RowMapper"/>
 </qualifiedTypeNameHistroy>

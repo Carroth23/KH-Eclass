@@ -14,7 +14,7 @@ import kh.spring.dto.MemberDTO;
 public class MemberDAO {
 
 	@Autowired
-	JdbcTemplate jdbc;
+	private JdbcTemplate jdbc;
 
 //	내가 푼거
 //	public Boolean idIdExist(String id) throws Exception {

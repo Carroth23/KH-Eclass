@@ -24,14 +24,14 @@ public class MemberController {
 	private HttpSession session; // 세션객체도 꺼내둘거니까 밖에서 주입받음
 	
 	@RequestMapping("join")
-	public String memverJoin() {
+	public String memberJoin() {
 		return "/member/join";
 	}
 
 	// ResponseBody를 붙이면 RestController이 되...는듯
 	@ResponseBody // 이 어노테이션을 붙이면, 이 메서드가 리턴하는 결과값은 포워드도 아니고 리다이렉트도 아니게됨(ajax에서 많이씀)
 	@RequestMapping(value="idDuplCheck", produces="text/html;charset=utf8") // ajax 한글깨짐 처리
-	public String idDuplCheck(String id, Model model) throws Exception {
+	public String idDuplCheck(String id) throws Exception {
 		// 중복검사를 하고, 결과를 이클립스콘솔에 출력하는 것까지.
 		System.out.println("도착한 id값 : " + id);
 		int result = mdao.idDuplCheck(id);
