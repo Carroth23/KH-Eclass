@@ -14,7 +14,7 @@
 	<c:choose>
 		<c:when test="${loginID != null}">
 			${loginID } 님 환영합니당
-			<button type="button">게시판</button>
+			<button type="button" id="toboard">게시판</button>
 			<button type="button" id="mypageBtn">마이페이지</button>
 			<button type="button" id="logoutBtn">로그아웃</button>
 			<button type="button" id="leaveBtn">회원탈퇴</button>
@@ -57,6 +57,9 @@
 		})
 		$("#mypageBtn").on("click", () => {
 			location.href="/member/mypage";
+		})
+		$("#toboard").on("click", () => {
+			location.href="/board/list";
 		})
 	</script>
 </body>

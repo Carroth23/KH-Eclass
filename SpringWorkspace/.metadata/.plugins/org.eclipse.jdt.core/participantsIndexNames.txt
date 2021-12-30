@@ -19,5 +19,7 @@ C:\WebD\StudyH\SpringWorkspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspse
 \Spring_01_Proc\src\main\java
 C:\WebD\StudyH\SpringWorkspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\756269708.index
 \Spring_01\src\main\java
+C:\WebD\StudyH\SpringWorkspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4145437010.index
+\Spring_04_Board\src\main\java
 C:\WebD\StudyH\SpringWorkspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\708969809.index
 \Proc1\src\main\java

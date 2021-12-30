@@ -45,7 +45,7 @@ public class MemberDAO {
 	
 	public int login (String id, String pw) { // 로그인
 		String sql = "select count(*) from member where id = ? and pw = ?";
-		return jdbc.queryForObject(sql, Integer.class, id, pw);
+		return jdbc.queryForObject(sql, Integer.class, id, pw); // Integer.class 널값 연산이 가능
 	}
 	
 	public int leave (String id) { // 회원탈퇴
