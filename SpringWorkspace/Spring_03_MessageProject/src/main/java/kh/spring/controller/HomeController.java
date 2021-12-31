@@ -60,7 +60,7 @@ public class HomeController {
 	
 	@RequestMapping("searchSeq")
 	public String searchSeq(int seq, Model model) throws Exception {
-		MessagesDTO dto = dao.searchSeq(seq);
+		List<MessagesDTO> dto = dao.searchSeq(seq);
 		model.addAttribute("list", dto);
 		return "outputView";
 	}

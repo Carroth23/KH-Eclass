@@ -3,6 +3,8 @@ C:\WebD\StudyH\SpringWorkspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspse
 \Spring_03_MessageProject\src\main\java
 C:\WebD\StudyH\SpringWorkspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2741376224.index
 \SpringProc123\src\main\java
+C:\WebD\StudyH\SpringWorkspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3779418088.index
+\Spring_04_Board_Mybatis\src\main\java
 C:\WebD\StudyH\SpringWorkspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\496393953.index
 \Spring_04_Board\src\main\java
 C:\WebD\StudyH\SpringWorkspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3239170285.index
@@ -19,8 +21,12 @@ C:\WebD\StudyH\SpringWorkspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspse
 \LegaProc01\src\main\java
 C:\WebD\SpringWorkspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\756269708.index
 \Spring_01\src\main\java
+C:\WebD\StudyH\SpringWorkspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1636729358.index
+\Spring_04_Board_Mybatis\src\main\java
 C:\WebD\StudyH\SpringWorkspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3163435182.index
 \Spring_01_Proc\src\main\java
+C:\WebD\StudyH\SpringWorkspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\909399933.index
+\Spring_04_Board_Mybatis\src\main\java
 C:\WebD\StudyH\SpringWorkspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3155845229.index
 \Proc01\src\main\java
 C:\WebD\StudyH\SpringWorkspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\756269708.index

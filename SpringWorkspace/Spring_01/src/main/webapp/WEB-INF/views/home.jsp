@@ -19,6 +19,7 @@
 		<tr align=center>
 			<td><a href="toInput">toInput</a>
 			<td><a href="toOutput">toOutput</a>
+			<td><a href="toSearch">toSearch</a>
 		</tr>
 	</table>
 </body>

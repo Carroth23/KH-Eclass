@@ -90,28 +90,44 @@ public class HomeController {
 		model.addAttribute("count", count);
 		return "output";
 	}
+	
+	@RequestMapping("toSearch")
+	public String toSearch() {
+		return "search";
+	}
 
 	@RequestMapping("search")
 	public String search(int searchSeq, Model model) throws Exception {
-		
 		List<ContactDTO> list = dao.search(searchSeq);
 		model.addAttribute("list", list);
 		return "output";
+	}
+	
+	@RequestMapping("searchByMultiCon") // 여러개의 조건을 검색
+	public String multiSearch(ContactDTO dto) {
+		System.out.println("넣은Con : " + dto.getContact() + ", 넣은Name : " + dto.getName());
+		List<ContactDTO> list = dao.searchByMultiCon(dto);
+		
+		for (ContactDTO dtos : list) {
+			System.out.println("검색된 Name : " + dtos.getName() + ", 검색된 Con : " + dtos.getContact());
+		}
+		
+		return "search";
 	}
 
 	@RequestMapping("deleteProc")
 	public String delProc(int delTarget) throws Exception {
 
-//		dao.delete(Integer.parseInt(delTarget));
-		int result = dao.delete(delTarget);
+////		dao.delete(Integer.parseInt(delTarget));
+		int result = dao.deleteBySeq(delTarget);
 		return "redirect:toOutput";
 	}
-	// JSP에서 같은 name값을 배열로 받기 = getParameterValues()
-
+//	// JSP에서 같은 name값을 배열로 받기 = getParameterValues()
+	
 	@RequestMapping("updateProc")
-	public String updateProc(ContactDTO dto) throws Exception {
+	public String updateProc(String column, String value, int seq) throws Exception {
 //		int result = dao.update(dto);
-		int result = dao.update(dto);
+		int result = dao.update(column, value, seq);
 		return "redirect:toOutput";
 	}
 

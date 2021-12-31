@@ -13,7 +13,7 @@
 		<property name="initialSize" value="30"/>
 	</bean>
 	
-	<!-- DAO인스턴스 생성 -->
+	<!-- DAO인스턴스 생성 (컴포넌트스캔으로 대체) -->
 	<!-- <bean class="kh.spring.dao.ContactDAO"/> -->
 	
 	<!-- Spring JDBC -->
@@ -28,5 +28,9 @@
 		<property name="dataSource" ref="dataSource"/>
 		<property name="mapperLocations" value="classpath:/mybatis/*-mapper.xml"/>
 		<!-- Mybatis는 xml문서를 참조해서 쓰는데 그 문서가 어디에 있는지 알려주는 property classpath는 밖에 있는 resources폴더 -->
+	</bean>
+	<!-- 생성자로 만드는법 -->
+	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"></constructor-arg>
 	</bean>
 </beans>

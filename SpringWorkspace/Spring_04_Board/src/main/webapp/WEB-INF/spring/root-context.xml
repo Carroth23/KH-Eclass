@@ -15,4 +15,15 @@
 	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
 		<property name="dataSource" ref="dataSource"/>
 	</bean>
+	
+	<!-- MyBatis -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="mapperLocations" value="classpath:/mybatis/*-mapper.xml"/>
+		<!-- Mybatis는 xml문서를 참조해서 쓰는데 그 문서가 어디에 있는지 알려주는 property classpath는 밖에 있는 resources폴더 -->
+	</bean>
+	<!-- 생성자로 만드는법 -->
+	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"></constructor-arg>
+	</bean>
 </beans>
