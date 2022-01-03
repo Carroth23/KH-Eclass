@@ -68,6 +68,7 @@ public class BoardController {
 	
 	@RequestMapping("toDetail") // 글 세부정보
 	public String toDetail(Model model, int seq) {
+		model.addAttribute("files", fdao.selectFileBySeq(seq));
 		model.addAttribute("dto", bdao.selectSeq(seq));
 		model.addAttribute("reply", bdao.selectReply(seq));
 		return "board/detail";

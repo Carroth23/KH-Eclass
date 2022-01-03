@@ -9,4 +9,7 @@
 		insert into files values(files_seq.nextval, #{oriName}, #{sysName}, ${parentSeq})
 	</insert>
 	
+	<select id="selectFileBySeq" resultType="kh.spring.dto.FilesDTO">
+		select * from files where parentseq = #{value}
+	</select>
 </mapper>

@@ -1,13 +1,9 @@
 package kh.spring.dao;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.List;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
 import kh.spring.dto.BoardDTO;
@@ -27,7 +23,7 @@ public class BoardDAO {
 		return mybatis.insert("Board.boardInsert", dto);
 	}
 	
-	public BoardDTO selectSeq(int seq) {
+	public BoardDTO selectSeq(int seq) { // 글목록 띄우는거
 		return mybatis.selectOne("Board.selectSeq", seq);
 	}
 	

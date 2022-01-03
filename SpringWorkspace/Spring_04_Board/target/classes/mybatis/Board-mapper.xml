@@ -11,6 +11,9 @@
 
 	<insert id="boardInsert">
 		insert into board values(board_seq.nextval, #{writer}, #{title}, #{contents}, sysdate, 0)
+		<selectKey resultType="int" order="AFTER" keyProperty="seq"> <!-- 위의 인서트를 실핼하고 나서 board_seq를 가져옴. 가져온 int를 dto의 seq에 넣는다. -->
+			select board_seq.currval from dual
+		</selectKey>
 	</insert>
 	
 	<select id="selectSeq" resultType="kh.spring.dto.BoardDTO">

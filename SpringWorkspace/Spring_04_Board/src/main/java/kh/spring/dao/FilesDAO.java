@@ -1,5 +1,7 @@
 package kh.spring.dao;
 
+import java.util.List;
+
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -14,5 +16,9 @@ public class FilesDAO {
 	
 	public int insert(FilesDTO dto) {
 		return mybatis.insert("Files.insert", dto);
+	}
+	
+	public List<FilesDTO> selectFileBySeq(int parentSeq){
+		return mybatis.selectList("Files.selectFileBySeq", parentSeq);
 	}
 }

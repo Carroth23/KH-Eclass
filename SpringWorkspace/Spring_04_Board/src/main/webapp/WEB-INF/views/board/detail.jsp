@@ -42,6 +42,9 @@
     <body>
       <div id="container">
         <form action="/board/modify" method="post">
+			<c:forEach var="i" items="${files}">
+				${i.oriName }<br>
+			</c:forEach>
           <div class="title">
             <input type="text" id="title" name="title" value="${dto.title }" readonly>
             <input type="text" id="seq" name="seq" value="${dto.seq }">
