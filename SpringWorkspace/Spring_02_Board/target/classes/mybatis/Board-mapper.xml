@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="Board">
+
+	<select id="selectAll" resultType="kh.spring.dto.BoardDTO">
+		select * from board order by seq desc
+	</select>
+
+	<insert id="boardInsert">
+		insert into board values(board_seq.nextval, #{writer}, #{title}, #{contents}, sysdate, 0)
+		<selectKey resultType="int" order="AFTER" keyProperty="seq"> <!-- 위의 인서트를 실핼하고 나서 board_seq를 가져옴. 가져온 int를 dto의 seq에 넣는다. -->
+			select board_seq.currval from dual
+		</selectKey>
+	</insert>
+	
+	<select id="selectSeq" resultType="kh.spring.dto.BoardDTO">
+		select * from board where seq = ${seq}
+	</select>
+	
+	<update id="deletePost">
+		delete from board where seq = ${seq}
+	</update>
+	
+	<update id="modify">
+		update board set title = #{title}, contents = #{contents} where seq = ${seq}
+	</update>
+	
+	<insert id="replyInsert">
+		insert into reply values(reply_seq.nextval, ${board_seq}, #{writer}, #{contents}, sysdate)
+	</insert>
+	
+	<select id="selectReply" resultType="kh.spring.dto.ReplyDTO">
+		select * from reply where board_seq = ${board_seq} order by seq desc
+	</select>
+	
+	
+</mapper>
