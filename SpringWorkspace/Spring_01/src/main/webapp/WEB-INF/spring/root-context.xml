@@ -4,7 +4,6 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
-		
 	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
 		<property name="username" value="kh"/>
 		<property name="password" value="kh"/>
