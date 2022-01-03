@@ -30,11 +30,11 @@ public class FileController {
 			byte[] fileContents = new byte[(int) target.length()]; // 대상파일을 적재할 메모리공간 미리 확보
 			dis.readFully(fileContents); // 대상 파일 로딩
 			
-			sysName = new String(oriName.getBytes(), "ISO-8859_1"); // 크롬 인코딩
+			oriName = new String(oriName.getBytes(), "ISO-8859-1"); // 크롬 인코딩
 			
 			response.reset();
 			response.setHeader("Content-Disposition", "attachment;filename=" + oriName);
-
+													// 어태치먼트: 내가보내는건 jsp가 아닌 파일이다.
 			dos.write(fileContents);
 			dos.flush();
 		}
