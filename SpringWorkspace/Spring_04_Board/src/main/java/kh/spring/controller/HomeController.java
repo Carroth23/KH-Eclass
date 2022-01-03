@@ -21,6 +21,7 @@ public class HomeController {
 	@ExceptionHandler(Exception.class)
 	public String ExceptionHandler(Exception e) {
 		e.printStackTrace();
+		e.getMessage();
 		System.out.println("에러남ㅋ");
 		return "redirect:/";
 	}

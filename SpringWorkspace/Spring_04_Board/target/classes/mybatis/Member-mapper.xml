@@ -13,7 +13,7 @@
   		insert into member values(#{id}, #{pw}, #{name}, #{phone}, #{email}, #{zipcode}, #{address1}, #{address2}, sysdate)
   	</insert>
   	
-  	<select id="login" resultType="int">
+  	<select id="login" resultType="int"> <!-- resultType boolean으로도 사용 가능하다.0과 1이기때문 -->
   		select count(*) from member where id = #{id} and pw = #{pw}
   	</select>
   	
@@ -22,7 +22,7 @@
   	</update>
   	
   	<select id="getInfoByID" resultType="kh.spring.dto.MemberDTO">
-  		select * from member where id = #{id}
+  		select * from member where id = #{id} <!-- 값이 하나니까 value로 해도 됨 -->
   	</select>
   	
   	<update id="modifyMyInfo">

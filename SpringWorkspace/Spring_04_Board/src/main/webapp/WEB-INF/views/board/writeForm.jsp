@@ -26,9 +26,10 @@
 
     <body>
       <div id="container">
-        <form action="/board/writeComplete" method="post">
+        <form action="/board/writeComplete" method="post" enctype="multipart/form-data">
           <div class="title">
             <input type="text" id="title" name="title">
+            <input type="file" name="file" multiple>
           </div>
           <div class="contents">
             <textarea id="contents" name="contents"></textarea>
