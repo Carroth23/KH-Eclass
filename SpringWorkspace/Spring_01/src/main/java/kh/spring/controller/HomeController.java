@@ -10,17 +10,20 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import kh.spring.dao.ContactDAO;
 import kh.spring.dto.ContactDTO;
+import kh.spring.service.ContactService;
 
 @Controller // 클라이언트와 연결해주는 애들은 컨트롤러어노테이션 붙임
 public class HomeController {
 
+//	@Autowired
+//	public ContactDAO dao; 컨트롤러는 dao를 직접 사용하지않고 서비스레이어를 거친?다
+	
 	@Autowired
-	public ContactDAO dao;
-
-//	@Autowired // 야 스프링 HttpSession형 객체를 찾아다가 메모리에 넣어.(그럼 밑에서도 씀)
-//	private HttpSession session;
+	public ContactService service;
+	
+	@Autowired // 야 스프링 HttpSession형 객체를 찾아다가 메모리에 넣어.(그럼 밑에서도 씀)
+	public HttpSession session; // 세션은 서비스레이어로 넘기지않는다. 필요하면 뽑아서 넘김
 
 //	@RequestMapping(value = "/", method = RequestMethod.GET) Get으로 명시하면 Get으로 들어오는것만 받음(지우면 둘다 허용)
 	@RequestMapping("/")
@@ -54,7 +57,7 @@ public class HomeController {
 //		String id = (String) session.getAttribute("loginId"); // 세션은 이렇게 가져올수도 있는데 나중엔 다른방식으로 씀
 		// 밖으로 꺼내놓고 씀
 
-		int result = dao.insert(dto);
+		int result = service.insert(dto);
 
 //		return "home";
 		return "redirect:/";
@@ -83,8 +86,8 @@ public class HomeController {
 		// 목록을 담아 JSP로 보내는 방법 2(얘를 주로 씀)
 		// Model을 매개변수로 셋팅하고 model객체에 목록을 담아 보낸다
 
-		List<ContactDTO> list = dao.selectAll();
-		int count = dao.selectCount(); // 총 contact의 갯수
+		List<ContactDTO> list = service.selectAll();
+		int count = service.selectCount(); // 총 contact의 갯수
 
 		model.addAttribute("list", list);
 		model.addAttribute("count", count);
@@ -98,7 +101,7 @@ public class HomeController {
 
 	@RequestMapping("search")
 	public String search(int searchSeq, Model model) throws Exception {
-		List<ContactDTO> list = dao.search(searchSeq);
+		List<ContactDTO> list = service.search(searchSeq);
 		model.addAttribute("list", list);
 		return "output";
 	}
@@ -106,7 +109,7 @@ public class HomeController {
 	@RequestMapping("searchByMultiCon") // 여러개의 조건을 검색
 	public String multiSearch(ContactDTO dto) {
 		System.out.println("넣은Con : " + dto.getContact() + ", 넣은Name : " + dto.getName());
-		List<ContactDTO> list = dao.searchByMultiCon(dto);
+		List<ContactDTO> list = service.searchByMultiCon(dto);
 		
 		for (ContactDTO dtos : list) {
 			System.out.println("검색된 Name : " + dtos.getName() + ", 검색된 Con : " + dtos.getContact());
@@ -119,7 +122,7 @@ public class HomeController {
 	public String delProc(int delTarget) throws Exception {
 
 ////		dao.delete(Integer.parseInt(delTarget));
-		int result = dao.deleteBySeq(delTarget);
+		int result = service.deleteBySeq(delTarget);
 		return "redirect:toOutput";
 	}
 //	// JSP에서 같은 name값을 배열로 받기 = getParameterValues()
@@ -127,8 +130,15 @@ public class HomeController {
 	@RequestMapping("updateProc")
 	public String updateProc(String column, String value, int seq) throws Exception {
 //		int result = dao.update(dto);
-		int result = dao.update(column, value, seq);
+		int result = service.update(column, value, seq);
 		return "redirect:toOutput";
+	}
+	
+	@RequestMapping("login")
+	public String login(String loginID) {
+		loginID = "로그인 ㅎ";
+		session.setAttribute("loginID", loginID);
+		return "redirect:/";
 	}
 
 	@ExceptionHandler(Exception.class) // 예외의 종류(그렇담 예외의 종류가 여러개면 얘도 나눌수 있을것.)

@@ -7,7 +7,10 @@
     <fullyQualifiedTypeName name="java.lang.Boolean"/>
     <fullyQualifiedTypeName name="java.sql.Date"/>
     <fullyQualifiedTypeName name="kh.spring.dto.ReplyDTO"/>
-    <fullyQualifiedTypeName name="kh.spring.utils.EncryptUtils"/>
     <fullyQualifiedTypeName name="kh.spring.statics.Statics"/>
     <fullyQualifiedTypeName name="org.springframework.jdbc.core.RowMapper"/>
+    <fullyQualifiedTypeName name="org.springframework.web.multipart.MultipartFile"/>
+    <fullyQualifiedTypeName name="kh.spring.utils.EncryptUtils"/>
+    <fullyQualifiedTypeName name="java.util.UUID"/>
+    <fullyQualifiedTypeName name="org.springframework.web.servlet.HandlerInterceptor"/>
 </qualifiedTypeNameHistroy>

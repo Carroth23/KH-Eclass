@@ -19,6 +19,7 @@ public class FileController {
 	@Autowired
 	private HttpSession session;
 	
+	// 얘네도 서비스레이어로 빼야될듯
 	@RequestMapping("download")			// 디스패쳐한테 안보낼거라 response 생성함
 	public void download(HttpServletResponse response, String oriName, String sysName) throws Exception {
 		String realPath = session.getServletContext().getRealPath("upload");	// 파일 위치 경로를 획득

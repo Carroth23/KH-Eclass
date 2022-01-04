@@ -2,6 +2,8 @@
 <aop-reference-model>
 <aop-project name="Proc01"/>
 <aop-project name="Spring_01"/>
+<aop-project name="Spring_05_File"/>
+<aop-project name="Spring_02_Board"/>
+<aop-project name="Spring_04_Board1"/>
 <aop-project name="Spring_03_MessageProject"/>
-<aop-project name="Spring_04_Board"/>
 </aop-reference-model>
