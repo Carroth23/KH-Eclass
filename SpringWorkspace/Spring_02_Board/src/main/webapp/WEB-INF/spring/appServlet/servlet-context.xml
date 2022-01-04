@@ -41,6 +41,7 @@
 			<mapping path="/**"/> <!-- 모든 url을 다 매칭시켜라 -->
 			<exclude-mapping path="/"/> <!-- 간섭을 제외할 -->
 			<exclude-mapping path="/member/join"/>
+			<exclude-mapping path="/member/login"/>
 			<exclude-mapping path="/images/**"/> <!-- images로 들어오는 모든걸 제외 -->
 			<beans:bean class="kh.spring.interceptor.Interceptor"/> <!-- 인터셉터는 누가 가지고 있는지? -->
 		</interceptor>
