@@ -32,7 +32,7 @@ public class MemberController {
 		return "/member/join"; // 회원가입페이지로 보냄
 	}
 	
-	// ResponseBody를 붙이면 RestController이 되...는듯
+	// @RestController가 아닌 @Controller에서는 ResponseBody를 붙이면 됨
 	@ResponseBody // 이 어노테이션을 붙이면, 이 메서드가 리턴하는 결과값은 포워드도 아니고 리다이렉트도 아니게됨(ajax에서 많이씀)
 	@RequestMapping("idDuplCheck") // ID중복체크
 	public String idDuplCheck(String id) throws Exception{
