@@ -24,7 +24,7 @@
 	
 	<update id="update">
 		update contact set ${column} = #{value} where seq = ${seq} <!-- #은 ''을 자동으로 붙여준다. 그럼 컬럼명은 붙으면 안되는데? 그럴땐 $를 씀 -->
-		<!-- #은 실글쿼테이션을 붙여주고, $는 안붙여줌 ㅎㅎ(오라클은 숫자를 ''로 감싸도 문맥상 숫자로 이해함) -->
+		<!-- #은 싱글쿼테이션을 붙여주고, $는 안붙여줌 ㅎㅎ(오라클은 숫자를 ''로 감싸도 문맥상 숫자로 이해함) -->
 	</update>
 	
 	<select id="selectBySeq" resultType="kh.spring.dto.ContactDTO"> <!-- dto같은값이 리턴되니까 resultType 명세 -->
@@ -33,7 +33,6 @@
 	
 	<select id="searchByMultiCon" resultType="kh.spring.dto.ContactDTO">
 		select * from contact
-		
 		
 		<trim prefix="where" prefixOverrides="and|or"> <!-- trim은 자신의 안쪽에 아무도 없다면 trim은 없는것과 마찬가지가 된다. -->
 					<!-- Overrides속성은 트림에서 특정 텍스트의 가장 앞부분이 "and"나 "or"라면 그걸 지워버려라(슬래시아님 | 이거임) -->

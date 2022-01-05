@@ -134,6 +134,10 @@ public class HomeController {
 		return "redirect:toOutput";
 	}
 	
+	// params 파라미터명 앞에 !를 붙이면 해당 파라미터는 넘어오면 안되게 제약 설정
+//		@RequestMapping(value="hello6.git", params= {"id=java","pw", "!age"}) 
+	// 블로그보고 따라적은거 나중에 참고
+	
 	@RequestMapping("login")
 	public String login(String loginID) {
 		loginID = "로그인 ㅎ";
