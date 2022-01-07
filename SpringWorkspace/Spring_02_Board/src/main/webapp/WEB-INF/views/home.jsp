@@ -14,6 +14,7 @@
 	<c:choose>
 		<c:when test="${loginID != null}">
 			${loginID } 님 환영합니당
+			<button type="button" id="toChat">toChat</button>
 			<button type="button" id="toboard">게시판</button>
 			<button type="button" id="mypageBtn">마이페이지</button>
 			<button type="button" id="logoutBtn">로그아웃</button>
@@ -61,6 +62,10 @@
 		$("#toboard").on("click", () => {
 			location.href="/board/list";
 		})
+		$("#toChat").on("click", () => {
+			location.href="/chat/toChat";
+		})
+		
 	</script>
 </body>
 </html>

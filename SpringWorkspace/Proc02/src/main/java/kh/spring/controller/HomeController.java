@@ -15,13 +15,6 @@ public class HomeController {
 		return "home";
 	}
 	
-	@RequestMapping("login")
-	public String login(String code, String error) {
-		System.out.println("반환된 코드 : " + code);
-		System.out.println("에러 코드 : " + error);
-		System.out.println("로그인 성공?");
-		return "/member/loginsu";
-	}
 	
 	
 	

@@ -28,7 +28,7 @@
         </div>
         <div class="modal-body">
           <h1>Hello World!!</h1>
-          <a href="/login"><img src="/images/kakao_login.png"></a>
+          <button id="kakaoLogin"><img src="/images/kakao_login.png"></button>
           <a href="/logout"><button>로그아웃</button></a>
         </div>
       </div>
@@ -38,6 +38,17 @@
   <c:if test="${loginID != null }">
     로그인 성공
   </c:if>
+
+  <script>
+    $("#kakaoLogin").on("click", () => {
+      $.ajax({
+        url: '/member/getKakaoAuthUrl',
+        type:'get'
+      }).done(function (res){
+        location.href = res;
+      })
+    })
+  </script>
 </body>
 
 </html>
