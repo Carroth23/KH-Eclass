@@ -12,6 +12,12 @@ public class MemberDTO {
 	private String address1;
 	private String address2;
 	private Date signup_date;
+	
+	public MemberDTO(String id, String pw) {
+		super();
+		this.id = id;
+		this.pw = pw;
+	}
 	public MemberDTO() {
 		super();
 		// TODO Auto-generated constructor stub
