@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
+		<property name="username" value="kh"/>
+		<property name="password" value="kh"/>
+		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
+		<property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
+		<property name="initialSize" value="30"/>
+	</bean>
+	
+	<!-- DAO인스턴스 생성 (컴포넌트스캔으로 대체) -->
+	<!-- <bean class="kh.spring.dao.ContactDAO"/> -->
+	
+	<!-- Spring JDBC -->
+	<!-- 얘또한 DI임 위에있는걸 여기에 주입받기때문 -->
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="dataSource"/> <!-- 위에 있는 DBCP를 JDBC에 넣는다. -->
+	</bean>							<!-- ref는 참조자료형들을 넣을때 ref라고 함, (value는 기본형넣을때 씀) -->
+	<!-- MyBatis쓰면 JDBC템플릿은 아마 없어도 될수도 -->
+	
+	<!-- MyBatis -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="mapperLocations" value="classpath:/mybatis/*-mapper.xml"/>
+		<!-- Mybatis는 xml문서를 참조해서 쓰는데 그 문서가 어디에 있는지 알려주는 property classpath는 밖에 있는 resources폴더 -->
+	</bean>
+	<!-- 생성자로 만드는법 -->
+	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"></constructor-arg>
+	</bean>
+</beans>
