@@ -14,7 +14,9 @@ public class WSConfig extends Configurator { // javax.websocket.server
 	public void modifyHandshake(ServerEndpointConfig sec, HandshakeRequest request, HandshakeResponse response) {
 		
 		HttpSession session = (HttpSession)request.getHttpSession();
-		sec.getUserProperties().put("hSession", session); // map
+		if(session != null) {
+			sec.getUserProperties().put("hSession", session); // map
+		}
 		
 		super.modifyHandshake(sec, request, response);
 	}

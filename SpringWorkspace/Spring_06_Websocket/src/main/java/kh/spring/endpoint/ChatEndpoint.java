@@ -38,9 +38,9 @@ public class ChatEndpoint {
 		
 		
 		// 이제 세션을 사용 가능하니까 이렇게 뽑을 수 있음.
-		String userID = (String)this.session.getAttribute("loginID");
+//		String userID = (String)this.session.getAttribute("loginID");
 		JsonObject obj = new JsonObject();
-		obj.addProperty("ID", userID);
+//		obj.addProperty("ID", userID);
 		obj.addProperty("message", message);
 		
 		synchronized (clients) { // 쓰레드 관련 코드 
