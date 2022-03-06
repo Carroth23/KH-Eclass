@@ -137,7 +137,7 @@ SELECT emp_name, dept_code, dept_title FROM employee, department WHERE dept_code
 
 SELECT emp_name, job_name FROM employee, job where employee.job_code = job.job_code; -- 명칭이 겹칠때 점찍어서 사용가능(추천 안함)
 SELECT emp_name, job_name FROM employee e, job j WHERE e.job_code = j.job_code; -- as를 붙여서 사용도 가능
-
+select * from employee left outer join department on (employee.dept_code = department.dept_id);
 SELECT emp_name, dept_title FROM employee, department WHERE dept_code = dept_id; -- 오라클 전용 쿼리문법
 SELECT emp_name, dept_title FROM employee inner join department on (employee.dept_code = department.dept_id); -- ANSI 표준 쿼리문법
 SELECT emp_name, job_name FROM employee inner join job on (employee.job_code = job.job_code); -- ANSI 표준 쿼리문법
