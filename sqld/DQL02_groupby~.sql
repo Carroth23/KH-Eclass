@@ -134,7 +134,7 @@ SELECT * FROM employee, department; -- 테이블이 두개 이상이 되면 join이 됨 (이중
 SELECT * FROM job, department; -- Cross Join : Cartesian Product - 카티션곱
 SELECT * FROM employee, department WHERE dept_code = dept_id; -- Inner Join : 특정 조건을 이용해 의미있는 데이터를 만들어내는것
 SELECT emp_name, dept_code, dept_title FROM employee, department WHERE dept_code = dept_id;
-
+SELECT * FROM employee;
 SELECT emp_name, job_name FROM employee, job where employee.job_code = job.job_code; -- 명칭이 겹칠때 점찍어서 사용가능(추천 안함)
 SELECT emp_name, job_name FROM employee e, job j WHERE e.job_code = j.job_code; -- as를 붙여서 사용도 가능
 select * from employee left outer join department on (employee.dept_code = department.dept_id);
