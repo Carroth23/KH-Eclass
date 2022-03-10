@@ -1,4 +1,4 @@
-package iterator;
+package iteratorM;
 
 import java.util.*;
 
@@ -15,6 +15,16 @@ public class IteratorM {
 		Iterator lt = list.iterator();
 		while(lt.hasNext()) {
 			System.out.println(lt.next());
+		}
+		
+		HashSet set = new HashSet();
+		set.add(1);
+		set.add(2);
+		set.add(3);
+		
+		Iterator li2 = set.iterator();
+		while(li2.hasNext()) {
+			System.out.println(li2.next());
 		}
 	}
 

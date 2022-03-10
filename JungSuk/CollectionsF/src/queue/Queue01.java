@@ -9,7 +9,7 @@ public class Queue01 {
 	static final int MAX_SIZE = 5;
 	
 	public static void main(String[] args) {
-		System.out.println("help입렵 = 도움말");
+		System.out.println("help입력 = 도움말");
 		Scanner sc = new Scanner(System.in);
 		while(true) {
 			System.out.println(">>");
