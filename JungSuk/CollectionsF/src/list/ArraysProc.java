@@ -19,6 +19,11 @@ public class ArraysProc {
 		System.out.println(list.size());
 		list.remove(new Integer(5));
 		System.out.println(list.size());
+		System.out.println(list.contains(3));
+		list.add(2, "하이");
+		System.out.println(list);
+		list.set(1, "바이");
+		System.out.println(list);
 		
 		// 리스트 지울땐 되도록 뒤에서부터 지워야댐
 	}

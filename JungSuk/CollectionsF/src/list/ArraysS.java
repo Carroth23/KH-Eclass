@@ -22,6 +22,11 @@ public class ArraysS {
 		
 		Arrays.sort(arr);
 		System.out.println(Arrays.toString(arr));
+		Arrays.sort(arr2);
+		int[] arr4 = new int[6];
+		Arrays.fill(arr4, 3);
+		System.out.println(Arrays.toString(arr4));
+		System.out.println(Arrays.equals(arr, arr2));
 	}
 
 }

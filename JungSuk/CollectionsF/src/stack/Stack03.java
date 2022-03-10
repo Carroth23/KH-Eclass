@@ -9,8 +9,10 @@ public class Stack03 {
 		st.push("1");
 		st.push("2");
 		st.add("3");
+		st.push("4");
 		System.out.println(st);
 		System.out.println(st.peek());
+		System.out.println(st);
 		System.out.println(st.pop());
 		System.out.println(st);
 	}

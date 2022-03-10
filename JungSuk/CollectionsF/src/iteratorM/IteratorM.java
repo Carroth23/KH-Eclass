@@ -1,6 +1,7 @@
 package iteratorM;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Iterator;
 
 public class IteratorM {
 
@@ -12,19 +13,12 @@ public class IteratorM {
 		list.add("4");
 		list.add("5");
 		
-		Iterator lt = list.iterator();
-		while(lt.hasNext()) {
-			System.out.println(lt.next());
-		}
-		
-		HashSet set = new HashSet();
-		set.add(1);
-		set.add(2);
-		set.add(3);
-		
-		Iterator li2 = set.iterator();
-		while(li2.hasNext()) {
-			System.out.println(li2.next());
+//		Iterator it = list.iterator();
+//		while(it.hasNext()) {
+//			System.out.println(it.next());
+//		}
+		for(int i = 0; i < list.size(); i++) {
+			System.out.println(list.get(i));
 		}
 	}
 

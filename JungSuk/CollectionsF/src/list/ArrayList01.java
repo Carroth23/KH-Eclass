@@ -32,6 +32,7 @@ public class ArrayList01 {
 		// 변경
 		list2.set(3, "DD");
 		System.out.println("list2 : " + list2);
+		// add 는 뒤로 밀리고 set은 변경
 		
 		System.out.println("list1에서 0의 index : " + list1.indexOf(0));
 		
