@@ -28,5 +28,18 @@ public class 지네릭스란 {
 		
 		String strt = null; // 이건 에러발생가능
 		String str = ""; // 이렇게 초기화하는게 더 좋은코드.
+		
+		// 클래스 안에 object를 포함한 클래스는 다 지네릭스 클래스로 바뀜
+		// 타입변수 사용으로 바뀐듯
+		
+		// TV타입만 들어올 수 있다.					여기는 생략가능
+		ArrayList<TV> tvList = new ArrayList<>();
+//		tvList.add(10); 에러
+		tvList.add(new TV()); // 가능
+		
+		TV tv1 = tvList.get(0); // 형변환없이 걍 꺼내기 가능
+		
 	}
 }
+
+class TV {}
