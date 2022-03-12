@@ -23,26 +23,10 @@ class Juicer{
 }
 public class 와일드카드 {
 	public static void main(String[] args) {
-		// 와일드카드 : 하나의 참조 변수로 대입된 타입이 다른 객체를 참조 가능
-		FruitBox3<Fruit2> fruitBox = new FruitBox3<Fruit2>();
+		Box3 b = null;
+		Box3<String> bStr = null;
 		
-		// Fruit2와 그 자손들 원래는 Apple인데 와일드카드 사용
-		FruitBox3<? extends Fruit2> appleBox = new FruitBox3<Apple2>();
-		appleBox = new FruitBox3<Grape2>();
-		appleBox = new FruitBox3<Apple2>();
-		appleBox = new FruitBox3<Fruit2>();
-		// 와일드카드는 제네릭클래스를 매개변수로 받는 메서드에서 사용가능
-		
-		
-		fruitBox.add(new Apple2());
-		fruitBox.add(new Grape2());
-		appleBox.add(new Fruit2());
-		appleBox.add(new Grape());
-		appleBox.add(new Apple2());
-		appleBox.add(new Apple2());
-		
-		System.out.println(Juicer.makeJuice(fruitBox));
-		System.out.println(Juicer.makeJuice(appleBox));
+		b = (Box3)bStr;
 	}
 }
 

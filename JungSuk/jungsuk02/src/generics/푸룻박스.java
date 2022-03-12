@@ -29,7 +29,7 @@ public class 푸룻박스 {
 		
 	}
 }
-						// 상속과 인터페이스를 같이쓸땐 &
+						// 상속과 인터페이스를 같이쓸땐 &를 써야함. , 아님
 class FruitBox2<T extends Fruit/*& Eatable2*/> extends Box2<T>{}
 
 class Box2<T>{
