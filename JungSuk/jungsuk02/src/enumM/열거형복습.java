@@ -22,3 +22,17 @@ public class 열거형복습 {
 		System.out.println(Toos.ASD.getValue());
 	}
 }
+
+class Boom{
+	public int Booom() {
+		return 1;
+	}
+}
+
+class Buum extends Boom{
+	// 오버라이딩임을 알려주는 애너테이션. 필수는 아니지만 앵간하면 붙이자.
+	@Override
+	public int Booom() {
+		return 2;
+	}
+}
