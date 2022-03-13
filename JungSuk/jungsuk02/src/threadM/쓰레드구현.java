@@ -24,10 +24,11 @@ public class 쓰레드구현 {
 //		MyThread t1 = new MyThread();
 //		t1.start();
 		
-		// 2번 방법의 쓰레드 사용 :
+		// 2번 방법의 쓰레드 사용 : (이게 좀 더 낫다. 다중상속에 자유로움)
 //		Runnable r = new MyThread2();
 //		Thread t2 = new Thread(r);
 //		t2.start();
 		// 짧게는 Thread t2 = new Thread(new MyThread2());
+		// t1번 t2번중 뭐가 먼저 실행될지는 OS의 스케쥴러가 결정
 	}
 }
