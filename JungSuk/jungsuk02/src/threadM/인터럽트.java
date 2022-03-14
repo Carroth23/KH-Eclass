@@ -15,6 +15,7 @@ public class 인터럽트 {
 }
 
 class ThreadEx9_1 extends Thread {
+	volatile boolean volaaa = false; // 자주변하는 수
 	public void run() {
 		int i = 10;
 		
