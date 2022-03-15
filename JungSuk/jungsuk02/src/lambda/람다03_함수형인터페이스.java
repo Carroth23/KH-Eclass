@@ -22,4 +22,5 @@ public class 람다03_함수형인터페이스 {
 @FunctionalInterface // 안붙여도 되지만 기왕이면 붙여주자(함수형 인터페이스는 단 하나의 추상메서드만 가져야함. 얘가 검사)
 interface MyFunction {
 	int max(int a, int b); // public abstract 이 생략되어 있음
+//	int max2(int a, int b); // 어노테이션에 의해 함수형인지 검사
 }

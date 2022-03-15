@@ -1,9 +1,16 @@
 package lambda;
 
+import java.util.function.Supplier;
+
 @FunctionalInterface // 함수형 인터페이스
 interface MyFunction2{
 	void run(); // public abstract void run();
 		// 요게 이름?
+}
+
+@FunctionalInterface
+interface MyF{
+	void gun(int a);
 }
 
 public class 람다03_예제 {
@@ -27,7 +34,12 @@ public class 람다03_예제 {
 			}
 		};
 		
-		MyFunction2 f3 = getMyFunction2();
+		Supplier <Integer> s = () -> 100*1;
+		System.out.println("서플 : " + s.get());
+		MyF mf = (a) -> System.out.println("바이바이" + a);
+		mf.gun(12);
+		
+		MyFunction2 f3 = getMyFunction2(); // () -> System.out.println("f1.run()");
 		
 		f1.run();
 		f2.run();
