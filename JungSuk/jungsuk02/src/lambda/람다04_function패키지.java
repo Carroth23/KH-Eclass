@@ -23,27 +23,27 @@ public class 람다04_function패키지 {
 		Supplier<Integer> s = () -> 10;
 		System.out.println("서플라이어 : " + s.get());
 		
-		// 위와 반대로 매개변수는 있고 반환값이 없음.
+		// 위와 반대로 매개변수는 있고 반환값이 없음. Consumer
 		Consumer<Integer> c = a -> System.out.println(tmp + a);
 		c.accept(10);
 		
-		// 일반적인 함수. 하나의 값을 받아 하나의 값을 반환.
+		// 일반적인 함수. 하나의 값을 받아 하나의 값을 반환. Function
 		Function<Integer, Integer> f = a -> a + 12;
 		System.out.println(f.apply(10));
 		
-		// 조건식표현 함수. 매개변수하나, 반환타입 boolean
+		// 조건식표현 함수. 매개변수하나, 반환타입 boolean Predicate
 		Predicate<Integer> p = a -> a > 10;
 		System.out.println(p.test(11));
 		
-		// 두개의 매개변수만 있고 반환값이 없음
+		// 두개의 매개변수만 있고 반환값이 없음 BiConsumer
 		BiConsumer<String, String> bc = (a, b) -> System.out.println("a 는 : " + a + ", b는 : " + b);
 		bc.accept("자바", "자스");
 		
-		// 두개의 매개변수를 받는 조건식
+		// 두개의 매개변수를 받는 조건식 BiPredicate
 		BiPredicate<Integer, Integer> bp = (a, b) -> a > b ? true : false;
 		System.out.println(bp.test(10, 11));
 		
-		// 두개의 매개변수를 받고 하나의 결과를 반환(제네릭은 세개네 마지막껀 반환타입이겠지)
+		// 두개의 매개변수를 받고 하나의 결과를 반환(제네릭은 세개네 마지막껀 반환타입이겠지) BiFunction
 		BiFunction<Integer, Integer, String> bf = (a, b) -> a > b ? "a가 큼" : "b가 큼";
 		System.out.println(bf.apply(20, 100));
 		

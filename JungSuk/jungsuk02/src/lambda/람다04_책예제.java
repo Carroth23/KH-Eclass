@@ -9,13 +9,13 @@ import java.util.function.Supplier;
 
 public class 람다04_책예제 {
 	public static void main(String[] args) {
-		// 매개변수X 반환값1개
+		// 매개변수X 반환값1개 Supplier
 		Supplier<Integer> s = () -> (int)(Math.random() * 100) + 1;
-		// 매개변수1 반환값X
+		// 매개변수1 반환값X Consumer
 		Consumer<Integer> c = i -> System.out.print(i + ", ");
-		// 매개변수1 조건식반환boolean
+		// 매개변수1 조건식반환boolean Predicate
 		Predicate<Integer> p = i -> i % 2 == 0;
-		// 매개변수1 반환1
+		// 매개변수1 반환1 Function
 		Function<Integer, Integer> f = i -> i / 10 * 10;
 		
 		List<Integer> list = new ArrayList<>();
