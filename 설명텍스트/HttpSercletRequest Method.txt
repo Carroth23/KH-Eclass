@@ -1,0 +1,9 @@
+request.getRequestURL() :http://localhost:8090/jam/abc
+request.getRequestURI() :/jam/abc
+request.getContextPath() :/jam
+request.getServletPath() :/abc
+request.getServerName() :localhost
+request.getServerPort() :8090
+request.getQueryString() :type=spider
+request.getPathInfo() :null
+

@@ -1,0 +1,8 @@
+MyBatis - DB Related Framework
+ - Query문과 자바가 분리됨(이식성 향상)
+ - Select 쿼리 결과에 대한 처리 문법 경제성 향상
+ - 동적 쿼리 생성에 유리하다
+ - (JPA보다) 상대적으로 쉽다. ㅎㅎ..개꿀..
+
+위의 resource폴더에 mybatis폴더 하나 만들고
+테이블 명-mapper.xml을 만듬

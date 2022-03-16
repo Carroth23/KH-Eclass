@@ -1,0 +1,39 @@
+1. tomcat의 conf 폴더 내부에 tomcat-users.xml에서 관리자 계정에 manager-script 권한 할당
+
+2. 플러그인 추가
+<plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<version>2.2</version>
+				<configuration>
+					<url>http://localhost:8090/manager/text</url>
+					<username>admin</username>
+					<password>admin</password>
+					<path>/</path>
+				</configuration>
+			</plugin>
+
+3. maven plugin 이 참조하는 jdk 버전 11로 업데이트
+4. 배포할 프로젝트 우클릭 -> maven build.. -> clean compile 명령으로 배포할 파일 정리
+5. 다시 프로젝트 우클릭 -> goals에 tomcat7:deploy 입력후 run
+
+* 80포트는 명세할 필요 없음
+
+
+----- 에러나서 해결
+aws 원격배포 해결법 = 파이널 프로젝트는 <groupId>org.apache.tomcat.maven</groupId> 이걸써야 aws에 올라감.
+인코딩 에러들이 뜬다면
+<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    	<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+이걸 추가해주면 일단 해결됨
+
+또한 aws에 deploy하려면 Tomcat8.5\conf\Catalina\localhost 경로에 manager.xml을 생성
+<Context privileged="true" antiResourceLocking="false" docBase="${catalina.home}/webapps/manager">
+        <Valve className="org.apache.catalina.valves.RemoteAddrValve" allow="^.*$"/>
+</Context>
+
+작성해줘야함.
+또한, webapp에 ROOT폴더가 없어야 하고
+aws 톰캣 SERVER.xml에 docbase가 명세되어있지 않아야함.(이건 명세되어있으면 톰캣이 바로꺼짐)
+
+대신 이방법은 배포는 되는데 클린이 안됨; 이건 프로젝트의 문제인듯

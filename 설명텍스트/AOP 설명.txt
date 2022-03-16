@@ -1,0 +1,18 @@
+AOP (Aspect Oriented Programming) : 관점 지향 개발
+ - Servlet Filter / Interceptor 보다 정밀한 간섭 가능
+ - 횡단관심사 (보는 관점을 옆에서 보는 관점으로 바꿔보는것)
+ - 주로 로그를 남기거나(logging), 시큐리티 / 트랜잭션에 많이씀
+
+
+
+ - JoinPoint : Advice Metohd가 weaving 될 수 있는 후보 메서드 '전체'
+ - weaving : 끼워넣는 행위
+ - PointCut : joinpoint메서드 중에서 pointcut표현식(weaving할 메서드를 선별하는 작업)을 통해 선별된 weaving타겟 메서드
+ - Advice : poincut에 weaving돨 메서드
+
+joinpoint중에서 pointcut표현식을 통해 선별된 pointcut메서드에게 weaving(적용)할 메서드를 advice라고 한다.
+ - pointcut메서드와 advice메서드를 합친 걸 advisor이라고함
+
+
+
+aspect 위버 다운받음

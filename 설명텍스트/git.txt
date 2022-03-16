@@ -1,0 +1,30 @@
+CVS / SVN / GIT
+SVN : 좀 옛날꺼 (서브버전)
+
+VCS - Version Control System(SVN) 애는 중앙저장 시스템(중앙날리면 다날라감)
+DVCS - 깃이 여기에 해당. 분산저장시스템
+
+* GIT 관련 용어
+WorkingTree -> Stage -> LocalRepository
+Working Tree : 사용자가 실질적인 작업을 수행하는 작업공간(폴더)
+Stage : 워킹트리에서 발생한 작업물을 저장소(로컬레포)에 저장하기 전에
+	임시적으로 보관하는 중간 저장소
+git add : 얘가 스테이징작업
+git commit : 스테이지에 있는걸 로컬레파지토리로 올리는걸 말함.(스냅샷 찍기)
+Local Repository : 워킹트리의 특정 시점을 스냅샷 하여 실제 보관하는 저장소(.git폴더)
+
+git restore --staged Test01.txt : add 한걸 다시 내리고 싶을때.
+
+git init - 저장소를 초기화하는 명령(관리시작)
+git config user.name "기록 관리자의 호칭"
+git config user.email "기록 관리자의 연락처(이메일)"
+
+git status - 현재 깃에 의해 관리되는 파일들의 현재 상태
+
+git checkout (git log에서 이동할 커밋로그)
+다시 최신상황으로 이동하려면
+git checkout main
+
+
+
+GITHUB - 깃 저장소 서비스 서버
